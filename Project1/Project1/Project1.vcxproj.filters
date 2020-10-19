@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\meteo">
+      <UniqueIdentifier>{ba78a036-ef4b-41bd-b133-e897e451afbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\HERO">
+      <UniqueIdentifier>{1e0acf2a-ba3f-4c8c-b9db-3736c02e3706}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Audio.cpp">
@@ -54,8 +60,32 @@
     <ClCompile Include="WinInputs.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="meteo large.cpp">
+      <Filter>ソース ファイル\meteo</Filter>
+    </ClCompile>
+    <ClCompile Include="meteo medium.cpp">
+      <Filter>ソース ファイル\meteo</Filter>
+    </ClCompile>
     <ClCompile Include="meteo small.cpp">
+      <Filter>ソース ファイル\meteo</Filter>
+    </ClCompile>
+    <ClCompile Include="meteo anomalies.cpp">
+      <Filter>ソース ファイル\meteo</Filter>
+    </ClCompile>
+    <ClCompile Include="Back screen.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="obstacles.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="hero.cpp">
+      <Filter>ソース ファイル\HERO</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
