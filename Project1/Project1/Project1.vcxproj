@@ -143,7 +143,9 @@
     <ClInclude Include="DirectXDevice.h" />
     <ClInclude Include="DrawFont.h" />
     <ClInclude Include="DrawTexture.h" />
+    <ClInclude Include="GameHead.h" />
     <ClInclude Include="HitBoxManager.h" />
+    <ClInclude Include="main.h" />
     <ClInclude Include="MultiThread.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneObjManager.h" />
