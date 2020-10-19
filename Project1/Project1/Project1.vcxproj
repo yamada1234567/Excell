@@ -123,7 +123,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="DirectXDevice.cpp" />
+    <ClCompile Include="Draw2DTex_Source.cpp" />
+    <ClCompile Include="DrawFont.cpp" />
+    <ClCompile Include="DrawTexture.cpp" />
+    <ClCompile Include="GameL_Main.cpp" />
+    <ClCompile Include="HitBoxManager.cpp" />
+    <ClCompile Include="MultiThread.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneObjManager.cpp" />
+    <ClCompile Include="SetWindow.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="UserData.cpp" />
+    <ClCompile Include="WinInputs.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Audio.h" />
+    <ClInclude Include="DirectXDevice.h" />
+    <ClInclude Include="DrawFont.h" />
+    <ClInclude Include="DrawTexture.h" />
+    <ClInclude Include="HitBoxManager.h" />
+    <ClInclude Include="MultiThread.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneObjManager.h" />
+    <ClInclude Include="SetWindow.h" />
+    <ClInclude Include="UserData.h" />
+    <ClInclude Include="WinInputs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
