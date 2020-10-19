@@ -130,11 +130,11 @@
     <ClCompile Include="DrawTexture.cpp" />
     <ClCompile Include="GameL_Main.cpp" />
     <ClCompile Include="HitBoxManager.cpp" />
+    <ClCompile Include="meteo small.cpp" />
     <ClCompile Include="MultiThread.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneObjManager.cpp" />
     <ClCompile Include="SetWindow.cpp" />
-    <ClCompile Include="Source.cpp" />
     <ClCompile Include="UserData.cpp" />
     <ClCompile Include="WinInputs.cpp" />
   </ItemGroup>
