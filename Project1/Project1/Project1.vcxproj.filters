@@ -131,5 +131,8 @@
     <ClInclude Include="SceneMain.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="hero.h">
+      <Filter>ソース ファイル\HERO</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

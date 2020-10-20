@@ -175,6 +175,7 @@
     <ClInclude Include="GameL\SetWindow.h" />
     <ClInclude Include="GameL\UserData.h" />
     <ClInclude Include="GameL\WinInputs.h" />
+    <ClInclude Include="hero.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="SceneMain.h" />
   </ItemGroup>
