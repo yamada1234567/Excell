@@ -8,17 +8,14 @@ using namespace GameL;
 class CObjHero:public CObj
 {
 public:
-	();
-	~();
+	CObjHero(){};
+	~CObjHero(){};
+
+	void Init();
+	void Action();
+	void Draw();
 
 private:
-
+	float m_y;//ålŒö‹@ y•ûŒüˆÚ“®—p•Ï”
 };
 
-::()
-{
-}
-
-::~()
-{
-}
