@@ -25,7 +25,7 @@ CSceneMain::~CSceneMain()
 void CSceneMain::InitScene()
 {
 	//外部グラフィックファイルを読み込む0番に登録()
-	Draw::LoadImageW(L"image.png", 0, TEX_SIZE_512);
+	Draw::LoadImageW(L"hero.png", 0, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
