@@ -12,14 +12,30 @@ using namespace GameL;
 void CObjHero::Init()
 {
 	m_y = 0;
-
+	m_x = 0;
 }
 
 //アクション
 void CObjHero::Action()
 {
-	
-	m_y += 1.0f;
+
+	if (Input::GetVKey(VK_RIGHT) == true)
+	{
+		m_x += 1.0f;
+	}
+	if (Input::GetVKey(VK_LEFT) == true)
+	{
+		m_x -= 1.0f;
+
+	}
+	if (Input::GetVKey(VK_UP)==true)
+	{
+		m_y -= 1.0f;
+	}
+	if (Input::GetVKey(VK_DOWN) == true)
+	{
+		m_y += 1.0f;
+	}
 }
 
 
@@ -39,10 +55,10 @@ void CObjHero::Draw()
 	src.m_bottom	= 32.0f;
 
 	//表示位置の設定
-	dst.m_top		= 0.0f;
-	dst.m_left		= 0.0f;
-	dst.m_right		= 32.0f;
-	dst.m_bottom	= 32.0f;
+	dst.m_top		= 0.0f+m_y;
+	dst.m_left		= 0.0f+m_x;
+	dst.m_right		= 32.0f+m_x;
+	dst.m_bottom	= 32.0f+m_y;
 
 	//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	//Draw::Draw(0, &src, &dst, c, 0.0f);

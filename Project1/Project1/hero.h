@@ -17,5 +17,6 @@ public:
 
 private:
 	float m_y;//主人公機 y方向移動用変数
+	float m_x;//主人公機 x方向移動用変数
 };
 
