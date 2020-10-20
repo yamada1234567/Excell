@@ -18,36 +18,6 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Audio.cpp" />
-    <ClCompile Include="DirectXDevice.cpp" />
-    <ClCompile Include="Draw2DTex_Source.cpp" />
-    <ClCompile Include="DrawFont.cpp" />
-    <ClCompile Include="DrawTexture.cpp" />
-    <ClCompile Include="GameL_Main.cpp" />
-    <ClCompile Include="HitBoxManager.cpp" />
-    <ClCompile Include="MultiThread.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="SceneObjManager.cpp" />
-    <ClCompile Include="SetWindow.cpp" />
-    <ClCompile Include="UserData.cpp" />
-    <ClCompile Include="WinInputs.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Audio.h" />
-    <ClInclude Include="DirectXDevice.h" />
-    <ClInclude Include="DrawFont.h" />
-    <ClInclude Include="DrawTexture.h" />
-    <ClInclude Include="GameHead.h" />
-    <ClInclude Include="HitBoxManager.h" />
-    <ClInclude Include="main.h" />
-    <ClInclude Include="MultiThread.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="SceneObjManager.h" />
-    <ClInclude Include="SetWindow.h" />
-    <ClInclude Include="UserData.h" />
-    <ClInclude Include="WinInputs.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{4CB89867-770D-4E8F-BAF2-EFAE8CFF0165}</ProjectGuid>
@@ -152,6 +122,37 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="DirectXDevice.cpp" />
+    <ClCompile Include="Draw2DTex_Source.cpp" />
+    <ClCompile Include="DrawFont.cpp" />
+    <ClCompile Include="DrawTexture.cpp" />
+    <ClCompile Include="GameL_Main.cpp" />
+    <ClCompile Include="HitBoxManager.cpp" />
+    <ClCompile Include="MultiThread.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneObjManager.cpp" />
+    <ClCompile Include="SetWindow.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="UserData.cpp" />
+    <ClCompile Include="WinInputs.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Audio.h" />
+    <ClInclude Include="DirectXDevice.h" />
+    <ClInclude Include="DrawFont.h" />
+    <ClInclude Include="DrawTexture.h" />
+    <ClInclude Include="GameHead.h" />
+    <ClInclude Include="HitBoxManager.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="MultiThread.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneObjManager.h" />
+    <ClInclude Include="SetWindow.h" />
+    <ClInclude Include="UserData.h" />
+    <ClInclude Include="WinInputs.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -33,7 +33,7 @@ void CAudio::Init(int max_audio)
 	g_is_error_sound = false;
 	if (m_pMasteringVoice == nullptr)
 	{
-		MessageBox(0, "»³İÄŞÊ°ÄŞŒn‚Ì»Îß°Ä‚É–â‘è‚ª‚ ‚é‚½‚ßA‰¹‚ª‚È‚è‚Ü‚¹‚ñ", NULL, MB_OK);
+		MessageBox(0, L"»³İÄŞÊ°ÄŞŒn‚Ì»Îß°Ä‚É–â‘è‚ª‚ ‚é‚½‚ßA‰¹‚ª‚È‚è‚Ü‚¹‚ñ", NULL, MB_OK);
 		g_is_error_sound = true;
 		return;
 	}

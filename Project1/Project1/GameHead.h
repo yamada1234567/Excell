@@ -6,6 +6,14 @@ enum OBJ_NAME
 	OBJ_NO_NAME,	//オブジェクト名無し(禁止)
 	//ゲームで使うオブジェクトの名前
 	//OBJ_○○と表記
+	OBJ_HERO,
+	OBJ_BULLET,
+	OBJ_ENEMY,
+	OBJ_ATTACK_ENEMY,
+	OBJ_BULLET_ENEMY,
+	OBJ_SIN_ENEMY,
+	OBJ_DIFFUSION_ENEMY,
+	OBJ_ANGLE_BULLET,
 };
 //------------------------------------------------
 
@@ -49,14 +57,21 @@ struct UserData
 //------------------------------------------------
 
 //ゲームシーンオブジェクトヘッダ------------------
-
+#include "ObjHero.h"
+#include "CObjBullet.h"
+#include "ObjEnemy.h"
+#include "ObjAttackEnemy.h"
+#include "CObjBulletEnemy.h"
+#include "CObjSinEnemy.h"
+#include "ObjDiffusionEnemy.h"
+#include "CObjAngleBullet.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
-
+#include "SceneMain.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-//#define SET_GAME_START  
+ #define SET_GAME_START CSceneMain 
 //-----------------------------------------------
