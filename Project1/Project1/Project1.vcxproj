@@ -124,17 +124,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="Back screen.cpp" />
+    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="DirectXDevice.cpp" />
     <ClCompile Include="Draw2DTex_Source.cpp" />
     <ClCompile Include="DrawFont.cpp" />
     <ClCompile Include="DrawTexture.cpp" />
     <ClCompile Include="GameL_Main.cpp" />
+    <ClCompile Include="hero.cpp" />
     <ClCompile Include="HitBoxManager.cpp" />
+    <ClCompile Include="item.cpp" />
+    <ClCompile Include="meteo anomalies.cpp" />
+    <ClCompile Include="meteo large.cpp" />
+    <ClCompile Include="meteo medium.cpp" />
+    <ClCompile Include="meteo small.cpp" />
     <ClCompile Include="MultiThread.cpp" />
+    <ClCompile Include="obstacles.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneObjManager.cpp" />
     <ClCompile Include="SetWindow.cpp" />
-    <ClCompile Include="Source.cpp" />
     <ClCompile Include="UserData.cpp" />
     <ClCompile Include="WinInputs.cpp" />
   </ItemGroup>
