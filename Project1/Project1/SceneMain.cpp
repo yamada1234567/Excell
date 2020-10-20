@@ -29,5 +29,4 @@ void CSceneMain::InitScene()
 void CSceneMain::Scene()
 {
 	//外部グラフィックファイルを読み込む0番に登録()
-	Draw::LoadImage(L"hero.png",0,TEX_SIZE_512);
 }
