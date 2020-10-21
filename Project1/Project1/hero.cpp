@@ -18,24 +18,45 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
-
+	//操作
 	if (Input::GetVKey(VK_RIGHT) == true)
 	{
-		m_x += 1.0f;
+		m_x += 3.0f;
 	}
 	if (Input::GetVKey(VK_LEFT) == true)
 	{
-		m_x -= 1.0f;
+		m_x -= 3.0f;
 
 	}
 	if (Input::GetVKey(VK_UP)==true)
 	{
-		m_y -= 1.0f;
+		m_y -= 3.0f;
 	}
 	if (Input::GetVKey(VK_DOWN) == true)
 	{
-		m_y += 1.0f;
+		m_y += 3.0f;
 	}
+
+	//範囲外に行かない処理
+	if (m_x + 32.0f > 800.0f)
+	{
+		m_x = 800.0f - 32.0f;
+	}
+	if (m_y + 32.0f > 600.0f)
+	{
+		m_y = 600.0f - 32.0f;
+	}
+	if (m_y < 0.0f)
+	{
+		m_y = 0.0f;
+	}
+	if (m_x < 0.0f)
+	{
+		m_x = 0.0f;
+	}
+
+
+
 }
 
 
