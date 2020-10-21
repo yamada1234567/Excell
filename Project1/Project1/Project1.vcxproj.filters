@@ -21,15 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="meteo large.cpp">
-      <Filter>ソース ファイル\meteo</Filter>
-    </ClCompile>
-    <ClCompile Include="meteo medium.cpp">
-      <Filter>ソース ファイル\meteo</Filter>
-    </ClCompile>
-    <ClCompile Include="meteo small.cpp">
-      <Filter>ソース ファイル\meteo</Filter>
-    </ClCompile>
     <ClCompile Include="meteo anomalies.cpp">
       <Filter>ソース ファイル\meteo</Filter>
     </ClCompile>
@@ -86,6 +77,15 @@
     </ClCompile>
     <ClCompile Include="SceneMain.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="meteoS.cpp">
+      <Filter>ソース ファイル\meteo</Filter>
+    </ClCompile>
+    <ClCompile Include="meteoM.cpp">
+      <Filter>ソース ファイル\meteo</Filter>
+    </ClCompile>
+    <ClCompile Include="meteoL.cpp">
+      <Filter>ソース ファイル\meteo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
