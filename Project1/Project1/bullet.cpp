@@ -25,6 +25,12 @@ void CObjBullet::Action()
 	m_y += -5.0f;
 
 	m_x += m_vx;
+
+	//領域外に出たら削除
+	if (m_x > 800.f)
+	{
+		this->SetStatus(false);
+	}
 }
 
 //ドロー
