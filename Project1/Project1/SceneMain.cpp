@@ -35,7 +35,7 @@ void CSceneMain::InitScene()
 	Objs::InsertObj(obj,OBJ_HERO,1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//敵メテオ
-	CObjmeteoS* obj_meteoS = new CObjmeteoS();
+	CObjmeteoS* obj_meteoS = new CObjmeteoS(100,100);
 	Objs::InsertObj(obj_meteoS, OBJ_meteoS, 2);
 }
 //ゲームメイン実行メソッド

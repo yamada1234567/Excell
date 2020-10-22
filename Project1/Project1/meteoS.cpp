@@ -6,6 +6,11 @@
 #include "GameL\HitBoxManager.h"
 //使用するネームスペース
 using namespace GameL;
+CObjmeteoS::CObjmeteoS(float x, float y)
+{
+	m_x = x;
+	m_y = y;
+}
 //イニシャライズ
 void CObjmeteoS::Init()
 {
@@ -43,7 +48,13 @@ void CObjmeteoS::Action()
 	//hitbox更新用ポインターの取得
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
-	if (hit->CheckObjNameHit(OBJ_meteoS) != nullptr)
+
+	if (m_x < -32.0f)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
