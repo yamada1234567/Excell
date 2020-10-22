@@ -145,16 +145,13 @@
     <ClCompile Include="item.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="meteo anomalies.cpp">
+    <ClCompile Include="meteoL.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="meteo big.cpp">
+    <ClCompile Include="meteoM.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="meteo medium.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="meteo small.cpp">
+    <ClCompile Include="meteoS.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="SceneMain.cpp" />
@@ -163,6 +160,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Boss.h" />
     <ClInclude Include="GameHead.h" />
     <ClInclude Include="GameL\Audio.h" />
     <ClInclude Include="GameL\DirectXDevice.h" />
@@ -177,7 +175,9 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="hero.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="meteo small.h" />
+    <ClInclude Include="meteoL.h" />
+    <ClInclude Include="meteoM.h" />
+    <ClInclude Include="meteoS.h" />
     <ClInclude Include="SceneMain.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
