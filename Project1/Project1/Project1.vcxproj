@@ -148,7 +148,7 @@
     <ClCompile Include="meteo anomalies.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="meteo large.cpp">
+    <ClCompile Include="meteo big.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="meteo medium.cpp">
@@ -177,6 +177,7 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="hero.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="meteo small.h" />
     <ClInclude Include="SceneMain.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
