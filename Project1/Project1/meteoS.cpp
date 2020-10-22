@@ -24,14 +24,14 @@ void CObjmeteoS::Draw()
 	RECT_F dst;
 	//Ø‚êæ‚èİ’è
 	src.m_top = 0.0f;
-	src.m_left = 32.0f;
-	src.m_right = 64.0f;
-	src.m_bottom = 32.0f;
+	src.m_left = 0.0f;
+	src.m_right = 50.0f;
+	src.m_bottom = 50.0f;
 	//•\¦ˆÊ’u
 	dst.m_top = 0.0f;
 	dst.m_left = 32.0f;
 	dst.m_right = 0.0f;
 	dst.m_bottom = 32.0f;
 	//‰æ‘œ“o˜^
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	Draw::Draw(2, &src, &dst, c, 0.0f);
 }
