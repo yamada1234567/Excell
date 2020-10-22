@@ -19,6 +19,9 @@
     <Filter Include="ソース ファイル\HERO">
       <UniqueIdentifier>{1e0acf2a-ba3f-4c8c-b9db-3736c02e3706}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{baddf824-2414-4d49-9f43-af0400ee0005}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="item.cpp">
@@ -72,9 +75,6 @@
     <ClCompile Include="syougaibutu.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SceneMain.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="meteoS.cpp">
       <Filter>ソース ファイル\meteo</Filter>
     </ClCompile>
@@ -86,6 +86,12 @@
     </ClCompile>
     <ClCompile Include="bullet.cpp">
       <Filter>ソース ファイル\HERO</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMain.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOver.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -128,9 +134,6 @@
     <ClInclude Include="GameL\WinInputs.h">
       <Filter>リソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SceneMain.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="hero.h">
       <Filter>ソース ファイル\HERO</Filter>
     </ClInclude>
@@ -148,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="bullet.h">
       <Filter>ソース ファイル\HERO</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMain.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
