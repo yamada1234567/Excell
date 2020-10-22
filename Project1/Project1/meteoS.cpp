@@ -3,17 +3,28 @@
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
 #include "meteoS.h"
+#include "GameL\HitBoxManager.h"
 //使用するネームスペース
 using namespace GameL;
 //イニシャライズ
 void CObjmeteoS::Init()
 {
-
+	m_x = 0;
+	m_y = 0;
+	//当たり判定作成
+	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_meteoS, 1);
 }
 //アクション
 void CObjmeteoS::Action()
 {
-
+	//hitbox更新用ポインターの取得
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x, m_y);
+	if (hit->CheckObjNameHit(OBJ_meteoS) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 }
 //ドロー
 void CObjmeteoS::Draw()

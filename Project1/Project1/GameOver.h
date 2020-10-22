@@ -7,11 +7,11 @@
 //
 ////オブジェクト：ゲームタイトル
 //class GameOver :public Objs
-//{
-//public:
-//	GameOver();
-//	~GameOver();
-//	void InitScene();  //ゲームタイトルの初期化メソッド
-//	void Scene();      //ゲームタイトルの実行中メソッド
-//private:
-//};
+{
+public:
+	GameOver();
+	~GameOver();
+	void InitScene();  //ゲームタイトルの初期化メソッド
+	void Scene();      //ゲームタイトルの実行中メソッド
+private:
+};
