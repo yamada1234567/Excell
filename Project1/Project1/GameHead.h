@@ -8,7 +8,9 @@ enum OBJ_NAME
 	//OBJ_ÅõÅõÇ∆ï\ãL
 	OBJ_HERO,
 	OBJ_BULLET,
-	OBJ_meteoS
+	OBJ_meteoS,
+	OBJ_TITLE,
+
 };
 //------------------------------------------------
 
