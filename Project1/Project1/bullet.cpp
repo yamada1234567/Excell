@@ -2,6 +2,7 @@
 #include "GameL\DrawTexture.h"
 #include "GameHead.h"
 #include "bullet.h"
+#include "GameL\HitBoxManager.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -17,6 +18,9 @@ CObjBullet::CObjBullet(float x, float y)
 void CObjBullet::Init()
 {
 	m_vx = 0.0f;
+
+	//当たり判定作成
+	Hits::SetHitBox(this, m_x, m_y, 32, -40, ELEMENT_PLAYER, OBJ_BULLET, 1);
 }
 
 //アクション
@@ -25,6 +29,15 @@ void CObjBullet::Action()
 	m_y += -5.0f;
 
 	m_x += m_vx;
+
+	//領域外に出たら削除
+	if (m_x > 800.f)
+	{
+		this->SetStatus(false);
+	}
+	//hitbox更新用ポインターの取得
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x, m_y);
 }
 
 //ドロー
@@ -45,7 +58,7 @@ void CObjBullet::Draw()
 	//表示位置の設定
 	dst.m_top = -40.0f+m_y;
 	dst.m_left = 0.0f+m_x;
-	dst.m_right = 32.0f+m_x;
+	dst.m_right =32.0f+m_x;
 	dst.m_bottom = 0.0f+m_y;
 
 	//1番に登録したグラフィックをの情報をもとに描画

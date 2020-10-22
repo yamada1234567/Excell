@@ -24,11 +24,14 @@ void CObjHero::Action()
 	//主人公機の弾丸発射
 	if (Input::GetVKey('Z') == true)
 	{
-		//弾丸オブジェクト作成
-		CObjBullet* obj_b = new CObjBullet(m_x, m_y);
-		Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+		if (m_f == true)
+		{
+			//弾丸オブジェクト作成
+			CObjBullet* obj_b = new CObjBullet(m_x+3.0f, m_y);
+			Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
-		m_f = false;
+			m_f = false;
+		}
 	}
     else
     {
