@@ -13,6 +13,7 @@ using namespace GameL;
 //使用ヘッダー
 #include "SceneMain.h"
 #include "GameHead.h"
+#include "GameOver.h"
 
 //コントラクタ
 GameOver::GameOver()
@@ -37,7 +38,7 @@ void GameOver::InitScene()
 
 	//ゲームオーバーオブジェクトを作成
 	GameOver* obj = new GameOver();
-	Objs::InsertObj(obj, OBJ_GAME_OVER, 10);
+	Objs::InsertObj(obj, OBJ_GAMEOVER, 10);
 }
 
 
