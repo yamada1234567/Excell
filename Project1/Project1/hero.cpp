@@ -15,12 +15,26 @@ void CObjHero::Init()
 	m_x = (810/2)-16;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-
+	m_f = true;
 }
 
 //アクション
 void CObjHero::Action()
 {
+	//主人公機の弾丸発射
+	if (Input::GetVKey('Z') == true)
+	{
+		//弾丸オブジェクト作成
+		CObjBullet* obj_b = new CObjBullet(m_x, m_y);
+		Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+
+		m_f = false;
+	}
+    else
+    {
+		m_f = true;
+    }
+
 	//操作
 	if (Input::GetVKey(VK_RIGHT) == true)
 	{
