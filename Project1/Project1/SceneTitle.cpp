@@ -34,11 +34,11 @@ void CSceneTitle::InitScene()
 	Font::SetStrTex(L"シューティングゲーム");
 
 	//音楽読み込み
-	Audio::LoadAudio( 0 , L"BGMTitle.wav", SOUND_TYPE::BACK_MUSIC);
+	//Audio::LoadAudio( 0 , L"BGMTitle.wav", SOUND_TYPE::BACK_MUSIC);
 
 	//バックミュージックスタート
 	//float Volume = Audio::VolumeMaster(-0.8f); //マスターボリュームを0.8下げる
-	Audio::Start(0);  //音楽スタート
+	//Audio::Start(0);  //音楽スタート
 
 
 	//タイトルオブジェクトを作成
