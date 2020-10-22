@@ -3,6 +3,7 @@
 #include "GameL/WinInputs.h"
 #include "GameHead.h"
 #include "hero.h"
+#include "GameL\HitBoxManager.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -16,6 +17,9 @@ void CObjHero::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_f = true;
+
+	//当たり判定用hitboxを作成
+	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
 
 //アクション
@@ -116,7 +120,9 @@ void CObjHero::Action()
 		m_x = 0.0f;
 	}
 
-
+	//Hitboxの内容を更新
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x, m_y);
 
 }
 
