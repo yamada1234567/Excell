@@ -9,7 +9,7 @@ enum OBJ_NAME
 	OBJ_HERO,
 	OBJ_BULLET,
 	OBJ_meteoS,
-	OBJ_TITLE,
+	OBJ_GAMEOVER,
 
 };
 //------------------------------------------------

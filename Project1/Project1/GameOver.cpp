@@ -15,13 +15,13 @@ using namespace GameL;
 #include "GameHead.h"
 
 //コントラクタ
-GameOver::CSceneGameOver()
+GameOver::GameOver()
 {
 
 }
 
 //デストラクタ
-GameOver::~CSceneGameOver()
+GameOver::~GameOver()
 {
 
 }
@@ -34,25 +34,15 @@ void GameOver::InitScene()
 	Font::SetStrTex(L"GAME OVER");
 	Font::SetStrTex(L"NEXT_CHALLENGE:ENTER_KEY");
 
-	//音楽読み込み
-	Audio::LoadAudio(0, L"BGMGamover.wav", BACK_MUSIC);
-
-	//ボリュームを1.0に戻す
-	float v = Audio::VolumeMaster(0);
-	v = Audio::VolumeMaster((1.0 - v));
-
-	//音楽スタート
-	Audio::Start(0);
-
 
 	//ゲームオーバーオブジェクトを作成
-	CObjGameOver* obj = new CObjGameOver();
+	GameOver* obj = new GameOver();
 	Objs::InsertObj(obj, OBJ_GAME_OVER, 10);
 }
 
 
 //ゲームメイン実行中メソッド
-void CSceneGameOver::Scene()
+void GameOver::Scene()
 {
 
 
