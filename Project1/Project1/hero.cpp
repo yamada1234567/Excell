@@ -27,7 +27,7 @@ void CObjHero::Action()
 		if (m_f == true)
 		{
 			//弾丸オブジェクト作成
-			CObjBullet* obj_b = new CObjBullet(m_x, m_y);
+			CObjBullet* obj_b = new CObjBullet(m_x+3.0f, m_y);
 			Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
 			m_f = false;
