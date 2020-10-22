@@ -124,6 +124,22 @@ void CObjHero::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
 
+	if (hit->CheckObjNameHit(OBJ_meteoS) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox;
+	}
+
+	//ELEMENT_ENEMYを持つオブジェクトと接触したら主人公機削除
+	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
+	{
+		this->SetStatus(false);     //自身に削除命令を出す
+		Hits::DeleteHitBox(this);   //主人公機が所有するHitBoxに削除する。
+
+
+	}
+
+
 }
 
 
