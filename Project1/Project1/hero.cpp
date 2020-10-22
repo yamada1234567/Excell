@@ -131,7 +131,7 @@ void CObjHero::Action()
 		Hits::DeleteHitBox(this);   //主人公機が所有するHitBoxに削除する。
 
 		//主人公消滅でシーンをゲームオバーに移行する
-		Scene::SetScene( new CSceneGameOver());
+		
 
 	}
 

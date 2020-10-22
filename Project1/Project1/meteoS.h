@@ -8,7 +8,7 @@ using namespace GameL;
 class CObjmeteoS :public CObj//メテオ小 
 {
 public:
-	CObjmeteoS(float x, float y);
+	CObjmeteoS();
 	~CObjmeteoS() {};
 	void Init(); //イニシャ
 	void Action();//アクション
