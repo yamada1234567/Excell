@@ -31,7 +31,7 @@ void CObjBullet::Action()
 	m_x += m_vx;
 
 	//領域外に出たら削除
-	if (m_y < 0.0f)
+	if (m_y >800.0f)
 	{
 		this->SetStatus(false);
 	}
@@ -39,6 +39,11 @@ void CObjBullet::Action()
 	//hitbox更新用ポインターの取得
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
+	if (hit->CheckObjNameHit(OBJ_meteoS) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 }
 
 //ドロー

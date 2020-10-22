@@ -9,14 +9,37 @@ using namespace GameL;
 //イニシャライズ
 void CObjmeteoS::Init()
 {
-	m_x = 0;
-	m_y = 0;
+	m_x = 600;
+	m_y = 400;
+	m_vx = 0.0f;
+	m_vy = 0.0f;
 	//当たり判定作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_meteoS, 1);
 }
 //アクション
 void CObjmeteoS::Action()
 {
+	//移動方向
+	m_vx = 1.0f;
+	m_vy = 0.0f;
+	float r = 0.0f;
+	r = m_vx * m_vx + m_vy * m_vy;
+	r = sqrt(r);
+	
+	if (r == 0.0f)
+	{
+		;
+	}
+	else
+	{
+		m_vx = 1.0f / r * m_vx;
+		m_vy = 1.0f / r * m_vy;
+	}
+	m_vx *= 1.5f;
+	m_vy *= 1.5f;
+
+	m_x += m_vx;
+	m_y += m_vy;
 	//hitbox更新用ポインターの取得
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
@@ -39,10 +62,10 @@ void CObjmeteoS::Draw()
 	src.m_right = 50.0f;
 	src.m_bottom = 50.0f;
 	//表示位置
-	dst.m_top = 0.0f;
-	dst.m_left = 32.0f;
-	dst.m_right = 0.0f;
-	dst.m_bottom = 32.0f;
+	dst.m_top = 0.0f + m_y;
+	dst.m_left = 32.0f + m_x;
+	dst.m_right = 0.0f + m_x;
+	dst.m_bottom = 32.0f + m_y;
 	//画像登録
 	Draw::Draw(2, &src, &dst, c, 0.0f);
 }
