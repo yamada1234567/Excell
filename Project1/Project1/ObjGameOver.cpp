@@ -18,7 +18,15 @@ void CObjGameOver::Init()
 //アクション
 void CObjGameOver::Action()
 {
-
+	//エンターキーを押してシーン：ゲームメインに移動する
+	if (Input::GetVKey(VK_RETURN) == true)
+	{
+		Scene::SetScene(new CSceneMain());
+	}
+	else
+	{
+		m_key_flag = true;
+	}
 }
 
 //ドロー
