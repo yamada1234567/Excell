@@ -10,6 +10,7 @@ enum OBJ_NAME
 	OBJ_BULLET,
 	OBJ_meteoS,
 	OBJ_GAMEOVER,
+	OBJ_BOSS_ENEMY
 
 };
 //------------------------------------------------
