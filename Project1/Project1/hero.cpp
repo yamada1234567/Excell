@@ -20,7 +20,7 @@ void CObjHero::Init()
 	m_f = true;
 
 	//当たり判定用hitboxを作成
-	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_BULLET, 1);
+	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
 
 //アクション
