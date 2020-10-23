@@ -9,6 +9,8 @@ enum OBJ_NAME
 	OBJ_HERO,
 	OBJ_BULLET,
 	OBJ_meteoS,
+	OBJ_BOSS,
+
 	OBJ_GAMEOVER,
 	OBJ_TITLE,
 
@@ -59,6 +61,7 @@ struct UserData
 #include "hero.h"
 #include "bullet.h"
 #include "meteoS.h"
+#include "Boss.h"
 #include "ObjGameOver.h"
 #include "ObjTitle.h"
 //------------------------------------------------

@@ -14,7 +14,8 @@ CObjmeteoS::CObjmeteoS(float x, float y)
 //イニシャライズ
 void CObjmeteoS::Init()
 {
-	/*m_health = 3;*/
+	m_x = 600;
+	m_y = 400;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	//当たり判定作成
@@ -44,26 +45,24 @@ void CObjmeteoS::Action()
 
 	m_x += m_vx;
 	m_y += m_vy;
+
 	//hitbox更新用ポインターの取得
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x,m_y);
+	hit->SetPos(m_x, m_y);
 
-	/*if (m_x < -32.0f)
+	if (m_x < -32.0f)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}*/
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
-	{
-		/*m_health -= 1;
-		if (0>=m_health)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-		}*/
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+
+
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
 }
 //ドロー
 void CObjmeteoS::Draw()

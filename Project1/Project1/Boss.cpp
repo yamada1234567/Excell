@@ -4,7 +4,7 @@
 
 #include"GameHead.h"
 #include"Boss.h"
-//#include"UtilityModule.h"
+#include"UtilityModule.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -13,7 +13,8 @@ using namespace GameL;
 CObjBoss::CObjBoss(float x, float y)
 {
 	m_x = x;
-	m_y = y;
+	m_y = y; 
+
 }
 
 //イニシャライズ
@@ -26,7 +27,7 @@ void CObjBoss::Init()
 	m_vy = 0.0f;
 
 	//当たり判定用HiyBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_BOSS_ENEMY, 1);
+	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_BOSS, 1);
 }
 //アクション
 void CObjBoss::Action()
@@ -36,12 +37,12 @@ void CObjBoss::Action()
 	hit->SetPos(m_x, m_y);
 
 	//ボス機が完全に領域外に出たらボス機を破棄する
-	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 800.0f, 600.0f);
-	if (check == false)
-	{
-		this->SetStatus(false);//自身に削除命令を出す
-		Hits::DeleteHitBox(this);//ボス機が所有するHitBoxに削除する
-	}
+	//bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 800.0f, 600.0f);
+	//if (check == false)
+	//{
+	//	this->SetStatus(false);//自身に削除命令を出す
+	//	Hits::DeleteHitBox(this);//ボス機が所有するHitBoxに削除する
+	//}
 
 	//弾丸と接触しているかどうかを調べる
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
@@ -61,7 +62,7 @@ void CObjBoss::Draw()
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;
-	src.m_left = 32.0f;
+	src.m_left = 0.0f;
 	src.m_right = 512.0f;
 	src.m_bottom = 260.0f;
 
