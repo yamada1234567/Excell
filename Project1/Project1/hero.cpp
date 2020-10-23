@@ -136,6 +136,7 @@ void CObjHero::Action()
 		this->SetStatus(false);     
 		Hits::DeleteHitBox(this);   
 
+
 	}
 
 
