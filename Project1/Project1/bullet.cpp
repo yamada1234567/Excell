@@ -39,10 +39,19 @@ void CObjBullet::Action()
 	//hitbox更新用ポインターの取得
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
+	
+
 	if (hit->CheckObjNameHit(OBJ_meteoS) != nullptr)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+	}
+
+	//ELEMENT_ENEMYを持つオブジェクトと接触したら削除
+	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
+	{
+		this->SetStatus(false);     
+		Hits::DeleteHitBox(this);   
 	}
 }
 

@@ -45,6 +45,7 @@ void CObjmeteoS::Action()
 
 	m_x += m_vx;
 	m_y += m_vy;
+
 	//hitbox更新用ポインターの取得
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
@@ -54,11 +55,14 @@ void CObjmeteoS::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+
+
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+
 }
 //ドロー
 void CObjmeteoS::Draw()
