@@ -1,9 +1,10 @@
 //使用するヘッダーファイル
 #include "GameL/DrawTexture.h"
 #include "GameL/WinInputs.h"
+#include "GameL\HitBoxManager.h"
 #include "GameHead.h"
 #include "hero.h"
-#include "GameL\HitBoxManager.h"
+#include "UtilityModule.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -124,11 +125,6 @@ void CObjHero::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
 
-	if (hit->CheckObjNameHit(OBJ_meteoS) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
 
 	//ELEMENT_ENEMYを持つオブジェクトと接触したら削除
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
@@ -136,7 +132,8 @@ void CObjHero::Action()
 		this->SetStatus(false);     
 		Hits::DeleteHitBox(this);   
 
-
+		//主人公消滅でシーンをゲームオバーに移行する
+		//Scene::SetScene(new CSceneGameOver());
 	}
 
 
