@@ -9,6 +9,8 @@ enum OBJ_NAME
 	OBJ_HERO,
 	OBJ_BULLET,
 	OBJ_meteoS,
+	OBJ_meteoM,
+	OBJ_meteoL,
 	OBJ_BOSS,
 
 	OBJ_GAMEOVER,
@@ -61,9 +63,12 @@ struct UserData
 #include "hero.h"
 #include "bullet.h"
 #include "meteoS.h"
+#include "meteoM.h"
+#include "meteoL.h"
 #include "Boss.h"
 #include "ObjGameOver.h"
 #include "ObjTitle.h"
+
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------

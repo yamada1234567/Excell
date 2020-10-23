@@ -18,5 +18,5 @@ private:
 	float m_y;
 	float m_vx;
 	float m_vy;
-	//int m_health;
+	int m_hp;
 };

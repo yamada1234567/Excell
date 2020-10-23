@@ -14,7 +14,7 @@ CObjmeteoS::CObjmeteoS(float x, float y)
 //イニシャライズ
 void CObjmeteoS::Init()
 {
-	/*m_health = 3;*/
+	m_hp = 1;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	//当たり判定作成
@@ -25,7 +25,7 @@ void CObjmeteoS::Action()
 {
 	//移動方向
 	m_vx =0.0f;
-	m_vy = 1.0f;
+	m_vy = 0.0f;
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
@@ -39,8 +39,9 @@ void CObjmeteoS::Action()
 		m_vx = 1.0f / r * m_vx;
 		m_vy = 1.0f / r * m_vy;
 	}
-	m_vx *= 1.5f;
-	m_vy *= 1.5f;
+	//加速
+	m_vx *= 3.0f;
+	m_vy *= 3.0f;
 
 	m_x += m_vx;
 	m_y += m_vy;
@@ -49,21 +50,21 @@ void CObjmeteoS::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x,m_y);
 
-	/*if (m_x < -32.0f)
+	//領域外に出たら削除
+	if (m_y > 600.0f)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
-	}*/
+	}
+	//ダメージ判定
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
-		/*m_health -= 1;
-		if (0>=m_health)
+		m_hp -= 1;
+		if (0 >= m_hp)
 		{
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
-		}*/
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		}
 	}
 
 }

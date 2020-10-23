@@ -36,8 +36,16 @@ void CSceneMain::InitScene()
 
 	//敵メテオ
 	CObjmeteoS* obj_meteoS = new CObjmeteoS(100,100);
-	Objs::InsertObj(obj_meteoS, OBJ_meteoS, 2);
+	Objs::InsertObj(obj_meteoS, OBJ_meteoS, 4);
 
+	//敵メテオ
+	CObjmeteoM* obj_meteoM = new CObjmeteoM(100, 100);
+	Objs::InsertObj(obj_meteoM, OBJ_meteoM, 3);
+	
+	//敵メテオ
+	CObjmeteoL* obj_meteoL = new CObjmeteoL(100, 100);
+	Objs::InsertObj(obj_meteoL, OBJ_meteoL, 2);
+	
 	//ボス
 	/*CObjBoss* obj_Boss = new CObjBoss(300, 120);
 	Objs::InsertObj(obj_meteoS, OBJ_BOSS, 4);*/
