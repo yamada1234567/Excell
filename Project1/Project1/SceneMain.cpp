@@ -28,7 +28,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"hero bullet.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
-	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
+	//Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
 	//Draw::LoadImage(L"meteoS.png", 4, TEX_SIZE_512);
 
 	//主人公オブジェクト作成

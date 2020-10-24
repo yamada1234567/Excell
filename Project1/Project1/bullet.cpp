@@ -31,7 +31,7 @@ void CObjBullet::Action()
 	m_x += m_vx;
 
 	//—ÌˆæŠO‚Éo‚½‚çíœ
-	if (m_y <0.0f)
+	if (m_x <0.0f)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
@@ -45,6 +45,16 @@ void CObjBullet::Action()
 
 	//’eŠÛ“–‚½‚Á‚Ä‚é‚©’²‚×‚é
 	if (hit->CheckObjNameHit(OBJ_meteoS) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+	if (hit->CheckObjNameHit(OBJ_meteoM) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+	if (hit->CheckObjNameHit(OBJ_meteoL) != nullptr)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);

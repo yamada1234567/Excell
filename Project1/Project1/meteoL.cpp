@@ -18,7 +18,7 @@ void CObjmeteoL::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	//“–‚½‚è”»’èì¬
-	Hits::SetHitBox(this, m_x, m_y, 96, 96, ELEMENT_ENEMY, OBJ_meteoM, 1);
+	Hits::SetHitBox(this, m_x, m_y, 96, 96, ELEMENT_ENEMY, OBJ_meteoL, 1);
 }
 //ƒAƒNƒVƒ‡ƒ“
 void CObjmeteoL::Action()

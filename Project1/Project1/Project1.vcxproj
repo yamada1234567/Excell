@@ -184,15 +184,21 @@
     <ClInclude Include="GameL\SetWindow.h" />
     <ClInclude Include="GameL\UserData.h" />
     <ClInclude Include="GameL\WinInputs.h" />
-    <ClInclude Include="item.h" />
+    <ClInclude Include="item.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneGameOver.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="hero.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="meteoL.h" />
-    <ClInclude Include="meteoM.h" />
+    <ClInclude Include="meteoL.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="meteoM.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="meteoS.h" />
     <ClInclude Include="ObjGameOver.h" />
     <ClInclude Include="SceneMain.h" />
