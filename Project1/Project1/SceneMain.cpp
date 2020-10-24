@@ -28,6 +28,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"hero bullet.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
+	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
 	//Draw::LoadImage(L"meteoS.png", 4, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
@@ -45,6 +46,10 @@ void CSceneMain::InitScene()
 	//敵メテオ
 	CObjmeteoL* obj_meteoL = new CObjmeteoL(100, 100);
 	Objs::InsertObj(obj_meteoL, OBJ_meteoL, 2);
+
+	//アイテム
+	//CObjitem* obj_item = new CObjitem(100, 100);
+	//Objs::InsertObj(obj_item, OBJ_ITEM, 5);
 	
 	//ボス
 	/*CObjBoss* obj_Boss = new CObjBoss(300, 120);
