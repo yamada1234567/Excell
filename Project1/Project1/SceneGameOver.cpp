@@ -11,7 +11,8 @@
 using namespace GameL;
 
 //使用ヘッダー
-#include "SceneGameOver.h"
+//#include "SceneGameOver.h"
+#include "SceneMain.h"
 #include "GameHead.h"
 
 //コントラクタ

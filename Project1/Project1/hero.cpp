@@ -133,7 +133,7 @@ void CObjHero::Action()
 		Hits::DeleteHitBox(this);   
 
 		//主人公消滅でシーンをゲームオバーに移行する
-		//Scene::SetScene(new CSceneGameOver());
+		Scene::SetScene(new CSceneGameOver());
 	}
 
 

@@ -1,7 +1,7 @@
 //使用するヘッダーファイル
 #include "GameL/DrawFont.h"
 #include "GameL/WinInputs.h"
-#include "GameL/SceneManager.h"
+//#include "GameL/SceneManager.h"
 
 #include "GameHead.h"
 #include "ObjGameOver.h"
@@ -21,7 +21,7 @@ void CObjGameOver::Action()
 	//エンターキーを押してシーン：ゲームメインに移動する
 	if (Input::GetVKey(VK_RETURN) == true)
 	{
-		Scene::SetScene(new CSceneMain());
+		Scene::SetScene(new CSceneTitle());
 	}
 	else
 	{
