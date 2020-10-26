@@ -105,6 +105,12 @@
     <ClCompile Include="UtilityModule.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="hero1.cpp">
+      <Filter>ソース ファイル\HERO</Filter>
+    </ClCompile>
+    <ClCompile Include="hero2.cpp">
+      <Filter>ソース ファイル\HERO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
