@@ -1,0 +1,46 @@
+//STLデバッグ機能をOFFにする
+#define _SECURE_SCL	(0)  
+#define _HAS_ITERATOR_DEBUGGING	(0)]
+
+//GameLで使用するヘッダー
+#include "GameL/SceneObjManager.h"
+#include "GameL/DrawFont.h"
+
+
+//使用するネームスペース
+using namespace GameL;
+
+//使用ヘッダー
+#include "SceneClear.h"
+#include "GameHead.h"
+
+//コントラクタ
+CSceneGameOver::CSceneGameOver()
+{
+
+}
+
+//デストラクタ
+CSceneGameOver::~CSceneGameOver()
+{
+
+}
+
+//ゲームメイン初期化メソッド
+void CSceneGameOver::InitScene()
+{
+	Font::SetStrTex(L"おめでとう！");
+	Font::SetStrTex(L"次のステージに進め");
+
+	CObjClear* obj = new CObjClear();
+	Objs::InsertObj(obj, OBJ_CLEAR, 10);
+
+}
+
+
+//ゲームメイン実行中メソッド
+void CSceneGameOver::Scene()
+{
+
+
+}
