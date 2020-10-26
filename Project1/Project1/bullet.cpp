@@ -59,6 +59,11 @@ void CObjBullet::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+	if (hit->CheckObjNameHit(OBJ_BOSS) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 
 	//ELEMENT_ENEMYを持つオブジェクトと接触したら削除
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)

@@ -10,13 +10,13 @@
 using namespace GameL;
 
 //イニシャライズ
-void CObjGameOver::Init()
+void CObjClear::Init()
 {
 	m_key_flag = false;//キーフラグ
 }
 
 //アクション
-void CObjGameOver::Action()
+void CObjClear::Action()
 {
 	//エンターキーを押してシーン：ゲームメインに移動する
 	if (Input::GetVKey(VK_RETURN) == true)
@@ -31,7 +31,7 @@ void CObjGameOver::Action()
 }
 
 //ドロー
-void CObjGameOver::Draw()
+void CObjClear::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
