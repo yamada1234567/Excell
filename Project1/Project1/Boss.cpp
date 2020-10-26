@@ -13,7 +13,8 @@ using namespace GameL;
 CObjBoss::CObjBoss(float x, float y)
 {
 	m_x = x+100;
-	m_y = y-250; 
+	m_y = y-400; 
+
 }
 
 //イニシャライズ
