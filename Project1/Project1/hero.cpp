@@ -127,14 +127,21 @@ void CObjHero::Action()
 	hit->SetPos(m_x, m_y);
 
 
-	//ELEMENT_ENEMYを持つオブジェクトと接触したら削除
+
+	//ダメージ判定
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
-		this->SetStatus(false);     
-		Hits::DeleteHitBox(this);   
+		m_hp -= 1;
+		if (0 >= m_hp)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
 
 		//主人公消滅でシーンをゲームオバーに移行する
 		Scene::SetScene((CScene*)new CSceneGameOver());
+
+		}
+		
 	}
 
 }
