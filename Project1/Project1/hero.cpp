@@ -132,37 +132,18 @@ void CObjHero::Action()
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
 		m_hp -= 1;
-		if (2 == m_hp)
+		if (0 >= m_hp)
 		{
-			this->SetStatus(false);
-
-
-			//主人公オブジェクト作成
-			CObjHero* obj = new CObjHero();//主人公オブジェクト作成
-			Objs::InsertObj(obj, OBJ_HERO, 5);//作った主人公オブジェクトをオブジェクトマネージャーに登録
-
-		}
-		else if (1 == m_hp)
-		{
-			this->SetStatus(false);
-
-
-			//主人公オブジェクト作成
-			CObjHero* obj = new CObjHero();//主人公オブジェクト作成
-			Objs::InsertObj(obj, OBJ_HERO, 6);
-		}
-		else if (0 == m_hp)
-		{
-
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 
+		//主人公消滅でシーンをゲームオバーに移行する
+		Scene::SetScene((CScene*)new CSceneGameOver());
 
 		}
-
-
-	}
 		
+	}
+
 }
 
 
@@ -174,7 +155,7 @@ void CObjHero::Draw()
 	
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-			 		 		  			   
+
 	//切り取り位置の設定
 	src.m_top		= 0.0f;
 	src.m_left		= 0.0f;

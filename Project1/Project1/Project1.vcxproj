@@ -140,8 +140,6 @@
     <ClCompile Include="GameL\SetWindow.cpp" />
     <ClCompile Include="GameL\UserData.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
-    <ClCompile Include="hero1.cpp" />
-    <ClCompile Include="hero2.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneGameOver.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
