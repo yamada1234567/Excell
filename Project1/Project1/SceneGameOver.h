@@ -6,7 +6,7 @@
 using namespace GameL;
 
 //オブジェクト：ゲームタイトル
-class CSceneGameOver :public Scene
+class CSceneGameOver :public CScene
 {
 public:
 	CSceneGameOver();
