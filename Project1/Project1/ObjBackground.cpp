@@ -17,12 +17,12 @@ void CObjBackground::Action()
 {
 	//”wŒi‚P‚Ì“®ì
 	m_y1 -= 10.0f;
-	if (m_y1 <-800.0f)
+	if (m_y1 <-600.0f)
 		m_y1 = 800;
 
 	//”wŒi‚Q‚Ì“®ì
 	m_y2 -= 10.0f;
-	if (m_y2 <-800.0f)
+	if (m_y2 <-600.0f)
 		m_y2 = 800;
 }
 //ƒhƒ[
@@ -41,16 +41,16 @@ void CObjBackground::Draw()
 	src.m_bottom = 448.0f;
 
 	//•\¦ˆÊ’u”wŒi‚P
-	dst.m_top = 0.0f;
-	dst.m_left = 0.0f + m_y1;
-	dst.m_right = 800.0f + m_y1;
-	dst.m_bottom = 600.0f;
+	dst.m_top = 0.0f - m_y1;
+	dst.m_left = 0.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 800.0f - m_y1;
 	Draw::Draw(5, &src, &dst, c, 0.0f);
 
 	//•\¦ˆÊ’u”wŒi‚Q
-	dst.m_top = 0.0f;
-	dst.m_left = 0.0f + m_y2;
-	dst.m_right = 800.0f + m_y2;
-	dst.m_bottom = 600.0f;
+	dst.m_top = 0.0f - m_y2;
+	dst.m_left = 0.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 900.0f - m_y2;
 	Draw::Draw(5, &src, &dst, c, 0.0f);
 }
