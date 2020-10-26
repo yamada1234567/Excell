@@ -15,8 +15,11 @@ enum OBJ_NAME
 
 	OBJ_ITEM,
 
+	OBJ_BACKGROUND,
+
 	OBJ_GAMEOVER,
 	OBJ_TITLE,
+	OBJ_CLEAR,
 
 };
 //------------------------------------------------
@@ -69,17 +72,19 @@ struct UserData
 #include "meteoL.h"
 #include "Boss.h"
 #include "item.h"
+#include "ObjBackground.h"
 
 
 #include "ObjGameOver.h"
 #include "ObjTitle.h"
+#include"ObjClear.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
 #include "SceneTitle.h"
 #include "SceneGameOver.h"
-
+#include "SceneClear.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
