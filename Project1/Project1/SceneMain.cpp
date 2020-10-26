@@ -31,6 +31,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
 	Draw::LoadImageW(L"縦背景.png", 5, TEX_SIZE_512);
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
+	Draw::LoadImage(L"Boss(moon).png", 6, TEX_SIZE_512);
 	//Draw::LoadImage(L"meteoS.png", 4, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
