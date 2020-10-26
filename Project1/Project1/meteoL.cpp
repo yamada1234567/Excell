@@ -16,7 +16,7 @@ CObjmeteoL::CObjmeteoL(float x, float y)
 //イニシャライズ
 void CObjmeteoL::Init()
 {
-	m_hp = 5;
+	m_hp = 8;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	//当たり判定作成
@@ -39,8 +39,10 @@ void CObjmeteoL::Action()
 		m_vx = 1.0f / r * m_vx;
 		m_vy = 1.0f / r * m_vy;
 	}
+
+	//加速
 	m_vx *= 1.0f;
-	m_vy *= 1.0f;
+	m_vy *= 2.0f;
 
 	m_x += m_vx;
 	m_y += m_vy;
