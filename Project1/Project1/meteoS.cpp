@@ -56,6 +56,15 @@ void CObjmeteoS::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+
+	////主人公に当たったら消滅
+	//if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+	//{
+	//	this->SetStatus(false);
+	//	Hits::DeleteHitBox(this);
+	//}
+
+
 	//ダメージ判定
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{

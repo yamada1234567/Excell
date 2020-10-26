@@ -24,7 +24,7 @@ private:
 	float m_vx;//ｘ方向ベクトル変換用
 	float m_vy;//ｙ方向ベクトル変換用
 
-
+	int m_hp;
 
 
 };

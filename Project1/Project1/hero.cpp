@@ -18,6 +18,7 @@ void CObjHero::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_f = true;
+	m_hp = 3;
 
 	//“–‚½‚è”»’è—phitbox‚ğì¬
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
