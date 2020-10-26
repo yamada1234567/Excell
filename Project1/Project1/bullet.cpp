@@ -26,7 +26,7 @@ void CObjBullet::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjBullet::Action()
 {
-	m_y += -8.0f;
+	m_y += -12.0f;
 
 	m_x += m_vx;
 
