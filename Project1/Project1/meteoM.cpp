@@ -79,11 +79,11 @@ void CObjmeteoM::Action()
 
 			//アイテム　作成中
 			srand(time(NULL));
-			item = rand() % 15;
+			item = rand() % 15;//アイテムが出る確率
 			if (item == 0)
 			{
-				CObjitem* obj_b = new CObjitem(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_ITEM, 1);
+				//CObjitem* obj_b = new CObjitem(m_x + 3.0f, m_y);
+				//Objs::InsertObj(obj_b, OBJ_ITEM, 1);
 			}
 		}
 	}
