@@ -20,7 +20,7 @@ void CObjBullet::Init()
 	m_vx = 0.0f;
 
 	//“–‚½‚è”»’èì¬
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_PLAYER, OBJ_BULLET, 1);
+	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_BULLET, OBJ_BULLET, 1);
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -55,6 +55,11 @@ void CObjBullet::Action()
 		Hits::DeleteHitBox(this);
 	}
 	if (hit->CheckObjNameHit(OBJ_meteoL) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+	if (hit->CheckObjNameHit(OBJ_BOSS) != nullptr)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);

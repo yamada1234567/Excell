@@ -13,8 +13,7 @@ using namespace GameL;
 CObjBoss::CObjBoss(float x, float y)
 {
 	m_x = x+100;
-	m_y = y-400; 
-
+	m_y = y-250; 
 }
 
 //イニシャライズ
@@ -42,11 +41,20 @@ void CObjBoss::Action()
 	//	Hits::DeleteHitBox(this);//ボス機が所有するHitBoxに削除する
 	//}
 
-	//弾丸と接触しているかどうかを調べる
+	//ダメージ判定
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		m_hp -= 1;
+		if (0 >= m_hp)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+
+			//クリアに移動
+			Scene::SetScene(new CSceneClear());
+
+		}
+
 	}
 }
 //ドロー
