@@ -8,7 +8,7 @@
 using namespace GameL;
 CObjmeteoM::CObjmeteoM(float x, float y)
 {
-	m_x = x+300;
+	m_x = x;
 	m_y = y;
 }
 //イニシャライズ
@@ -23,9 +23,7 @@ void CObjmeteoM::Init()
 //アクション
 void CObjmeteoM::Action()
 {
-	//移動方向
-	m_vx = 0.0f;
-	m_vy = 0.0f;
+	
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
@@ -87,4 +85,9 @@ void CObjmeteoM::Draw()
 	dst.m_bottom = 64.0f + m_y;
 	//画像登録
 	Draw::Draw(2, &src, &dst, c, 0.0f);
+}
+void CObjmeteoM::SetVector(float vx, float vy)
+{
+	m_vx = vx;
+	m_vy = vy;
 }

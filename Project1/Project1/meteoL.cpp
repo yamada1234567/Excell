@@ -8,13 +8,13 @@
 using namespace GameL;
 CObjmeteoL::CObjmeteoL(float x, float y)
 {
-	m_x = x + 500;
+	m_x = x;
 	m_y = y;
 }
 //イニシャライズ
 void CObjmeteoL::Init()
 {
-	m_hp = 10;
+	m_hp = 5;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	//当たり判定作成
@@ -23,9 +23,7 @@ void CObjmeteoL::Init()
 //アクション
 void CObjmeteoL::Action()
 {
-	//移動方向
-	m_vx = 0.0f;
-	m_vy = 0.0f;
+	
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
@@ -87,4 +85,9 @@ void CObjmeteoL::Draw()
 	dst.m_bottom = 96.0f + m_y;
 	//画像登録
 	Draw::Draw(2, &src, &dst, c, 0.0f);
+}
+void CObjmeteoL::SetVector(float vx, float vy)
+{
+	m_vx = vx;
+	m_vy = vy;
 }

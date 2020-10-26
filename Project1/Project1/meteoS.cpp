@@ -24,8 +24,8 @@ void CObjmeteoS::Init()
 void CObjmeteoS::Action()
 {
 	//ˆÚ“®•ûŒü
-	m_vx =0.0f;
-	m_vy = 0.0f;
+	/*m_vx =0.0f;
+	m_vy =0.0f;*/
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
@@ -40,8 +40,8 @@ void CObjmeteoS::Action()
 		m_vy = 1.0f / r * m_vy;
 	}
 	//‰Á‘¬
-	m_vx *= 3.0f;
-	m_vy *= 3.0f;
+	m_vx *= 2.0f;
+	m_vy *= 2.0f;
 
 	m_x += m_vx;
 	m_y += m_vy;
@@ -87,4 +87,9 @@ void CObjmeteoS::Draw()
 	dst.m_bottom = 32.0f + m_y;
 	//‰æ‘œ“o˜^
 	Draw::Draw(2, &src, &dst, c, 0.0f);
+}
+void CObjmeteoS::SetVector(float vx, float vy)
+{
+	m_vx=vx;
+	m_vy=vy;
 }

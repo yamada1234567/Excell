@@ -13,10 +13,12 @@ public:
 	void Init(); //イニシャ
 	void Action();//アクション
 	void Draw();//ドロー
+	void SetVector(float vx, float vy);
 private:
 	float m_x; 
 	float m_y;
 	float m_vx;
 	float m_vy;
 	int m_hp;
+
 };
