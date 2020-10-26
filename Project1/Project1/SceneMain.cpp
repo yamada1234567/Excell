@@ -59,7 +59,7 @@ void CSceneMain::InitScene()
 
 	//îwåi
 	CObjBackground* back = new CObjBackground();
-	Objs::InsertObj(back, OBJ_BACKGROUND, 1);
+	Objs::InsertObj(back, OBJ_BACKGROUND, 0);
 
 	m_time = 0;
 }
