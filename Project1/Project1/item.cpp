@@ -19,7 +19,7 @@ void CObjitem::Init()
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ITEM, OBJ_ITEM, 1);
 }
 //アクション
-void CObjmeteoS::Action()
+void CObjitem::Action()
 {
 	//移動方向
 	m_vx = 0.0f;
@@ -56,7 +56,7 @@ void CObjmeteoS::Action()
 	}
 }
 //ドロー
-void CObjmeteoS::Draw()
+void CObjitem::Draw()
 {
 	//描画
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };

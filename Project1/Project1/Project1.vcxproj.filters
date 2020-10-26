@@ -105,6 +105,9 @@
     <ClCompile Include="UtilityModule.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="ObjBackground.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -183,6 +186,9 @@
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="item.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBackground.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>

@@ -15,6 +15,8 @@ enum OBJ_NAME
 
 	OBJ_ITEM,
 
+	OBJ_BACKGROUND,
+
 	OBJ_GAMEOVER,
 	OBJ_TITLE,
 
@@ -69,6 +71,7 @@ struct UserData
 #include "meteoL.h"
 #include "Boss.h"
 #include "item.h"
+#include "ObjBackground.h"
 
 
 #include "ObjGameOver.h"
