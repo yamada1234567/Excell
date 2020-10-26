@@ -68,16 +68,18 @@ struct UserData
 #include "meteoM.h"
 #include "meteoL.h"
 #include "Boss.h"
-#include "ObjGameOver.h"
-#include "ObjTitle.h"
 #include "item.h"
 
+
+#include "ObjGameOver.h"
+#include "ObjTitle.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
-#include "SceneGameOver.h"
 #include "SceneTitle.h"
+#include "SceneGameOver.h"
+
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

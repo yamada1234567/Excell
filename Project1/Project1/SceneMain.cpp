@@ -5,6 +5,7 @@
 //GameLで使用するヘッダー
 #include"GameL/DrawTexture.h"
 #include"GameL\SceneObjManager.h"
+
 //使用するネームスペース
 using namespace GameL;
 
