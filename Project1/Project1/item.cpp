@@ -23,7 +23,7 @@ void CObjitem::Action()
 {
 	//ˆÚ“®•ûŒü
 	m_vx = 0.0f;
-	m_vy = 0.0f;
+	m_vy = 1.0f;
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
@@ -65,8 +65,8 @@ void CObjitem::Draw()
 	//Ø‚êæ‚èİ’è
 	src.m_top	 = 0.0f;
 	src.m_left	 = 0.0f;
-	src.m_right  = 50.0f;
-	src.m_bottom = 50.0f;
+	src.m_right  = 30.0f;
+	src.m_bottom = 28.0f;
 	//•\¦ˆÊ’u
 	dst.m_top	 = 0.0f  + m_y;
 	dst.m_left   = 32.0f + m_x;

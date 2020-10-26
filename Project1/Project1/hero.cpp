@@ -47,20 +47,20 @@ void CObjHero::Action()
 	//‘€ì
 	if (Input::GetVKey(VK_RIGHT) == true)
 	{
-		m_x += 3.0f;
+		m_x += 5.0f;
 	}
 	if (Input::GetVKey(VK_LEFT) == true)
 	{
-		m_x -= 3.0f;
+		m_x -= 5.0f;
 
 	}
 	if (Input::GetVKey(VK_UP)==true)
 	{
-		m_y -= 3.0f;
+		m_y -= 5.0f;
 	}
 	if (Input::GetVKey(VK_DOWN) == true)
 	{
-		m_y += 3.0f;
+		m_y += 5.0f;
 	}
 
 	//ˆÚ“®ƒxƒNƒgƒ‹‰Šú‰»
