@@ -79,7 +79,7 @@ void CObjmeteoM::Action()
 
 			//アイテム　作成中
 			srand(time(NULL));
-			item = rand() % 20;
+			item = rand() % 15;
 			if (item == 0)
 			{
 				CObjitem* obj_b = new CObjitem(m_x + 3.0f, m_y);
