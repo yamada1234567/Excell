@@ -15,19 +15,19 @@ using namespace GameL;
 #include "GameHead.h"
 
 //コントラクタ
-CSceneGameOver::CSceneGameOver()
+CSceneClear::CSceneClear()
 {
 
 }
 
 //デストラクタ
-CSceneGameOver::~CSceneGameOver()
+CSceneClear::~CSceneClear()
 {
 
 }
 
 //ゲームメイン初期化メソッド
-void CSceneGameOver::InitScene()
+void CSceneClear::InitScene()
 {
 	Font::SetStrTex(L"おめでとう！");
 	Font::SetStrTex(L"次のステージに進め");
@@ -39,7 +39,7 @@ void CSceneGameOver::InitScene()
 
 
 //ゲームメイン実行中メソッド
-void CSceneGameOver::Scene()
+void CSceneClear::Scene()
 {
 
 
