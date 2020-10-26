@@ -18,6 +18,7 @@ void CObjHero::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_f = true;
+	m_hp = 3;
 
 	//当たり判定用hitboxを作成
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
@@ -126,16 +127,22 @@ void CObjHero::Action()
 	hit->SetPos(m_x, m_y);
 
 
-	//ELEMENT_ENEMYを持つオブジェクトと接触したら削除
+
+	//ダメージ判定
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
-		this->SetStatus(false);     
-		Hits::DeleteHitBox(this);   
+		m_hp -= 1;
+		if (0 >= m_hp)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
 
 		//主人公消滅でシーンをゲームオバーに移行する
-		/*Scene::SetScene(new CSceneGameOver());*/
-	}
+		Scene::SetScene((CScene*)new CSceneGameOver());
 
+		}
+		
+	}
 
 }
 
