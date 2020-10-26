@@ -1,5 +1,7 @@
 #pragma once
 //使用するヘッダー
+#include <stdlib.h>
+#include <time.h>
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
 #include "meteoL.h"
@@ -68,8 +70,19 @@ void CObjmeteoL::Action()
 		m_hp -= 1;
 		if (0>=m_hp)
 		{
+			int item;
+
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
+
+			//アイテム　作成中
+			srand(time(NULL));
+			item = rand() % 10;
+			if (item == 0)
+			{
+				CObjitem* obj_b = new CObjitem(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_ITEM, 1);
+			}
 		}
 	}
 
