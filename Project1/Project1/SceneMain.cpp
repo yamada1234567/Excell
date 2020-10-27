@@ -62,6 +62,10 @@ void CSceneMain::InitScene()
 	CObjBackground* back = new CObjBackground();
 	Objs::InsertObj(back, OBJ_BACKGROUND, 0);
 
+	//テスト用
+	//CObjTripleBullet* obj_triple_bullet = new CObjTripleBullet(500, 200, 45, 5);
+	//Objs::InsertObj(obj_triple_bullet, OBJ_BULLET, 2);
+
 	m_time = 0;
 }
 //ゲームメイン実行メソッド

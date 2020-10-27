@@ -4,6 +4,7 @@
 #include "GameL\HitBoxManager.h"
 #include "GameHead.h"
 #include "hero.h"
+#include "triplebullet.h"
 #include "UtilityModule.h"
 
 //使用するネームスペース
@@ -35,8 +36,6 @@ void CObjHero::Action()
 			//弾丸オブジェクト作成
 			CObjBullet* obj_b = new CObjBullet(m_x+3.0f, m_y);
 			Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-
-
 
 
 			m_f = false;
@@ -146,6 +145,7 @@ void CObjHero::Action()
 		}
 		
 	}
+
 }
 
 
