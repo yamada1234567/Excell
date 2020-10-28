@@ -15,7 +15,7 @@ CObjBoss::CObjBoss(float x, float y)
 
 	//•\Ž¦ˆÊ’u
 	m_x = x+100;
-	m_y = y-400; 
+	m_y = y-150; 
 
 }
 
