@@ -6,6 +6,7 @@
 #include "hero.h"
 #include "triplebullet.h"
 #include "UtilityModule.h"
+#include "triplebullet2.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -37,6 +38,11 @@ void CObjHero::Action()
 			CObjBullet* obj_b = new CObjBullet(m_x+3.0f, m_y);
 			Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
+			CObjTripleBullet* obj_triple_bullet = new CObjTripleBullet(m_x + 3.0f, m_y, 45, 12.0);//（位置、角度、速度)
+			Objs::InsertObj(obj_triple_bullet, OBJ_TRIPLE, 1);
+
+			CObjTripleBullet2* obj_triple_bullet2= new CObjTripleBullet2(m_x + 3.0f, m_y, -45, 12.0);//（位置、角度、速度)
+			Objs::InsertObj(obj_triple_bullet2, OBJ_TRIPLE, 1);
 
 			m_f = false;
 		}
