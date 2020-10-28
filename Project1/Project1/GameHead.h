@@ -12,7 +12,9 @@ enum OBJ_NAME
 	OBJ_meteoS,
 	OBJ_meteoM,
 	OBJ_meteoL,
+	OBJ_meteoRD,
 	OBJ_BOSS,
+
 
 	OBJ_ITEM,
 
@@ -73,6 +75,7 @@ struct UserData
 #include "meteoS.h"
 #include "meteoM.h"
 #include "meteoL.h"
+#include "meteoRD.h"
 #include "Boss.h"
 #include "item.h"
 #include "ObjBackground.h"

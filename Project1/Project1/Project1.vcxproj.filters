@@ -120,6 +120,9 @@
     <ClCompile Include="triplebullet2.cpp">
       <Filter>ソース ファイル\HERO</Filter>
     </ClCompile>
+    <ClCompile Include="meteoRD.cpp">
+      <Filter>ソース ファイル\meteo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -214,6 +217,9 @@
     </ClInclude>
     <ClInclude Include="triplebullet2.h">
       <Filter>ソース ファイル\HERO</Filter>
+    </ClInclude>
+    <ClInclude Include="meteoRD.h">
+      <Filter>ソース ファイル\meteo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
