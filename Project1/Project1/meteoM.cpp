@@ -29,7 +29,6 @@ void CObjmeteoM::Init()
 //アクション
 void CObjmeteoM::Action()
 {
-	
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
@@ -115,7 +114,6 @@ void CObjmeteoM::Action()
 		m_left_bottom = 64.0f;
 
 	}
-
 }
 //ドロー
 void CObjmeteoM::Draw()

@@ -32,6 +32,8 @@ void CObjmeteoS::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjmeteoS::Action()
 {
+	m_time++;
+	
 	//ˆÚ“®•ûŒü
 	/*m_vx =0.0f;
 	m_vy =0.0f;*/
