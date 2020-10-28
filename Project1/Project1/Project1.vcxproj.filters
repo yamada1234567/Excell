@@ -117,6 +117,9 @@
     <ClCompile Include="triplebullet.cpp">
       <Filter>ソース ファイル\HERO</Filter>
     </ClCompile>
+    <ClCompile Include="triplebullet2.cpp">
+      <Filter>ソース ファイル\HERO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -207,6 +210,9 @@
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
     <ClInclude Include="triplebullet.h">
+      <Filter>ソース ファイル\HERO</Filter>
+    </ClInclude>
+    <ClInclude Include="triplebullet2.h">
       <Filter>ソース ファイル\HERO</Filter>
     </ClInclude>
   </ItemGroup>

@@ -12,8 +12,10 @@ using namespace GameL;
 //コンストラクタ
 CObjBoss::CObjBoss(float x, float y)
 {
+
+	//表示位置
 	m_x = x+100;
-	m_y = y-200; 
+	m_y = y-150; 
 
 }
 

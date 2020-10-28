@@ -1,14 +1,14 @@
 //使用するヘッダーファイル
 #include "GameL\DrawTexture.h"
 #include "GameHead.h"
-#include "triplebullet.h"
+#include "triplebullet2.h"
 #include "GameL\HitBoxManager.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //コンストラクタ
-CObjTripleBullet::CObjTripleBullet(float x, float y, float r, float speed)
+CObjTripleBullet2::CObjTripleBullet2(float x, float y, float r, float speed)
 {
 	m_x = x;
 	m_y = y;
@@ -17,9 +17,9 @@ CObjTripleBullet::CObjTripleBullet(float x, float y, float r, float speed)
 }
 
 //イニシャライズ
-void CObjTripleBullet::Init()
+void CObjTripleBullet2::Init()
 {
-	m_vx = cos(3.14f/180.0f*m_r);
+	m_vx = cos(3.14f / 180.0f * m_r);
 	m_vy = sin(3.14f / 180.0f * m_r);
 
 	//当たり判定作成
@@ -27,13 +27,13 @@ void CObjTripleBullet::Init()
 }
 
 //アクション
-void CObjTripleBullet::Action()
+void CObjTripleBullet2::Action()
 {
 	//移動
 	m_y -= m_vx * m_speed;
-	m_x -= m_vx * m_speed;
+	m_x += m_vx * m_speed;
 
-	
+
 
 	//hitbox更新用ポインターの取得
 	CHitBox* hit = Hits::GetHitBox(this);
@@ -77,7 +77,7 @@ void CObjTripleBullet::Action()
 }
 
 //ドロー
-void CObjTripleBullet::Draw()
+void CObjTripleBullet2::Draw()
 {
 	//描写カラー情報 R=RED G=Green B=Blue A=alpha
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };

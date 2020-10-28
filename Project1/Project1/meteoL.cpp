@@ -16,9 +16,13 @@ CObjmeteoL::CObjmeteoL(float x, float y)
 //イニシャライズ
 void CObjmeteoL::Init()
 {
-	m_hp = 8;
+	m_hp = 5;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+	m_time=0;
+	m_left_bottom = 96.0f;//表示位置
+	m_top_right   = 0.0f; //表示位置
+
 	//当たり判定作成
 	Hits::SetHitBox(this, m_x, m_y, 96, 96, ELEMENT_ENEMY, OBJ_meteoL, 1);
 }
@@ -88,6 +92,30 @@ void CObjmeteoL::Action()
 		}
 	}
 
+	m_time++;
+
+
+	//敵回転
+	if (m_time >= 25)
+	{
+		m_top_right = 96.0f;
+		m_left_bottom = 0.0f;
+
+
+		if (m_time >= 50)
+		{
+			m_time = 0;
+
+		}
+
+	}
+	else
+	{
+		m_top_right = 0.0f;
+		m_left_bottom = 96.0f;
+
+	}
+
 }
 //ドロー
 void CObjmeteoL::Draw()
@@ -102,10 +130,10 @@ void CObjmeteoL::Draw()
 	src.m_right = 50.0f;
 	src.m_bottom = 50.0f;
 	//表示位置
-	dst.m_top = 0.0f + m_y;
-	dst.m_left = 96.0f + m_x;
-	dst.m_right = 0.0f + m_x;
-	dst.m_bottom = 96.0f + m_y;
+	dst.m_top = m_top_right + m_y;
+	dst.m_left = m_left_bottom + m_x;
+	dst.m_right = m_top_right + m_x;
+	dst.m_bottom = m_left_bottom + m_y;
 	//画像登録
 	Draw::Draw(2, &src, &dst, c, 0.0f);
 }

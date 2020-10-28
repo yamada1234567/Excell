@@ -8,6 +8,7 @@ enum OBJ_NAME
 	//OBJ_○○と表記
 	OBJ_HERO,
 	OBJ_BULLET,
+	OBJ_TRIPLE,
 	OBJ_meteoS,
 	OBJ_meteoM,
 	OBJ_meteoL,
@@ -68,6 +69,7 @@ struct UserData
 //ゲームシーンオブジェクトヘッダ------------------
 #include "hero.h"
 #include "bullet.h"
+#include "triplebullet.h"
 #include "meteoS.h"
 #include "meteoM.h"
 #include "meteoL.h"

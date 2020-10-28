@@ -5,11 +5,11 @@
 using namespace GameL;
 
 //オブジェクト：弾丸
-class CObjTripleBullet : public CObj
+class CObjTripleBullet2 : public CObj
 {
 public:
-	CObjTripleBullet(float x, float y, float r, float speed); //コンストラクタ
-	~CObjTripleBullet() {};
+	CObjTripleBullet2(float x, float y, float r, float speed); //コンストラクタ
+	~CObjTripleBullet2() {};
 	void Init();
 	void Action();
 	void Draw();
@@ -21,3 +21,4 @@ private:
 	float m_r;//移動する角度
 	float m_speed;//速度
 };
+

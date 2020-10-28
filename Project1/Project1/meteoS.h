@@ -19,10 +19,12 @@ private:
 	float m_y;
 	float m_vx;
 	float m_vy;
+	float m_left_bottom;
+	float m_top_right;
+
+
 	int m_hp;
 	int m_time;
-
-	float m_ani1;
-	float m_ani2;
+	
 
 };
