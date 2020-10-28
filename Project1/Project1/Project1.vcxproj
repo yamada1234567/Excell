@@ -140,6 +140,7 @@
     <ClCompile Include="GameL\SetWindow.cpp" />
     <ClCompile Include="GameL\UserData.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
+    <ClCompile Include="meteoRD.cpp" />
     <ClCompile Include="ObjBackground.cpp" />
     <ClCompile Include="ObjClear.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
@@ -192,6 +193,7 @@
     <ClInclude Include="item.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="meteoRD.h" />
     <ClInclude Include="ObjBackground.h" />
     <ClInclude Include="ObjClear.h" />
     <ClInclude Include="ObjTitle.h" />
