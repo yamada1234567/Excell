@@ -21,12 +21,18 @@ void CObjmeteoS::Init()
 	m_hp = 1;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+	m_ani1=32.0f;
+	m_ani2=0.0f;
+	m_time = 0;
+
 	//当たり判定作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_meteoS, 1);
 }
 //アクション
 void CObjmeteoS::Action()
 {
+	m_time++;
+	
 	//移動方向
 	/*m_vx =0.0f;
 	m_vy =0.0f;*/
@@ -92,6 +98,28 @@ void CObjmeteoS::Action()
 		}
 	}
 
+	if (m_time%10==0)
+	{
+		if (m_ani1==32.0f)
+		{
+		
+			m_ani1 = 0.0f;
+
+		m_ani2 = 32.0f;
+
+		}
+		else
+		{
+		
+			m_ani1 = 32.0f;
+
+		m_ani2 = 0.0f;
+		}
+	}
+	
+
+
+
 }
 //ドロー
 void CObjmeteoS::Draw()
@@ -107,8 +135,8 @@ void CObjmeteoS::Draw()
 	src.m_bottom = 50.0f;
 	//表示位置
 	dst.m_top = 0.0f + m_y;
-	dst.m_left = 32.0f + m_x;
-	dst.m_right = 0.0f + m_x;
+	dst.m_left = m_ani1 + m_x;
+	dst.m_right = m_ani2 + m_x;
 	dst.m_bottom = 32.0f + m_y;
 	//画像登録
 	Draw::Draw(2, &src, &dst, c, 0.0f);

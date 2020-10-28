@@ -20,5 +20,9 @@ private:
 	float m_vx;
 	float m_vy;
 	int m_hp;
+	int m_time;
+
+	float m_ani1;
+	float m_ani2;
 
 };
