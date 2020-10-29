@@ -39,7 +39,7 @@ void CObjOxygen::Action()
 	}
 	//‰Á‘¬
 	m_vx *= 3.0f;
-	m_vy *= 1.0f;
+	m_vy *= 0.5f;
 
 	m_x += m_vx;
 	m_y += m_vy;
@@ -80,7 +80,7 @@ void CObjOxygen::Draw()
 	src.m_bottom = 28.0f;
 	//•\Ž¦ˆÊ’u
 	dst.m_top = 0.0f + m_y;
-	dst.m_left = 32.0f + m_x;
+	dst.m_left =  32.0f + m_x;
 	dst.m_right = 0.0f + m_x;
 	dst.m_bottom = 32.0f + m_y;
 	//‰æ‘œ“o˜^

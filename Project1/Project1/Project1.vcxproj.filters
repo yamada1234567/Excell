@@ -157,7 +157,7 @@
       <Filter>ソース ファイル\敵</Filter>
     </ClCompile>
     <ClCompile Include="Oxygen.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\アイテム</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -276,7 +276,7 @@
       <Filter>ソース ファイル\敵</Filter>
     </ClInclude>
     <ClInclude Include="Oxygen.h">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\アイテム</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
