@@ -140,7 +140,9 @@
     <ClCompile Include="GameL\SetWindow.cpp" />
     <ClCompile Include="GameL\UserData.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
+    <ClCompile Include="meteoLD.cpp" />
     <ClCompile Include="meteoRD.cpp" />
+    <ClCompile Include="meteoSin.cpp" />
     <ClCompile Include="ObjBackground.cpp" />
     <ClCompile Include="ObjClear.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
@@ -165,11 +167,21 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="ObjGameOver.cpp" />
-    <ClCompile Include="SceneMain.cpp" />
-    <ClCompile Include="SceneTitle.cpp" />
-    <ClCompile Include="syougaibutu.cpp">
+    <ClCompile Include="SceneLast.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="SceneStage2.cpp" />
+    <ClCompile Include="SceneStage3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="SceneStage4.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="SceneStage5.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="triplebullet.cpp" />
     <ClCompile Include="triplebullet2.cpp" />
     <ClCompile Include="UtilityModule.cpp" />
@@ -194,6 +206,7 @@
     <ClInclude Include="item.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="meteoLD.h" />
     <ClInclude Include="meteoRD.h" />
     <ClInclude Include="ObjBackground.h" />
     <ClInclude Include="ObjClear.h" />
@@ -213,7 +226,20 @@
     </ClInclude>
     <ClInclude Include="meteoS.h" />
     <ClInclude Include="ObjGameOver.h" />
+    <ClInclude Include="SceneLast.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="SceneStage2.h" />
+    <ClInclude Include="SceneStage3.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="SceneStage4.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="SceneStage5.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="triplebullet.h" />
     <ClInclude Include="triplebullet2.h" />

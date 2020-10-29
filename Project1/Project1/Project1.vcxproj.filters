@@ -13,22 +13,34 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="ソース ファイル\meteo">
-      <UniqueIdentifier>{ba78a036-ef4b-41bd-b133-e897e451afbf}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\ステージ">
+      <UniqueIdentifier>{ab936477-1716-4783-b61a-2fd4d8611158}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\HERO">
+    <Filter Include="ソース ファイル\アイテム">
+      <UniqueIdentifier>{9d00bbac-c82d-4b68-81fc-31592f784e20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\クリア ・ ゲームオーバー ・ タイトル">
+      <UniqueIdentifier>{baddf824-2414-4d49-9f43-af0400ee0005}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\主人公">
       <UniqueIdentifier>{1e0acf2a-ba3f-4c8c-b9db-3736c02e3706}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Scene">
-      <UniqueIdentifier>{baddf824-2414-4d49-9f43-af0400ee0005}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\主人公\弾丸">
+      <UniqueIdentifier>{2ae67fb5-449d-4c0b-b225-ce0a3208dec0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\敵">
+      <UniqueIdentifier>{ba78a036-ef4b-41bd-b133-e897e451afbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\敵\ボス">
+      <UniqueIdentifier>{478ad7a3-c3a0-411e-8cb8-4760f0e34ca6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\その他">
+      <UniqueIdentifier>{4bc7c6b5-36df-4af2-9518-905c49961a95}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="item.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="hero.cpp">
-      <Filter>ソース ファイル\HERO</Filter>
+      <Filter>ソース ファイル\主人公</Filter>
     </ClCompile>
     <ClCompile Include="GameL\Audio.cpp">
       <Filter>リソース ファイル</Filter>
@@ -69,59 +81,80 @@
     <ClCompile Include="GameL\WinInputs.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Boss.cpp">
-      <Filter>ソース ファイル\meteo</Filter>
-    </ClCompile>
-    <ClCompile Include="syougaibutu.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="meteoS.cpp">
-      <Filter>ソース ファイル\meteo</Filter>
+      <Filter>ソース ファイル\敵</Filter>
     </ClCompile>
     <ClCompile Include="meteoM.cpp">
-      <Filter>ソース ファイル\meteo</Filter>
+      <Filter>ソース ファイル\敵</Filter>
     </ClCompile>
     <ClCompile Include="meteoL.cpp">
-      <Filter>ソース ファイル\meteo</Filter>
-    </ClCompile>
-    <ClCompile Include="bullet.cpp">
-      <Filter>ソース ファイル\HERO</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneMain.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
+      <Filter>ソース ファイル\敵</Filter>
     </ClCompile>
     <ClCompile Include="ObjGameOver.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
+      <Filter>ソース ファイル\クリア ・ ゲームオーバー ・ タイトル</Filter>
     </ClCompile>
     <ClCompile Include="SceneGameOver.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
+      <Filter>ソース ファイル\クリア ・ ゲームオーバー ・ タイトル</Filter>
     </ClCompile>
     <ClCompile Include="SceneTitle.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
+      <Filter>ソース ファイル\クリア ・ ゲームオーバー ・ タイトル</Filter>
     </ClCompile>
     <ClCompile Include="ObjTitle.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="UtilityModule.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjBackground.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\クリア ・ ゲームオーバー ・ タイトル</Filter>
     </ClCompile>
     <ClCompile Include="ObjClear.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
+      <Filter>ソース ファイル\クリア ・ ゲームオーバー ・ タイトル</Filter>
     </ClCompile>
     <ClCompile Include="SceneClear.cpp">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="triplebullet.cpp">
-      <Filter>ソース ファイル\HERO</Filter>
-    </ClCompile>
-    <ClCompile Include="triplebullet2.cpp">
-      <Filter>ソース ファイル\HERO</Filter>
+      <Filter>ソース ファイル\クリア ・ ゲームオーバー ・ タイトル</Filter>
     </ClCompile>
     <ClCompile Include="meteoRD.cpp">
-      <Filter>ソース ファイル\meteo</Filter>
+      <Filter>ソース ファイル\敵</Filter>
+    </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>ソース ファイル\アイテム</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMain.cpp">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>ソース ファイル\敵\ボス</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>ソース ファイル\主人公\弾丸</Filter>
+    </ClCompile>
+    <ClCompile Include="triplebullet.cpp">
+      <Filter>ソース ファイル\主人公\弾丸</Filter>
+    </ClCompile>
+    <ClCompile Include="triplebullet2.cpp">
+      <Filter>ソース ファイル\主人公\弾丸</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBackground.cpp">
+      <Filter>ソース ファイル\その他</Filter>
+    </ClCompile>
+    <ClCompile Include="UtilityModule.cpp">
+      <Filter>ソース ファイル\その他</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneLast.cpp">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStage2.cpp">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStage3.cpp">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStage4.cpp">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStage5.cpp">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="meteoLD.cpp">
+      <Filter>ソース ファイル\敵</Filter>
+    </ClCompile>
+    <ClCompile Include="meteoSin.cpp">
+      <Filter>ソース ファイル\敵</Filter>
     </ClCompile>
     <ClCompile Include="Oxygen.cpp">
       <Filter>ソース ファイル</Filter>
@@ -168,61 +201,79 @@
       <Filter>リソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="hero.h">
-      <Filter>ソース ファイル\HERO</Filter>
+      <Filter>ソース ファイル\主人公</Filter>
     </ClInclude>
     <ClInclude Include="meteoS.h">
-      <Filter>ソース ファイル\meteo</Filter>
+      <Filter>ソース ファイル\敵</Filter>
     </ClInclude>
     <ClInclude Include="meteoM.h">
-      <Filter>ソース ファイル\meteo</Filter>
+      <Filter>ソース ファイル\敵</Filter>
     </ClInclude>
     <ClInclude Include="meteoL.h">
-      <Filter>ソース ファイル\meteo</Filter>
-    </ClInclude>
-    <ClInclude Include="Boss.h">
-      <Filter>ソース ファイル\meteo</Filter>
-    </ClInclude>
-    <ClInclude Include="bullet.h">
-      <Filter>ソース ファイル\HERO</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMain.h">
-      <Filter>ソース ファイル\Scene</Filter>
+      <Filter>ソース ファイル\敵</Filter>
     </ClInclude>
     <ClInclude Include="ObjGameOver.h">
-      <Filter>ソース ファイル\Scene</Filter>
+      <Filter>ソース ファイル\クリア ・ ゲームオーバー ・ タイトル</Filter>
     </ClInclude>
     <ClInclude Include="SceneGameOver.h">
-      <Filter>ソース ファイル\Scene</Filter>
+      <Filter>ソース ファイル\クリア ・ ゲームオーバー ・ タイトル</Filter>
     </ClInclude>
     <ClInclude Include="SceneTitle.h">
-      <Filter>ソース ファイル\Scene</Filter>
+      <Filter>ソース ファイル\クリア ・ ゲームオーバー ・ タイトル</Filter>
     </ClInclude>
     <ClInclude Include="ObjTitle.h">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="UtilityModule.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="item.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjBackground.h">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\クリア ・ ゲームオーバー ・ タイトル</Filter>
     </ClInclude>
     <ClInclude Include="ObjClear.h">
-      <Filter>ソース ファイル\Scene</Filter>
+      <Filter>ソース ファイル\クリア ・ ゲームオーバー ・ タイトル</Filter>
     </ClInclude>
     <ClInclude Include="SceneClear.h">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="triplebullet.h">
-      <Filter>ソース ファイル\HERO</Filter>
-    </ClInclude>
-    <ClInclude Include="triplebullet2.h">
-      <Filter>ソース ファイル\HERO</Filter>
+      <Filter>ソース ファイル\クリア ・ ゲームオーバー ・ タイトル</Filter>
     </ClInclude>
     <ClInclude Include="meteoRD.h">
-      <Filter>ソース ファイル\meteo</Filter>
+      <Filter>ソース ファイル\敵</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>ソース ファイル\アイテム</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMain.h">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>ソース ファイル\敵\ボス</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>ソース ファイル\主人公\弾丸</Filter>
+    </ClInclude>
+    <ClInclude Include="triplebullet.h">
+      <Filter>ソース ファイル\主人公\弾丸</Filter>
+    </ClInclude>
+    <ClInclude Include="triplebullet2.h">
+      <Filter>ソース ファイル\主人公\弾丸</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBackground.h">
+      <Filter>ソース ファイル\その他</Filter>
+    </ClInclude>
+    <ClInclude Include="UtilityModule.h">
+      <Filter>ソース ファイル\その他</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneLast.h">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStage2.h">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStage3.h">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStage4.h">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStage5.h">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="meteoLD.h">
+      <Filter>ソース ファイル\敵</Filter>
     </ClInclude>
     <ClInclude Include="Oxygen.h">
       <Filter>ソース ファイル</Filter>
