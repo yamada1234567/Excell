@@ -123,6 +123,9 @@
     <ClCompile Include="meteoRD.cpp">
       <Filter>ソース ファイル\meteo</Filter>
     </ClCompile>
+    <ClCompile Include="Oxygen.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -220,6 +223,9 @@
     </ClInclude>
     <ClInclude Include="meteoRD.h">
       <Filter>ソース ファイル\meteo</Filter>
+    </ClInclude>
+    <ClInclude Include="Oxygen.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
