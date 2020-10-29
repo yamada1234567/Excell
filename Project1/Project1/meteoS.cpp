@@ -40,6 +40,7 @@ void CObjmeteoS::Action()
 
 	m_x += m_vx;
 	m_y += m_vy;
+
 	//hitbox更新用ポインターの取得
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
