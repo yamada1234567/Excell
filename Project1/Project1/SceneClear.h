@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 //使用するヘッダー
 #include "GameL/SceneManager.h"
 
@@ -6,11 +7,11 @@
 using namespace GameL;
 
 //オブジェクト：ゲームタイトル
-class CSceneGameOver :public CScene
+class CSceneClear :public CScene
 {
 public:
-	CSceneGameOver();
-	~CSceneGameOver();
+	CSceneClear();
+	~CSceneClear();
 	void InitScene();  //ゲームタイトルの初期化メソッド
 	void Scene();      //ゲームタイトルの実行中メソッド
 private:

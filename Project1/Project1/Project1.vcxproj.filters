@@ -102,6 +102,27 @@
     <ClCompile Include="ObjTitle.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="UtilityModule.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBackground.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjClear.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneClear.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="triplebullet.cpp">
+      <Filter>ソース ファイル\HERO</Filter>
+    </ClCompile>
+    <ClCompile Include="triplebullet2.cpp">
+      <Filter>ソース ファイル\HERO</Filter>
+    </ClCompile>
+    <ClCompile Include="meteoRD.cpp">
+      <Filter>ソース ファイル\meteo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -175,6 +196,30 @@
     </ClInclude>
     <ClInclude Include="ObjTitle.h">
       <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="UtilityModule.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBackground.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjClear.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneClear.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="triplebullet.h">
+      <Filter>ソース ファイル\HERO</Filter>
+    </ClInclude>
+    <ClInclude Include="triplebullet2.h">
+      <Filter>ソース ファイル\HERO</Filter>
+    </ClInclude>
+    <ClInclude Include="meteoRD.h">
+      <Filter>ソース ファイル\meteo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

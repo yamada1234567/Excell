@@ -5,30 +5,30 @@
 //GameLで使用するヘッダー
 #include "GameL/SceneObjManager.h"
 #include "GameL/DrawFont.h"
-
+#include "GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //使用ヘッダー
-#include "SceneGameOver.h"
 #include "SceneMain.h"
 #include "GameHead.h"
+#include "GameOver.h"
 
 //コントラクタ
-CSceneGameOver::CSceneGameOver()
+GameOver::GameOver()
 {
 
 }
 
 //デストラクタ
-CSceneGameOver::~CSceneGameOver()
+GameOver::~GameOver()
 {
 
 }
 
 //ゲームメイン初期化メソッド
-void CSceneGameOver::InitScene()
+void GameOver::InitScene()
 {
 	//出力させる文字もグラフィックを作成
 	Font::SetStrTex(L"YOU LOST");
@@ -37,13 +37,13 @@ void CSceneGameOver::InitScene()
 
 
 	//ゲームオーバーオブジェクトを作成
-	CObjGameOver* obj = new CObjGameOver();
+	GameOver* obj = new GameOver();
 	Objs::InsertObj(obj, OBJ_GAMEOVER, 10);
 }
 
 
 //ゲームメイン実行中メソッド
-void CSceneGameOver::Scene()
+void GameOver::Scene()
 {
 
 

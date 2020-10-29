@@ -36,8 +36,7 @@ void CObjTitle::Action()
 void CObjTitle::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-	Font::StrDraw(L"シューティングゲーム",220,250,32,c);
 
-	Font::StrDraw(L"GameStart : PushEnterKey", 200, 300, 32, c);
+	Font::StrDraw(L"Enter:スタート", 200, 300, 32, c);
 
 }

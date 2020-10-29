@@ -1,9 +1,12 @@
 //使用するヘッダーファイル
 #include "GameL/DrawTexture.h"
 #include "GameL/WinInputs.h"
+#include "GameL\HitBoxManager.h"
 #include "GameHead.h"
 #include "hero.h"
-#include "GameL\HitBoxManager.h"
+#include "triplebullet.h"
+#include "UtilityModule.h"
+#include "triplebullet2.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -17,6 +20,7 @@ void CObjHero::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_f = true;
+	m_hp = 3;
 
 	//当たり判定用hitboxを作成
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
@@ -34,6 +38,12 @@ void CObjHero::Action()
 			CObjBullet* obj_b = new CObjBullet(m_x+3.0f, m_y);
 			Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
+			//CObjTripleBullet* obj_triple_bullet = new CObjTripleBullet(m_x + 3.0f, m_y, 45, 12.0);//（位置、角度、速度)
+			//Objs::InsertObj(obj_triple_bullet, OBJ_TRIPLE, 1);
+
+			//CObjTripleBullet2* obj_triple_bullet2= new CObjTripleBullet2(m_x + 3.0f, m_y, -45, 12.0);//（位置、角度、速度)
+			//Objs::InsertObj(obj_triple_bullet2, OBJ_TRIPLE, 1);
+
 			m_f = false;
 		}
 	}
@@ -45,20 +55,20 @@ void CObjHero::Action()
 	//操作
 	if (Input::GetVKey(VK_RIGHT) == true)
 	{
-		m_x += 3.0f;
+		m_x += 5.0f;
 	}
 	if (Input::GetVKey(VK_LEFT) == true)
 	{
-		m_x -= 3.0f;
+		m_x -= 5.0f;
 
 	}
 	if (Input::GetVKey(VK_UP)==true)
 	{
-		m_y -= 3.0f;
+		m_y -= 5.0f;
 	}
 	if (Input::GetVKey(VK_DOWN) == true)
 	{
-		m_y += 3.0f;
+		m_y += 5.0f;
 	}
 
 	//移動ベクトル初期化
@@ -124,14 +134,28 @@ void CObjHero::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
 
-	//ELEMENT_ENEMYを持つオブジェクトと接触したら主人公機削除
+
+
+	//ダメージ判定
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
-		this->SetStatus(false);     //自身に削除命令を出す
-		Hits::DeleteHitBox(this);   //主人公機が所有するHitBoxに削除する。
+		m_hp -= 1;
+		if (0 >= m_hp)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
 
+		//主人公消滅でシーンをゲームオバーに移行する
+		Scene::SetScene((CScene*)new CSceneGameOver());
+
+		}
+		
 	}
 
+	//if (hit->CheckElementHit(ELEMENT_ITEM) == true)
+	//{
+		
+	//}
 
 }
 

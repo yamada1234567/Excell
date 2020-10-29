@@ -8,9 +8,21 @@ enum OBJ_NAME
 	//OBJ_○○と表記
 	OBJ_HERO,
 	OBJ_BULLET,
+	OBJ_TRIPLE,
 	OBJ_meteoS,
+	OBJ_meteoM,
+	OBJ_meteoL,
+	OBJ_meteoRD,
+	OBJ_BOSS,
+
+
+	OBJ_ITEM,
+
+	OBJ_BACKGROUND,
+
 	OBJ_GAMEOVER,
 	OBJ_TITLE,
+	OBJ_CLEAR,
 
 };
 //------------------------------------------------
@@ -31,6 +43,7 @@ enum HIT_ELEMENTS
 	ELEMENT_BLUE,
 	ELEMENT_BLACK,
 	ELEMENT_WHITE,
+	ELEMENT_BULLET,
 
 };
 //------------------------------------------------
@@ -58,15 +71,26 @@ struct UserData
 //ゲームシーンオブジェクトヘッダ------------------
 #include "hero.h"
 #include "bullet.h"
+#include "triplebullet.h"
 #include "meteoS.h"
+#include "meteoM.h"
+#include "meteoL.h"
+#include "meteoRD.h"
+#include "Boss.h"
+#include "item.h"
+#include "ObjBackground.h"
+
+
 #include "ObjGameOver.h"
 #include "ObjTitle.h"
+#include"ObjClear.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
-#include "SceneGameOver.h"
 #include "SceneTitle.h"
+#include "SceneGameOver.h"
+#include "SceneClear.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

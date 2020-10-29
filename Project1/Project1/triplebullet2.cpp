@@ -1,47 +1,50 @@
 //使用するヘッダーファイル
 #include "GameL\DrawTexture.h"
 #include "GameHead.h"
-#include "bullet.h"
+#include "triplebullet2.h"
 #include "GameL\HitBoxManager.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //コンストラクタ
-CObjBullet::CObjBullet(float x, float y)
+CObjTripleBullet2::CObjTripleBullet2(float x, float y, float r, float speed)
 {
 	m_x = x;
 	m_y = y;
+	m_r = r;
+	m_speed = speed;
 }
 
 //イニシャライズ
-void CObjBullet::Init()
+void CObjTripleBullet2::Init()
 {
-	m_vx = 0.0f;
+	m_vx = cos(3.14f / 180.0f * m_r);
+	m_vy = sin(3.14f / 180.0f * m_r);
 
 	//当たり判定作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_BULLET, OBJ_BULLET, 1);
 }
 
 //アクション
-void CObjBullet::Action()
+void CObjTripleBullet2::Action()
 {
-	m_y += -12.0f;
+	//移動
+	m_y -= m_vx * m_speed;
+	m_x += m_vx * m_speed;
 
-	m_x += m_vx;
 
-	//領域外に出たら削除
-	if (m_x <0.0f)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
 
 	//hitbox更新用ポインターの取得
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
-	
 
+	//領域外に出たら削除
+	if (m_x < 0.0f)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 
 	//弾丸当たってるか調べる
 	if (hit->CheckObjNameHit(OBJ_meteoS) != nullptr)
@@ -68,13 +71,13 @@ void CObjBullet::Action()
 	//ELEMENT_ENEMYを持つオブジェクトと接触したら削除
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
-		this->SetStatus(false);     
-		Hits::DeleteHitBox(this);   
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
 	}
 }
 
 //ドロー
-void CObjBullet::Draw()
+void CObjTripleBullet2::Draw()
 {
 	//描写カラー情報 R=RED G=Green B=Blue A=alpha
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -89,11 +92,11 @@ void CObjBullet::Draw()
 	src.m_bottom = 50.0f;
 
 	//表示位置の設定
-	dst.m_top = 0.0f+m_y;
-	dst.m_left = 0.0f+m_x;
-	dst.m_right =32.0f+m_x;
-	dst.m_bottom =32.0f+m_y;
+	dst.m_top = 0.0f + m_y;
+	dst.m_left = 0.0f + m_x;
+	dst.m_right = 32.0f + m_x;
+	dst.m_bottom = 32.0f + m_y;
 
 	//1番に登録したグラフィックをの情報をもとに描画
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, c, m_r);
 }

@@ -5,11 +5,11 @@
 using namespace GameL;
 
 //オブジェクト:敵機
-class CObjmeteoM :public CObj//メテオ中 
+class CObjmeteoRD :public CObj//メテオ右下 
 {
 public:
-	CObjmeteoM(float x, float y);
-	~CObjmeteoM() {};
+	CObjmeteoRD(float x, float y);
+	~CObjmeteoRD() {};
 	void Init(); //イニシャ
 	void Action();//アクション
 	void Draw();//ドロー
@@ -22,6 +22,9 @@ private:
 	float m_left_bottom;
 	float m_top_right;
 
+
 	int m_hp;
 	int m_time;
+
+
 };
