@@ -14,6 +14,7 @@ enum OBJ_NAME
 	OBJ_meteoL,
 	OBJ_meteoRD,
 	OBJ_meteoLD,
+	OBJ_meteoSIN,
 	OBJ_BOSS,
 
 
@@ -78,6 +79,7 @@ struct UserData
 #include "meteoL.h"
 #include "meteoRD.h"
 #include "meteoLD.h"
+#include "meteoSin.h"
 #include "Boss.h"
 #include "item.h"
 #include "ObjBackground.h"
@@ -99,5 +101,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneClear
+#define SET_GAME_START CSceneMain
 //-----------------------------------------------

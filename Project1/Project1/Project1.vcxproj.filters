@@ -272,5 +272,8 @@
     <ClInclude Include="meteoLD.h">
       <Filter>ソース ファイル\敵</Filter>
     </ClInclude>
+    <ClInclude Include="meteoSin.h">
+      <Filter>ソース ファイル\敵</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

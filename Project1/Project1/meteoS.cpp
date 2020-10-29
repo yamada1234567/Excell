@@ -32,11 +32,10 @@ void CObjmeteoS::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjmeteoS::Action()
 {
-
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
-	
+
 	if (r == 0.0f)
 	{
 		;
@@ -46,6 +45,7 @@ void CObjmeteoS::Action()
 		m_vx = 1.0f / r * m_vx;
 		m_vy = 1.0f / r * m_vy;
 	}
+
 	//‰Á‘¬
 	m_vx *= 0.0f;
 	m_vy *= 6.0f;

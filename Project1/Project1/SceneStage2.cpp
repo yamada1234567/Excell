@@ -66,6 +66,11 @@ void CSceneStage2::Scene()
 		Objs::InsertObj(obj, OBJ_meteoLD, 4);
 		obj->SetVector(1.0f, 1.0f);
 	}
-
+	if (m_time%60 == 0)
+	{
+		CObjmeteoSin* obj = new CObjmeteoSin(368.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoSIN, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
 
 }

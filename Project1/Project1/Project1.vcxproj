@@ -207,6 +207,7 @@
     </ClInclude>
     <ClInclude Include="meteoLD.h" />
     <ClInclude Include="meteoRD.h" />
+    <ClInclude Include="meteoSin.h" />
     <ClInclude Include="ObjBackground.h" />
     <ClInclude Include="ObjClear.h" />
     <ClInclude Include="ObjTitle.h" />
