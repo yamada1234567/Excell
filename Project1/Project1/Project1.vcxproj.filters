@@ -111,9 +111,6 @@
     <ClCompile Include="meteoRD.cpp">
       <Filter>ソース ファイル\敵</Filter>
     </ClCompile>
-    <ClCompile Include="SceneStage2.cpp">
-      <Filter>ソース ファイル\ステージ</Filter>
-    </ClCompile>
     <ClCompile Include="item.cpp">
       <Filter>ソース ファイル\アイテム</Filter>
     </ClCompile>
@@ -137,6 +134,27 @@
     </ClCompile>
     <ClCompile Include="UtilityModule.cpp">
       <Filter>ソース ファイル\その他</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneLast.cpp">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStage2.cpp">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStage3.cpp">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStage4.cpp">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStage5.cpp">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="meteoLD.cpp">
+      <Filter>ソース ファイル\敵</Filter>
+    </ClCompile>
+    <ClCompile Include="meteoSin.cpp">
+      <Filter>ソース ファイル\敵</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -212,9 +230,6 @@
     <ClInclude Include="meteoRD.h">
       <Filter>ソース ファイル\敵</Filter>
     </ClInclude>
-    <ClInclude Include="SceneStage2.h">
-      <Filter>ソース ファイル\ステージ</Filter>
-    </ClInclude>
     <ClInclude Include="item.h">
       <Filter>ソース ファイル\アイテム</Filter>
     </ClInclude>
@@ -238,6 +253,24 @@
     </ClInclude>
     <ClInclude Include="UtilityModule.h">
       <Filter>ソース ファイル\その他</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneLast.h">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStage2.h">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStage3.h">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStage4.h">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStage5.h">
+      <Filter>ソース ファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="meteoLD.h">
+      <Filter>ソース ファイル\敵</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

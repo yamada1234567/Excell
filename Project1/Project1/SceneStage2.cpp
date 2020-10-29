@@ -32,15 +32,15 @@ void CSceneStage2::InitScene()
 	Draw::LoadImageW(L"縦背景.png", 5, TEX_SIZE_512);
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
 	Draw::LoadImage(L"Boss(moon).png", 6, TEX_SIZE_512);
-	//Draw::LoadImage(L"meteoS.png", 4, TEX_SIZE_512);
+
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//敵メテオ
-	CObjmeteoRD* obj_meteoRD = new CObjmeteoRD(100, 100);
-	Objs::InsertObj(obj_meteoRD, OBJ_meteoRD, 4);
+	//CObjmeteoRD* obj_meteoRD = new CObjmeteoRD(100, 100);
+	//Objs::InsertObj(obj_meteoRD, OBJ_meteoRD, 4);
 
 	//背景
 	CObjBackground* back = new CObjBackground();
@@ -54,10 +54,18 @@ void CSceneStage2::Scene()
 {
 	m_time++;
 
-	if (m_time%10 == 0)
+	if (m_time % 50 == 0)
 	{
-		CObjmeteoS* obj = new CObjmeteoS(400.0f, 0);
-		Objs::InsertObj(obj, OBJ_meteoS, 4);
-		obj->SetVector(0.0f, 1.0f);
+		CObjmeteoRD* obj = new CObjmeteoRD(0.0f, 60.0f);
+		Objs::InsertObj(obj, OBJ_meteoRD, 4);
+		obj->SetVector(1.0f, 1.0f);
+	}
+	if (m_time%50==0)
+	{
+		CObjmeteoLD* obj = new CObjmeteoLD(800.0f, 60.0f);
+		Objs::InsertObj(obj, OBJ_meteoLD, 4);
+		obj->SetVector(1.0f, 1.0f);
+	}
+
 
 }
