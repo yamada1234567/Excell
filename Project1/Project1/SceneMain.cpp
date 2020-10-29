@@ -71,7 +71,12 @@ void CSceneMain::InitScene()
 //ゲームメイン実行メソッド
 void CSceneMain::Scene()
 {
+	//クリアに移動
+	Scene::SetScene(new CSceneClear());
+	
 	m_time++;
+
+
 	if (m_time == 30)
 	{
 		CObjmeteoS* obj = new CObjmeteoS(400.0f, 0);

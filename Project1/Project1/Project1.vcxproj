@@ -165,10 +165,8 @@
     </ClCompile>
     <ClCompile Include="ObjGameOver.cpp" />
     <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="SceneStage2.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
-    <ClCompile Include="syougaibutu.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="triplebullet.cpp" />
     <ClCompile Include="triplebullet2.cpp" />
     <ClCompile Include="UtilityModule.cpp" />
@@ -212,6 +210,7 @@
     <ClInclude Include="meteoS.h" />
     <ClInclude Include="ObjGameOver.h" />
     <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="SceneStage2.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="triplebullet.h" />
     <ClInclude Include="triplebullet2.h" />

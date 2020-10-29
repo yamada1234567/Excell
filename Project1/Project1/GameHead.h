@@ -83,14 +83,16 @@ struct UserData
 
 #include "ObjGameOver.h"
 #include "ObjTitle.h"
-#include"ObjClear.h"
+#include "ObjClear.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
+#include "SceneStage2.h"
 #include "SceneTitle.h"
 #include "SceneGameOver.h"
 #include "SceneClear.h"
+
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
