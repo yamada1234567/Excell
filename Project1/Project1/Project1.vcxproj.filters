@@ -156,6 +156,9 @@
     <ClCompile Include="meteoSin.cpp">
       <Filter>ソース ファイル\敵</Filter>
     </ClCompile>
+    <ClCompile Include="Oxygen.cpp">
+      <Filter>ソース ファイル\アイテム</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -272,8 +275,8 @@
     <ClInclude Include="meteoLD.h">
       <Filter>ソース ファイル\敵</Filter>
     </ClInclude>
-    <ClInclude Include="meteoSin.h">
-      <Filter>ソース ファイル\敵</Filter>
+    <ClInclude Include="Oxygen.h">
+      <Filter>ソース ファイル\アイテム</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

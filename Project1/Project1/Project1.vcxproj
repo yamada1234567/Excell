@@ -146,6 +146,7 @@
     <ClCompile Include="ObjBackground.cpp" />
     <ClCompile Include="ObjClear.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
+    <ClCompile Include="Oxygen.cpp" />
     <ClCompile Include="SceneClear.cpp" />
     <ClCompile Include="SceneGameOver.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
@@ -211,6 +212,7 @@
     <ClInclude Include="ObjBackground.h" />
     <ClInclude Include="ObjClear.h" />
     <ClInclude Include="ObjTitle.h" />
+    <ClInclude Include="Oxygen.h" />
     <ClInclude Include="SceneClear.h" />
     <ClInclude Include="SceneGameOver.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
