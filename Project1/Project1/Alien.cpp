@@ -10,7 +10,7 @@
 //使用するネームスペース
 using namespace GameL;
 
-CObjmeteoSin::CObjmeteoSin(float x, float y)
+CObjAlien::CObjAlien(float x, float y)
 {
 
 	m_x = x;
