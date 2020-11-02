@@ -121,10 +121,10 @@
     <ClCompile Include="Boss.cpp">
       <Filter>ソースファイル\敵\ボス</Filter>
     </ClCompile>
-    <ClCompile Include="Alien.cpp">
-      <Filter>ソースファイル\敵</Filter>
+    <ClCompile Include="shield.cpp">
+      <Filter>ソースファイル\アイテム</Filter>
     </ClCompile>
-    <ClCompile Include="AlienBullet.cpp">
+    <ClCompile Include="Alien.cpp">
       <Filter>ソースファイル\敵</Filter>
     </ClCompile>
   </ItemGroup>
@@ -252,8 +252,8 @@
     <ClInclude Include="Alien.h">
       <Filter>ソースファイル\敵</Filter>
     </ClInclude>
-    <ClInclude Include="AlienBullet.h">
-      <Filter>ソースファイル\敵</Filter>
+    <ClInclude Include="shield.h">
+      <Filter>ソースファイル\アイテム</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

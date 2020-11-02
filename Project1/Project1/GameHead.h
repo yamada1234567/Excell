@@ -21,6 +21,7 @@ enum OBJ_NAME
 
 	OBJ_OXYGEN,
 	OBJ_ITEM,
+	OBJ_SHIELD,
 
 	OBJ_BACKGROUND,
 
@@ -40,6 +41,8 @@ enum HIT_ELEMENTS
 	ELEMENT_PLAYER,
 	ELEMENT_ENEMY,
 	ELEMENT_ITEM,
+	ELEMENT_OXYGEN,
+	ELEMENT_SHIELD,
 	ELEMENT_MAGIC,
 	ELEMENT_FIELD,
 	ELEMENT_RED,
@@ -86,6 +89,7 @@ struct UserData
 #include "Boss.h"
 #include "item.h"
 #include "Oxygen.h"
+#include "shield.h"
 #include "ObjBackground.h"
 
 
