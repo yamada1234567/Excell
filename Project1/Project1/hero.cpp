@@ -26,6 +26,7 @@ void CObjHero::Init()
 	m_bullet = 0;
 	m_o=10;
 	m_time = 0;
+	Attack_Item=0;
 
 	//当たり判定用hitboxを作成
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
@@ -44,10 +45,25 @@ void CObjHero::Action()
 		{
 			if (m_f == true)
 			{
+				//for (int i=0; i<360; i+=20)
+				//{
+				//	//３弾丸オブジェクト作成
+				//	CObjTripleBullet* obj_b = new CObjTripleBullet(m_x, m_y,i*45,5);
+				//	Objs::InsertObj(obj_b, OBJ_TRIPLEBULLET, 1);
+				//}
+				
+
+
+					
+				////３弾丸オブジェクト作成(右斜め)
+				//CObjTripleBullet* obj_b = new CObjTripleBullet(m_x + 3.0f, m_y, -45, 5);
+				//Objs::InsertObj(obj_b, OBJ_TRIPLEBULLET, 1);
+
 				//弾丸オブジェクト作成
 				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
+				
 				m_f = false;
 
 			}
@@ -156,7 +172,13 @@ void CObjHero::Action()
 		}
 		
 	}
+	//酸素減少
+	if (hit->CheckObjNameHit(OBJ_OXYGEN) != nullptr)
+	{
+		m_o = 10;
 
+	}
+	//酸素０で消滅
 	if (m_time % 60 == 0)
 	{
 		m_o--;
@@ -171,12 +193,12 @@ void CObjHero::Action()
 
 		}
 	}
-
-	if (hit->CheckObjNameHit(OBJ_OXYGEN) != nullptr)
+	//アイテム判定
+	if (hit->CheckObjNameHit(OBJ_TRIPLEBULLET) != nullptr)
 	{
-		m_o = 10;
-
+		Attack_Item=1;
 	}
+
 
 }
 

@@ -186,7 +186,9 @@
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="shield.cpp" />
     <ClCompile Include="triplebullet.cpp" />
-    <ClCompile Include="triplebullet2.cpp" />
+    <ClCompile Include="triplebullet2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="UtilityModule.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -249,7 +251,9 @@
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="shield.h" />
     <ClInclude Include="triplebullet.h" />
-    <ClInclude Include="triplebullet2.h" />
+    <ClInclude Include="triplebullet2.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="UtilityModule.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
