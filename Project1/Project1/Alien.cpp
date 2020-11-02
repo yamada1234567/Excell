@@ -4,7 +4,7 @@
 #include <time.h>
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
-#include "meteoSin.h"
+#include "Alien.h"
 #include "GameL\HitBoxManager.h"
 
 //使用するネームスペース
@@ -17,10 +17,10 @@ CObjmeteoSin::CObjmeteoSin(float x, float y)
 	m_y = y;
 }
 //イニシャライズ
-void CObjmeteoSin::Init()
+void CObjAlien::Init()
 {
-	m_hp = 1;
-	
+	m_hp = 2;
+
 	m_r = 0.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
@@ -30,23 +30,23 @@ void CObjmeteoSin::Init()
 
 
 	//当たり判定作成
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_meteoSIN, 1);
+	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_Alien, 1);
 }
 //アクション
-void CObjmeteoSin::Action()
+void CObjAlien::Action()
 {
 	//角度加算
-	m_r+= 2.0f;
+	m_r += 2.0f;
 
 	//360°で初期値に戻す
-	if (m_r>=360.0f)
+	if (m_r >= 360.0f)
 	{
-		//m_r += 0.0f;
+		m_r += 0.0f;
 	}
 
 	//移動方向
-	m_vy = 1.0f;
-	m_vx = cos(3.14 / 180 * m_r);//???を求めてn_vyに入れる
+	m_vx = -1.0f;
+	m_vy = sin(3.14 / 180 * m_r);//???を求めてn_vyに入れる
 
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
@@ -130,7 +130,7 @@ void CObjmeteoSin::Action()
 }
 
 //ドロー
-void CObjmeteoSin::Draw()
+void CObjAlien::Draw()
 {
 	//描画
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -142,15 +142,15 @@ void CObjmeteoSin::Draw()
 	src.m_right = 50.0f;
 	src.m_bottom = 50.0f;
 	//表示位置
-	dst.m_top = m_top_right + m_y;
-	dst.m_left = m_left_bottom + m_x;
-	dst.m_right = m_top_right + m_x;
-	dst.m_bottom = m_left_bottom + m_y;
+	dst.m_top =0.0f + m_y;
+	dst.m_left = 32.0f+ m_x;
+	dst.m_right =0.0f+ m_x;
+	dst.m_bottom = 32.0f+ m_y;
 	//画像登録
 	Draw::Draw(2, &src, &dst, c, 0.0f);
 }
 
-void CObjmeteoSin::SetVector(float vx, float vy)
+void CObjAlien::SetVector(float vx, float vy)
 {
 	m_vx = vx;
 	m_vy = vy;
