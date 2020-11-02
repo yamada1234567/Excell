@@ -23,6 +23,7 @@ void CObjHero::Init()
 	m_vy = 0.0f;
 	m_f = true;
 	m_hp = 3;
+	m_bullet = 0;
 	m_o=10;
 	m_time = 0;
 

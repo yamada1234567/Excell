@@ -88,17 +88,23 @@ void CObjmeteoLD::Action()
 
 			//アイテム　作成中
 			srand(time(NULL));
-			item = rand() % 2;//アイテムが出る確率
-			if (item == 0)
-			{
-				CObjitem* obj_b = new CObjitem(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_ITEM, 1);
-			}
+			item = rand() % 30;//アイテムが出る確率
 			if (item == 1)
 			{
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 			}
+			if (item == 2)
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			}
+			if (item == 3)
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			}
+
 
 		}
 	}
