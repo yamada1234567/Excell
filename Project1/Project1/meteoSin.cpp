@@ -36,7 +36,7 @@ void CObjmeteoSin::Init()
 void CObjmeteoSin::Action()
 {
 	//角度加算
-	m_r += 2.0f;
+	m_r+= 2.0f;
 
 	//360°で初期値に戻す
 	if (m_r>=360.0f)
@@ -46,7 +46,7 @@ void CObjmeteoSin::Action()
 
 	//移動方向
 	m_vy = 1.0f;
-	m_vx = tan(3.14 / 180 * m_r);//???を求めてn_vyに入れる
+	m_vx = cos(3.14 / 180 * m_r);//???を求めてn_vyに入れる
 
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
@@ -65,7 +65,8 @@ void CObjmeteoSin::Action()
 	m_vx *= 0.0f;
 	m_vy *= 6.0f;
 
-	m_x += m_vx;
+	m_x += m_vx=3;
+
 	m_y += m_vy;
 
 	//hitbox更新用ポインターの取得
