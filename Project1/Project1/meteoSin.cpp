@@ -4,21 +4,24 @@
 #include <time.h>
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
-#include "meteoRD.h"
+#include "meteoSin.h"
 #include "GameL\HitBoxManager.h"
 
 //使用するネームスペース
 using namespace GameL;
 
-CObjmeteoRD::CObjmeteoRD(float x, float y)
+CObjmeteoSin::CObjmeteoSin(float x, float y)
 {
+
 	m_x = x;
 	m_y = y;
 }
 //イニシャライズ
-void CObjmeteoRD::Init()
+void CObjmeteoSin::Init()
 {
 	m_hp = 1;
+	
+	m_r = 0.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_time = 0;
@@ -27,14 +30,23 @@ void CObjmeteoRD::Init()
 
 
 	//当たり判定作成
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_meteoRD, 1);
+	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_meteoSIN, 1);
 }
 //アクション
-void CObjmeteoRD::Action()
+void CObjmeteoSin::Action()
 {
+	//角度加算
+	m_r += 2.0f;
+
+	//360°で初期値に戻す
+	if (m_r>=360.0f)
+	{
+		//m_r += 0.0f;
+	}
+
 	//移動方向
-	m_vx =1.0f;
-	m_vy =1.0f;
+	m_vy = 1.0f;
+	m_vx = tan(3.14 / 180 * m_r);//???を求めてn_vyに入れる
 
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
@@ -50,7 +62,7 @@ void CObjmeteoRD::Action()
 		m_vy = 1.0f / r * m_vy;
 	}
 	//加速
-	m_vx *= 6.0f;
+	m_vx *= 0.0f;
 	m_vy *= 6.0f;
 
 	m_x += m_vx;
@@ -75,7 +87,7 @@ void CObjmeteoRD::Action()
 	}
 
 
-	/*ダメージ判定*/
+	//ダメージ判定
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
@@ -85,20 +97,6 @@ void CObjmeteoRD::Action()
 
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
-
-			//アイテム　作成中
-			srand(time(NULL));
-			item = rand() % 2;//アイテムが出る確率
-			if (item == 0)
-			{
-				CObjitem* obj_b = new CObjitem(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_ITEM, 1);
-			}
-			if (item == 1)
-			{
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-			}
 
 		}
 	}
@@ -128,12 +126,10 @@ void CObjmeteoRD::Action()
 	}
 
 
-
-
-
 }
+
 //ドロー
-void CObjmeteoRD::Draw()
+void CObjmeteoSin::Draw()
 {
 	//描画
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -152,7 +148,8 @@ void CObjmeteoRD::Draw()
 	//画像登録
 	Draw::Draw(2, &src, &dst, c, 0.0f);
 }
-void CObjmeteoRD::SetVector(float vx, float vy)
+
+void CObjmeteoSin::SetVector(float vx, float vy)
 {
 	m_vx = vx;
 	m_vy = vy;

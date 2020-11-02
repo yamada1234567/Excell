@@ -32,11 +32,10 @@ void CObjmeteoS::Init()
 //アクション
 void CObjmeteoS::Action()
 {
-
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
-	
+
 	if (r == 0.0f)
 	{
 		;
@@ -46,6 +45,7 @@ void CObjmeteoS::Action()
 		m_vx = 1.0f / r * m_vx;
 		m_vy = 1.0f / r * m_vy;
 	}
+
 	//加速
 	m_vx *= 0.0f;
 	m_vy *= 6.0f;
@@ -85,11 +85,16 @@ void CObjmeteoS::Action()
 
 			//アイテム　作成中
 			srand(time(NULL));
-			item = rand() % 1;//アイテムが出る確率
+			item = rand() % 2;//アイテムが出る確率
 			if (item == 0)
 			{
 				CObjitem* obj_b = new CObjitem(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_ITEM, 1);
+			}
+			if (item == 1)
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 			}
 			
 		}
@@ -120,10 +125,8 @@ void CObjmeteoS::Action()
 	}
 	
 
-
-
-
 }
+
 //ドロー
 void CObjmeteoS::Draw()
 {

@@ -4,23 +4,23 @@
 #include <time.h>
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
-#include "meteoRD.h"
+#include "meteoLD.h"
 #include "GameL\HitBoxManager.h"
 
 //使用するネームスペース
 using namespace GameL;
 
-CObjmeteoRD::CObjmeteoRD(float x, float y)
+CObjmeteoLD::CObjmeteoLD(float x, float y)
 {
 	m_x = x;
 	m_y = y;
 }
 //イニシャライズ
-void CObjmeteoRD::Init()
+void CObjmeteoLD::Init()
 {
 	m_hp = 1;
 	m_vx = 0.0f;
-	m_vy = 0.0f;
+	m_vy = -1.0f;
 	m_time = 0;
 	m_left_bottom = 32.0f;//表示位置
 	m_top_right = 0.0f; //表示位置
@@ -30,11 +30,11 @@ void CObjmeteoRD::Init()
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_meteoRD, 1);
 }
 //アクション
-void CObjmeteoRD::Action()
+void CObjmeteoLD::Action()
 {
 	//移動方向
-	m_vx =1.0f;
-	m_vy =1.0f;
+	m_vx = -1.0f;
+	m_vy = 1.0f;
 
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
@@ -133,7 +133,7 @@ void CObjmeteoRD::Action()
 
 }
 //ドロー
-void CObjmeteoRD::Draw()
+void CObjmeteoLD::Draw()
 {
 	//描画
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -152,7 +152,7 @@ void CObjmeteoRD::Draw()
 	//画像登録
 	Draw::Draw(2, &src, &dst, c, 0.0f);
 }
-void CObjmeteoRD::SetVector(float vx, float vy)
+void CObjmeteoLD::SetVector(float vx, float vy)
 {
 	m_vx = vx;
 	m_vy = vy;

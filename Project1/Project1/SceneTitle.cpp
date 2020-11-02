@@ -30,8 +30,6 @@ CSceneTitle::~CSceneTitle()
 //ゲームメイン初期化メソッド
 void CSceneTitle::InitScene()
 {
-	//出力させる文字もグラフィックを作成
-	Font::SetStrTex(L"シューティングゲーム");
 
 	//音楽読み込み
 	//Audio::LoadAudio( 0 , L"BGMTitle.wav", SOUND_TYPE::BACK_MUSIC);
