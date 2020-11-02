@@ -15,6 +15,7 @@ enum OBJ_NAME
 	OBJ_meteoRD,
 	OBJ_meteoLD,
 	OBJ_meteoSIN,
+	OBJ_Alien,
 	OBJ_BOSS,
 
 	OBJ_OXYGEN,
@@ -83,6 +84,7 @@ struct UserData
 #include "meteoRD.h"
 #include "meteoLD.h"
 #include "meteoSin.h"
+#include"Alien.h"
 #include "Boss.h"
 #include "item.h"
 #include "Oxygen.h"
@@ -98,6 +100,11 @@ struct UserData
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
 #include "SceneStage2.h"
+#include "SceneStage3.h"
+#include "SceneStage4.h"
+#include "SceneStage5.h"
+#include "SceneLast.h"
+
 #include "SceneTitle.h"
 #include "SceneGameOver.h"
 #include "SceneClear.h"
@@ -106,5 +113,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneMain
+#define SET_GAME_START CSceneStage2
 //-----------------------------------------------

@@ -39,37 +39,9 @@ void CSceneMain::InitScene()
 	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
 	Objs::InsertObj(obj,OBJ_HERO,1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
-
-
-	//敵メテオ
-	CObjmeteoRD* obj_meteoRD = new CObjmeteoRD(100,100);
-	Objs::InsertObj(obj_meteoRD, OBJ_meteoRD, 4);
-
-	//敵メテオ
-	//CObjmeteoM* obj_meteoM = new CObjmeteoM(100, 100);
-	//Objs::InsertObj(obj_meteoM, OBJ_meteoM, 3);
-	
-	//敵メテオ
-	//CObjmeteoL* obj_meteoL = new CObjmeteoL(100, 100);
-	//Objs::InsertObj(obj_meteoL, OBJ_meteoL, 2);
-
-	//アイテム
-	//CObjitem* obj_item = new CObjitem(100, 100);
-	//Objs::InsertObj(obj_item, OBJ_ITEM, 5);
-	
-	//ボス
-	/*CObjBoss* obj_Boss = new CObjBoss(300, 120);
-	Objs::InsertObj(obj_meteoS, OBJ_BOSS, 4);*/
-
 	//背景
 	CObjBackground* back = new CObjBackground();
 	Objs::InsertObj(back, OBJ_BACKGROUND, 0);
-
-	//テスト用
-	//CObjTripleBullet* obj_triple_bullet = new CObjTripleBullet(500, 200, 45, 5);
-	//Objs::InsertObj(obj_triple_bullet, OBJ_BULLET, 2);
-
-
 
 	m_time = 0;
 }
@@ -206,6 +178,13 @@ void CSceneMain::Scene()
 		Objs::InsertObj(obj, OBJ_meteoS, 4);
 		obj->SetVector(0.0f, 1.0f);
 	}
+	else if (m_time == 260)
+	{
+	CObjmeteoL* obj;
+	obj = new CObjmeteoL(700.0f, 0);
+	Objs::InsertObj(obj, OBJ_meteoL, 2);
+	obj->SetVector(0.0f, 1.0f);
+	}
 	else if (m_time == 300)
 	{
 		CObjmeteoS* obj;
@@ -257,6 +236,13 @@ void CSceneMain::Scene()
 		obj = new CObjmeteoS(460.0f, 0.0f);
 		Objs::InsertObj(obj, OBJ_meteoS, 4);
 		obj->SetVector(0.0f, 1.0f);
+	}
+	else if (m_time == 420)
+	{
+	CObjmeteoL* obj;
+	obj = new CObjmeteoL(700.0f, 0);
+	Objs::InsertObj(obj, OBJ_meteoL, 2);
+	obj->SetVector(0.0f, 1.0f);
 	}
 	else if (m_time == 430)
 	{
@@ -381,6 +367,13 @@ void CSceneMain::Scene()
 	Objs::InsertObj(obj, OBJ_meteoS, 4);
 	obj->SetVector(0.0f, 1.0f);
 	}
+	else if (m_time == 720)
+	{
+	CObjmeteoL* obj;
+	obj = new CObjmeteoL(700.0f, 0);
+	Objs::InsertObj(obj, OBJ_meteoL, 2);
+	obj->SetVector(0.0f, 1.0f);
+	}
 	else if (m_time == 740)
 	{
 	CObjmeteoL* obj;
@@ -500,6 +493,13 @@ void CSceneMain::Scene()
 	obj->SetVector(0.0f, 1.0f);
 	obj = new CObjmeteoS(500.0f, 0);
 	Objs::InsertObj(obj, OBJ_meteoS, 4);
+	obj->SetVector(0.0f, 1.0f);
+	}
+	else if (m_time == 1118)
+	{
+	CObjmeteoL* obj;
+	obj = new CObjmeteoL(700.0f, 0);
+	Objs::InsertObj(obj, OBJ_meteoL, 2);
 	obj->SetVector(0.0f, 1.0f);
 	}
 	else if (m_time == 1200)
