@@ -37,5 +37,5 @@ void CObjGameOver::Draw()
 	Font::StrDraw(L"YOU LOST", 325, 200, 32, c);
 	Font::StrDraw(L"GAME OVER", 320, 250, 32, c);
 	Font::StrDraw(L"NEXT_CHALLENGE:ENTER_KEY", 200, 350, 32, c);
-
+											//y座標(左右) , x座標(上下) , サイズ
 }

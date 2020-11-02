@@ -21,7 +21,7 @@ void CObjClear::Action()
 	//エンターキーを押してシーン：ゲームメインに移動する
 	if (Input::GetVKey(VK_RETURN) == true)
 	{
-		Scene::SetScene(new CSceneTitle());
+		Scene::SetScene(new CSceneStage2());
 		m_key_flag = true;
 	}
 	else
@@ -35,6 +35,7 @@ void CObjClear::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	Font::StrDraw(L"おめでとう！", 325, 200, 32, c);
-	Font::StrDraw(L"next", 320, 250, 32, c);
+	Font::StrDraw(L"1ステージクリア！", 260, 225, 32, c);
+	Font::StrDraw(L"next:ENTER_KEY", 225, 275, 50, c);
+						        //y座標(左右) , x座標(上下) , サイズ
 }

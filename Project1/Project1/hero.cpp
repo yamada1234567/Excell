@@ -4,7 +4,11 @@
 #include "GameL\HitBoxManager.h"
 #include "GameHead.h"
 #include "hero.h"
+#include "triplebullet.h"
 #include "UtilityModule.h"
+#include "triplebullet2.h"
+
+#include "GameL/DrawFont.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -27,25 +31,28 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
-	//主人公機の弾丸発射
-	if (Input::GetVKey('Z') == true)
-	{
-		if (m_f == true)
+
+	//Hitboxの内容を更新
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x, m_y);
+
+		//主人公機の弾丸発射
+		if (Input::GetVKey('Z') == true)
 		{
-			//弾丸オブジェクト作成
-			CObjBullet* obj_b = new CObjBullet(m_x+3.0f, m_y);
-			Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+			if (m_f == true)
+			{
+				//弾丸オブジェクト作成
+				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
+				m_f = false;
 
-
-
-			m_f = false;
+			}
 		}
-	}
-    else
-    {
-		m_f = true;
-    }
+		else
+		{
+			m_f = true;
+		}
 
 	//操作
 	if (Input::GetVKey(VK_RIGHT) == true)
@@ -126,8 +133,8 @@ void CObjHero::Action()
 	}
 
 	//Hitboxの内容を更新
-	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x, m_y);
+	//CHitBox* hit = Hits::GetHitBox(this);
+	//hit->SetPos(m_x, m_y);
 
 
 
@@ -140,12 +147,15 @@ void CObjHero::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 
-		//主人公消滅でシーンをゲームオバーに移行する
+		//主人公消滅でシーンをゲームオーバーに移行する
 		Scene::SetScene((CScene*)new CSceneGameOver());
 
 		}
 		
 	}
+
+
+
 }
 
 
@@ -172,5 +182,8 @@ void CObjHero::Draw()
 
 	//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);
+
+
+	Font::StrDraw(L"YOU LOST", 325, 200, 32, c);
 }
 //600*800

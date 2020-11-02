@@ -4,32 +4,50 @@
 #include <time.h>
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
-#include "meteoL.h"
+#include "meteoSin.h"
 #include "GameL\HitBoxManager.h"
+
 //使用するネームスペース
 using namespace GameL;
-CObjmeteoL::CObjmeteoL(float x, float y)
+
+CObjmeteoSin::CObjmeteoSin(float x, float y)
 {
+
 	m_x = x;
 	m_y = y;
 }
 //イニシャライズ
-void CObjmeteoL::Init()
+void CObjmeteoSin::Init()
 {
-	m_hp = 5;
+	m_hp = 1;
+	
+	m_r = 0.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-	m_time=0;
-	m_left_bottom = 96.0f;//表示位置
-	m_top_right   = 0.0f; //表示位置
+	m_time = 0;
+	m_left_bottom = 32.0f;//表示位置
+	m_top_right = 0.0f; //表示位置
+
 
 	//当たり判定作成
-	Hits::SetHitBox(this, m_x, m_y, 96, 96, ELEMENT_ENEMY, OBJ_meteoL, 1);
+	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_meteoSIN, 1);
 }
 //アクション
-void CObjmeteoL::Action()
+void CObjmeteoSin::Action()
 {
-	
+	//角度加算
+	m_r += 2.0f;
+
+	//360°で初期値に戻す
+	if (m_r>=360.0f)
+	{
+		//m_r += 0.0f;
+	}
+
+	//移動方向
+	m_vy = 1.0f;
+	m_vx = tan(3.14 / 180 * m_r);//???を求めてn_vyに入れる
+
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
@@ -43,10 +61,9 @@ void CObjmeteoL::Action()
 		m_vx = 1.0f / r * m_vx;
 		m_vy = 1.0f / r * m_vy;
 	}
-
 	//加速
-	m_vx *= 1.0f;
-	m_vy *= 2.0f;
+	m_vx *= 0.0f;
+	m_vy *= 6.0f;
 
 	m_x += m_vx;
 	m_y += m_vy;
@@ -61,7 +78,7 @@ void CObjmeteoL::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
-	
+
 	//主人公に当たったら消滅
 	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
 	{
@@ -74,21 +91,13 @@ void CObjmeteoL::Action()
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
-		if (0>=m_hp)
+		if (0 >= m_hp)
 		{
 			int item;
 
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 
-			//アイテム　作成中
-			srand(time(NULL));
-			item = rand() % 15;//アイテムが出る確率
-			if (item == 0)
-			{
-				//CObjitem* obj_b = new CObjitem(m_x + 3.0f, m_y);
-				//Objs::InsertObj(obj_b, OBJ_ITEM, 1);
-			}
 		}
 	}
 
@@ -98,7 +107,7 @@ void CObjmeteoL::Action()
 	//敵回転
 	if (m_time >= 25)
 	{
-		m_top_right = 96.0f;
+		m_top_right = 32.0f;
 		m_left_bottom = 0.0f;
 
 
@@ -112,13 +121,15 @@ void CObjmeteoL::Action()
 	else
 	{
 		m_top_right = 0.0f;
-		m_left_bottom = 96.0f;
+		m_left_bottom = 32.0f;
 
 	}
 
+
 }
+
 //ドロー
-void CObjmeteoL::Draw()
+void CObjmeteoSin::Draw()
 {
 	//描画
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -137,7 +148,8 @@ void CObjmeteoL::Draw()
 	//画像登録
 	Draw::Draw(2, &src, &dst, c, 0.0f);
 }
-void CObjmeteoL::SetVector(float vx, float vy)
+
+void CObjmeteoSin::SetVector(float vx, float vy)
 {
 	m_vx = vx;
 	m_vy = vy;
