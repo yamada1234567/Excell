@@ -24,6 +24,8 @@ void CObjHero::Init()
 	m_f = true;
 	m_hp = 3;
 	m_bullet = 0;
+	m_o=10;
+	m_time = 0;
 
 	//当たり判定用hitboxを作成
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
@@ -32,6 +34,7 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
+	m_time++;
 	//Hitboxの内容を更新
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
@@ -154,11 +157,29 @@ void CObjHero::Action()
 		
 	}
 
-	
+	if (m_time % 60 == 0)
+	{
+		m_o--;
 
+		if (0 == m_o)
+		{
+			//this->SetStatus(false);
+			//Hits::DeleteHitBox(this);
 
+			////主人公消滅でシーンをゲームオーバーに移行する
+			//Scene::SetScene((CScene*)new CSceneGameOver());
+
+		}
+	}
+
+	if (hit->CheckObjNameHit(OBJ_OXYGEN) != nullptr)
+	{
+		m_o = 10;
+
+	}
 
 }
+
 
 //ドロー
 void CObjHero::Draw()
@@ -184,7 +205,59 @@ void CObjHero::Draw()
 	//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 
+	if (m_hp==3)
+	{
+		Font::StrDraw(L"HP:3/3", 0, 568, 32, c);
+	}
+	else if (m_hp == 2)
+	{
+		Font::StrDraw(L"HP:2/3", 0, 568, 32, c);
+	}
+	else if (m_hp == 1)
+	{
+		Font::StrDraw(L"HP:1/3", 0, 568, 32, c);
+	}
 
-	Font::StrDraw(L"YOU LOST", 325, 200, 32, c);
+
+	if (m_o == 10)
+	{
+		Font::StrDraw(L"10/10", 110, 568, 32, c);
+	}
+	else if (m_o == 9)
+	{
+		Font::StrDraw(L"9/10", 110, 568, 32, c);
+	}
+	else if (m_o ==8)
+	{
+		Font::StrDraw(L"8/10", 110, 568, 32, c);
+	}
+	else if (m_o == 7)
+	{
+		Font::StrDraw(L"7/10", 110, 568, 32, c);
+	}
+	else if (m_o ==6)
+	{
+		Font::StrDraw(L"6/10", 110, 568, 32, c);
+	}
+	else if (m_o == 5)
+	{
+		Font::StrDraw(L"5/10", 110, 568, 32, c);
+	}
+	else if (m_o == 4)
+	{
+		Font::StrDraw(L"4/10", 110, 568, 32, c);
+	}
+	else if (m_o == 3)
+	{
+		Font::StrDraw(L"3/10", 110, 568, 32, c);
+	}
+	else if (m_o == 2)
+	{
+		Font::StrDraw(L"2/10", 110, 568, 32, c);
+	}
+	else if (m_o == 1)
+	{
+		Font::StrDraw(L"1/10", 110, 568, 32, c);
+	}
 }
 //600*800

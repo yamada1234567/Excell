@@ -27,6 +27,8 @@ private:
 	int m_hp;
 	int m_bullet;
 
+	int m_o;
+	int m_time;
 
 };
 
