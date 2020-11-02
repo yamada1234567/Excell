@@ -127,6 +127,7 @@
     <ClCompile Include="Alien.cpp">
       <Filter>ソースファイル\敵</Filter>
     </ClCompile>
+    <ClCompile Include="AlienBullet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -255,6 +256,7 @@
     <ClInclude Include="shield.h">
       <Filter>ソースファイル\アイテム</Filter>
     </ClInclude>
+    <ClInclude Include="AlienBullet.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ヘッダーファイル">

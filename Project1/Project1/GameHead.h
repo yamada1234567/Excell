@@ -7,7 +7,6 @@ enum OBJ_NAME
 	//ゲームで使うオブジェクトの名前
 	//OBJ_○○と表記
 	OBJ_HERO,
-	OBJ_BULLET,
 	OBJ_TRIPLE,
 	OBJ_meteoS,
 	OBJ_meteoM,
@@ -17,6 +16,10 @@ enum OBJ_NAME
 	OBJ_meteoSIN,
 	OBJ_Alien,
 	OBJ_BOSS,
+
+	OBJ_BULLET,
+	OBJ_TRIPLEBULLET,
+	OBJ_TRIPLEBULLET2,
 
 	OBJ_OXYGEN,
 	OBJ_ITEM,
@@ -78,13 +81,14 @@ struct UserData
 #include "hero.h"
 #include "bullet.h"
 #include "triplebullet.h"
+#include "triplebullet2.h"
 #include "meteoS.h"
 #include "meteoM.h"
 #include "meteoL.h"
 #include "meteoRD.h"
 #include "meteoLD.h"
 #include "meteoSin.h"
-#include"Alien.h"
+#include "Alien.h"
 #include "Boss.h"
 #include "item.h"
 #include "Oxygen.h"
