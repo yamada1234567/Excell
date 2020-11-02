@@ -12,7 +12,6 @@ using namespace GameL;
 
 CObjmeteoSin::CObjmeteoSin(float x, float y)
 {
-
 	m_x = x;
 	m_y = y;
 }
