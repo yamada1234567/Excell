@@ -12,7 +12,6 @@ using namespace GameL;
 
 CObjAlien::CObjAlien(float x, float y)
 {
-
 	m_x = x;
 	m_y = y;
 }
