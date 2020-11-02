@@ -171,6 +171,11 @@ void CObjHero::Action()
 		}
 	}
 
+	if (hit->CheckObjNameHit(OBJ_OXYGEN) != nullptr)
+	{
+		m_o = 10;
+
+	}
 
 }
 

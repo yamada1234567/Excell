@@ -5,7 +5,7 @@
 using namespace GameL;
 
 //オブジェクト:敵機
-class CObjOxygen :public CObj//メテオ小 
+class CObjOxygen :public CObj//酸素
 {
 public:
 	CObjOxygen(float x, float y);
@@ -18,6 +18,5 @@ private:
 	float m_y;
 	float m_vx;
 	float m_vy;
-	int m_hp;
 };
 
