@@ -29,8 +29,7 @@ CSceneClear::~CSceneClear()
 //ゲームメイン初期化メソッド
 void CSceneClear::InitScene()
 {
-	Font::SetStrTex(L"おめでとう！");
-	Font::SetStrTex(L"次のステージに進め");
+
 
 	CObjClear* obj = new CObjClear();
 	Objs::InsertObj(obj, OBJ_CLEAR, 10);

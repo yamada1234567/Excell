@@ -37,6 +37,6 @@ void CObjTitle::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	Font::StrDraw(L"Enter:スタート", 200, 300, 32, c);
-
+	Font::StrDraw(L"Enter:スタート", 260, 250, 32, c);
+								//y座標(左右) , x座標(上下) , サイズ
 }

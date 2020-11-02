@@ -29,28 +29,28 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
-	//主人公機の弾丸発射
-	if (Input::GetVKey('Z') == true)
-	{
-		if (m_f == true)
+
+	//Hitboxの内容を更新
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x, m_y);
+
+		//主人公機の弾丸発射
+		if (Input::GetVKey('Z') == true)
 		{
-			//弾丸オブジェクト作成
-			CObjBullet* obj_b = new CObjBullet(m_x+3.0f, m_y);
-			Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+			if (m_f == true)
+			{
+				//弾丸オブジェクト作成
+				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
-			CObjTripleBullet* obj_triple_bullet = new CObjTripleBullet(m_x + 3.0f, m_y, 45, 12.0);//（位置、角度、速度)
-			Objs::InsertObj(obj_triple_bullet, OBJ_TRIPLE, 1);
+				m_f = false;
 
-			CObjTripleBullet2* obj_triple_bullet2= new CObjTripleBullet2(m_x + 3.0f, m_y, -45, 12.0);//（位置、角度、速度)
-			Objs::InsertObj(obj_triple_bullet2, OBJ_TRIPLE, 1);
-
-			m_f = false;
+			}
 		}
-	}
-    else
-    {
-		m_f = true;
-    }
+		else
+		{
+			m_f = true;
+		}
 
 	//操作
 	if (Input::GetVKey(VK_RIGHT) == true)
@@ -131,8 +131,8 @@ void CObjHero::Action()
 	}
 
 	//Hitboxの内容を更新
-	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x, m_y);
+	//CHitBox* hit = Hits::GetHitBox(this);
+	//hit->SetPos(m_x, m_y);
 
 
 
@@ -145,7 +145,7 @@ void CObjHero::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 
-		//主人公消滅でシーンをゲームオバーに移行する
+		//主人公消滅でシーンをゲームオーバーに移行する
 		Scene::SetScene((CScene*)new CSceneGameOver());
 
 		}
