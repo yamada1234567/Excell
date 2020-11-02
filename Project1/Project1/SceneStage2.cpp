@@ -72,5 +72,12 @@ void CSceneStage2::Scene()
 		Objs::InsertObj(obj, OBJ_meteoSIN, 4);
 		obj->SetVector(0.0f, 1.0f);
 	}
+	if (m_time ==200)
+	{
 
+		//ƒNƒŠƒA‚ÉˆÚ“®
+		Scene::SetScene(new CSceneClear());
+
+
+	}
 }
