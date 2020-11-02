@@ -38,6 +38,8 @@ void CSceneMain::InitScene()
 	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
 	Objs::InsertObj(obj,OBJ_HERO,1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
+
+
 	//敵メテオ
 	CObjmeteoRD* obj_meteoRD = new CObjmeteoRD(100,100);
 	Objs::InsertObj(obj_meteoRD, OBJ_meteoRD, 4);
@@ -65,6 +67,8 @@ void CSceneMain::InitScene()
 	//テスト用
 	//CObjTripleBullet* obj_triple_bullet = new CObjTripleBullet(500, 200, 45, 5);
 	//Objs::InsertObj(obj_triple_bullet, OBJ_BULLET, 2);
+
+
 
 	m_time = 0;
 }

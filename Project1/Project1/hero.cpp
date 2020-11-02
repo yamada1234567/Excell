@@ -8,6 +8,8 @@
 #include "UtilityModule.h"
 #include "triplebullet2.h"
 
+#include "GameL/DrawFont.h"
+
 //使用するネームスペース
 using namespace GameL;
 
@@ -152,6 +154,8 @@ void CObjHero::Action()
 		
 	}
 
+
+
 }
 
 
@@ -178,5 +182,8 @@ void CObjHero::Draw()
 
 	//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);
+
+
+	Font::StrDraw(L"YOU LOST", 325, 200, 32, c);
 }
 //600*800
