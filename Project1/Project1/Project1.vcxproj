@@ -182,6 +182,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="shield.cpp" />
     <ClCompile Include="triplebullet.cpp" />
     <ClCompile Include="triplebullet2.cpp" />
     <ClCompile Include="UtilityModule.cpp" />
@@ -242,6 +243,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="SceneTitle.h" />
+    <ClInclude Include="shield.h" />
     <ClInclude Include="triplebullet.h" />
     <ClInclude Include="triplebullet2.h" />
     <ClInclude Include="UtilityModule.h" />
