@@ -25,7 +25,8 @@ private:
 	float m_vy;//ｙ方向ベクトル変換用
 
 	int m_hp;
-
+	int m_o;
+	int m_time;
 
 };
 
