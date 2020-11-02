@@ -17,6 +17,7 @@ enum OBJ_NAME
 	OBJ_meteoSIN,
 	OBJ_Alien,
 	OBJ_BOSS,
+	OBJ_AlienBullet,
 
 	OBJ_OXYGEN,
 	OBJ_ITEM,
@@ -108,10 +109,10 @@ struct UserData
 #include "SceneTitle.h"
 #include "SceneGameOver.h"
 #include "SceneClear.h"
-
+//sdsdfsfsfsdf
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneStage2
+#define SET_GAME_START CSceneMain
 //-----------------------------------------------

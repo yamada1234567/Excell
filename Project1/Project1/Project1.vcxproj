@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Alien.cpp" />
+    <ClCompile Include="AlienBullet.cpp" />
     <ClCompile Include="Boss.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
@@ -190,6 +191,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Alien.h" />
+    <ClInclude Include="AlienBullet.h" />
     <ClInclude Include="Boss.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
