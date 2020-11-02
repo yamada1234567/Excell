@@ -23,6 +23,7 @@ void CObjHero::Init()
 	m_vy = 0.0f;
 	m_f = true;
 	m_hp = 3;
+	m_bullet = 0;
 
 	//当たり判定用hitboxを作成
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
@@ -31,7 +32,6 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
-
 	//Hitboxの内容を更新
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
@@ -154,10 +154,11 @@ void CObjHero::Action()
 		
 	}
 
+	
+
 
 
 }
-
 
 //ドロー
 void CObjHero::Draw()
