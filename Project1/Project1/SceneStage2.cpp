@@ -33,6 +33,7 @@ void CSceneStage2::InitScene()
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
 	Draw::LoadImage(L"Boss(moon).png", 6, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
+	Draw::LoadImage(L"UFO.png", 8, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
@@ -54,6 +55,12 @@ void CSceneStage2::Scene()
 {
 	m_time++;
 
+	if (m_time == 30)
+	{
+		CObjAlien* obj = new CObjAlien(400.0f, 200.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 8);
+		obj->SetVector(0.0f, 1.0f);
+	}
 	if (m_time % 50 == 0)
 	{
 		CObjmeteoRD* obj = new CObjmeteoRD(0.0f, 60.0f);

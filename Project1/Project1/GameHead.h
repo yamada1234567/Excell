@@ -17,7 +17,6 @@ enum OBJ_NAME
 	OBJ_meteoSIN,
 	OBJ_Alien,
 	OBJ_BOSS,
-	OBJ_AlienBullet,
 
 	OBJ_OXYGEN,
 	OBJ_ITEM,
