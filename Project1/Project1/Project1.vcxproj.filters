@@ -118,16 +118,30 @@
     <ClCompile Include="bullet.cpp">
       <Filter>ソースファイル\主人公</Filter>
     </ClCompile>
-    <ClCompile Include="Boss.cpp">
-      <Filter>ソースファイル\敵\ボス</Filter>
-    </ClCompile>
     <ClCompile Include="shield.cpp">
       <Filter>ソースファイル\アイテム</Filter>
     </ClCompile>
     <ClCompile Include="Alien.cpp">
       <Filter>ソースファイル\敵</Filter>
     </ClCompile>
-    <ClCompile Include="AlienBullet.cpp" />
+    <ClCompile Include="Boss.cpp">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss2.cpp">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss3.cpp">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss4.cpp">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss5.cpp">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss6.cpp">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -247,16 +261,30 @@
     <ClInclude Include="bullet.h">
       <Filter>ソースファイル\主人公</Filter>
     </ClInclude>
-    <ClInclude Include="Boss.h">
-      <Filter>ソースファイル\敵\ボス</Filter>
-    </ClInclude>
     <ClInclude Include="Alien.h">
       <Filter>ソースファイル\敵</Filter>
     </ClInclude>
     <ClInclude Include="shield.h">
       <Filter>ソースファイル\アイテム</Filter>
     </ClInclude>
-    <ClInclude Include="AlienBullet.h" />
+    <ClInclude Include="Boss.h">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss2.h">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss3.h">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss4.h">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss5.h">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss6.h">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ヘッダーファイル">
