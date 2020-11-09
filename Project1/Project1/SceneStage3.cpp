@@ -75,7 +75,7 @@ void CSceneStage3::Scene()
 	if (m_time==200)
 	{
 		//ƒNƒŠƒA‚ÉˆÚ“®
-		Scene::SetScene(new CSceneClear());
+		Scene::SetScene(new CSceneClear(2));
 	}
 
 }

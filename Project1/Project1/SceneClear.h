@@ -9,9 +9,10 @@ using namespace GameL;
 class CSceneClear :public CScene
 {
 public:
-	CSceneClear();
+	CSceneClear(int Cou);
 	~CSceneClear();
 	void InitScene();  //ゲームタイトルの初期化メソッド
 	void Scene();      //ゲームタイトルの実行中メソッド
 private:
+	int Count;
 };

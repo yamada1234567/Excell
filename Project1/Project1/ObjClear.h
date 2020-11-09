@@ -9,7 +9,7 @@ using namespace GameL;
 class CObjClear :public CObj
 {
 public:
-	CObjClear() {};
+	CObjClear(int Cou);
 	~CObjClear() {};
 	void Init();  //イニシャライズ
 	void Action();//アクション
