@@ -27,7 +27,7 @@ void CObjBoss6::Init()
 	m_vy = 0.0f;
 
 	//当たり判定用HiyBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 420, 420, ELEMENT_ENEMY, OBJ_BOSS5, 13);
+	Hits::SetHitBox(this, m_x, m_y, 420, 420, ELEMENT_ENEMY, OBJ_BOSS6, 13);
 }
 //アクション
 void CObjBoss6::Action()
