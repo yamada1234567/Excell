@@ -20,8 +20,8 @@ CSceneLast::CSceneLast()
 //デストラクタ
 CSceneLast::~CSceneLast()
 {
-	x = 0;
-	y = 0;
+	x = 0.0f;
+	y = 0.0f;
 
 }
 //ゲームメイン初期化メソッド
@@ -33,7 +33,7 @@ void CSceneLast::InitScene()
 	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
 	Draw::LoadImageW(L"縦背景.png", 5, TEX_SIZE_512);
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
-	Draw::LoadImage(L"Boss(Sum).png", 13, TEX_SIZE_512);
+	Draw::LoadImage(L"Boss(Sun).png", 13, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
@@ -54,13 +54,11 @@ void CSceneLast::Scene()
 	m_time++;
 
 
+	
 	if (m_time % 100 == 0)
 	{
-		y+=20.0f;
-		if (y >= 100)
-		{
-			y = 0.0;
-		}										//60
+		y=20.0;
+						
 		CObjmeteoRD* obj = new CObjmeteoRD(0.0f, y);
 		Objs::InsertObj(obj, OBJ_meteoRD, 4);
 		obj->SetVector(1.0f, 1.0f);
@@ -73,7 +71,7 @@ void CSceneLast::Scene()
 	}
 	if (m_time % 50 == 0)
 	{
-		x+=1.0f;
+		x= 10.0f;
 		if (x >= 800)
 		{
 			x = 0.0;
@@ -84,9 +82,9 @@ void CSceneLast::Scene()
 	
 
 	}
-	//if (m_time == 200)
-	//{
-	//	//クリアに移動
-	//	Scene::SetScene(new CSceneClear(5));
-	//}
+	if (m_time == 150)
+	{
+		CObjBoss6* obj = new CObjBoss6(x, 100.0f);
+		Objs::InsertObj(obj, OBJ_BOSS6, 13);
+	}
 }

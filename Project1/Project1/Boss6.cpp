@@ -72,13 +72,13 @@ void CObjBoss6::Draw()
 	//切れ取り設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 530.0f;
-	src.m_bottom = 530.0f;
+	src.m_right = 565.0f;
+	src.m_bottom = 560.0f;
 	//表示位置
-	dst.m_top = 0.0f + m_y;
-	dst.m_left = 420.0f + m_x;
-	dst.m_right = 0.0f + m_x;
-	dst.m_bottom = 420.0f + m_y;
+	dst.m_top = 420.0f + m_y;
+	dst.m_left = 0.0f + m_x;
+	dst.m_right = 420.0f + m_x;
+	dst.m_bottom = 0.0f + m_y;
 
 	//1番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(13, &src, &dst, c, 0.0f);
