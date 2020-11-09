@@ -31,7 +31,7 @@ void CSceneStage2::InitScene()
 	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
 	Draw::LoadImageW(L"ècîwåi.png", 5, TEX_SIZE_512);
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
-	Draw::LoadImage(L"Boss(moon).png", 6, TEX_SIZE_512);
+	Draw::LoadImage(L"Boss(Mars).png", 9, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
 	Draw::LoadImage(L"UFO.png", 8, TEX_SIZE_512);
 

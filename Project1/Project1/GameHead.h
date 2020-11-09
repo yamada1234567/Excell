@@ -16,6 +16,11 @@ enum OBJ_NAME
 	OBJ_meteoSIN,
 	OBJ_Alien,
 	OBJ_BOSS,
+	OBJ_BOSS2,
+	OBJ_BOSS3,
+	OBJ_BOSS4,
+	OBJ_BOSS5,
+	OBJ_BOSS6,
 
 	OBJ_BULLET,
 	OBJ_TRIPLEBULLET,
@@ -90,6 +95,11 @@ struct UserData
 #include "meteoSin.h"
 #include "Alien.h"
 #include "Boss.h"
+#include"Boss2.h"
+#include"Boss3.h"
+#include"Boss4.h"
+#include"Boss5.h"
+#include"Boss6.h"
 #include "item.h"
 #include "Oxygen.h"
 #include "shield.h"
