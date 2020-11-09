@@ -9,25 +9,34 @@
 //使用するネームスペース
 using namespace GameL;
 
+CObjClear::CObjClear(int Cou)
+{
+
+	SG = Cou;
+
+}
+
+
 //イニシャライズ
 void CObjClear::Init()
 {
 	m_key_flag = false;//キーフラグ
-	SG = 0;
-	int i;
 }
 
 //アクション
 void CObjClear::Action()
 {
+
 	if (SG==0)
 	{
 		//エンターキーを押してシーン：次のステージに移動する
 		if (Input::GetVKey(VK_RETURN) == true)
 		{
-			Scene::SetScene(new CSceneStage2());
+
 			m_key_flag = true;
-			SG+=1;
+		
+			Scene::SetScene(new CSceneStage2());
+
 		}
 		else
 		{	
@@ -43,7 +52,6 @@ void CObjClear::Action()
 		{
 			Scene::SetScene(new CSceneStage3());
 			m_key_flag = true;
-			SG += 1;
 		}
 		else
 		{
@@ -59,7 +67,6 @@ void CObjClear::Action()
 		{
 			Scene::SetScene(new CSceneStage4());
 			m_key_flag = true;
-		SG += 1;
 		}
 		else
 		{
@@ -75,7 +82,6 @@ void CObjClear::Action()
 		{
 			Scene::SetScene(new CSceneStage5());
 			m_key_flag = true;
-			SG += 1;
 		}
 		else
 		{
@@ -92,7 +98,6 @@ void CObjClear::Action()
 		{
 			Scene::SetScene(new CSceneLast());
 			m_key_flag = true;
-			SG += 1;
 		}
 		else
 		{			

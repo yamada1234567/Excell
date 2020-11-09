@@ -74,15 +74,15 @@ void CObjshield::Draw()
 	RECT_F src;
 	RECT_F dst;
 	//êÿÇÍéÊÇËê›íË
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 30.0f;
-	src.m_bottom = 28.0f;
+	src.m_top = -50.0f;
+	src.m_left = 3.0f;
+	src.m_right = 50.0f;
+	src.m_bottom = 0.0f;
 	//ï\é¶à íu
 	dst.m_top = 0.0f + m_y;
-	dst.m_left = 32.0f + m_x;
+	dst.m_left = 30.0f + m_x;
 	dst.m_right = 0.0f + m_x;
 	dst.m_bottom = 32.0f + m_y;
 	//âÊëúìoò^
-	Draw::Draw(3, &src, &dst, c, 0.0f);
+	Draw::Draw(8, &src, &dst, c, 0.0f);
 }

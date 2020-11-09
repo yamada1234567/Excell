@@ -30,7 +30,7 @@ void CObjTripleBullet::Init()
 void CObjTripleBullet::Action()
 {
 	//ˆÚ“®
-	m_y -= m_vx * m_speed;
+	m_y += m_vx * m_speed;
 	m_x += m_vx * m_speed;
 
 	
