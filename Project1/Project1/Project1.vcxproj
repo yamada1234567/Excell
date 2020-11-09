@@ -127,6 +127,11 @@
     <ClCompile Include="Boss.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Boss2.cpp" />
+    <ClCompile Include="Boss3.cpp" />
+    <ClCompile Include="Boss4.cpp" />
+    <ClCompile Include="Boss5.cpp" />
+    <ClCompile Include="Boss6.cpp" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="GameL\Audio.cpp" />
     <ClCompile Include="GameL\DirectXDevice.cpp" />
@@ -195,6 +200,11 @@
     <ClInclude Include="Boss.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Boss2.h" />
+    <ClInclude Include="Boss3.h" />
+    <ClInclude Include="Boss4.h" />
+    <ClInclude Include="Boss5.h" />
+    <ClInclude Include="Boss6.h" />
     <ClInclude Include="bullet.h" />
     <ClInclude Include="GameHead.h" />
     <ClInclude Include="GameL\Audio.h" />
