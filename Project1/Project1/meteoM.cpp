@@ -82,7 +82,7 @@ void CObjmeteoM::Action()
 
 			//アイテム　作成中
 			srand(time(NULL));
-			item = rand() % 20;//アイテムが出る確率
+			item = rand() % 35;//アイテムが出る確率
 			if (item == 1)
 			{
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
