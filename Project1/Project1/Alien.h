@@ -5,7 +5,7 @@
 using namespace GameL;
 
 //オブジェクト:敵機
-class CObjAlien :public CObj
+class CObjAlien :public CObj//Aーリアン
 {
 public:
 	CObjAlien(float x, float y);
