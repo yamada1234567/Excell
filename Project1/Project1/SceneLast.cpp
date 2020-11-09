@@ -20,6 +20,8 @@ CSceneLast::CSceneLast()
 //デストラクタ
 CSceneLast::~CSceneLast()
 {
+	x = 0.0f;
+	y = 0.0f;
 
 }
 //ゲームメイン初期化メソッド
@@ -31,16 +33,13 @@ void CSceneLast::InitScene()
 	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
 	Draw::LoadImageW(L"縦背景.png", 5, TEX_SIZE_512);
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
-	Draw::LoadImage(L"Boss(Sum).png", 13, TEX_SIZE_512);
+	Draw::LoadImage(L"Boss(Sun).png", 13, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
-	//敵メテオ
-	//CObjmeteoRD* obj_meteoRD = new CObjmeteoRD(100, 100);
-	//Objs::InsertObj(obj_meteoRD, OBJ_meteoRD, 4);
 
 	//背景
 	CObjBackground* back = new CObjBackground();
@@ -54,27 +53,38 @@ void CSceneLast::Scene()
 {
 	m_time++;
 
-	if (m_time % 50 == 0)
+
+	
+	if (m_time % 100 == 0)
 	{
-		CObjmeteoRD* obj = new CObjmeteoRD(0.0f, 60.0f);
+		y=20.0;
+						
+		CObjmeteoRD* obj = new CObjmeteoRD(0.0f, y);
 		Objs::InsertObj(obj, OBJ_meteoRD, 4);
 		obj->SetVector(1.0f, 1.0f);
 	}
-	if (m_time % 50 == 0)
+	if (m_time % 100 == 0)
 	{
 		CObjmeteoLD* obj = new CObjmeteoLD(800.0f, 60.0f);
 		Objs::InsertObj(obj, OBJ_meteoLD, 4);
 		obj->SetVector(1.0f, 1.0f);
 	}
-	if (m_time % 60 == 0)
+	if (m_time % 50 == 0)
 	{
-		CObjmeteoSin* obj = new CObjmeteoSin(368.0f, 0.0f);
-		Objs::InsertObj(obj, OBJ_meteoSIN, 4);
-		obj->SetVector(0.0f, 1.0f);
+		x= 10.0f;
+		if (x >= 800)
+		{
+			x = 0.0;
+		}
+			CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+			Objs::InsertObj(obj, OBJ_meteoS, 4);
+			obj->SetVector(0.0f, 1.0f);
+	
+
 	}
-	if (m_time == 200)
+	if (m_time == 150)
 	{
-		//クリアに移動
-		Scene::SetScene(new CSceneClear(5));
+		CObjBoss6* obj = new CObjBoss6(x, 100.0f);
+		Objs::InsertObj(obj, OBJ_BOSS6, 13);
 	}
 }
