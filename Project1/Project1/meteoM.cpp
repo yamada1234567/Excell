@@ -105,8 +105,8 @@ void CObjmeteoM::Action()
 			}
 			if (item == 6)
 			{
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+				CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
 			}
 
 		}
