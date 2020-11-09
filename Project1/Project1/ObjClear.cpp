@@ -14,6 +14,7 @@ void CObjClear::Init()
 {
 	m_key_flag = false;//キーフラグ
 	SG = 0;
+	int i;
 }
 
 //アクション

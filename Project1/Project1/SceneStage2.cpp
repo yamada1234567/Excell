@@ -84,6 +84,7 @@ void CSceneStage2::Scene()
 
 		//ƒNƒŠƒA‚ÉˆÚ“®
 		Scene::SetScene(new CSceneClear());
+		SG += 1;
 
 
 	}
