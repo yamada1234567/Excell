@@ -27,7 +27,7 @@ void CObjClear::Init()
 void CObjClear::Action()
 {
 
-	if (SG==0)
+	if (SG==2)
 	{
 		//エンターキーを押してシーン：次のステージに移動する
 		if (Input::GetVKey(VK_RETURN) == true)
@@ -45,7 +45,7 @@ void CObjClear::Action()
 		}
 
 	}
-	else if (SG == 1)
+	else if (SG == 3)
 	{
 
 		if (Input::GetVKey(VK_RETURN) == true)
@@ -60,7 +60,7 @@ void CObjClear::Action()
 		}
 	
 	}
-	else if (SG == 2)
+	else if (SG == 4)
 	{
 
 		if (Input::GetVKey(VK_RETURN) == true)
@@ -75,7 +75,7 @@ void CObjClear::Action()
 		}
 	
 	}
-	else if (SG == 3)
+	else if (SG == 5)
 	{
 
 		if (Input::GetVKey(VK_RETURN) == true)
@@ -91,7 +91,7 @@ void CObjClear::Action()
 		}
 	
 	}
-	else if (SG == 4)
+	else if (SG == 6)
 	{
 
 		if (Input::GetVKey(VK_RETURN) == true)
@@ -115,35 +115,35 @@ void CObjClear::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	if (SG == 0)
+	if (SG == 2)
 	{
 		Font::StrDraw(L"1ステージクリア！", 260, 225, 32, c);
 		Font::StrDraw(L"next:ENTER_KEY", 225, 275, 50, c);
 	}
-	else if (SG == 1)
+	else if (SG == 3)
 	{
 		Font::StrDraw(L"2ステージクリア！", 260, 225, 32, c);
 		Font::StrDraw(L"next:ENTER_KEY", 225, 275, 50, c);
 	}
-	else if (SG == 2)
+	else if (SG == 4)
 	{
 		Font::StrDraw(L"3ステージクリア！", 260, 225, 32, c);
 		Font::StrDraw(L"next:ENTER_KEY", 225, 275, 50, c);
 
 	}
-	else if (SG == 3)
+	else if (SG == 5)
 	{
 		Font::StrDraw(L"4ステージクリア！", 260, 225, 32, c);
 		Font::StrDraw(L"next:ENTER_KEY", 225, 275, 50, c);
 
 	}
-	else if (SG == 4)
+	else if (SG == 6)
 	{
 		Font::StrDraw(L"5ステージクリア！", 260, 225, 32, c);
 		Font::StrDraw(L"next:ENTER_KEY", 225, 275, 50, c);
 
 	}
-	else if (SG == 5)
+	else if (SG == 7)
 	{
 		Font::StrDraw(L"ラストステージクリア！", 260, 225, 32, c);
 		Font::StrDraw(L"おめでとう！", 225, 275, 50, c);

@@ -22,12 +22,12 @@ void CObjAlien::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_time = 0;
-	m_left_bottom = 32.0f;//表示位置
+	m_left_bottom =50.0f;//表示位置
 	m_top_right = 0.0f; //表示位置
 
 
 	//当たり判定作成
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_Alien, 1);
+	Hits::SetHitBox(this, m_x, m_y, 50, 50, ELEMENT_ENEMY, OBJ_Alien, 1);
 }
 //アクション
 void CObjAlien::Action()
