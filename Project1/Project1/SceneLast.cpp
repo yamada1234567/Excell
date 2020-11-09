@@ -53,11 +53,10 @@ void CSceneLast::Scene()
 {
 	m_time++;
 
-
 	
 	if (m_time % 100 == 0)
 	{
-		y=20.0;
+		y=200.0;
 						
 		CObjmeteoRD* obj = new CObjmeteoRD(0.0f, y);
 		Objs::InsertObj(obj, OBJ_meteoRD, 4);
@@ -69,22 +68,64 @@ void CSceneLast::Scene()
 		Objs::InsertObj(obj, OBJ_meteoLD, 4);
 		obj->SetVector(1.0f, 1.0f);
 	}
-	if (m_time % 50 == 0)
+	if (m_time % 40 == 0)
 	{
-		x= 10.0f;
-		if (x >= 800)
-		{
-			x = 0.0;
-		}
+		x= 300.0f;
+
 			CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
 			Objs::InsertObj(obj, OBJ_meteoS, 4);
 			obj->SetVector(0.0f, 1.0f);
 	
 
 	}
-	if (m_time == 150)
+	if (m_time % 60 == 0)
 	{
-		CObjBoss6* obj = new CObjBoss6(x, 100.0f);
+		x = 500.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+
+		for (int i = 0; i < 8; i++)
+		{
+			x = i*100.0f;
+
+			CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+			Objs::InsertObj(obj, OBJ_meteoS, 4);
+			obj->SetVector(0.0f, 1.0f);
+
+		}
+
+		
+
+	}
+
+	if (m_time == 80)
+	{
+		x = 300.0f;
+
+		CObjmeteoM* obj = new CObjmeteoM(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoM, 4);
+		obj->SetVector(0.0f, 1.0f);
+
+
+	}
+
+	if (m_time == 100)
+	{
+		x = 650.0f;
+
+		CObjmeteoL* obj = new CObjmeteoL(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoL, 4);
+		obj->SetVector(0.0f, 1.0f);
+
+
+	}
+
+	if (m_time == 1500)
+	{
+		x = 100;
+		CObjBoss6* obj = new CObjBoss6(x, 10.0f);
 		Objs::InsertObj(obj, OBJ_BOSS6, 13);
 	}
 }
