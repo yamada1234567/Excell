@@ -5,7 +5,7 @@
 using namespace GameL;
 
 //オブジェクト:敵機
-class CObjAlien :public CObj//メテオS字に移動
+class CObjAlien :public CObj
 {
 public:
 	CObjAlien(float x, float y);
@@ -21,7 +21,7 @@ private:
 	float m_vy;
 	float m_left_bottom;
 	float m_top_right;
-	float m_r;//カーブ用変数
+
 
 	int m_hp;
 	int m_time;

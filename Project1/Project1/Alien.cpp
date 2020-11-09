@@ -18,9 +18,7 @@ CObjAlien::CObjAlien(float x, float y)
 //イニシャライズ
 void CObjAlien::Init()
 {
-	m_hp = 2;
-
-	m_r = 0.0f;
+	m_hp = 1;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_time = 0;
@@ -34,19 +32,6 @@ void CObjAlien::Init()
 //アクション
 void CObjAlien::Action()
 {
-	//角度加算
-	m_r += 2.0f;
-
-	//360°で初期値に戻す
-	if (m_r >= 360.0f)
-	{
-		m_r += 0.0f;
-	}
-
-	//移動方向
-	m_vx = -1.0f;
-	m_vy = sin(3.14 / 180 * m_r);//???を求めてn_vyに入れる
-
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
@@ -60,12 +45,12 @@ void CObjAlien::Action()
 		m_vx = 1.0f / r * m_vx;
 		m_vy = 1.0f / r * m_vy;
 	}
+
 	//加速
 	m_vx *= 0.0f;
 	m_vy *= 6.0f;
 
 	m_x += m_vx;
-
 	m_y += m_vy;
 
 	//hitbox更新用ポインターの取得
@@ -98,33 +83,29 @@ void CObjAlien::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 
+			//アイテム　作成中
+			srand(time(NULL));
+			item = rand() % 30;//アイテムが出る確率
+			if (item == 1)
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			}
+			if (item == 2)
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			}
+			if (item == 3)
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			}
+
 		}
 	}
 
 	m_time++;
-
-
-	//敵回転
-	if (m_time >= 25)
-	{
-		m_top_right = 32.0f;
-		m_left_bottom = 0.0f;
-
-
-		if (m_time >= 50)
-		{
-			m_time = 0;
-
-		}
-
-	}
-	else
-	{
-		m_top_right = 0.0f;
-		m_left_bottom = 32.0f;
-
-	}
-
 
 }
 
@@ -141,14 +122,13 @@ void CObjAlien::Draw()
 	src.m_right = 50.0f;
 	src.m_bottom = 50.0f;
 	//表示位置
-	dst.m_top =0.0f + m_y;
-	dst.m_left = 32.0f+ m_x;
-	dst.m_right =0.0f+ m_x;
-	dst.m_bottom = 32.0f+ m_y;
+	dst.m_top = m_top_right + m_y;
+	dst.m_left = m_left_bottom + m_x;
+	dst.m_right = m_top_right + m_x;
+	dst.m_bottom = m_left_bottom + m_y;
 	//画像登録
-	Draw::Draw(2, &src, &dst, c, 0.0f);
+	Draw::Draw(8, &src, &dst, c, 0.0f);
 }
-
 void CObjAlien::SetVector(float vx, float vy)
 {
 	m_vx = vx;
