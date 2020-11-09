@@ -15,9 +15,9 @@ using namespace GameL;
 #include "GameHead.h"
 
 //コントラクタ
-CSceneClear::CSceneClear()
+CSceneClear::CSceneClear(int Cou)
 {
-
+	Count = Cou;
 }
 
 //デストラクタ
@@ -31,7 +31,7 @@ void CSceneClear::InitScene()
 {
 
 
-	CObjClear* obj = new CObjClear();
+	CObjClear* obj = new CObjClear(Count);
 	Objs::InsertObj(obj, OBJ_CLEAR, 10);
 
 }

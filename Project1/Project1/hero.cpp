@@ -48,16 +48,10 @@ void CObjHero::Action()
 				//for (int i=0; i<360; i+=20)
 				//{
 				//	//３弾丸オブジェクト作成
-				//	CObjTripleBullet* obj_b = new CObjTripleBullet(m_x, m_y,i*45,5);
+				//	CObjTripleBullet* obj_b = new CObjTripleBullet(m_x, m_y,i,5);
 				//	Objs::InsertObj(obj_b, OBJ_TRIPLEBULLET, 1);
 				//}
 				
-
-
-					
-				////３弾丸オブジェクト作成(右斜め)
-				//CObjTripleBullet* obj_b = new CObjTripleBullet(m_x + 3.0f, m_y, -45, 5);
-				//Objs::InsertObj(obj_b, OBJ_TRIPLEBULLET, 1);
 
 				//弾丸オブジェクト作成
 				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
@@ -185,11 +179,11 @@ void CObjHero::Action()
 
 		if (0 == m_o)
 		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
+			//this->SetStatus(false);
+			//Hits::DeleteHitBox(this);
 
 			////主人公消滅でシーンをゲームオーバーに移行する
-			Scene::SetScene((CScene*)new CSceneGameOver());
+			//Scene::SetScene((CScene*)new CSceneGameOver());
 
 		}
 	}

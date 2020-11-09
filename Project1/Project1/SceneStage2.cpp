@@ -76,7 +76,7 @@ void CSceneStage2::Scene()
 	{
 
 		//ƒNƒŠƒA‚ÉˆÚ“®
-		Scene::SetScene(new CSceneClear());
+		Scene::SetScene(new CSceneClear(1));
 
 
 	}
