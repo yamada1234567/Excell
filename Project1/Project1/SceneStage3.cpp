@@ -52,30 +52,63 @@ void CSceneStage3::InitScene()
 //ゲームメイン実行メソッド
 void CSceneStage3::Scene()
 {
+	//時間
 	m_time++;
 
-	if (m_time % 50 == 0)
+
+	//出力する時間(timeが60になると出力)
+	if (m_time == 60)
 	{
+		//小隕石出力					座標 ｘ,ｙ
+		CObjmeteoS* obj = new CObjmeteoS(368.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+
+	//出力する時間(timeが100になると出力)
+	if (m_time == 100)
+	{
+		//中隕石出力
+		CObjmeteoM* obj = new CObjmeteoM(500.0f, -100.0f);
+		Objs::InsertObj(obj, OBJ_meteoM, 3);
+		obj->SetVector(0.0f, 1.0f);
+	}
+
+	//出力する時間(timeが60になると出力)
+	if (m_time % 130 == 0)
+	{
+		//大隕石出力
+		CObjmeteoS* obj = new CObjmeteoS(368.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+
+
+
+	//出力する時間(timeが50になると出力)
+	if (m_time == 50)
+	{
+		//右下に進む隕石出力　　　　　　  	
 		CObjmeteoRD* obj = new CObjmeteoRD(0.0f, 60.0f);
 		Objs::InsertObj(obj, OBJ_meteoRD, 4);
 		obj->SetVector(1.0f, 1.0f);
 	}
-	if (m_time % 50 == 0)
+
+	//出力する時間(timeが50になると出力)
+	if (m_time == 50)
 	{
+		//左下に進む隕石出力
 		CObjmeteoLD* obj = new CObjmeteoLD(800.0f, 60.0f);
 		Objs::InsertObj(obj, OBJ_meteoLD, 4);
 		obj->SetVector(1.0f, 1.0f);
 	}
-	if (m_time % 60 == 0)
+
+	//出力する時間(timeが200になると出力)
+	if (m_time == 200)
 	{
-		CObjmeteoSin* obj = new CObjmeteoSin(368.0f, 0.0f);
-		Objs::InsertObj(obj, OBJ_meteoSIN, 4);
-		obj->SetVector(0.0f, 1.0f);
-	}
-	if (m_time==200)
-	{
-		//クリアに移動
-		Scene::SetScene(new CSceneClear(4));
+		//ボス出力
+		CObjBoss6* obj = new CObjBoss6(100.0f, 10.0f);
+		Objs::InsertObj(obj, OBJ_BOSS6, 13);
 	}
 
 }
