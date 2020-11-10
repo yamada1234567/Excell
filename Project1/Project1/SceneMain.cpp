@@ -52,11 +52,13 @@ void CSceneMain::Scene()
 	//クリアに移動
 	//Scene::SetScene(new CSceneClear());
 	
+	//時間
 	m_time++;
 
-
+	//出現する時間（timeが30になったら1体出現する）
 	if (m_time == 30)
 	{
+		//小隕石出力　　　　　　　　　　座標ｘ , ｙ
 		CObjmeteoS* obj = new CObjmeteoS(400.0f, -100.0f);
 		Objs::InsertObj(obj, OBJ_meteoS, 4);
 		obj->SetVector(0.0f, 1.0f);
@@ -81,6 +83,7 @@ void CSceneMain::Scene()
 	}
 	else if (m_time == 80)
 	{
+		//中隕石出力
 		CObjmeteoM* obj = new CObjmeteoM(500.0f, -100.0f);
 		Objs::InsertObj(obj, OBJ_meteoM, 3);
 		obj->SetVector(0.0f, 1.0f);
