@@ -59,6 +59,7 @@ void CSceneStage2::Scene()
 	{
 		CObjmeteoS* obj = new CObjmeteoS(400.0f, -100.0f);
 		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		
 		CObjAlien* obj = new CObjAlien(400.0f, 0.0f);
 		Objs::InsertObj(obj, OBJ_Alien, 8);
 		obj->SetVector(0.0f, 1.0f);
