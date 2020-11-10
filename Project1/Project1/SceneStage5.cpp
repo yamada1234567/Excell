@@ -59,9 +59,9 @@ void CSceneStage5::Scene()
 	
 		if (m_time == 20)
 		{
-					CObjmeteoS* obj = new CObjmeteoS(100.0f, i*-100.0f);
+					/*CObjmeteoS* obj = new CObjmeteoS(100.0f, i*-100.0f);
 					Objs::InsertObj(obj, OBJ_meteoS, 4);
-					obj->SetVector(0.0f, 1.0f);
+					obj->SetVector(0.0f, 1.0f);*/
 		}
 	
 }

@@ -103,9 +103,6 @@
     <ClCompile Include="SceneStage3.cpp">
       <Filter>ソースファイル\ステージ</Filter>
     </ClCompile>
-    <ClCompile Include="SceneStage4.cpp">
-      <Filter>ソースファイル\ステージ</Filter>
-    </ClCompile>
     <ClCompile Include="triplebullet.cpp">
       <Filter>ソースファイル\主人公\強化</Filter>
     </ClCompile>
@@ -140,6 +137,9 @@
       <Filter>ソースファイル\敵\ボス</Filter>
     </ClCompile>
     <ClCompile Include="SceneStage5.cpp">
+      <Filter>ソースファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStage4.cpp">
       <Filter>ソースファイル\ステージ</Filter>
     </ClCompile>
   </ItemGroup>

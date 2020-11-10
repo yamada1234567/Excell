@@ -70,10 +70,10 @@ void CObjBoss4::Draw()
 	RECT_F dst;//描画先表示位置
 
 	//切れ取り設定
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 530.0f;
-	src.m_bottom = 530.0f;
+	src.m_top = 20.0f;
+	src.m_left = 20.0f;
+	src.m_right = 1014.0f - 20;
+	src.m_bottom = 910.0f - 20;
 	//表示位置
 	dst.m_top = 0.0f + m_y;
 	dst.m_left = 420.0f + m_x;
