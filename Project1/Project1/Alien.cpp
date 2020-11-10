@@ -50,8 +50,8 @@ void CObjAlien::Action()
 	}
 
 	//‰Á‘¬
-	m_vx *= 0.0f;
-	m_vy *= 6.0f;
+	m_vx *= 3.5f;
+	m_vy *= 1.5f;
 
 	m_x += m_vx;
 	m_y += m_vy;
