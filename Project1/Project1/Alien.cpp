@@ -32,6 +32,9 @@ void CObjAlien::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjAlien::Action()
 {
+	//ˆÚ“®•ûŒü
+	m_vx = -1.0f;
+	m_vy = 0.0f;
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
@@ -47,8 +50,8 @@ void CObjAlien::Action()
 	}
 
 	//‰Á‘¬
-	m_vx *= 0.0f;
-	m_vy *= 6.0f;
+	m_vx *= 3.5f;
+	m_vy *= 1.5f;
 
 	m_x += m_vx;
 	m_y += m_vy;
