@@ -80,33 +80,23 @@ void CObjAlien::Action()
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
-		//if (0 >= m_hp)
-		//{
-		//	int item;
+		if (0 >= m_hp)
+		{
+			int item;
 
-		//	this->SetStatus(false);
-		//	Hits::DeleteHitBox(this);
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
 
-			//アイテム　作成中
-			//srand(time(NULL));
-			//item = rand() % 30;//倒した際に出るランダムな数値の数
-			//if (item == 1)//そのランダムに出た数値が特定の数値の場合アイテムを出す
-			//{
-			//	CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-			//	Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-			//}
-			//if (item == 2)
-			//{
-			//	CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-			//	Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-			//}
-			//if (item == 3)
-			//{
-			//	CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-			//	Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-			//}
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 
-		//}
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+
+		}
 	}
 
 	m_time++;
@@ -131,7 +121,7 @@ void CObjAlien::Draw()
 	dst.m_right = m_top_right + m_x;
 	dst.m_bottom = m_left_bottom + m_y;
 	//画像登録
-	Draw::Draw(8, &src, &dst, c, 0.0f);
+	Draw::Draw(200, &src, &dst, c, 0.0f);
 }
 void CObjAlien::SetVector(float vx, float vy)
 {

@@ -47,18 +47,29 @@ void CObjHero::Action()
 		{
 			if (m_f == true)
 			{
-				//for (int i=0; i<360; i+=20)
-				//{
-				//	//３弾丸オブジェクト作成
-				//	CObjTripleBullet* obj_b = new CObjTripleBullet(m_x, m_y,i,5);
-				//	Objs::InsertObj(obj_b, OBJ_TRIPLEBULLET, 1);
-				//}
+				if (Attack_Item == 1)
+				{
+					
+
+						//３弾丸オブジェクト作成
+						CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+						Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+
+		
+
+
+
+				}
+	
 				
 
-				//弾丸オブジェクト作成
-				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-
+	/*			}*/
+				//else
+				//{
+				//	//弾丸オブジェクト作成
+				//	CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+				//	Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+				//}
 				
 				m_f = false;
 
@@ -66,6 +77,7 @@ void CObjHero::Action()
 		}
 		else
 		{
+			
 			m_f = true;
 		}
 
@@ -190,7 +202,7 @@ void CObjHero::Action()
 	//酸素０で消滅
 	if (m_time % 60 == 0)
 	{
-		m_o--;
+		//m_o--;
 
 		if (0 == m_o)
 		{
@@ -206,7 +218,7 @@ void CObjHero::Action()
 
 
 	//散弾アイテム判定
-	if (hit->CheckObjNameHit(OBJ_TRIPLEBULLET) != nullptr)
+	if (hit->CheckObjNameHit(OBJ_ITEM) != nullptr)
 	{
 		Attack_Item=1;
 	}
