@@ -54,10 +54,32 @@ void CSceneStage3::Scene()
 {
 	//時間
 	m_time++;
+ 
+	if(m_time % 50 == 0)
+	{	
+
+		if (m_time%2==1)
+		{
+			CObjmeteoM* obj = new CObjmeteoM(100.0f, 0.0f);
+			Objs::InsertObj(obj, OBJ_meteoM, 4);
+			obj->SetVector(0.0f, 1.0f);
+
+		}
+		else
+		{
+
+			CObjmeteoS* obj = new CObjmeteoS(500.0f, 0.0f);
+			Objs::InsertObj(obj, OBJ_meteoS, 4);
+			obj->SetVector(0.0f, 1.0f);
+
+		}
+
+	}
+
 
 
 	//出力する時間(timeが60になると出力)
-	if (m_time == 60)
+	if (m_time% 60== 0)
 	{
 		//小隕石出力					座標 ｘ,ｙ
 		CObjmeteoS* obj = new CObjmeteoS(368.0f, 0.0f);
@@ -66,7 +88,7 @@ void CSceneStage3::Scene()
 	}
 
 	//出力する時間(timeが100になると出力)
-	if (m_time == 100)
+	if (m_time %100==0)
 	{
 		//中隕石出力
 		CObjmeteoM* obj = new CObjmeteoM(500.0f, -100.0f);
@@ -75,40 +97,48 @@ void CSceneStage3::Scene()
 	}
 
 	//出力する時間(timeが60になると出力)
-	if (m_time % 130 == 0)
+	if (m_time % 120 == 0)
 	{
-		//大隕石出力
-		CObjmeteoS* obj = new CObjmeteoS(368.0f, 0.0f);
-		Objs::InsertObj(obj, OBJ_meteoS, 4);
-		obj->SetVector(0.0f, 1.0f);
+
+			CObjmeteoM* obj = new CObjmeteoM(100.0f, 0.0f);
+			Objs::InsertObj(obj, OBJ_meteoM, 4);
+			obj->SetVector(0.0f, 1.0f);
+
 	}
 
+	if (m_time==200 || m_time == 500 ||m_time==800)
+	{
 
+		CObjmeteoL* obj = new CObjmeteoL(300.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoL, 4);
+		obj->SetVector(0.0f, 1.0f);
+
+	}
 
 	//出力する時間(timeが50になると出力)
-	if (m_time == 50)
+	if (m_time%130 == 0)
 	{
 		//右下に進む隕石出力　　　　　　  	
-		CObjmeteoRD* obj = new CObjmeteoRD(0.0f, 60.0f);
-		Objs::InsertObj(obj, OBJ_meteoRD, 4);
+		CObjmeteoS* obj = new CObjmeteoS(60.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
 		obj->SetVector(1.0f, 1.0f);
 	}
 
 	//出力する時間(timeが50になると出力)
-	if (m_time == 50)
+	if (m_time% 200== 0)
 	{
 		//左下に進む隕石出力
-		CObjmeteoLD* obj = new CObjmeteoLD(800.0f, 60.0f);
-		Objs::InsertObj(obj, OBJ_meteoLD, 4);
+		CObjmeteoS* obj = new CObjmeteoS(400.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
 		obj->SetVector(1.0f, 1.0f);
 	}
 
 	//出力する時間(timeが200になると出力)
-	if (m_time == 200)
+	if (m_time == 1500)
 	{
 		//ボス出力
-		CObjBoss6* obj = new CObjBoss6(100.0f, 10.0f);
-		Objs::InsertObj(obj, OBJ_BOSS6, 13);
+		CObjBoss3* obj = new CObjBoss3(100.0f, 10.0f);
+		Objs::InsertObj(obj, OBJ_BOSS3, 13);
 	}
 
 }

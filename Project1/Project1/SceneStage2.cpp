@@ -57,12 +57,7 @@ void CSceneStage2::Scene()
 
 	if (m_time == 30)
 	{
-		CObjmeteoS* obj = new CObjmeteoS(400.0f, -100.0f);
-		Objs::InsertObj(obj, OBJ_meteoS, 4);
-		
-		CObjAlien* obj = new CObjAlien(400.0f, 0.0f);
-		CObjAlien* obj = new CObjAlien(368.0f, 60.0f);
-		Objs::InsertObj(obj, OBJ_Alien, 8);
+
 	}
 	if (m_time % 50 == 0)
 	{

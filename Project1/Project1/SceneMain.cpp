@@ -128,6 +128,7 @@ void CSceneMain::Scene()
 		obj = new CObjmeteoS(220.0f, -100.0f);
 		Objs::InsertObj(obj, OBJ_meteoS, 4);
 		obj->SetVector(0.0f, 1.0f);
+		
 		obj = new CObjmeteoS(350.0f, -100.0f);
 		Objs::InsertObj(obj, OBJ_meteoS, 4);
 		obj->SetVector(0.0f, 1.0f);
