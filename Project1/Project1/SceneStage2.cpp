@@ -54,7 +54,7 @@ void CSceneStage2::InitScene()
 void CSceneStage2::Scene()
 {
 	m_time++;
-
+	Scene::SetScene(new CSceneClear(5));
 	if (m_time == 30)
 	{
 		CObjAlien* obj = new CObjAlien(368.0f, 60.0f);
