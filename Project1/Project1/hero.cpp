@@ -48,8 +48,8 @@ void CObjHero::Action()
 				for (int i=0; i<360; i+=20)
 				{
 					//３弾丸オブジェクト作成
-					CObjTripleBullet* obj_b = new CObjTripleBullet(m_x, m_y,i,5);
-					Objs::InsertObj(obj_b, OBJ_TRIPLEBULLET, 1);
+					/*CObjTripleBullet* obj_b = new CObjTripleBullet(m_x, m_y,i,5);
+					Objs::InsertObj(obj_b, OBJ_TRIPLEBULLET, 1);*/
 				}
 				
 
