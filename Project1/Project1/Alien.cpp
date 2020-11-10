@@ -87,22 +87,24 @@ void CObjAlien::Action()
 		//	this->SetStatus(false);
 		//	Hits::DeleteHitBox(this);
 
-			
-		if (item == 1)//そのランダムに出た数値が特定の数値の場合アイテムを出す
-		{
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-		}
-		if (item == 2)
-		{
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-		}
-		if (item == 3)
-		{
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-		}
+			//アイテム　作成中
+			//srand(time(NULL));
+			//item = rand() % 30;//倒した際に出るランダムな数値の数
+			//if (item == 1)//そのランダムに出た数値が特定の数値の場合アイテムを出す
+			//{
+			//	CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+			//	Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			//}
+			//if (item == 2)
+			//{
+			//	CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+			//	Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			//}
+			//if (item == 3)
+			//{
+			//	CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+			//	Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			//}
 
 		//}
 	}

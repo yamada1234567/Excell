@@ -142,6 +142,9 @@
     <ClCompile Include="SceneStage5.cpp">
       <Filter>ソースファイル\ステージ</Filter>
     </ClCompile>
+    <ClCompile Include="explosion.cpp">
+      <Filter>ソースファイル\その他</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -284,6 +287,9 @@
     </ClInclude>
     <ClInclude Include="SceneStage5.h">
       <Filter>ソースファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="explosion.h">
+      <Filter>ソースファイル\その他</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
