@@ -45,12 +45,12 @@ void CObjHero::Action()
 		{
 			if (m_f == true)
 			{
-				//for (int i=0; i<360; i+=20)
-				//{
-				//	//３弾丸オブジェクト作成
-				//	CObjTripleBullet* obj_b = new CObjTripleBullet(m_x, m_y,i,5);
-				//	Objs::InsertObj(obj_b, OBJ_TRIPLEBULLET, 1);
-				//}
+				for (int i=0; i<360; i+=20)
+				{
+					//３弾丸オブジェクト作成
+					CObjTripleBullet* obj_b = new CObjTripleBullet(m_x, m_y,i,5);
+					Objs::InsertObj(obj_b, OBJ_TRIPLEBULLET, 1);
+				}
 				
 
 				//弾丸オブジェクト作成
@@ -154,7 +154,7 @@ void CObjHero::Action()
 	//ダメージ判定
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
-		m_hp -= 1;
+		/*m_hp -= 1;*/
 		if (0 >= m_hp)
 		{
 			this->SetStatus(false);
@@ -175,7 +175,7 @@ void CObjHero::Action()
 	//酸素０で消滅
 	if (m_time % 60 == 0)
 	{
-		m_o--;
+	/*	m_o--;*/
 
 		if (0 == m_o)
 		{
