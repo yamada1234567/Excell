@@ -25,6 +25,7 @@ void CObjAlien::Init()
 	m_left_bottom =50.0f;//表示位置
 	m_top_right = 0.0f; //表示位置
 
+	item = 0;
 
 	//当たり判定作成
 	Hits::SetHitBox(this, m_x, m_y, 50, 50, ELEMENT_ENEMY, OBJ_Alien, 1);
