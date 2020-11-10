@@ -30,6 +30,7 @@ private:
 	int m_o;
 	int m_time;
 	int Attack_Item;
+	bool Bar;
 
 };
 

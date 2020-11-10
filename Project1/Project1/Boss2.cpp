@@ -70,15 +70,15 @@ void CObjBoss2::Draw()
 	RECT_F dst;//描画先表示位置
 
 	//切れ取り設定
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 530.0f;
-	src.m_bottom = 530.0f;
+	src.m_top = 65.0f;
+	src.m_left = 65.0f;
+	src.m_right = 720.0f - 65;
+	src.m_bottom = 636.0f - 65;
 	//表示位置
-	dst.m_top = 0.0f + m_y;
-	dst.m_left = 420.0f + m_x;
-	dst.m_right = 0.0f + m_x;
-	dst.m_bottom = 420.0f + m_y;
+	dst.m_top = 420.0f + m_y;
+	dst.m_left = 0.0f + m_x;
+	dst.m_right = 420.0f + m_x;
+	dst.m_bottom = 0.0f + m_y;
 
 	//1番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(9, &src, &dst, c, 0.0f);

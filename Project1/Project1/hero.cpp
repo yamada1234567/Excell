@@ -24,9 +24,10 @@ void CObjHero::Init()
 	m_f = true;
 	m_hp = 3;
 	m_bullet = 0;
-	m_o=10;
+	m_o	=	10;
 	m_time = 0;
 	Attack_Item=0;
+	Bar=true;
 
 	//当たり判定用hitboxを作成
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
@@ -150,23 +151,37 @@ void CObjHero::Action()
 	//hit->SetPos(m_x, m_y);
 
 
-
+	Bar = false;
 	//ダメージ判定
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
-		m_hp -= 1;
-		if (0 >= m_hp)
+		if (Bar == true)
 		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
+			m_hp -= 1;
+			if (0 >= m_hp)
+			{
+				this->SetStatus(false);
+				Hits::DeleteHitBox(this);
 
-		//主人公消滅でシーンをゲームオーバーに移行する
-		Scene::SetScene((CScene*)new CSceneGameOver());
-
+				//主人公消滅でシーンをゲームオーバーに移行する
+				Scene::SetScene((CScene*)new CSceneGameOver());
+				
+			}
 		}
-		
+		//Hpのかわりにバリアを消費
+		else if (Bar == false)
+		{
+				Bar = true;
+		}
+
+	}	
+	//シールドアイテム当たり判定
+	if (hit->CheckObjNameHit(OBJ_SHIELD) != nullptr)
+	{
+		Bar = false;
+
 	}
-	//酸素減少
+	//酸素アイテム当たり判定
 	if (hit->CheckObjNameHit(OBJ_OXYGEN) != nullptr)
 	{
 		m_o = 10;
@@ -175,7 +190,7 @@ void CObjHero::Action()
 	//酸素０で消滅
 	if (m_time % 60 == 0)
 	{
-		m_o--;
+	/*	m_o--;*/
 
 		if (0 == m_o)
 		{
@@ -187,7 +202,10 @@ void CObjHero::Action()
 
 		}
 	}
-	//アイテム判定
+
+
+
+	//散弾アイテム判定
 	if (hit->CheckObjNameHit(OBJ_TRIPLEBULLET) != nullptr)
 	{
 		Attack_Item=1;
@@ -221,6 +239,11 @@ void CObjHero::Draw()
 	//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 
+	if (Bar== false)
+	{
+		Font::StrDraw(L"バリア中", 210, 568, 32, c);
+	}
+	
 	if (m_hp==3)
 	{
 		Font::StrDraw(L"HP:3/3", 0, 568, 32, c);

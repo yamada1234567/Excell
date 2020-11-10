@@ -85,22 +85,22 @@ void CObjmeteoS::Action()
 
 			//アイテム　作成中
 			srand(time(NULL));
-			item = rand() % 40;//倒した際に出るランダムな数値の数
-			if (item == 1)//そのランダムに出た数値が特定の数値の場合アイテムを出す
+			item = rand() % 20;//アイテムが出る確率
+			if (item == 1)
 			{
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 			}
-			if (item == 10)
+			if (item == 5)
 			{
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+				CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
 			}
-			if (item == 20)
-			{
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-			}
+			//if (item == 10)
+			//{
+			//	CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+			//	Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			//}
 			
 		}
 	}
