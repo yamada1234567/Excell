@@ -5,6 +5,8 @@
 //GameLで使用するヘッダー
 #include"GameL/DrawTexture.h"
 #include"GameL\SceneObjManager.h"
+#include <stdlib.h>
+#include <time.h>
 
 //使用するネームスペース
 using namespace GameL;
@@ -53,28 +55,13 @@ void CSceneStage5::InitScene()
 void CSceneStage5::Scene()
 {
 	m_time++;
-
-	if (m_time % 50 == 0)
-	{
-		CObjmeteoRD* obj = new CObjmeteoRD(0.0f, 60.0f);
-		Objs::InsertObj(obj, OBJ_meteoRD, 4);
-		obj->SetVector(1.0f, 1.0f);
-	}
-	if (m_time % 50 == 0)
-	{
-		CObjmeteoLD* obj = new CObjmeteoLD(800.0f, 60.0f);
-		Objs::InsertObj(obj, OBJ_meteoLD, 4);
-		obj->SetVector(1.0f, 1.0f);
-	}
-	if (m_time % 60 == 0)
-	{
-		CObjmeteoSin* obj = new CObjmeteoSin(368.0f, 0.0f);
-		Objs::InsertObj(obj, OBJ_meteoSIN, 4);
-		obj->SetVector(0.0f, 1.0f);
-	}
-	if (m_time == 200)
-	{
-		//クリアに移動
-		Scene::SetScene(new CSceneClear(6));
-	}
+	
+	
+		if (m_time == 20)
+		{
+					CObjmeteoS* obj = new CObjmeteoS(100.0f, i*-100.0f);
+					Objs::InsertObj(obj, OBJ_meteoS, 4);
+					obj->SetVector(0.0f, 1.0f);
+		}
+	
 }

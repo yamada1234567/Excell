@@ -52,6 +52,7 @@ void CSceneLast::InitScene()
 void CSceneLast::Scene()
 {
 	m_time++;
+	Scene::SetScene(new CSceneClear(5));
 
 	//‰E‰º
 	if (m_time % 10 == 0)
