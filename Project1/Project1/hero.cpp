@@ -24,9 +24,10 @@ void CObjHero::Init()
 	m_f = true;
 	m_hp = 3;
 	m_bullet = 0;
-	m_o	=	10;
+	m_o	=	15;
 	m_time = 0;
 	Attack_Item=0;
+
 	Bar=true;
 
 	//ìñÇΩÇËîªíËóphitboxÇçÏê¨
@@ -151,7 +152,6 @@ void CObjHero::Action()
 	//hit->SetPos(m_x, m_y);
 
 
-	Bar = false;
 	//É_ÉÅÅ[ÉWîªíË
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
@@ -184,13 +184,13 @@ void CObjHero::Action()
 	//é_ëfÉAÉCÉeÉÄìñÇΩÇËîªíË
 	if (hit->CheckObjNameHit(OBJ_OXYGEN) != nullptr)
 	{
-		m_o = 10;
+		m_o = 15;
 
 	}
 	//é_ëfÇOÇ≈è¡ñ≈
 	if (m_time % 60 == 0)
 	{
-	/*	m_o--;*/
+		m_o--;
 
 		if (0 == m_o)
 		{
@@ -257,34 +257,53 @@ void CObjHero::Draw()
 		Font::StrDraw(L"HP:1/3", 0, 568, 32, c);
 	}
 
-
-	if (m_o == 10)
+	if (m_o == 15)
 	{
-		Font::StrDraw(L"10/10", 110, 568, 32, c);
+		Font::StrDraw(L"15/15", 110, 568, 32, c);
+	}
+	else if (m_o == 14)
+	{
+		Font::StrDraw(L"14/15", 110, 568, 32, c);
+	}
+	else if (m_o ==13)
+	{
+		Font::StrDraw(L"13/15", 110, 568, 32, c);
+	}
+	else if (m_o == 12)
+	{
+		Font::StrDraw(L"12/15", 110, 568, 32, c);
+	}
+	else if (m_o == 11)
+	{
+		Font::StrDraw(L"11/15", 110, 568, 32, c);
+	}
+	else if (m_o == 10)
+	{
+		Font::StrDraw(L"10/15", 110, 568, 32, c);
 	}
 	else if (m_o == 9)
 	{
-		Font::StrDraw(L"9/10", 110, 568, 32, c);
+		Font::StrDraw(L"9/15", 110, 568, 32, c);
 	}
 	else if (m_o ==8)
 	{
-		Font::StrDraw(L"8/10", 110, 568, 32, c);
+		Font::StrDraw(L"8/15", 110, 568, 32, c);
 	}
 	else if (m_o == 7)
 	{
-		Font::StrDraw(L"7/10", 110, 568, 32, c);
+		Font::StrDraw(L"7/15", 110, 568, 32, c);
 	}
 	else if (m_o ==6)
 	{
-		Font::StrDraw(L"6/10", 110, 568, 32, c);
+		Font::StrDraw(L"6/15", 110, 568, 32, c);
 	}
 	else if (m_o == 5)
 	{
-		Font::StrDraw(L"5/10", 110, 568, 32, c);
+		Font::StrDraw(L"5/15", 110, 568, 32, c);
 	}
 	else if (m_o == 4)
 	{
-		Font::StrDraw(L"4/10", 110, 568, 32, c);
+		Font::StrDraw(L"4/15", 110, 568, 32, c);
 	}
 	else if (m_o == 3)
 	{
@@ -292,11 +311,11 @@ void CObjHero::Draw()
 	}
 	else if (m_o == 2)
 	{
-		Font::StrDraw(L"2/10", 110, 568, 32, c);
+		Font::StrDraw(L"2/15", 110, 568, 32, c);
 	}
 	else if (m_o == 1)
 	{
-		Font::StrDraw(L"1/10", 110, 568, 32, c);
+		Font::StrDraw(L"1/15", 110, 568, 32, c);
 	}
 }
 //600*800
