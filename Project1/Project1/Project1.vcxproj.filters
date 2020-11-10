@@ -285,6 +285,9 @@
     <ClInclude Include="SceneStage5.h">
       <Filter>ソースファイル\ステージ</Filter>
     </ClInclude>
+    <ClInclude Include="explosion.h">
+      <Filter>ソースファイル\その他</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ヘッダーファイル">
