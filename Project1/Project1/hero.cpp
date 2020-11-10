@@ -179,11 +179,11 @@ void CObjHero::Action()
 
 		if (0 == m_o)
 		{
-			//this->SetStatus(false);
-			//Hits::DeleteHitBox(this);
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
 
 			////主人公消滅でシーンをゲームオーバーに移行する
-			//Scene::SetScene((CScene*)new CSceneGameOver());
+			Scene::SetScene((CScene*)new CSceneGameOver());
 
 		}
 	}
