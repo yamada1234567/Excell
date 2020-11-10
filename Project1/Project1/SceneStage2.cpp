@@ -57,10 +57,25 @@ void CSceneStage2::Scene()
 
 	if (m_time == 30)
 	{
-		CObjmeteoS* obj = new CObjmeteoS(400.0f, -100.0f);
-		Objs::InsertObj(obj, OBJ_meteoS, 4);
-		//CObjAlien* obj = new CObjAlien(400.0f, 0.0f);
-		//Objs::InsertObj(obj, OBJ_Alien, 8);
+		CObjAlien* obj = new CObjAlien(368.0f, 60.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 8);
+	}
+	if (m_time % 50 == 0)
+	{
+		CObjmeteoRD* obj = new CObjmeteoRD(0.0f, 60.0f);
+		Objs::InsertObj(obj, OBJ_meteoRD, 4);
+		obj->SetVector(1.0f, 1.0f);
+	}
+	if (m_time%50==0)
+	{
+		CObjmeteoLD* obj = new CObjmeteoLD(800.0f, 60.0f);
+		Objs::InsertObj(obj, OBJ_meteoLD, 4);
+		obj->SetVector(1.0f, 1.0f);
+	}
+	if (m_time%60 == 0)
+	{
+		CObjmeteoSin* obj = new CObjmeteoSin(368.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoSIN, 4);
 		obj->SetVector(0.0f, 1.0f);
 	}
 	if (m_time ==200)
