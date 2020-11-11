@@ -36,7 +36,7 @@ void CSceneStage5::InitScene()
 	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
 	
 	//主人公オブジェクト作成
-	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
+	CObjHero* obj = new CObjHero(5);//主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//背景

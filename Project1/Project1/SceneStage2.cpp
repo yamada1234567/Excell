@@ -38,7 +38,7 @@ void CSceneStage2::InitScene()
 	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
-	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
+	CObjHero* obj = new CObjHero(2);//主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//敵メテオ
@@ -56,6 +56,11 @@ void CSceneStage2::InitScene()
 void CSceneStage2::Scene()
 {
 	m_time++;
+	if (m_time == 20)
+	{
+		CObjAlien*obj = new CObjAlien(0.0f,100.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 200);
+	}
 
 	//小
 	if (m_time % 40 == 0)
