@@ -56,6 +56,11 @@ void CSceneStage2::InitScene()
 void CSceneStage2::Scene()
 {
 	m_time++;
+	if (m_time == 20)
+	{
+		CObjAlien*obj = new CObjAlien(0.0f,100.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 200);
+	}
 
 	//è¨
 	if (m_time % 40 == 0)

@@ -139,8 +139,3 @@ void CObjAlien::Draw()
 	//‰æ‘œ“o˜^
 	Draw::Draw(200, &src, &dst, c, 0.0f);
 }
-void CObjAlien::SetVector(float vx, float vy)
-{
-	m_vx = vx;
-	m_vy = vy;
-}
