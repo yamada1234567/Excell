@@ -54,14 +54,11 @@ void CObjHero::Action()
 			{
 				if (Attack_Item == 1)
 				{
-					for (int i = 0; i == 3; i++)
-					{
-						//３弾丸オブジェクト作成
-						CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
-						Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-					}
 
 
+					//弾丸オブジェクト作成
+					CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+					Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
 
 
@@ -70,9 +67,15 @@ void CObjHero::Action()
 				}
 				else
 				{
-					//弾丸オブジェクト作成
-					CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+					for(int i = 0; i <= 40; i+=10)
+					{
+						
+						//３弾丸オブジェクト作成
+						CObjBullet* obj_b = new CObjBullet(m_x+3.0f, m_y-i);
+						Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+					}
+
+
 				}
 
 				m_f = false;
@@ -253,8 +256,25 @@ void CObjHero::Draw()
 	dst.m_right		= 36.0f+m_x;
 	dst.m_bottom	= 36.0f+m_y;
 
-	//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	if (m_hp == 3)
+	{
+		//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
+		Draw::Draw(0, &src, &dst, c, 0.0f);
+	}
+	else if(m_hp == 2)
+	{
+
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+	}
+	else if (m_hp == 1)
+	{		
+
+		Draw::Draw(3, &src, &dst, c, 0.0f);
+
+	}
+
+
 
 	if (Bar== false)
 	{
