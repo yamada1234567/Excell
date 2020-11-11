@@ -16,6 +16,8 @@ public:
 private:
 	float m_x;
 	float m_y;
+	float si_x;
+	float si_y;
 	float m_vx;
 	int m_time;
 };

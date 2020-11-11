@@ -73,7 +73,12 @@ void CObjmeteoRD::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
-
+	//bom‚É‚ ‚Á‚½‚çÁ–Å
+	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 
 	/*ƒ_ƒ[ƒW”»’è*/
 	if (hit->CheckElementHit(ELEMENT_BULLET) == true)

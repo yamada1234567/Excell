@@ -10,9 +10,12 @@ using namespace GameL;
 //コンストラクタ
 CObjBom::CObjBom(float x, float y)
 {
-	m_x = x;
-	m_y = y;
+	m_x = x-80;
+	m_y = y-80;
 	m_time=0;
+
+	si_x=200;//xサイズ
+	si_y=200;//yサイズ
 }
 
 //イニシャライズ
@@ -21,7 +24,7 @@ void CObjBom::Init()
 	m_vx = 0.0f;
 
 	//当たり判定作成
-	Hits::SetHitBox(this, m_x, m_y, 100, 100, ELEMENT_BULLET, OBJ_BOM, 1);
+	Hits::SetHitBox(this, m_x, m_y, si_x, si_y, ELEMENT_BULLET, OBJ_BOM, 1);
 }
 
 //アクション
@@ -62,8 +65,8 @@ void CObjBom::Draw()
 	//表示位置の設定
 	dst.m_top = 0.0f + m_y;
 	dst.m_left = 0.0f + m_x;
-	dst.m_right = 32.0f + m_x;
-	dst.m_bottom = 32.0f + m_y;
+	dst.m_right = si_x + m_x;
+	dst.m_bottom = si_y + m_y;
 
 	//1番に登録したグラフィックをの情報をもとに描画
 	Draw::Draw(1, &src, &dst, c, 0.0f);
