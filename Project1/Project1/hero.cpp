@@ -54,11 +54,14 @@ void CObjHero::Action()
 			{
 				if (Attack_Item == 1)
 				{
+					for (int i = 0; i == 3; i++)
+					{
+						//３弾丸オブジェクト作成
+						CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+						Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+					}
 
 
-					//３弾丸オブジェクト作成
-					CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
 
 
@@ -173,6 +176,7 @@ void CObjHero::Action()
 			m_hp -= 1;
 			if (0 >= m_hp)
 			{
+
 				this->SetStatus(false);
 				Hits::DeleteHitBox(this);
 
