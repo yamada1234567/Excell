@@ -34,6 +34,8 @@ void CSceneStage4::InitScene()
 	Draw::LoadImage(L"Boss(Venus).png", 11, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
 	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"hero 1damage.png", 15, TEX_SIZE_512);
+	Draw::LoadImage(L"hero 2damage.png", 16, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(4);//主人公オブジェクト作成
