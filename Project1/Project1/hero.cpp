@@ -54,19 +54,6 @@ void CObjHero::Action()
 			{
 				if (Attack_Item == 1)
 				{
-
-
-					//弾丸オブジェクト作成
-					CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-
-
-
-
-
-				}
-				else
-				{
 					for(int i = 0; i <= 40; i+=10)
 					{
 						
@@ -75,6 +62,13 @@ void CObjHero::Action()
 						Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 					}
 
+
+				}
+				else
+				{
+					//弾丸オブジェクト作成
+					CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+					Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
 				}
 
@@ -270,7 +264,7 @@ void CObjHero::Draw()
 	else if (m_hp == 1)
 	{		
 
-		Draw::Draw(3, &src, &dst, c, 0.0f);
+		Draw::Draw(1, &src, &dst, c, 0.0f);
 
 	}
 
