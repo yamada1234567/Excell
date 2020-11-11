@@ -18,7 +18,7 @@ void CObjGameOver::Init()
 //アクション
 void CObjGameOver::Action()
 {
-	//エンターキーを押してシーン：ゲームメインに移動する
+	//エンターキーを押してシーン：titleに移動する
 	if (Input::GetVKey(VK_RETURN) == true)
 	{
 		Scene::SetScene(new CSceneTitle());

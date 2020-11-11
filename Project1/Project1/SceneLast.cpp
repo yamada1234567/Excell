@@ -36,6 +36,7 @@ void CSceneLast::InitScene()
 	Draw::LoadImage(L"Boss(Sun).png", 13, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
 	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"UFO.png", 200, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
@@ -163,6 +164,17 @@ void CSceneLast::Scene()
 
 		CObjmeteoL* obj = new CObjmeteoL(x, 0.0f);
 		Objs::InsertObj(obj, OBJ_meteoL, 4);
+		obj->SetVector(0.0f, 1.0f);
+
+
+	}
+
+	if (m_time % 20==0 ||m_time==500)
+	{
+
+
+		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 4);
 		obj->SetVector(0.0f, 1.0f);
 
 

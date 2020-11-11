@@ -67,6 +67,11 @@ void CObjAlien::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+	if (m_x > 0.0f)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 
 	//主人公に当たったら消滅
 	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
@@ -82,21 +87,32 @@ void CObjAlien::Action()
 		m_hp -= 1;
 		if (0 >= m_hp)
 		{
-			int item;
-
+			
+			//消去
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 
 		}
+			int item;
+
+			srand(time(NULL));
+			item = rand() % 2;//アイテムが出る確率
+			
+			if(item == 1)
+			{ 
+
+				CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
+			}
+			else
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			}
+
+
 	}
 
 	m_time++;

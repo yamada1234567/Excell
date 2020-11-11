@@ -49,31 +49,27 @@ void CObjHero::Action()
 			{
 				if (Attack_Item == 1)
 				{
-					
 
-						//３弾丸オブジェクト作成
-						CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
-						Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
-		
+					//３弾丸オブジェクト作成
+					CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+					Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+
+
 
 
 
 				}
-	
-				
+				else
+				{
+					//弾丸オブジェクト作成
+					CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+					Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+				}
 
-	/*			}*/
-				//else
-				//{
-				//	//弾丸オブジェクト作成
-				//	CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
-				//	Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-				//}
-				
 				m_f = false;
-
 			}
+			
 		}
 		else
 		{
