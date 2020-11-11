@@ -23,6 +23,7 @@ CSceneLast::~CSceneLast()
 	x = 0.0f;
 	y = 0.0f;
 
+
 }
 //ゲームメイン初期化メソッド
 void CSceneLast::InitScene()
@@ -39,7 +40,7 @@ void CSceneLast::InitScene()
 	Draw::LoadImage(L"UFO.png", 200, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
-	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
+	CObjHero* obj = new CObjHero(6);//主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 

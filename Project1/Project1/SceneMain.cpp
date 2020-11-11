@@ -15,7 +15,6 @@ using namespace GameL;
 //コンストラクタ
 CSceneMain::CSceneMain()
 {
-	C = 1;
 
 }
 //デストラクタ
@@ -37,7 +36,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
-	CObjHero* obj = new CObjHero(C);//主人公オブジェクト作成
+	CObjHero* obj = new CObjHero(1);//主人公オブジェクト作成
 	Objs::InsertObj(obj,OBJ_HERO,1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//背景
