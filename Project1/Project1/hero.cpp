@@ -13,6 +13,11 @@
 //使用するネームスペース
 using namespace GameL;
 
+CObjHero::CObjHero(int c)
+{
+
+	C = c;
+}
 
 //イニシャライズ
 void CObjHero::Init()
@@ -172,7 +177,7 @@ void CObjHero::Action()
 				Hits::DeleteHitBox(this);
 
 				//主人公消滅でシーンをゲームオーバーに移行する
-				Scene::SetScene((CScene*)new CSceneGameOver());
+				Scene::SetScene((CScene*)new CSceneGameOver(C));
 				
 			}
 		}
@@ -206,7 +211,7 @@ void CObjHero::Action()
 			Hits::DeleteHitBox(this);
 
 			////主人公消滅でシーンをゲームオーバーに移行する
-			Scene::SetScene((CScene*)new CSceneGameOver());
+			Scene::SetScene((CScene*)new CSceneGameOver(C));
 
 		}
 	}
