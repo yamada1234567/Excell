@@ -43,27 +43,27 @@ void CObjBullet::Action()
 	
 
 
-	//’eŠÛ“–‚½‚Á‚Ä‚é‚©’²‚×‚é
-	if (hit->CheckObjNameHit(OBJ_meteoS) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
-	if (hit->CheckObjNameHit(OBJ_meteoM) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
-	if (hit->CheckObjNameHit(OBJ_meteoL) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
-	if (hit->CheckObjNameHit(OBJ_BOSS) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
+	////’eŠÛ“–‚½‚Á‚Ä‚é‚©’²‚×‚é
+	//if (hit->CheckObjNameHit(OBJ_meteoS) != nullptr)
+	//{
+	//	this->SetStatus(false);
+	//	Hits::DeleteHitBox(this);
+	//}
+	//if (hit->CheckObjNameHit(OBJ_meteoM) != nullptr)
+	//{
+	//	this->SetStatus(false);
+	//	Hits::DeleteHitBox(this);
+	//}
+	//if (hit->CheckObjNameHit(OBJ_meteoL) != nullptr)
+	//{
+	//	this->SetStatus(false);
+	//	Hits::DeleteHitBox(this);
+	//}
+	//if (hit->CheckObjNameHit(OBJ_BOSS) != nullptr)
+	//{
+	//	this->SetStatus(false);
+	//	Hits::DeleteHitBox(this);
+	//}
 
 	//ELEMENT_ENEMY‚ðŽ‚ÂƒIƒuƒWƒFƒNƒg‚ÆÚG‚µ‚½‚çíœ
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)

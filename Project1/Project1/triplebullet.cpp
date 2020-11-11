@@ -19,26 +19,6 @@ CObjTripleBullet::CObjTripleBullet(float x, float y, float r, float speed)
 //イニシャライズ
 void CObjTripleBullet::Init()
 {
-	m_vx = cos(3.14f/180.0f*m_r);
-	m_vy = sin(3.14f / 180.0f * m_r);
-
-
-	//ベクトルの長さを求める
-	float r = 0.0f;
-	r = m_vx * m_vx + m_vy * m_vy;
-	r = sqrt(r);//rをルートを求める
-
-	//長さが０かどうか調べる
-	if (r == 0.0f)
-	{
-		;//０ならそのまま
-	}
-	else
-	{
-		//正規化
-		m_vx = 1.0f / r * m_vx;
-		m_vy = 1.0f / r * m_vy;
-	}
 
 	//当たり判定作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_BULLET, OBJ_TRIPLEBULLET, 1);
