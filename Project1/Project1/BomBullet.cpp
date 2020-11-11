@@ -1,40 +1,34 @@
 //使用するヘッダーファイル
 #include "GameL\DrawTexture.h"
 #include "GameHead.h"
-#include "triplebullet.h"
+#include "BomBullet.h"
 #include "GameL\HitBoxManager.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //コンストラクタ
-CObjTripleBullet::CObjTripleBullet(float x, float y)
+CObjBomBullet::CObjBomBullet(float x, float y)
 {
 	m_x = x;
 	m_y = y;
-
 }
 
 //イニシャライズ
-void CObjTripleBullet::Init()
+void CObjBomBullet::Init()
 {
+	m_vx = 0.0f;
 
 	//当たり判定作成
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_BULLET, OBJ_TRIPLEBULLET, 1);
+	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_BULLET, OBJ_BOM_BULLET, 1);
 }
 
 //アクション
-void CObjTripleBullet::Action()
+void CObjBomBullet::Action()
 {
-	//移動
-	m_y += m_vx * 30.0f;
-	m_x -= m_vx * 0.0f;
+	m_y += -12.0f;
 
-	
-
-	//hitbox更新用ポインターの取得
-	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x, m_y);
+	m_x += m_vx;
 
 	//領域外に出たら削除
 	if (m_x < 0.0f)
@@ -43,41 +37,25 @@ void CObjTripleBullet::Action()
 		Hits::DeleteHitBox(this);
 	}
 
-	//弾丸当たってるか調べる
-	if (hit->CheckObjNameHit(OBJ_meteoS) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
-	if (hit->CheckObjNameHit(OBJ_meteoM) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
-	if (hit->CheckObjNameHit(OBJ_meteoL) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
-	if (hit->CheckObjNameHit(OBJ_BOSS) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
+	//hitbox更新用ポインターの取得
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x, m_y);
+
+
 
 	//ELEMENT_ENEMYを持つオブジェクトと接触したら削除
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
-		
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 
-
+		CObjBom* obj_b = new CObjBom(m_x, m_y);
+		Objs::InsertObj(obj_b, OBJ_BOM, 1);
 	}
 }
 
 //ドロー
-void CObjTripleBullet::Draw()
+void CObjBomBullet::Draw()
 {
 	//描写カラー情報 R=RED G=Green B=Blue A=alpha
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -98,5 +76,5 @@ void CObjTripleBullet::Draw()
 	dst.m_bottom = 32.0f + m_y;
 
 	//1番に登録したグラフィックをの情報をもとに描画
-	Draw::Draw(1, &src, &dst, c, m_r);
+	Draw::Draw(1, &src, &dst, c, 0.0f);
 }

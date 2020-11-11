@@ -27,6 +27,7 @@ void CObjHero::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_f = true;
+	m_g = true;
 	m_bullet = 0;
 
 	m_hp = 3;
@@ -55,31 +56,17 @@ void CObjHero::Action()
 
 
 
-		//主人公機の弾丸発射
+		//通常弾丸発射
 		if (Input::GetVKey('Z') == true)
 		{
 			if (m_f == true)
 			{
-				if (Attack_Item == 1)
-				{
-					for(int i = 0; i <= 40; i+=10)
-					{
-						
-						//３弾丸オブジェクト作成
-						CObjBullet* obj_b = new CObjBullet(m_x+3.0f, m_y-i);
-						Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-					}
 
+				//弾丸オブジェクト作成
+				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
-				}
-				else
-				{
-
-					//弾丸オブジェクト作成
-					CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-
-				}
+			
 
 				m_f = false;
 
@@ -93,7 +80,64 @@ void CObjHero::Action()
 			m_f = true;
 		}
 
+		//４連の弾丸発射
+		if (Input::GetVKey('X') == true)
+		{
+			if (m_g == true)
+			{
+				//if (Attack_Item <= 1)
+				///
+					for (int i = 0; i <= 40; i += 10)
+					{
 
+						//３弾丸オブジェクト作成
+						CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y - i);
+						Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+
+					}
+
+		//			Attack_Item -= 1;
+		///*		}*/
+
+				m_g = false;
+
+			}
+
+
+		}
+		else
+		{
+
+			m_g = true;
+		}
+
+		//BOMの弾丸発射
+		if (Input::GetVKey('B') == true)
+		{
+			if (m_b == true)
+			{
+				//if (Attack_Item <= 1)
+				///
+
+
+					//BOMオブジェクト作成
+					CObjBomBullet* obj_b = new CObjBomBullet(m_x + 3.0f, m_y);
+					Objs::InsertObj(obj_b, OBJ_BOM_BULLET, 1);
+
+				//			Attack_Item -= 1;
+				///*		}*/
+
+				m_b = false;
+
+			}
+
+
+		}
+		else
+		{
+
+			m_b = true;
+		}
 
 
 
@@ -237,7 +281,7 @@ void CObjHero::Action()
 	//散弾アイテム判定
 	if (hit->CheckObjNameHit(OBJ_ITEM) != nullptr)
 	{
-		Attack_Item=1;
+		Attack_Item=4;
 	}
 
 
@@ -273,15 +317,20 @@ void CObjHero::Draw()
 	else if(m_hp == 2)
 	{
 
-		Draw::Draw(1, &src, &dst, c, 0.0f);
+		Draw::Draw(15, &src, &dst, c, 0.0f);
 
 	}
 	else if (m_hp == 1)
 	{		
 
-		Draw::Draw(1, &src, &dst, c, 0.0f);
+		Draw::Draw(16, &src, &dst, c, 0.0f);
 
 	}
+	else
+	{
+		Draw::Draw(17, &src, &dst, c, 0.0f);
+	}
+
 
 
 
