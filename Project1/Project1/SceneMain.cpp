@@ -51,9 +51,6 @@ void CSceneMain::InitScene()
 //ゲームメイン実行メソッド
 void CSceneMain::Scene()
 {
-	Scene::SetScene(new CSceneClear(5));
-	//クリアに移動
-	//Scene::SetScene(new CSceneClear());
 	
 	//時間
 	m_time++;

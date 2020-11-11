@@ -73,7 +73,7 @@ void CObjmeteoS::Action()
 
 
 	//ƒ_ƒ[ƒW”»’è
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_BULLET) == true)
 	{
 		m_hp -= 1;
 		if (0 >= m_hp)
@@ -91,7 +91,7 @@ void CObjmeteoS::Action()
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 			}
-			if (item == 5)
+			if (item <= 5)
 			{
 				CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
