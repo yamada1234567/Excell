@@ -34,7 +34,6 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"Boss(moon).png", 6, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
 	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
-	//Draw::LoadImage(L"meteoS.png", 4, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
