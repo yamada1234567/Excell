@@ -130,6 +130,7 @@ void CSceneLast::Scene()
 	if (m_time % 80 == 0)
 	{
 	
+	
 		if (x==300)
 		{
 
