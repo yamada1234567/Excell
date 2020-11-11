@@ -8,7 +8,7 @@ using namespace GameL;
 class CObjHero:public CObj
 {
 public:
-	CObjHero(){};
+	CObjHero(int c);
 	~CObjHero(){};
 
 	void Init();
@@ -31,6 +31,7 @@ private:
 	int m_time;
 	int Attack_Item;
 	bool Bar;
+	int C;
 
 };
 
