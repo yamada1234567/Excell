@@ -13,6 +13,11 @@
 //使用するネームスペース
 using namespace GameL;
 
+CObjHero::CObjHero(int c)
+{
+
+	C = c;
+}
 
 //イニシャライズ
 void CObjHero::Init()
@@ -22,11 +27,16 @@ void CObjHero::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_f = true;
-	m_hp = 3;
+	m_g = true;
 	m_bullet = 0;
+
+	m_hp = 3;
 	m_o	=	15;
-	m_time = 0;
+
 	Attack_Item=0;
+
+	m_time = 0;
+	Bullet_time = 100;
 
 	Bar=true;
 
@@ -38,44 +48,98 @@ void CObjHero::Init()
 void CObjHero::Action()
 {
 	m_time++;
+
 	//Hitboxの内容を更新
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
 
-		//主人公機の弾丸発射
+
+
+
+		//通常弾丸発射
 		if (Input::GetVKey('Z') == true)
 		{
 			if (m_f == true)
 			{
-				if (Attack_Item == 1)
-				{
 
+				//弾丸オブジェクト作成
+				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
-					//３弾丸オブジェクト作成
-					CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-
-
-
-
-
-				}
-				else
-				{
-					//弾丸オブジェクト作成
-					CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-				}
+			
 
 				m_f = false;
+
 			}
-			
+
+
 		}
 		else
 		{
 			
 			m_f = true;
 		}
+
+		//４連の弾丸発射
+		if (Input::GetVKey('X') == true)
+		{
+			if (m_g == true)
+			{
+				//if (Attack_Item <= 1)
+				///
+					for (int i = 0; i <= 40; i += 10)
+					{
+
+						//３弾丸オブジェクト作成
+						CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y - i);
+						Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+
+					}
+
+		//			Attack_Item -= 1;
+		///*		}*/
+
+				m_g = false;
+
+			}
+
+
+		}
+		else
+		{
+
+			m_g = true;
+		}
+
+		//BOMの弾丸発射
+		if (Input::GetVKey('B') == true)
+		{
+			if (m_b == true)
+			{
+				//if (Attack_Item <= 1)
+				///
+
+
+					//BOMオブジェクト作成
+					CObjBomBullet* obj_b = new CObjBomBullet(m_x + 3.0f, m_y);
+					Objs::InsertObj(obj_b, OBJ_BOM_BULLET, 1);
+
+				//			Attack_Item -= 1;
+				///*		}*/
+
+				m_b = false;
+
+			}
+
+
+		}
+		else
+		{
+
+			m_b = true;
+		}
+
+
 
 	//操作
 	if (Input::GetVKey(VK_RIGHT) == true)
@@ -168,11 +232,12 @@ void CObjHero::Action()
 			m_hp -= 1;
 			if (0 >= m_hp)
 			{
+
 				this->SetStatus(false);
 				Hits::DeleteHitBox(this);
 
 				//主人公消滅でシーンをゲームオーバーに移行する
-				Scene::SetScene((CScene*)new CSceneGameOver());
+				Scene::SetScene((CScene*)new CSceneGameOver(C));
 				
 			}
 		}
@@ -205,8 +270,8 @@ void CObjHero::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 
-			////主人公消滅でシーンをゲームオーバーに移行する
-			Scene::SetScene((CScene*)new CSceneGameOver());
+			//主人公消滅でシーンをゲームオーバーに移行する
+			Scene::SetScene((CScene*)new CSceneGameOver(C));
 
 		}
 	}
@@ -216,7 +281,7 @@ void CObjHero::Action()
 	//散弾アイテム判定
 	if (hit->CheckObjNameHit(OBJ_ITEM) != nullptr)
 	{
-		Attack_Item=1;
+		Attack_Item=4;
 	}
 
 
@@ -244,8 +309,30 @@ void CObjHero::Draw()
 	dst.m_right		= 36.0f+m_x;
 	dst.m_bottom	= 36.0f+m_y;
 
-	//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(0, &src, &dst, c, 0.0f);
+	if (m_hp == 3)
+	{
+		//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
+		Draw::Draw(0, &src, &dst, c, 0.0f);
+	}
+	else if(m_hp == 2)
+	{
+
+		Draw::Draw(15, &src, &dst, c, 0.0f);
+
+	}
+	else if (m_hp == 1)
+	{		
+
+		Draw::Draw(16, &src, &dst, c, 0.0f);
+
+	}
+	else
+	{
+		Draw::Draw(17, &src, &dst, c, 0.0f);
+	}
+
+
+
 
 	if (Bar== false)
 	{

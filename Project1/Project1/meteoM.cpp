@@ -70,7 +70,7 @@ void CObjmeteoM::Action()
 
 
 	//ƒ_ƒ[ƒW”»’è
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_BULLET) == true)
 	{
 		m_hp -= 1;
 		if (0 >= m_hp)

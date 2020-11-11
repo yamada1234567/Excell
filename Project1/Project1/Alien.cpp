@@ -52,7 +52,7 @@ void CObjAlien::Action()
 
 	//‰Á‘¬
 	m_vx *= 5.5f;
-	m_vy *= 1.5f;
+	m_vy *= 0.0f;
 
 	m_x += m_vx;
 	m_y += m_vy;
@@ -82,7 +82,7 @@ void CObjAlien::Action()
 
 
 	//ƒ_ƒ[ƒW”»’è
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_BULLET) == true)
 	{
 		m_hp -= 1;
 		if (0 >= m_hp)
@@ -137,10 +137,5 @@ void CObjAlien::Draw()
 	dst.m_right = m_top_right + m_x;
 	dst.m_bottom = m_left_bottom + m_y;
 	//‰æ‘œ“o˜^
-	Draw::Draw(200, &src, &dst, c, 0.0f);
-}
-void CObjAlien::SetVector(float vx, float vy)
-{
-	m_vx = vx;
-	m_vy = vy;
+	Draw::Draw(20, &src, &dst, c, 0.0f);
 }
