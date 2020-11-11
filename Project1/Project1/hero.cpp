@@ -27,11 +27,15 @@ void CObjHero::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_f = true;
-	m_hp = 3;
 	m_bullet = 0;
+
+	m_hp = 3;
 	m_o	=	15;
-	m_time = 0;
+
 	Attack_Item=0;
+
+	m_time = 0;
+	Bullet_time = 100;
 
 	Bar=true;
 
@@ -43,9 +47,13 @@ void CObjHero::Init()
 void CObjHero::Action()
 {
 	m_time++;
+
 	//Hitboxの内容を更新
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
+
+
+
 
 		//主人公機の弾丸発射
 		if (Input::GetVKey('Z') == true)
@@ -66,6 +74,7 @@ void CObjHero::Action()
 				}
 				else
 				{
+
 					//弾丸オブジェクト作成
 					CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
 					Objs::InsertObj(obj_b, OBJ_BULLET, 1);
@@ -73,14 +82,20 @@ void CObjHero::Action()
 				}
 
 				m_f = false;
+
 			}
-			
+
+
 		}
 		else
 		{
 			
 			m_f = true;
 		}
+
+
+
+
 
 	//操作
 	if (Input::GetVKey(VK_RIGHT) == true)
@@ -211,7 +226,7 @@ void CObjHero::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 
-			////主人公消滅でシーンをゲームオーバーに移行する
+			//主人公消滅でシーンをゲームオーバーに移行する
 			Scene::SetScene((CScene*)new CSceneGameOver(C));
 
 		}

@@ -29,6 +29,7 @@ private:
 
 	int m_o;
 	int m_time;
+	int Bullet_time;
 	int Attack_Item;
 	bool Bar;
 	int C;
