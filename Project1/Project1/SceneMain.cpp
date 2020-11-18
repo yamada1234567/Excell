@@ -62,8 +62,6 @@ void CSceneMain::Scene()
 	//出現する時間（timeが30になったら1体出現する）
 	if (m_time == 20)
 	{
-		CObjAlien* obj;
-	    obj= new CObjAlien(0,0);
-		Objs::InsertObj(obj, OBJ_Alien, 20);
+		
 	}
 }
