@@ -43,6 +43,9 @@ void CSceneMain::InitScene()
 	CObjHero* obj = new CObjHero(1);//主人公オブジェクト作成
 	Objs::InsertObj(obj,OBJ_HERO,1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
+
+
+
 	//背景
 	CObjBackground* back = new CObjBackground();
 	Objs::InsertObj(back, OBJ_BACKGROUND, 0);
@@ -59,9 +62,21 @@ void CSceneMain::Scene()
 	//時間
 	m_time++;
 
-	//出現する時間（timeが30になったら1体出現する）
-	if (m_time == 20)
+	if (m_time == 10)
 	{
-		
+		CObjmeteoS* obj = new CObjmeteoS(400.0f, 50.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
 	}
+
+
+	//出現する時間
+	if (m_time==10)
+	{
+		CObjAlien* obj= new CObjAlien(0,50);
+		Objs::InsertObj(obj, OBJ_Alien, 20);
+
+	}
+
+
 }
