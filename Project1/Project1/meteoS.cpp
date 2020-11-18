@@ -24,6 +24,8 @@ void CObjmeteoS::Init()
 	m_time = 0;
 	m_left_bottom =32.0f;//表示位置
 	m_top_right   =0.0f; //表示位置
+
+	time=0;//画像切り替え時間
 	
 
 	//当たり判定作成
@@ -32,6 +34,8 @@ void CObjmeteoS::Init()
 //アクション
 void CObjmeteoS::Action()
 {
+	m_time++;
+		
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
@@ -73,8 +77,7 @@ void CObjmeteoS::Action()
 	//bomにあったら消滅
 	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		m_hp = 0;
 	}
 
 	//ダメージ判定
@@ -85,8 +88,7 @@ void CObjmeteoS::Action()
 		{
 			int item;
 
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
+
 
 			////アイテム　作成中
 			//srand(time(NULL));
@@ -121,7 +123,7 @@ void CObjmeteoS::Action()
 
 
 
-	m_time++;
+
 
 	
 	//敵回転
@@ -166,25 +168,46 @@ void CObjmeteoS::Draw()
 	dst.m_right  = m_top_right + m_x;
 	dst.m_bottom = m_left_bottom+ m_y;
 	
-	
+	//爆発切り替え
 	if (0 >= m_hp)
-	{
+	{					
+		
+
+		m_vx = 0;
+		m_vy = 0;
+
 		Draw::Draw(15, &src, &dst, c, 0.0f);
 
-		Draw::Draw(16, &src, &dst, c, 0.0f);
+		time++;
 		
-		Draw::Draw(17, &src, &dst, c, 0.0f);
+			
+		if (time >= 2)
+		{
+
+
+			Draw::Draw(16, &src, &dst, c, 0.0f);
+
+			if (time >= 5)
+			{
+				Draw::Draw(17, &src, &dst, c, 0.0f);
 	
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+
+
+			}
+			if(time >= 10)
+			{
+				Hits::DeleteHitBox(this);
+				this->SetStatus(false);
+				
+			}
+
+		}
 
 	}
 	else
 	{
-
-		//画像登録
+		//隕石登録
 		Draw::Draw(2, &src, &dst, c, 0.0f);
-
 
 	}
 

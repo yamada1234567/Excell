@@ -223,31 +223,52 @@ void CObjHero::Action()
 	//CHitBox* hit = Hits::GetHitBox(this);
 	//hit->SetPos(m_x, m_y);
 
-
-	//ダメージ判定
-	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
+	if (Input::GetVKey('A') == false)
 	{
-		if (Bar == true)
+		//ダメージ判定
+		if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 		{
-			m_hp -= 1;
-			if (0 >= m_hp)
+			if (Bar == true)
 			{
+				m_hp -= 1;
+				if (0 >= m_hp)
+				{
 
+					this->SetStatus(false);
+					Hits::DeleteHitBox(this);
+
+					//主人公消滅でシーンをゲームオーバーに移行する
+					Scene::SetScene((CScene*)new CSceneGameOver(C));
+
+				}
+			}
+			//Hpのかわりにバリアを消費
+			else if (Bar == false)
+			{
+				Bar = true;
+			}
+
+		}
+	}
+	if (Input::GetVKey('A') == false)
+	{
+		//酸素０で消滅
+		if (m_time % 60 == 0)
+		{
+			//m_o--;
+
+			if (0 == m_o)
+			{
 				this->SetStatus(false);
 				Hits::DeleteHitBox(this);
 
 				//主人公消滅でシーンをゲームオーバーに移行する
 				Scene::SetScene((CScene*)new CSceneGameOver(C));
-				
+
 			}
 		}
-		//Hpのかわりにバリアを消費
-		else if (Bar == false)
-		{
-				Bar = true;
-		}
+	}
 
-	}	
 	//シールドアイテム当たり判定
 	if (hit->CheckObjNameHit(OBJ_SHIELD) != nullptr)
 	{
@@ -260,21 +281,8 @@ void CObjHero::Action()
 		m_o = 15;
 
 	}
-	//酸素０で消滅
-	if (m_time % 60 == 0)
-	{
-		//m_o--;
 
-		if (0 == m_o)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
 
-			//主人公消滅でシーンをゲームオーバーに移行する
-			Scene::SetScene((CScene*)new CSceneGameOver(C));
-
-		}
-	}
 
 
 

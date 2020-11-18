@@ -1,7 +1,6 @@
 #pragma once
 //使用するヘッダー
 #include <stdlib.h>
-#include <time.h>
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
 #include "meteoSin.h"
