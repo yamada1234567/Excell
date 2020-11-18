@@ -151,6 +151,9 @@
     <ClCompile Include="explosion.cpp">
       <Filter>ソースファイル\その他</Filter>
     </ClCompile>
+    <ClCompile Include="meteoEX.cpp">
+      <Filter>ソースファイル\敵</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -302,6 +305,9 @@
     </ClInclude>
     <ClInclude Include="Bom.h">
       <Filter>ソースファイル\主人公\強化</Filter>
+    </ClInclude>
+    <ClInclude Include="meteoEX.h">
+      <Filter>ソースファイル\敵</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
