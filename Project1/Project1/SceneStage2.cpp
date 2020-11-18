@@ -34,7 +34,7 @@ void CSceneStage2::InitScene()
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
 	Draw::LoadImage(L"Boss(Mars).png", 9, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
-	Draw::LoadImage(L"UFO.png", 200, TEX_SIZE_512);
+	Draw::LoadImage(L"UFO.png", 20, TEX_SIZE_512);
 	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
 	Draw::LoadImage(L"hero 1damage.png", 15, TEX_SIZE_512);
 	Draw::LoadImage(L"hero 2damage.png", 16, TEX_SIZE_512);

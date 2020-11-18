@@ -48,7 +48,7 @@ void CObjmeteoS::Action()
 
 	//‰Á‘¬
 	m_vx *= 0.0f;
-	m_vy *= 6.0f;
+	m_vy *= 4.5f;
 
 	m_x += m_vx;
 	m_y += m_vy;

@@ -38,7 +38,7 @@ void CSceneStage4::InitScene()
 	Draw::LoadImage(L"hero 1damage.png", 15, TEX_SIZE_512);
 	Draw::LoadImage(L"hero 2damage.png", 16, TEX_SIZE_512);
 	Draw::LoadImage(L"hero dead.png", 17, TEX_SIZE_512);
-
+	Draw::LoadImage(L"UFO.png", 20, TEX_SIZE_512);
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(4);//主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
@@ -95,7 +95,7 @@ void CSceneStage4::Scene()
 	}
 	
 	//出力する時間(timeが50になると出力)
-	if (m_time % 30 == 0)
+	if (m_time % 70 == 0)
 	{
 		//小隕石出力
 		CObjmeteoS* obj = new CObjmeteoS(290.0f, 0.0f);
@@ -104,28 +104,82 @@ void CSceneStage4::Scene()
 	}
 
 	//出力する時間(timeが40になると出力)
-	if (m_time % 30 == 0)
+	if (m_time % 66 == 0)
 	{
 		//小隕石出力
 		CObjmeteoS* obj = new CObjmeteoS(460.0f, 0.0f);
 		Objs::InsertObj(obj, OBJ_meteoS, 4);
 		obj->SetVector(0.0f, 1.0f);
 	}
-
+	if (m_time % 83 == 0)
+	{
+		//小隕石出力
+		CObjmeteoS* obj = new CObjmeteoS(400.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 67 == 0)
+	{
+		//小隕石出力
+		CObjmeteoS* obj = new CObjmeteoS(110.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 55 == 0)
+	{
+		//小隕石出力
+		CObjmeteoS* obj = new CObjmeteoS(330.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 50 == 0)
+	{
+		//小隕石出力
+		CObjmeteoS* obj = new CObjmeteoS(670.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
 	//出力する時間(timeが60になると出力)
-	if (m_time % 40 == 0)
+	if (m_time % 70 == 0)
 	{
 		//中隕石出力
 		CObjmeteoM* obj = new CObjmeteoM(70.0f, 0.0f);
 		Objs::InsertObj(obj, OBJ_meteoM, 4);
 		obj->SetVector(0.0f, 1.0f);
 	}
-
+	if (m_time % 100 == 0)
+	{
+		//中隕石出力
+		CObjmeteoM* obj = new CObjmeteoM(610.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoM, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 90 == 0)
+	{
+		//中隕石出力
+		CObjmeteoM* obj = new CObjmeteoM(390.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoM, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
 	//出力する時間(timeが70になると出力)
-	if (m_time % 70 == 0)
+	if (m_time % 88 == 0)
 	{
 		//大隕石出力
-		CObjmeteoL* obj = new CObjmeteoL(620.0f, 0.0f);
+		CObjmeteoL* obj = new CObjmeteoL(300.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoL, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 80 == 0)
+	{
+		//大隕石出力
+		CObjmeteoL* obj = new CObjmeteoL(700.0f, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoL, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 60 == 0)
+	{
+		//大隕石出力
+		CObjmeteoL* obj = new CObjmeteoL(0.0f, 0.0f);
 		Objs::InsertObj(obj, OBJ_meteoL, 4);
 		obj->SetVector(0.0f, 1.0f);
 	}
