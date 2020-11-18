@@ -50,8 +50,8 @@ void CObjmeteoLD::Action()
 		m_vy = 1.0f / r * m_vy;
 	}
 	//‰Á‘¬
-	m_vx *= 6.0f;
-	m_vy *= 6.0f;
+	m_vx *= 4.5f;
+	m_vy *= 4.5f;
 
 	m_x += m_vx;
 	m_y += m_vy;
@@ -74,9 +74,15 @@ void CObjmeteoLD::Action()
 		Hits::DeleteHitBox(this);
 	}
 
+	//bom‚É‚ ‚Á‚½‚çÁ–Å
+	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 
 	/*ƒ_ƒ[ƒW”»’è*/
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_BULLET) == true)
 	{
 		m_hp -= 1;
 		if (0 >= m_hp)
@@ -107,6 +113,12 @@ void CObjmeteoLD::Action()
 
 
 		}
+	}
+
+	if (hit->CheckElementHit(ELEMENT_EXPLOSION) == true)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
 	}
 
 	m_time++;
@@ -155,8 +167,35 @@ void CObjmeteoLD::Draw()
 	dst.m_left = m_left_bottom + m_x;
 	dst.m_right = m_top_right + m_x;
 	dst.m_bottom = m_left_bottom + m_y;
-	//‰æ‘œ“o˜^
-	Draw::Draw(2, &src, &dst, c, 0.0f);
+	//”š”­Ø‚è‘Ö‚¦
+	if (0 >= m_hp)
+	{
+
+
+		m_vx = 0;
+		m_vy = 0;
+
+		Draw::Draw(50, &src, &dst, c, 0.0f);
+
+		de_time++;
+
+
+
+		if (de_time >= 10)
+		{
+			Hits::DeleteHitBox(this);
+			this->SetStatus(false);
+
+		}
+
+
+	}
+	else
+	{
+		//è¦Î“o˜^
+		Draw::Draw(2, &src, &dst, c, 0.0f);
+
+	}
 }
 void CObjmeteoLD::SetVector(float vx, float vy)
 {

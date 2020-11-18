@@ -8,12 +8,15 @@ enum OBJ_NAME
 	//OBJ_○○と表記
 	OBJ_HERO,
 	OBJ_TRIPLE,
+	OBJ_BOM,
+
 	OBJ_meteoS,
 	OBJ_meteoM,
 	OBJ_meteoL,
 	OBJ_meteoRD,
 	OBJ_meteoLD,
 	OBJ_meteoSIN,
+	OBJ_meteoEX,
 	OBJ_Alien,
 	OBJ_BOSS,
 	OBJ_BOSS2,
@@ -23,6 +26,7 @@ enum OBJ_NAME
 	OBJ_BOSS6,
 
 	OBJ_BULLET,
+	OBJ_BOM_BULLET,
 	OBJ_TRIPLEBULLET,
 	OBJ_TRIPLEBULLET2,
 
@@ -58,6 +62,7 @@ enum HIT_ELEMENTS
 	ELEMENT_BLACK,
 	ELEMENT_WHITE,
 	ELEMENT_BULLET,
+	ELEMENT_EXPLOSION,
 
 };
 //------------------------------------------------
@@ -85,21 +90,26 @@ struct UserData
 //ゲームシーンオブジェクトヘッダ------------------
 #include "hero.h"
 #include "bullet.h"
+#include "BomBullet.h"
+#include "Bom.h"
 #include "triplebullet.h"
 #include "triplebullet2.h"
+
 #include "meteoS.h"
 #include "meteoM.h"
 #include "meteoL.h"
 #include "meteoRD.h"
 #include "meteoLD.h"
 #include "meteoSin.h"
+#include "meteoEX.h"
 #include "Alien.h"
 #include "Boss.h"
-#include"Boss2.h"
-#include"Boss3.h"
-#include"Boss4.h"
-#include"Boss5.h"
-#include"Boss6.h"
+#include "Boss2.h"
+#include "Boss3.h"
+#include "Boss4.h"
+#include "Boss5.h"
+#include "Boss6.h"
+
 #include "item.h"
 #include "Oxygen.h"
 #include "shield.h"

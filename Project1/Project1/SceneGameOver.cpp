@@ -17,9 +17,9 @@ using namespace GameL;
 #include "GameHead.h"
 
 //コントラクタ
-CSceneGameOver::CSceneGameOver()
+CSceneGameOver::CSceneGameOver(int c)
 {
-
+	C = c;
 }
 
 //デストラクタ
@@ -47,7 +47,7 @@ void CSceneGameOver::InitScene()
 	Audio::Start(0);
 
 	//ゲームオーバーオブジェクトを作成
-	CObjGameOver* obj = new CObjGameOver();
+	CObjGameOver* obj = new CObjGameOver(C);
 	Objs::InsertObj(obj, OBJ_GAMEOVER, 10);
 }
 

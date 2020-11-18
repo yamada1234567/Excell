@@ -16,7 +16,7 @@ CObjmeteoL::CObjmeteoL(float x, float y)
 //イニシャライズ
 void CObjmeteoL::Init()
 {
-	m_hp = 7;
+	m_hp = 5;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_time=0;
@@ -45,8 +45,8 @@ void CObjmeteoL::Action()
 	}
 
 	//加速
-	m_vx *= 1.0f;
-	m_vy *= 2.0f;
+	m_vx *= 0.5f;
+	m_vy *= 0.5f;
 
 	m_x += m_vx;
 	m_y += m_vy;
@@ -69,9 +69,16 @@ void CObjmeteoL::Action()
 		Hits::DeleteHitBox(this);
 	}
 
+	//bomにあったら消滅
+	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
 
 	//ダメージ判定
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_BULLET) == true)
 	{
 		m_hp -= 1;
 		if (0>=m_hp)
@@ -174,8 +181,35 @@ void CObjmeteoL::Draw()
 	dst.m_left = m_left_bottom + m_x;
 	dst.m_right = m_top_right + m_x;
 	dst.m_bottom = m_left_bottom + m_y;
-	//画像登録
-	Draw::Draw(2, &src, &dst, c, 0.0f);
+	//爆発切り替え
+	if (0 >= m_hp)
+	{
+
+
+		m_vx = 0;
+		m_vy = 0;
+
+		Draw::Draw(50, &src, &dst, c, 0.0f);
+
+		de_time++;
+
+
+
+		if (de_time >= 10)
+		{
+			Hits::DeleteHitBox(this);
+			this->SetStatus(false);
+
+		}
+
+
+	}
+	else
+	{
+		//隕石登録
+		Draw::Draw(2, &src, &dst, c, 0.0f);
+
+	}
 }
 void CObjmeteoL::SetVector(float vx, float vy)
 {

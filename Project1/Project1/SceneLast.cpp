@@ -23,6 +23,7 @@ CSceneLast::~CSceneLast()
 	x = 0.0f;
 	y = 0.0f;
 
+
 }
 //ゲームメイン初期化メソッド
 void CSceneLast::InitScene()
@@ -35,9 +36,16 @@ void CSceneLast::InitScene()
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
 	Draw::LoadImage(L"Boss(Sun).png", 13, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
+	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"UFO.png", 20, TEX_SIZE_512);
+	Draw::LoadImage(L"hero 1damage.png", 15, TEX_SIZE_512);
+	Draw::LoadImage(L"hero 2damage.png", 16, TEX_SIZE_512);
+	Draw::LoadImage(L"hero 1damage.png", 15, TEX_SIZE_512);
+	Draw::LoadImage(L"hero dead.png", 17, TEX_SIZE_512);
+	Draw::LoadImage(L"barrier.png", 22, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
-	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
+	CObjHero* obj = new CObjHero(6);//主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 
@@ -53,7 +61,53 @@ void CSceneLast::Scene()
 {
 	m_time++;
 	
+	if (m_time % 500 == 0)
+	{
+		x = 0.0f;
 
+		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 200);
+	}
+	if (m_time % 100 == 0)
+	{
+		x = 200.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 100 == 0)
+	{
+		x = 200.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 110 == 0)
+	{
+		x = 350.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 160 == 0)
+	{
+		x = 600.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 150 == 0)
+	{
+		x = 550.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
 	//右下
 	if (m_time % 10 == 0)
 	{ 	
@@ -124,14 +178,28 @@ void CSceneLast::Scene()
 	}
 
 	//中
-	if (m_time == 80)
+	if (m_time % 80 == 0)
 	{
-		x = 300.0f;
+	
+	
+		if (x==300)
+		{
 
-		CObjmeteoM* obj = new CObjmeteoM(x, 0.0f);
-		Objs::InsertObj(obj, OBJ_meteoM, 4);
-		obj->SetVector(0.0f, 1.0f);
+			CObjmeteoM* obj = new CObjmeteoM(x, 0.0f);
+			Objs::InsertObj(obj, OBJ_meteoM, 4);
+			obj->SetVector(0.0f, 1.0f);
 
+			x = 800.0f;
+		}
+		else
+		{
+
+			CObjmeteoM* obj = new CObjmeteoM(x, 0.0f);
+			Objs::InsertObj(obj, OBJ_meteoM, 4);
+			obj->SetVector(0.0f, 1.0f);
+
+			x = 300.0f;
+		}
 
 	}
 
@@ -146,9 +214,9 @@ void CSceneLast::Scene()
 
 
 	}
-	if (m_time%200 == 0)
+	if (m_time%160 == 0)
 	{
-		x = 360.0f;
+		x = 800.0f;
 
 		CObjmeteoL* obj = new CObjmeteoL(x, 0.0f);
 		Objs::InsertObj(obj, OBJ_meteoL, 4);
@@ -156,13 +224,37 @@ void CSceneLast::Scene()
 
 
 	}
-	if (m_time%180 == 0)
+	if (m_time%200 == 0)
 	{
-		x = 50.0f;
+		x = 400.0f;
 
 		CObjmeteoL* obj = new CObjmeteoL(x, 0.0f);
 		Objs::InsertObj(obj, OBJ_meteoL, 4);
 		obj->SetVector(0.0f, 1.0f);
+
+	}
+	if (m_time % 130 == 0)
+	{
+		x = 700.0f;
+
+		CObjmeteoL* obj = new CObjmeteoL(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoL, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 140 == 0)
+	{
+		x = 0.0f;
+
+		CObjmeteoL* obj = new CObjmeteoL(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoL, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 20==0 ||m_time==500)
+	{
+
+
+		CObjAlien* obj = new CObjAlien(800.0f, 100.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 200);
 
 
 	}

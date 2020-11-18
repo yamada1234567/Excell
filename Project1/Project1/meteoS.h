@@ -25,6 +25,8 @@ private:
 
 	int m_hp;
 	int m_time;
-	
+	int item;
+
+	int de_time;
 
 };

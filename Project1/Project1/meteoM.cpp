@@ -16,7 +16,7 @@ CObjmeteoM::CObjmeteoM(float x, float y)
 //イニシャライズ
 void CObjmeteoM::Init()
 {
-	m_hp = 4;
+	m_hp = 3;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_time = 0;
@@ -45,7 +45,7 @@ void CObjmeteoM::Action()
 
 	//加速
 	m_vx *= 0.0f;
-	m_vy *= 3.0f;
+	m_vy *= 2.5f;
 
 	m_x += m_vx;
 	m_y += m_vy;
@@ -67,10 +67,15 @@ void CObjmeteoM::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
-
+	//bomにあったら消滅
+	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 
 	//ダメージ判定
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_BULLET) == true)
 	{
 		m_hp -= 1;
 		if (0 >= m_hp)
@@ -82,7 +87,7 @@ void CObjmeteoM::Action()
 
 			//アイテム　作成中
 			srand(time(NULL));
-			item = rand() % 35;//倒した際に出るランダムな数値の数
+			item = rand() % 20;//倒した際に出るランダムな数値の数
 			if (item == 1)//そのランダムに出た数値が特定の数値の場合アイテムを出す
 			{
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
@@ -110,6 +115,14 @@ void CObjmeteoM::Action()
 			}
 
 		}
+	}
+
+	if (hit->CheckElementHit(ELEMENT_EXPLOSION) == true)
+	{
+		m_hp -= 10;
+
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
 	}
 
 	m_time++;
@@ -153,8 +166,35 @@ void CObjmeteoM::Draw()
 	dst.m_left = m_left_bottom + m_x;
 	dst.m_right = m_top_right + m_x;
 	dst.m_bottom = m_left_bottom + m_y;
-	//画像登録
-	Draw::Draw(2, &src, &dst, c, 0.0f);
+	//爆発切り替え
+	if (0 >= m_hp)
+	{
+
+
+		m_vx = 0;
+		m_vy = 0;
+
+		Draw::Draw(50, &src, &dst, c, 0.0f);
+
+		de_time++;
+
+
+
+		if (de_time >= 10)
+		{
+			Hits::DeleteHitBox(this);
+			this->SetStatus(false);
+
+		}
+
+
+	}
+	else
+	{
+		//隕石登録
+		Draw::Draw(2, &src, &dst, c, 0.0f);
+
+	}
 }
 void CObjmeteoM::SetVector(float vx, float vy)
 {

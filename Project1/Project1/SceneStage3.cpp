@@ -20,7 +20,8 @@ CSceneStage3::CSceneStage3()
 //デストラクタ
 CSceneStage3::~CSceneStage3()
 {
-
+	x = 0.0f;
+	y = 0.0f;
 }
 //ゲームメイン初期化メソッド
 void CSceneStage3::InitScene()
@@ -33,9 +34,15 @@ void CSceneStage3::InitScene()
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
 	Draw::LoadImage(L"Boss(jupiter).png", 10, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
+	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"hero 1damage.png", 15, TEX_SIZE_512);
+	Draw::LoadImage(L"hero 2damage.png", 16, TEX_SIZE_512);
+	Draw::LoadImage(L"hero dead.png", 17, TEX_SIZE_512);
+	Draw::LoadImage(L"barrier.png", 22, TEX_SIZE_512);
 
+	Draw::LoadImage(L"UFO.png", 20, TEX_SIZE_512);
 	//主人公オブジェクト作成
-	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
+	CObjHero* obj = new CObjHero(3);//主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//敵メテオ
@@ -55,6 +62,13 @@ void CSceneStage3::Scene()
 	//時間
 	m_time++;
  
+	if (m_time % 500 == 0)
+	{
+		x = 0.0f;
+
+		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 200);
+	}
 	if(m_time % 50 == 0)
 	{	
 

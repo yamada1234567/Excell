@@ -16,4 +16,5 @@ private:
 	int m_time;
 	float x;
 	float y;
+
 };

@@ -124,6 +124,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Alien.cpp" />
+    <ClCompile Include="Bom.cpp" />
+    <ClCompile Include="BomBullet.cpp" />
     <ClCompile Include="explosion.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -149,6 +151,9 @@
     <ClCompile Include="GameL\SetWindow.cpp" />
     <ClCompile Include="GameL\UserData.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
+    <ClCompile Include="meteoEX.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="meteoLD.cpp" />
     <ClCompile Include="meteoRD.cpp" />
     <ClCompile Include="meteoSin.cpp" />
@@ -194,7 +199,9 @@
     </ClCompile>
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="shield.cpp" />
-    <ClCompile Include="triplebullet.cpp" />
+    <ClCompile Include="triplebullet.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="triplebullet2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -202,6 +209,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Alien.h" />
+    <ClInclude Include="Bom.h" />
+    <ClInclude Include="BomBullet.h" />
     <ClInclude Include="explosion.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
@@ -228,6 +237,9 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="item.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="meteoEX.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="meteoLD.h" />
     <ClInclude Include="meteoRD.h" />
@@ -268,7 +280,9 @@
     </ClInclude>
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="shield.h" />
-    <ClInclude Include="triplebullet.h" />
+    <ClInclude Include="triplebullet.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="triplebullet2.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>

@@ -142,6 +142,18 @@
     <ClCompile Include="SceneStage4.cpp">
       <Filter>ソースファイル\ステージ</Filter>
     </ClCompile>
+    <ClCompile Include="BomBullet.cpp">
+      <Filter>ソースファイル\主人公\強化</Filter>
+    </ClCompile>
+    <ClCompile Include="Bom.cpp">
+      <Filter>ソースファイル\主人公\強化</Filter>
+    </ClCompile>
+    <ClCompile Include="explosion.cpp">
+      <Filter>ソースファイル\その他</Filter>
+    </ClCompile>
+    <ClCompile Include="meteoEX.cpp">
+      <Filter>ソースファイル\敵</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -287,6 +299,15 @@
     </ClInclude>
     <ClInclude Include="explosion.h">
       <Filter>ソースファイル\その他</Filter>
+    </ClInclude>
+    <ClInclude Include="BomBullet.h">
+      <Filter>ソースファイル\主人公\強化</Filter>
+    </ClInclude>
+    <ClInclude Include="Bom.h">
+      <Filter>ソースファイル\主人公\強化</Filter>
+    </ClInclude>
+    <ClInclude Include="meteoEX.h">
+      <Filter>ソースファイル\敵</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
