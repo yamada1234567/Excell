@@ -31,9 +31,12 @@ private:
 
 	int m_o;
 	int m_time;
+	int de_time;
+	int bar_time;
+
 	int Bullet_time;
 	int Attack_Item;
-	bool Bar;
+	int Bar;
 	int C;
 
 };

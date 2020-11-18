@@ -25,7 +25,7 @@ void CObjmeteoS::Init()
 	m_left_bottom =32.0f;//表示位置
 	m_top_right   =0.0f; //表示位置
 
-	time=0;//画像切り替え時間
+	de_time=0;//画像切り替え時間
 	
 
 	//当たり判定作成
@@ -170,6 +170,7 @@ void CObjmeteoS::Draw()
 	src.m_left = 0.0f;
 	src.m_right = 50.0f;
 	src.m_bottom = 50.0f;
+
 	//表示位置
 	dst.m_top	 = m_top_right  + m_y;
 	dst.m_left   = m_left_bottom + m_x;
@@ -184,32 +185,19 @@ void CObjmeteoS::Draw()
 		m_vx = 0;
 		m_vy = 0;
 
-		Draw::Draw(15, &src, &dst, c, 0.0f);
+		Draw::Draw(50, &src, &dst, c, 0.0f);
 
-		time++;
+		de_time++;
 		
 			
-		if (time >= 2)
+
+		if(de_time >= 3)
 		{
-
-
-			Draw::Draw(16, &src, &dst, c, 0.0f);
-
-			if (time >= 5)
-			{
-				Draw::Draw(17, &src, &dst, c, 0.0f);
-	
-
-
-			}
-			if(time >= 10)
-			{
-				Hits::DeleteHitBox(this);
-				this->SetStatus(false);
-				
-			}
-
+			Hits::DeleteHitBox(this);
+			this->SetStatus(false);
+			
 		}
+
 
 	}
 	else

@@ -1,6 +1,7 @@
 #pragma once
 //使用するヘッダー
 #include <stdlib.h>
+#include <time.h>
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
 #include "meteoSin.h"
@@ -98,8 +99,8 @@ void CObjmeteoSin::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 
-			//srand(time(NULL));
-			//item = rand() % 30;//倒した際に出るランダムな数値の数
+			srand(time(NULL));
+			item = rand() % 30;//倒した際に出るランダムな数値の数
 			if (item == 1)//そのランダムに出た数値が特定の数値の場合アイテムを出す
 			{
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);

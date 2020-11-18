@@ -156,6 +156,33 @@ void CObjAlien::Draw()
 	dst.m_left = 50.0f + m_x;
 	dst.m_right = 0.0f + m_x;
 	dst.m_bottom = 50.0f + m_y;
-	//‰æ‘œ“o˜^
-	Draw::Draw(20, &src, &dst, c, 0.0f);
+	//”š”­Ø‚è‘Ö‚¦
+	if (0 >= m_hp)
+	{
+
+
+		m_vx = 0;
+		m_vy = 0;
+
+		Draw::Draw(50, &src, &dst, c, 0.0f);
+
+		de_time++;
+
+
+
+		if (de_time >= 10)
+		{
+			Hits::DeleteHitBox(this);
+			this->SetStatus(false);
+
+		}
+
+
+	}
+	else
+	{
+		//è¦Î“o˜^
+		Draw::Draw(2, &src, &dst, c, 0.0f);
+
+	}
 }

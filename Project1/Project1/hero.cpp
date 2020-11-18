@@ -29,6 +29,8 @@ void CObjHero::Init()
 	m_f = true;
 	m_g = true;
 	m_bullet = 0;
+	de_time = 0;
+	bar_time = 0;
 
 	m_hp = 3;
 	m_o	=	15;
@@ -228,24 +230,11 @@ void CObjHero::Action()
 		//ダメージ判定
 		if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 		{
-			if (Bar == true)
+
+			if (Bar <= 0)
 			{
 				m_hp -= 1;
-				if (0 >= m_hp)
-				{
 
-					this->SetStatus(false);
-					Hits::DeleteHitBox(this);
-
-					//主人公消滅でシーンをゲームオーバーに移行する
-					Scene::SetScene((CScene*)new CSceneGameOver(C));
-
-				}
-			}
-			//Hpのかわりにバリアを消費
-			else if (Bar == false)
-			{
-				Bar = true;
 			}
 
 		}
@@ -255,7 +244,7 @@ void CObjHero::Action()
 		//酸素０で消滅
 		if (m_time % 60 == 0)
 		{
-			//m_o--;
+			m_o--;
 
 			if (0 == m_o)
 			{
@@ -272,9 +261,29 @@ void CObjHero::Action()
 	//シールドアイテム当たり判定
 	if (hit->CheckObjNameHit(OBJ_SHIELD) != nullptr)
 	{
-		Bar = false;
+
+		Bar = 3;
 
 	}
+	
+	
+	if (Bar>=0)
+	{
+		
+		bar_time++;
+
+		if (bar_time==30)
+		{
+
+			Bar--;
+
+			bar_time = 0;
+		}
+
+
+	}
+
+
 	//酸素アイテム当たり判定
 	if (hit->CheckObjNameHit(OBJ_OXYGEN) != nullptr)
 	{
@@ -317,32 +326,52 @@ void CObjHero::Draw()
 	dst.m_right		= 36.0f+m_x;
 	dst.m_bottom	= 36.0f+m_y;
 
-	if (m_hp == 3)
-	{
-		//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
-		Draw::Draw(0, &src, &dst, c, 0.0f);
-	}
-	else if(m_hp == 2)
-	{
+	//if (m_hp == 3)
+	//{
+	//	//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
+	//	Draw::Draw(0, &src, &dst, c, 0.0f);
+	//}
+	//else if(m_hp == 2)
+	//{
 
-		Draw::Draw(15, &src, &dst, c, 0.0f);
+	//	Draw::Draw(15, &src, &dst, c, 0.0f);
 
-	}
-	else if (m_hp == 1)
-	{		
+	//}
+	//else if (m_hp == 1)
+	//{		
 
-		Draw::Draw(16, &src, &dst, c, 0.0f);
+	//	Draw::Draw(16, &src, &dst, c, 0.0f);
 
-	}
-	else
-	{
-		Draw::Draw(17, &src, &dst, c, 0.0f);
-	}
-
+	//}
+	//else
+	//{
+	//	Draw::Draw(17, &src, &dst, c, 0.0f);
 
 
+	//	de_time++;
 
-	if (Bar== false)
+
+
+	//	if (de_time == 100)
+	//	{
+	//		this->SetStatus(false);
+	//		Hits::DeleteHitBox(this);
+	//	}
+	//	else
+	//	{
+	//			
+	//			//主人公消滅でシーンをゲームオーバーに移行する
+	//			Scene::SetScene((CScene*)new CSceneGameOver(C));
+
+	//	}
+	//	
+
+	//}
+
+
+
+
+	if (Bar>=3)
 	{
 		Font::StrDraw(L"バリア中", 210, 568, 32, c);
 	}
@@ -350,15 +379,48 @@ void CObjHero::Draw()
 	if (m_hp==3)
 	{
 		Font::StrDraw(L"HP:3/3", 0, 568, 32, c);
+		//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
+		Draw::Draw(0, &src, &dst, c, 0.0f);
 	}
 	else if (m_hp == 2)
 	{
 		Font::StrDraw(L"HP:2/3", 0, 568, 32, c);
+
+		Draw::Draw(15, &src, &dst, c, 0.0f);
 	}
 	else if (m_hp == 1)
 	{
 		Font::StrDraw(L"HP:1/3", 0, 568, 32, c);
+
+		Draw::Draw(16, &src, &dst, c, 0.0f);
 	}
+	else
+	{
+		Font::StrDraw(L"HP:0/3", 0, 568, 32, c);
+		Draw::Draw(17, &src, &dst, c, 0.0f);
+
+		de_time++;
+
+		m_vx = 0;
+		m_vy = 0;
+
+			if (de_time == 11)
+			{
+				this->SetStatus(false);
+				Hits::DeleteHitBox(this);
+			
+				//主人公消滅でシーンをゲームオーバーに移行する
+				Scene::SetScene((CScene*)new CSceneGameOver(C));
+
+
+
+			}
+
+
+
+	}
+
+	
 
 	if (m_o == 15)
 	{

@@ -26,5 +26,5 @@ private:
 	int m_time;
 	int item;
 
-
+	int de_time;
 };
