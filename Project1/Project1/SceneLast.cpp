@@ -37,7 +37,7 @@ void CSceneLast::InitScene()
 	Draw::LoadImage(L"Boss(Sun).png", 13, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
 	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
-	Draw::LoadImage(L"UFO.png", 200, TEX_SIZE_512);
+	Draw::LoadImage(L"UFO.png", 20, TEX_SIZE_512);
 	Draw::LoadImage(L"hero 1damage.png", 15, TEX_SIZE_512);
 	Draw::LoadImage(L"hero 2damage.png", 16, TEX_SIZE_512);
 	Draw::LoadImage(L"hero 1damage.png", 15, TEX_SIZE_512);
@@ -60,7 +60,54 @@ void CSceneLast::InitScene()
 void CSceneLast::Scene()
 {
 	m_time++;
+	
+	if (m_time % 500 == 0)
+	{
+		x = 0.0f;
 
+		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 200);
+	}
+	if (m_time % 100 == 0)
+	{
+		x = 200.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 100 == 0)
+	{
+		x = 200.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 110 == 0)
+	{
+		x = 350.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 160 == 0)
+	{
+		x = 600.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 150 == 0)
+	{
+		x = 550.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
 	//‰E‰º
 	if (m_time % 10 == 0)
 	{ 	
