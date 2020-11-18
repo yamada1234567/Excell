@@ -39,7 +39,7 @@ void CObjOxygen::Action()
 	}
 	//‰Á‘¬
 	m_vx *= 3.0f;
-	m_vy *= 0.5f;
+	m_vy *= 1.5f;
 
 	m_x += m_vx;
 	m_y += m_vy;
