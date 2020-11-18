@@ -20,7 +20,8 @@ CSceneStage3::CSceneStage3()
 //デストラクタ
 CSceneStage3::~CSceneStage3()
 {
-
+	x = 0.0f;
+	y = 0.0f;
 }
 //ゲームメイン初期化メソッド
 void CSceneStage3::InitScene()
@@ -59,6 +60,13 @@ void CSceneStage3::Scene()
 	//時間
 	m_time++;
  
+	if (m_time % 500 == 0)
+	{
+		x = 0.0f;
+
+		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 200);
+	}
 	if(m_time % 50 == 0)
 	{	
 

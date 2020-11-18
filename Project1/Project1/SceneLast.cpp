@@ -167,27 +167,41 @@ void CSceneLast::Scene()
 
 
 	}
+	if (m_time%160 == 0)
+	{
+		x = 800.0f;
+
+		CObjmeteoL* obj = new CObjmeteoL(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoL, 4);
+		obj->SetVector(0.0f, 1.0f);
+
+
+	}
 	if (m_time%200 == 0)
 	{
-		x = 360.0f;
+		x = 400.0f;
 
 		CObjmeteoL* obj = new CObjmeteoL(x, 0.0f);
 		Objs::InsertObj(obj, OBJ_meteoL, 4);
 		obj->SetVector(0.0f, 1.0f);
 
-
 	}
-	if (m_time%180 == 0)
+	if (m_time % 130 == 0)
 	{
-		x = 50.0f;
+		x = 700.0f;
 
 		CObjmeteoL* obj = new CObjmeteoL(x, 0.0f);
 		Objs::InsertObj(obj, OBJ_meteoL, 4);
 		obj->SetVector(0.0f, 1.0f);
-
-
 	}
+	if (m_time % 140 == 0)
+	{
+		x = 0.0f;
 
+		CObjmeteoL* obj = new CObjmeteoL(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoL, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
 	if (m_time % 20==0 ||m_time==500)
 	{
 
