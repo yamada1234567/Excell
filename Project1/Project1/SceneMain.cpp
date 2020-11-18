@@ -58,6 +58,7 @@ void CSceneMain::Scene()
 	
 	//ƒNƒŠƒA‚ÉˆÚ“®
 	//Scene::SetScene(new CSceneClear());
+	Scene::SetScene(new CSceneClear(5));
 	
 	//ŠÔ
 	m_time++;
@@ -73,6 +74,7 @@ void CSceneMain::Scene()
 	//oŒ»‚·‚éŠÔ
 	if (m_time==10)
 	{
+
 		CObjAlien* obj= new CObjAlien(0,50);
 		Objs::InsertObj(obj, OBJ_Alien, 20);
 

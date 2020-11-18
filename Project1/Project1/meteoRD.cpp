@@ -114,6 +114,14 @@ void CObjmeteoRD::Action()
 		}
 	}
 
+	if (hit->CheckElementHit(ELEMENT_EXPLOSION) == true)
+	{
+		m_hp -= 10;
+
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
 	m_time++;
 
 

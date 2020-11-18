@@ -16,6 +16,7 @@ enum OBJ_NAME
 	OBJ_meteoRD,
 	OBJ_meteoLD,
 	OBJ_meteoSIN,
+	OBJ_meteoEX,
 	OBJ_Alien,
 	OBJ_BOSS,
 	OBJ_BOSS2,
@@ -61,6 +62,7 @@ enum HIT_ELEMENTS
 	ELEMENT_BLACK,
 	ELEMENT_WHITE,
 	ELEMENT_BULLET,
+	ELEMENT_EXPLOSION,
 
 };
 //------------------------------------------------
@@ -99,6 +101,7 @@ struct UserData
 #include "meteoRD.h"
 #include "meteoLD.h"
 #include "meteoSin.h"
+#include "meteoEX.h"
 #include "Alien.h"
 #include "Boss.h"
 #include "Boss2.h"

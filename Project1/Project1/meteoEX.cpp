@@ -1,51 +1,33 @@
+//倒されると爆発して周りの隕石を巻き込むものを作っていたけどややこしいので保留
 #pragma once
 //使用するヘッダー
-#include <stdlib.h>
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
-#include "meteoSin.h"
+#include "meteoEX.h"
 #include "GameL\HitBoxManager.h"
-
 //使用するネームスペース
 using namespace GameL;
-
-CObjmeteoSin::CObjmeteoSin(float x, float y)
+CObjmeteoEX::CObjmeteoEX(float x, float y)
 {
-
 	m_x = x;
 	m_y = y;
 }
 //イニシャライズ
-void CObjmeteoSin::Init()
+void CObjmeteoEX::Init()
 {
-	m_hp = 1;
-	
-	m_r = 0.0f;
+	m_hp = 5;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_time = 0;
-	m_left_bottom = 32.0f;//表示位置
+	m_left_bottom = 96.0f;//表示位置
 	m_top_right = 0.0f; //表示位置
 
-
 	//当たり判定作成
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_meteoSIN, 1);
+	Hits::SetHitBox(this, m_x, m_y, 96, 96, ELEMENT_ENEMY, OBJ_meteoL, 1);
 }
 //アクション
-void CObjmeteoSin::Action()
+void CObjmeteoEX::Action()
 {
-	//角度加算
-	m_r+= 2.0f;
-
-	//360°で初期値に戻す
-	if (m_r>=360.0f)
-	{
-		//m_r += 0.0f;
-	}
-
-	//移動方向
-	m_vy = 1.0f;
-	m_vx = cos(3.14 / 180 * m_r);//???を求めてn_vyに入れる
 
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
@@ -60,12 +42,12 @@ void CObjmeteoSin::Action()
 		m_vx = 1.0f / r * m_vx;
 		m_vy = 1.0f / r * m_vy;
 	}
+
 	//加速
-	m_vx *= 0.0f;
-	m_vy *= 6.0f;
+	m_vx *= 1.0f;
+	m_vy *= 2.0f;
 
 	m_x += m_vx;
-
 	m_y += m_vy;
 
 	//hitbox更新用ポインターの取得
@@ -86,9 +68,16 @@ void CObjmeteoSin::Action()
 		Hits::DeleteHitBox(this);
 	}
 
+	//bomにあったら消滅
+	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
 
 	//ダメージ判定
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_BULLET) == true)
 	{
 		m_hp -= 1;
 		if (0 >= m_hp)
@@ -98,34 +87,8 @@ void CObjmeteoSin::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 
-			srand(time(NULL));
-			item = rand() % 30;//倒した際に出るランダムな数値の数
-			if (item == 1)//そのランダムに出た数値が特定の数値の場合アイテムを出す
-			{
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-			}
-			if (item == 2)
-			{
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-			}
-			if (item == 3)
-			{
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-			}
-
-
+			Hits::SetHitBox(this, m_x, m_y, -300, 300, ELEMENT_EXPLOSION, OBJ_meteoEX, 1);
 		}
-	}
-
-	if (hit->CheckElementHit(ELEMENT_EXPLOSION) == true)
-	{
-		m_hp -= 10;
-
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
 	}
 
 	m_time++;
@@ -134,7 +97,7 @@ void CObjmeteoSin::Action()
 	//敵回転
 	if (m_time >= 25)
 	{
-		m_top_right = 32.0f;
+		m_top_right = 96.0f;
 		m_left_bottom = 0.0f;
 
 
@@ -148,15 +111,13 @@ void CObjmeteoSin::Action()
 	else
 	{
 		m_top_right = 0.0f;
-		m_left_bottom = 32.0f;
+		m_left_bottom = 96.0f;
 
 	}
 
-
 }
-
 //ドロー
-void CObjmeteoSin::Draw()
+void CObjmeteoEX::Draw()
 {
 	//描画
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -175,8 +136,7 @@ void CObjmeteoSin::Draw()
 	//画像登録
 	Draw::Draw(2, &src, &dst, c, 0.0f);
 }
-
-void CObjmeteoSin::SetVector(float vx, float vy)
+void CObjmeteoEX::SetVector(float vx, float vy)
 {
 	m_vx = vx;
 	m_vy = vy;

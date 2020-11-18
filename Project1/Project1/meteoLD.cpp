@@ -115,6 +115,12 @@ void CObjmeteoLD::Action()
 		}
 	}
 
+	if (hit->CheckElementHit(ELEMENT_EXPLOSION) == true)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
 	m_time++;
 
 
