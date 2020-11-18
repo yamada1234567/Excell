@@ -72,8 +72,8 @@ void CObjBoss5::Draw()
 	//êÿÇÍéÊÇËê›íË
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 530.0f;
-	src.m_bottom = 530.0f;
+	src.m_right = 911.0f;
+	src.m_bottom = 729.0f;
 	//ï\é¶à íu
 	dst.m_top = 0.0f + m_y;
 	dst.m_left = 420.0f + m_x;
