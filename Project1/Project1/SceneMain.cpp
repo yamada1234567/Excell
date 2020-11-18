@@ -39,7 +39,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"hero 2damage.png", 16, TEX_SIZE_512);
 	Draw::LoadImage(L"hero dead.png", 17, TEX_SIZE_512);
 	Draw::LoadImage(L"UFO.png", 20, TEX_SIZE_512);
-	Draw::LoadImage(L"隕石爆発.png", 50, TEX_SIZE_512);
+	Draw::LoadImage(L"barrier.png", 22, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(1);//主人公オブジェクト作成
@@ -57,6 +57,11 @@ void CSceneMain::InitScene()
 //ゲームメイン実行メソッド
 void CSceneMain::Scene()
 {
+	
+	//クリアに移動
+	//Scene::SetScene(new CSceneClear());
+	//Scene::SetScene(new CSceneClear(5));
+	
 	//時間
 	m_time++;
 

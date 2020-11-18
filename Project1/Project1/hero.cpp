@@ -374,6 +374,7 @@ void CObjHero::Draw()
 	if (Bar>=3)
 	{
 		Font::StrDraw(L"ƒoƒŠƒA’†", 210, 568, 32, c);
+		Draw::Draw(22, &src, &dst, c, 0.0f);
 	}
 	
 	if (m_hp==3)
