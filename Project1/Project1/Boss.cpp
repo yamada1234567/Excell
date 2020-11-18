@@ -32,6 +32,7 @@ void CObjBoss::Init()
 //アクション
 void CObjBoss::Action()
 {
+
 	//HitBoxの内容を更新
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);

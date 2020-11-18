@@ -97,20 +97,35 @@ void CObjmeteoS::Action()
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 			}
-			if (item <= 5)
+			if (item == 3)
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			}
+			if (item == 5)
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			}
+			if (item == 7)
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			}
+			if (item == 5)
 			{
 				CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
 			}	
-			if (m_time % 10 == 0)
-			{
+			//if (m_time % 10 == 0)
+			//{
 
 
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+				//CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				//Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 
 
-			}
+			//}
 
 
 			
