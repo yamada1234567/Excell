@@ -88,24 +88,31 @@ void CObjmeteoS::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 
-			//アイテム　作成中
-			srand(time(NULL));
-			item = rand() % 20;//アイテムが出る確率
-			if (item == 1)
-			{
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-			}
-			if (item <= 5)
-			{
-				CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
-			}
-			//if (item == 10)
+			////アイテム　作成中
+			//srand(time(NULL));
+			//item = rand() % 20;//アイテムが出る確率
+			//
+			//if (item == 1)
 			//{
 			//	CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
 			//	Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 			//}
+			//if (item <= 5)
+			//{
+			//	CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
+			//	Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
+			//}	
+			if (m_time % 10 == 0)
+			{
+
+
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+
+
+			}
+
+
 			
 		}
 	}
@@ -117,6 +124,10 @@ void CObjmeteoS::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+
+
+
+
 
 	m_time++;
 
@@ -162,8 +173,31 @@ void CObjmeteoS::Draw()
 	dst.m_left   = m_left_bottom + m_x;
 	dst.m_right  = m_top_right + m_x;
 	dst.m_bottom = m_left_bottom+ m_y;
-	//画像登録
-	Draw::Draw(2, &src, &dst, c, 0.0f);
+	
+	
+	if (0 >= m_hp)
+	{
+		Draw::Draw(15, &src, &dst, c, 0.0f);
+
+		Draw::Draw(16, &src, &dst, c, 0.0f);
+		
+		Draw::Draw(17, &src, &dst, c, 0.0f);
+	
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+
+	}
+	else
+	{
+
+		//画像登録
+		Draw::Draw(2, &src, &dst, c, 0.0f);
+
+
+	}
+
+
+
 }
 void CObjmeteoS::SetVector(float vx, float vy)
 {
