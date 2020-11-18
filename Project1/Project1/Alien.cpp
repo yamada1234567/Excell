@@ -33,8 +33,10 @@ void CObjAlien::Init()
 //アクション
 void CObjAlien::Action()
 {
+	m_time++;
+		
 	//移動方向
-	m_vx = -1.0f;
+	m_vx = 1.0f;
 	m_vy = 0.0f;
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
@@ -67,11 +69,22 @@ void CObjAlien::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
-	if (m_x > 0.0f)
+	if (m_y < 0.0f)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+	if (m_x < 0.0f)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+	if (m_x > 800.0f)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
 
 	//主人公に当たったら消滅
 	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
@@ -79,6 +92,7 @@ void CObjAlien::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+
 	//bomにあったら消滅
 	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
 	{
@@ -121,7 +135,7 @@ void CObjAlien::Action()
 
 	}
 
-	m_time++;
+
 
 }
 
@@ -138,10 +152,10 @@ void CObjAlien::Draw()
 	src.m_right = 50.0f;
 	src.m_bottom = 50.0f;
 	//表示位置
-	dst.m_top = m_top_right + m_y;
-	dst.m_left = m_left_bottom + m_x;
-	dst.m_right = m_top_right + m_x;
-	dst.m_bottom = m_left_bottom + m_y;
+	dst.m_top = 0.0f + m_y;
+	dst.m_left = 50.0f + m_x;
+	dst.m_right = 0.0f + m_x;
+	dst.m_bottom = 50.0f + m_y;
 	//画像登録
 	Draw::Draw(20, &src, &dst, c, 0.0f);
 }
