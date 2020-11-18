@@ -22,7 +22,8 @@ CSceneStage5::CSceneStage5()
 //デストラクタ
 CSceneStage5::~CSceneStage5()
 {
-
+	x = 0.0f;
+	y = 0.0f;
 }
 //ゲームメイン初期化メソッド
 void CSceneStage5::InitScene()
@@ -33,7 +34,7 @@ void CSceneStage5::InitScene()
 	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
 	Draw::LoadImageW(L"縦背景.png", 5, TEX_SIZE_512);
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
-	Draw::LoadImage(L"Boss(moon).png", 6, TEX_SIZE_512);
+	Draw::LoadImage(L"Boss(Mrcury).png", 12, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
 	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
 	Draw::LoadImage(L"hero 1damage.png", 15, TEX_SIZE_512);
@@ -61,6 +62,13 @@ void CSceneStage5::Scene()
 	int x;
 	int a;
 
+	if (m_time % 500 == 0)
+	{
+		x = 0.0f;
+
+		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 200);
+	}
 
 	for (int i = 0; i < 10000; i++)
 	{
@@ -365,10 +373,10 @@ void CSceneStage5::Scene()
 				}
 			}
 		}
-		if (m_time == 2000)
+		if (m_time == 1500)
 		{
 			//ボス出力
 			CObjBoss5* obj = new CObjBoss5(100.0f, 10.0f);
-			Objs::InsertObj(obj, OBJ_BOSS5, 10);
+			Objs::InsertObj(obj, OBJ_BOSS5, 12);
 		}
 }

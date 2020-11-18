@@ -20,7 +20,8 @@ CSceneStage4::CSceneStage4()
 //デストラクタ
 CSceneStage4::~CSceneStage4()
 {
-
+	x = 0.0f;
+	y = 0.0f;
 }
 //ゲームメイン初期化メソッド
 void CSceneStage4::InitScene()
@@ -59,6 +60,13 @@ void CSceneStage4::Scene()
 	m_time++;
 
 	
+	if (m_time % 500 == 0)
+	{
+		x = 0.0f;
+
+		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 200);
+	}
 	//出力する時間(timeが50になると出力)
 	if (m_time % 50 == 0)
 	{
