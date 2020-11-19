@@ -75,7 +75,7 @@ void CSceneMain::Scene()
 	
 	//クリアに移動
 	//Scene::SetScene(new CSceneClear());
-	//Scene::SetScene(new CSceneClear(6));
+	Scene::SetScene(new CSceneClear(3));
 	
 
 
@@ -153,7 +153,7 @@ void CSceneMain::Scene()
 		Audio::Start(1);//1番曲をスタート
 
 		x = 100;
-		CObjBoss* obj = new CObjBoss(x, 10.0f);
+		CObjBoss* obj = new CObjBoss(x, -640.0f);
 		Objs::InsertObj(obj, OBJ_BOSS, 6);
 	}
 }
