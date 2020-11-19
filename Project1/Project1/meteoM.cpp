@@ -6,6 +6,8 @@
 #include "GameHead.h"
 #include "meteoM.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL\Audio.h"
+
 //使用するネームスペース
 using namespace GameL;
 CObjmeteoM::CObjmeteoM(float x, float y)
