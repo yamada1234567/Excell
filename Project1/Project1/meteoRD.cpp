@@ -182,8 +182,11 @@ void CObjmeteoRD::Draw()
 
 
 
-		if (de_time >= 10)
+		if (de_time >= 3)
 		{
+			//“G”š”­‰¹‚ğ–Â‚ç‚·
+			Audio::Start(3);
+
 			Hits::DeleteHitBox(this);
 			this->SetStatus(false);
 
