@@ -202,7 +202,7 @@ void CSceneStage2::Scene()
 	if (m_time == 1300)
 	{
 		x = 100;
-		CObjBoss2* obj = new CObjBoss2(x, 10.0f);
+		CObjBoss2* obj = new CObjBoss2(-100, -650.0f);
 		Objs::InsertObj(obj, OBJ_BOSS2, 9);
 	}
 }
