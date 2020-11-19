@@ -31,7 +31,7 @@ void CSceneMain::InitScene()
 	Audio::LoadAudio(0, L"BGMSceneMain.wav",BACK_MUSIC);
 	Audio::LoadAudio(1, L"BGMBoss.wav", BACK_MUSIC);
 
-	Audio::LoadAudio(2,L"SEbullet.wav",EFFECT);
+	Audio::LoadAudio(2, L"SEbullet.wav", EFFECT);
 	Audio::LoadAudio(3, L"SEEnemyexp.wav",EFFECT);
 	Audio::LoadAudio(4, L"SEheroexp.wav", EFFECT);
 
@@ -75,13 +75,16 @@ void CSceneMain::Scene()
 	
 	//ƒNƒŠƒA‚ÉˆÚ“®
 	//Scene::SetScene(new CSceneClear());
-	Scene::SetScene(new CSceneClear(6));
+	//Scene::SetScene(new CSceneClear(6));
 	
+
+
 	//ŽžŠÔ
 	m_time++;
 
 	if (m_time %500 == 0)
 	{
+
 		x = 0.0f;
 
 		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
