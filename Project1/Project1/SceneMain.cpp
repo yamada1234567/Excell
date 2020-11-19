@@ -70,7 +70,7 @@ void CSceneMain::Scene()
 		x = 0.0f;
 
 		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
-		Objs::InsertObj(obj, OBJ_Alien, 200);
+		Objs::InsertObj(obj, OBJ_Alien, 20);
 	}
 	if (m_time % 63 == 0)
 	{
