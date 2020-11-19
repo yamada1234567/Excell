@@ -76,7 +76,7 @@ void CSceneMain::Scene()
 	
 	//ƒNƒŠƒA‚ÉˆÚ“®
 	//Scene::SetScene(new CSceneClear());
-	//Scene::SetScene(new CSceneClear(4));
+	Scene::SetScene(new CSceneClear(4));
 	
 
 
