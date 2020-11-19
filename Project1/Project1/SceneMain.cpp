@@ -131,7 +131,7 @@ void CSceneMain::Scene()
 	if (m_time == 1200)
 	{
 		x = 100;
-		CObjBoss* obj = new CObjBoss(x, 10.0f);
+		CObjBoss* obj = new CObjBoss(x, -650.0f);
 		Objs::InsertObj(obj, OBJ_BOSS, 6);
 	}
 }

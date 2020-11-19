@@ -207,8 +207,8 @@ void CSceneStage5::Scene()
 				}
 				else if (random == 0)
 				{
-					CObjmeteoL* obj = new CObjmeteoL(x + a, -100.0f);
-					Objs::InsertObj(obj, OBJ_meteoL, 2);
+					CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f);
+					Objs::InsertObj(obj, OBJ_meteoS, 2);
 					obj->SetVector(0.0f, 1.0f);
 				}
 				if (random == 2)
@@ -265,8 +265,8 @@ void CSceneStage5::Scene()
 				}
 				else if (random == 4)
 				{
-					CObjmeteoL* obj = new CObjmeteoL(400.0f + a, -100.0f);
-					Objs::InsertObj(obj, OBJ_meteoL, 2);
+					CObjmeteoS* obj = new CObjmeteoS(400.0f + a, -100.0f);
+					Objs::InsertObj(obj, OBJ_meteoS, 2);
 					obj->SetVector(0.0f, 1.0f);
 				}
 				if (random == 3)
@@ -375,10 +375,10 @@ void CSceneStage5::Scene()
 				}
 			}
 		}
-		if (m_time == 1500)
+		if (m_time == 800)
 		{
 			//É{ÉXèoóÕ
-			CObjBoss5* obj = new CObjBoss5(100.0f, 10.0f);
+			CObjBoss5* obj = new CObjBoss5(-100.0f, -700.0f);
 			Objs::InsertObj(obj, OBJ_BOSS5, 12);
 		}
 }
