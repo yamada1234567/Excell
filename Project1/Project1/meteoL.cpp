@@ -25,6 +25,7 @@ void CObjmeteoL::Init()
 	m_left_bottom = 96.0f;//表示位置
 	m_top_right   = 0.0f; //表示位置
 
+	de_time = 0;
 	//当たり判定作成
 	Hits::SetHitBox(this, m_x, m_y, 96, 96, ELEMENT_ENEMY, OBJ_meteoL, 1);
 }
@@ -74,8 +75,10 @@ void CObjmeteoL::Action()
 	//bomにあったら消滅
 	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		m_hp = 0;
+
+		//発射音を鳴らす
+		Audio::Start(3);
 	}
 
 
@@ -87,8 +90,9 @@ void CObjmeteoL::Action()
 		{
 			int item;
 
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
+			//敵爆発音を鳴らす
+			Audio::Start(3);
+
 
 			//アイテム　作成中
 			srand(time(NULL));
@@ -199,8 +203,7 @@ void CObjmeteoL::Draw()
 
 		if (de_time >= 10)
 		{
-			//敵爆発音を鳴らす
-			Audio::Start(3);
+
 
 			Hits::DeleteHitBox(this);
 			this->SetStatus(false);

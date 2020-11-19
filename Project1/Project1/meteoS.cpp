@@ -92,7 +92,8 @@ void CObjmeteoS::Action()
 		{
 			int item;
 
-
+			//敵爆発音を鳴らす
+			Audio::Start(3);
 
 			////アイテム　作成中
 			srand(time(NULL));

@@ -85,38 +85,37 @@ void CObjHero::Action()
 			m_f = true;
 		}
 
-		//‚S˜A‚Ì’eŠÛ”­ŽË
-		if (Input::GetVKey('X') == true)
-		{
-			if (m_g == true)
-			{
-				//if (Attack_Item <= 1)
-					for (int i = 0; i <= 40; i += 10)
-					{
-
-						//”­ŽË‰¹‚ð–Â‚ç‚·
-						Audio::Start(4);
-
-						//‚R’eŠÛƒIƒuƒWƒFƒNƒgì¬
-						CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y - i);
-						Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-
-					}
-
-		//			Attack_Item -= 1;
-		///*		}*/
-
-				m_g = false;
-
-			}
+		////‚S˜A‚Ì’eŠÛ”­ŽË
+		//if (Input::GetVKey('X') == true)
+		//{
+		//	if (m_g == true)
+		//	{
+		//		//if (Attack_Item <= 1)
+		//			for (int i = 0; i <= 40; i += 10)
+		//			{
 
 
-		}
-		else
-		{
 
-			m_g = true;
-		}
+		//				//‚R’eŠÛƒIƒuƒWƒFƒNƒgì¬
+		//				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y - i);
+		//				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+
+		//			}
+
+		////			Attack_Item -= 1;
+		/////*		}*/
+
+		//		m_g = false;
+
+		//	}
+
+
+		//}
+		//else
+		//{
+
+		//	m_g = true;
+		//}
 
 		//BOM‚Ì’eŠÛ”­ŽË
 		if (Input::GetVKey('B') == true)
@@ -281,7 +280,7 @@ void CObjHero::Action()
 		
 		bar_time++;
 
-		if (bar_time==50a)
+		if (bar_time==50)
 		{
 
 			Bar=-1;

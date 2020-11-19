@@ -38,6 +38,7 @@ void CObjBullet::Action()
 		Hits::DeleteHitBox(this);
 	}
 
+
 	//hitbox更新用ポインターの取得
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
