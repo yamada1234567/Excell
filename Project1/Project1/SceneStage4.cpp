@@ -190,7 +190,7 @@ void CSceneStage4::Scene()
 	if (m_time == 1500)
 	{
 		//É{ÉXèoóÕ
-		CObjBoss4* obj = new CObjBoss4(100.0f, 10.0f);
+		CObjBoss4* obj = new CObjBoss4(-100.0f, -700.0f);
 		Objs::InsertObj(obj, OBJ_BOSS4, 13);
 	}
 }

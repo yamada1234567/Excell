@@ -375,7 +375,7 @@ void CSceneStage5::Scene()
 				}
 			}
 		}
-		if (m_time == 800)
+		if (m_time == 100)
 		{
 			//É{ÉXèoóÕ
 			CObjBoss5* obj = new CObjBoss5(-100.0f, -700.0f);
