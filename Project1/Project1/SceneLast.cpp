@@ -5,7 +5,7 @@
 //GameLで使用するヘッダー
 #include"GameL/DrawTexture.h"
 #include"GameL\SceneObjManager.h"
-
+#include"GameL\Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -28,6 +28,19 @@ CSceneLast::~CSceneLast()
 //ゲームメイン初期化メソッド
 void CSceneLast::InitScene()
 {
+	//音楽読み込み
+	Audio::LoadAudio(0, L"BGMSceneLast.wav", BACK_MUSIC);
+	Audio::LoadAudio(1, L"BGMLastBoss.wav", BACK_MUSIC);
+
+	Audio::LoadAudio(2, L"SEbullet.wav", EFFECT);
+	Audio::LoadAudio(3, L"SEEnemyexp.wav", EFFECT);
+	Audio::LoadAudio(4, L"SEheroexp.wav", EFFECT);
+	//ボリュームを1.5増やす
+	float v = Audio::VolumeMaster(1.5);
+
+	//音楽スタート
+	Audio::Start(0);
+
 	//外部グラフィックファイルを読み込む0番に登録()
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"hero bullet.png", 1, TEX_SIZE_512);
@@ -204,7 +217,7 @@ void CSceneLast::Scene()
 	}
 
 	//大
-	if (m_time == 100)
+	if (m_time == 300)
 	{
 		x = 650.0f;
 
@@ -214,7 +227,7 @@ void CSceneLast::Scene()
 
 
 	}
-	if (m_time%160 == 0)
+	if (m_time%470 == 0)
 	{
 		x = 800.0f;
 
@@ -224,7 +237,7 @@ void CSceneLast::Scene()
 
 
 	}
-	if (m_time%200 == 0)
+	if (m_time%530 == 0)
 	{
 		x = 400.0f;
 
@@ -233,7 +246,7 @@ void CSceneLast::Scene()
 		obj->SetVector(0.0f, 1.0f);
 
 	}
-	if (m_time % 130 == 0)
+	if (m_time %550 == 0)
 	{
 		x = 700.0f;
 
@@ -241,7 +254,7 @@ void CSceneLast::Scene()
 		Objs::InsertObj(obj, OBJ_meteoL, 4);
 		obj->SetVector(0.0f, 1.0f);
 	}
-	if (m_time % 140 == 0)
+	if (m_time % 500 == 0)
 	{
 		x = 0.0f;
 
@@ -262,6 +275,8 @@ void CSceneLast::Scene()
 	//ボス
 	if (m_time == 1500)
 	{
+		Audio::Stop(0);//0番曲をストップ
+		Audio::Start(1);//1番曲をスタート
 		x = 100;
 		CObjBoss6* obj = new CObjBoss6(x, 10.0f);
 		Objs::InsertObj(obj, OBJ_BOSS6, 13);

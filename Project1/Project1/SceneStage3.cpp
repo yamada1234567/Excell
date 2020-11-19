@@ -5,7 +5,7 @@
 //GameLで使用するヘッダー
 #include"GameL/DrawTexture.h"
 #include"GameL\SceneObjManager.h"
-
+#include"GameL\Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -26,6 +26,21 @@ CSceneStage3::~CSceneStage3()
 //ゲームメイン初期化メソッド
 void CSceneStage3::InitScene()
 {
+
+	//音楽読み込み
+	Audio::LoadAudio(0, L"BGMSceneMain.wav", BACK_MUSIC);
+	Audio::LoadAudio(1, L"BGMBoss.wav", BACK_MUSIC);
+
+	Audio::LoadAudio(2, L"SEbullet.wav", EFFECT);
+	Audio::LoadAudio(3, L"SEEnemyexp.wav", EFFECT);
+	Audio::LoadAudio(4, L"SEheroexp.wav", EFFECT);
+
+	//ボリュームを1.5増やす
+	float v = Audio::VolumeMaster(1.5);
+
+	//音楽スタート
+	Audio::Start(0);
+
 	//外部グラフィックファイルを読み込む0番に登録()
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"hero bullet.png", 1, TEX_SIZE_512);
@@ -312,6 +327,9 @@ void CSceneStage3::Scene()
 	//出力する時間(timeが200になると出力)
 	if (m_time == 1600)
 	{
+		//音楽チェンジ
+		Audio::Stop(0);//0番曲をストップ
+		Audio::Start(1);//1番曲をスタート
 		//ボス出力
 		CObjBoss3* obj = new CObjBoss3(-100.0f, -650.0f);
 		Objs::InsertObj(obj, OBJ_BOSS3, 10);
