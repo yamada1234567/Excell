@@ -233,7 +233,7 @@ void CAudio::Stop(int id)
 
 	for(int i=0 ; i < SCENE_AUDIO_EFFCT_MAX ; i++ )
 	{
-z		m_AudioData[id]->m_pSourceVoice[i]->Stop();
+		m_AudioData[id]->m_pSourceVoice[i]->Stop();
 		m_AudioData[id]->m_pSourceVoice[i]->FlushSourceBuffers();
 	}
 }
