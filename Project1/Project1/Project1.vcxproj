@@ -156,7 +156,9 @@
     </ClCompile>
     <ClCompile Include="meteoLD.cpp" />
     <ClCompile Include="meteoRD.cpp" />
-    <ClCompile Include="meteoSin.cpp" />
+    <ClCompile Include="meteoSin.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="ObjBackground.cpp" />
     <ClCompile Include="ObjClear.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
@@ -243,7 +245,9 @@
     </ClInclude>
     <ClInclude Include="meteoLD.h" />
     <ClInclude Include="meteoRD.h" />
-    <ClInclude Include="meteoSin.h" />
+    <ClInclude Include="meteoSin.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="ObjBackground.h" />
     <ClInclude Include="ObjClear.h" />
     <ClInclude Include="ObjTitle.h" />

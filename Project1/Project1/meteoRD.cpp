@@ -6,6 +6,7 @@
 #include "GameHead.h"
 #include "meteoRD.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -88,8 +89,7 @@ void CObjmeteoRD::Action()
 		{
 			int item;
 
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
+
 
 			//アイテム　作成中
 			srand(time(NULL));

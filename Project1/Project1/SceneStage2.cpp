@@ -26,6 +26,7 @@ CSceneStage2::~CSceneStage2()
 //ゲームメイン初期化メソッド
 void CSceneStage2::InitScene()
 {
+
 	//外部グラフィックファイルを読み込む0番に登録()
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"hero bullet.png", 1, TEX_SIZE_512);
