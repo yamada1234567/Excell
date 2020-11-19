@@ -205,7 +205,7 @@ void CObjmeteoS::Draw()
 
 		if(de_time >= 3)
 		{
-			//”­ŽË‰¹‚ð–Â‚ç‚·
+			//“G”š”­‰¹‚ð–Â‚ç‚·
 			Audio::Start(3);
 
 			Hits::DeleteHitBox(this);

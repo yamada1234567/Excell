@@ -41,7 +41,7 @@ void CObjHero::Init()
 	m_time = 0;
 	Bullet_time = 100;
 
-	Bar=true;
+	Bar=0;
 
 	//当たり判定用hitboxを作成
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
@@ -94,6 +94,8 @@ void CObjHero::Action()
 					for (int i = 0; i <= 40; i += 10)
 					{
 
+						//発射音を鳴らす
+						Audio::Start(4);
 
 						//３弾丸オブジェクト作成
 						CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y - i);
@@ -238,6 +240,9 @@ void CObjHero::Action()
 			{
 				m_hp -= 1;
 
+				//ダメージ音を鳴らす
+				Audio::Start(4);
+
 			}
 
 		}
@@ -259,6 +264,7 @@ void CObjHero::Action()
 
 			}
 		}
+
 	}
 
 	//シールドアイテム当たり判定
@@ -275,10 +281,10 @@ void CObjHero::Action()
 		
 		bar_time++;
 
-		if (bar_time==30)
+		if (bar_time==50a)
 		{
 
-			Bar--;
+			Bar=-1;
 
 			bar_time = 0;
 		}
@@ -377,26 +383,32 @@ void CObjHero::Draw()
 	if (Bar>=3)
 	{
 		Font::StrDraw(L"バリア中", 210, 568, 32, c);
+		
 		Draw::Draw(22, &src, &dst, c, 0.0f);
 	}
 	
 	if (m_hp==3)
 	{
 		Font::StrDraw(L"HP:3/3", 0, 568, 32, c);
+
 		//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 		Draw::Draw(0, &src, &dst, c, 0.0f);
+
+
 	}
 	else if (m_hp == 2)
 	{
 		Font::StrDraw(L"HP:2/3", 0, 568, 32, c);
 
 		Draw::Draw(15, &src, &dst, c, 0.0f);
+
 	}
 	else if (m_hp == 1)
 	{
 		Font::StrDraw(L"HP:1/3", 0, 568, 32, c);
 
 		Draw::Draw(16, &src, &dst, c, 0.0f);
+
 	}
 	else
 	{
@@ -408,8 +420,12 @@ void CObjHero::Draw()
 		m_vx = 0;
 		m_vy = 0;
 
+
+
 			if (de_time == 11)
 			{
+
+
 				this->SetStatus(false);
 				Hits::DeleteHitBox(this);
 			

@@ -118,6 +118,9 @@ void CObjmeteoLD::Action()
 
 	if (hit->CheckElementHit(ELEMENT_EXPLOSION) == true)
 	{
+		//”­ŽË‰¹‚ð–Â‚ç‚·
+		Audio::Start(3);
+
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
