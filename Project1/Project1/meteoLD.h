@@ -26,4 +26,5 @@ private:
 	int m_hp;
 	int m_time;
 
+	int de_time;
 };

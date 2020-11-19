@@ -8,7 +8,7 @@ using namespace GameL;
 class CObjTripleBullet : public CObj
 {
 public:
-	CObjTripleBullet(float x, float y, float r, float speed); //コンストラクタ
+	CObjTripleBullet(float x, float y); //コンストラクタ
 	~CObjTripleBullet() {};
 	void Init();
 	void Action();
@@ -18,6 +18,7 @@ private:
 	float m_y;
 	float m_vx;
 	float m_vy;
-	float m_r;//移動する角度
 	float m_speed;//速度
+	
+
 };

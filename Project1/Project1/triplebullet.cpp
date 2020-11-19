@@ -8,30 +8,27 @@
 using namespace GameL;
 
 //コンストラクタ
-CObjTripleBullet::CObjTripleBullet(float x, float y, float r, float speed)
+CObjTripleBullet::CObjTripleBullet(float x, float y)
 {
 	m_x = x;
 	m_y = y;
-	m_r = r;
-	m_speed = speed;
+
 }
 
 //イニシャライズ
 void CObjTripleBullet::Init()
 {
-	m_vx = cos(3.14f/180.0f*m_r);
-	m_vy = sin(3.14f / 180.0f * m_r);
 
 	//当たり判定作成
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_BULLET, OBJ_BULLET, 1);
+	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_BULLET, OBJ_TRIPLEBULLET, 1);
 }
 
 //アクション
 void CObjTripleBullet::Action()
 {
 	//移動
-	m_y -= m_vx * m_speed;
-	m_x -= m_vx * m_speed;
+	m_y += m_vx * 30.0f;
+	m_x -= m_vx * 0.0f;
 
 	
 
@@ -71,8 +68,11 @@ void CObjTripleBullet::Action()
 	//ELEMENT_ENEMYを持つオブジェクトと接触したら削除
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
+		
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+
+
 	}
 }
 

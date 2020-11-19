@@ -14,4 +14,7 @@ public:
 	void Scene();    //ゲームメインの実行中メソッド
 private:
 	int m_time;
+	float x;
+	float y;
+;
 };

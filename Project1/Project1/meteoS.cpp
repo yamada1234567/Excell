@@ -24,6 +24,8 @@ void CObjmeteoS::Init()
 	m_time = 0;
 	m_left_bottom =32.0f;//表示位置
 	m_top_right   =0.0f; //表示位置
+
+	de_time=0;//画像切り替え時間
 	
 
 	//当たり判定作成
@@ -32,11 +34,12 @@ void CObjmeteoS::Init()
 //アクション
 void CObjmeteoS::Action()
 {
-
+	m_time++;
+		
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
-	
+
 	if (r == 0.0f)
 	{
 		;
@@ -46,9 +49,10 @@ void CObjmeteoS::Action()
 		m_vx = 1.0f / r * m_vx;
 		m_vy = 1.0f / r * m_vy;
 	}
+
 	//加速
 	m_vx *= 0.0f;
-	m_vy *= 6.0f;
+	m_vy *= 4.5f;
 
 	m_x += m_vx;
 	m_y += m_vy;
@@ -70,37 +74,79 @@ void CObjmeteoS::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
-
+	//bomにあったら消滅
+	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
+	{
+		m_hp = 0;
+	}
 
 	//ダメージ判定
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	if (hit->CheckElementHit(ELEMENT_BULLET) == true)
 	{
 		m_hp -= 1;
 		if (0 >= m_hp)
 		{
 			int item;
 
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
 
-			//アイテム　作成中
+
+			////アイテム　作成中
 			srand(time(NULL));
-			item = rand() % 2;//アイテムが出る確率
-			if (item == 0)
-			{
-				CObjitem* obj_b = new CObjitem(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_ITEM, 1);
-			}
+			item = rand() % 30;//アイテムが出る確率
+			
 			if (item == 1)
 			{
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 			}
+			if (item == 3)
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			}
+			if (item == 5)
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			}
+			if (item == 7)
+			{
+				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+			}
+			if (item == 5)
+			{
+				CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
+			}	
+			//if (m_time % 10 == 0)
+			//{
+
+
+				//CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+				//Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+
+
+			//}
+
+
 			
 		}
 	}
 
-	m_time++;
+	if (hit->CheckElementHit(ELEMENT_EXPLOSION) == true)
+	{
+		m_hp -= 10;
+
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
+
+
+
+
+
 
 	
 	//敵回転
@@ -139,13 +185,45 @@ void CObjmeteoS::Draw()
 	src.m_left = 0.0f;
 	src.m_right = 50.0f;
 	src.m_bottom = 50.0f;
+
 	//表示位置
 	dst.m_top	 = m_top_right  + m_y;
 	dst.m_left   = m_left_bottom + m_x;
 	dst.m_right  = m_top_right + m_x;
 	dst.m_bottom = m_left_bottom+ m_y;
-	//画像登録
-	Draw::Draw(2, &src, &dst, c, 0.0f);
+	
+	//爆発切り替え
+	if (0 >= m_hp)
+	{					
+		
+
+		m_vx = 0;
+		m_vy = 0;
+
+		Draw::Draw(50, &src, &dst, c, 0.0f);
+
+		de_time++;
+		
+			
+
+		if(de_time >= 3)
+		{
+			Hits::DeleteHitBox(this);
+			this->SetStatus(false);
+			
+		}
+
+
+	}
+	else
+	{
+		//隕石登録
+		Draw::Draw(2, &src, &dst, c, 0.0f);
+
+	}
+
+
+
 }
 void CObjmeteoS::SetVector(float vx, float vy)
 {

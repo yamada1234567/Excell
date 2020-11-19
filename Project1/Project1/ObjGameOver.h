@@ -9,11 +9,12 @@ using namespace GameL;
 class CObjGameOver :public CObj
 {
 public:
-	CObjGameOver() {};
+	CObjGameOver(int c);
 	~CObjGameOver() {};
 	void Init();  //イニシャライズ
 	void Action();//アクション
 	void Draw();  //ドロー
 private:
 	bool m_key_flag;//キーフラグ
+	int SG;
 };

@@ -23,7 +23,7 @@ void CObjTripleBullet2::Init()
 	m_vy = sin(3.14f / 180.0f * m_r);
 
 	//ìñÇΩÇËîªíËçÏê¨
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_BULLET, OBJ_BULLET, 1);
+	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_BULLET, OBJ_TRIPLEBULLET2, 1);
 }
 
 //ÉAÉNÉVÉáÉì

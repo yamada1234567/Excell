@@ -20,7 +20,8 @@ CSceneStage2::CSceneStage2()
 //デストラクタ
 CSceneStage2::~CSceneStage2()
 {
-
+	x = 0.0f;
+	y = 0.0f;
 }
 //ゲームメイン初期化メソッド
 void CSceneStage2::InitScene()
@@ -31,11 +32,17 @@ void CSceneStage2::InitScene()
 	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
 	Draw::LoadImageW(L"縦背景.png", 5, TEX_SIZE_512);
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
-	Draw::LoadImage(L"Boss(moon).png", 6, TEX_SIZE_512);
+	Draw::LoadImage(L"Boss(Mars).png", 9, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
+	Draw::LoadImage(L"UFO.png", 20, TEX_SIZE_512);
+	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"hero 1damage.png", 15, TEX_SIZE_512);
+	Draw::LoadImage(L"hero 2damage.png", 16, TEX_SIZE_512);
+	Draw::LoadImage(L"hero dead.png", 17, TEX_SIZE_512);
+	Draw::LoadImage(L"barrier.png", 22, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
-	CObjHero* obj = new CObjHero();//主人公オブジェクト作成
+	CObjHero* obj = new CObjHero(2);//主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	//敵メテオ
@@ -53,19 +60,149 @@ void CSceneStage2::InitScene()
 void CSceneStage2::Scene()
 {
 	m_time++;
+	if (m_time % 500 == 0)
+	{
+		x = 0.0f;
 
+		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 200);
+	}
+
+	//小
+	if (m_time % 40 == 0)
+	{
+		x = 300.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	//小
+	if (m_time % 55 == 0)
+	{
+		x = 100.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 45 == 0)
+	{
+		x = 220.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 65 == 0)
+	{
+		x = 450.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 70 == 0)
+	{
+		x = 600.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+	}
+	if (m_time % 55 == 0)
+	{
+		x = 200.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+
+	}
 	if (m_time % 50 == 0)
 	{
-		CObjmeteoRD* obj = new CObjmeteoRD(0.0f, 60.0f);
-		Objs::InsertObj(obj, OBJ_meteoRD, 4);
-		obj->SetVector(1.0f, 1.0f);
+		x = 700.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+
 	}
-	if (m_time%50==0)
+	if (m_time % 70 == 0)
 	{
-		CObjmeteoLD* obj = new CObjmeteoLD(800.0f, 60.0f);
-		Objs::InsertObj(obj, OBJ_meteoLD, 4);
-		obj->SetVector(1.0f, 1.0f);
+		x = 500.0f;
+
+		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoS, 4);
+		obj->SetVector(0.0f, 1.0f);
+
 	}
+	//メテオ中
+	if (m_time % 150 == 0)
+	{
+		x = 700.0f;
+
+		CObjmeteoM* obj = new CObjmeteoM(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoM, 4);
+		obj->SetVector(0.0f, 1.0f);
 
 
+	}
+	if (m_time % 70 == 0)
+	{
+		x = 0.0f;
+
+		CObjmeteoM* obj = new CObjmeteoM(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoM, 4);
+		obj->SetVector(0.0f, 1.0f);
+
+
+	}
+	if (m_time % 70 == 0)
+	{
+		x = 750.0f;
+
+		CObjmeteoM* obj = new CObjmeteoM(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoM, 4);
+		obj->SetVector(0.0f, 1.0f);
+
+
+	}
+	if (m_time % 200 == 0)
+	{
+		x = 400.0f;
+
+		CObjmeteoM* obj = new CObjmeteoM(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoM, 4);
+		obj->SetVector(0.0f, 1.0f);
+
+
+	}
+	if (m_time % 170 == 0)
+	{
+		x = 250.0f;
+
+		CObjmeteoM* obj = new CObjmeteoM(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoM, 4);
+		obj->SetVector(0.0f, 1.0f);
+
+
+	}
+	if (m_time % 140 == 0)
+	{
+		x = 400.0f;
+
+		CObjmeteoM* obj = new CObjmeteoM(x, 0.0f);
+		Objs::InsertObj(obj, OBJ_meteoM, 4);
+		obj->SetVector(0.0f, 1.0f);
+
+
+	}
+	//ボス
+	if (m_time == 1300)
+	{
+		x = 100;
+		CObjBoss2* obj = new CObjBoss2(x, 10.0f);
+		Objs::InsertObj(obj, OBJ_BOSS2, 9);
+	}
 }

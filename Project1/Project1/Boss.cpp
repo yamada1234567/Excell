@@ -32,6 +32,7 @@ void CObjBoss::Init()
 //アクション
 void CObjBoss::Action()
 {
+
 	//HitBoxの内容を更新
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
@@ -54,8 +55,8 @@ void CObjBoss::Action()
 			Hits::DeleteHitBox(this);
 
 			//クリアに移動
-			Scene::SetScene(new CSceneClear());
-
+			Scene::SetScene(new CSceneClear(2));
+			
 		}
 
 	}
