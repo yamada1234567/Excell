@@ -9,7 +9,6 @@
 #include "triplebullet2.h"
 
 #include "GameL/DrawFont.h"
-#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -64,8 +63,6 @@ void CObjHero::Action()
 		{
 			if (m_f == true)
 			{
-				//発射音を鳴らす
-				Audio::Start(2);
 
 				//弾丸オブジェクト作成
 				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);

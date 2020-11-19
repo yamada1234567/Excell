@@ -37,7 +37,7 @@ void CSceneGameOver::InitScene()
 	Font::SetStrTex(L"NEXT_CHALLENGE:ENTER_KEY");
 
 	//音楽読み込み
-	Audio::LoadAudio(0, L"BGMSceneGameOver.wav", BACK_MUSIC);
+	Audio::LoadAudio(0, L"BGMGameOver.wav", BACK_MUSIC);
 
 	//ボリュウームを1.0に戻す
 	float v = Audio::VolumeMaster(0);
