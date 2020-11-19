@@ -97,8 +97,10 @@ void CObjAlien::Action()
 	//bom‚É‚ ‚Á‚½‚çÁ–Å
 	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		m_hp = 0;
+
+		//”­Ë‰¹‚ğ–Â‚ç‚·
+		Audio::Start(3);
 	}
 
 
@@ -108,6 +110,9 @@ void CObjAlien::Action()
 		m_hp -= 1;
 		if (0 >= m_hp)
 		{
+
+			//“G”š”­‰¹‚ğ–Â‚ç‚·
+			Audio::Start(3);
 			
 			//Á‹
 			this->SetStatus(false);
@@ -157,36 +162,9 @@ void CObjAlien::Draw()
 	dst.m_left = 50.0f + m_x;
 	dst.m_right = 0.0f + m_x;
 	dst.m_bottom = 50.0f + m_y;
-	//”š”­Ø‚è‘Ö‚¦
-	if (0 >= m_hp)
-	{
 
 
-		m_vx = 0;
-		m_vy = 0;
-
-		Draw::Draw(50, &src, &dst, c, 0.0f);
-
-		de_time++;
-
-
-
-		if (de_time >= 10)
-		{
-			//“G”š”­‰¹‚ğ–Â‚ç‚·
-			Audio::Start(3);
-
-			Hits::DeleteHitBox(this);
-			this->SetStatus(false);
-
-		}
-
-
-	}
-	else
-	{
 		//è¦Î“o˜^
-		Draw::Draw(2, &src, &dst, c, 0.0f);
+		Draw::Draw(20, &src, &dst, c, 0.0f);
 
-	}
 }

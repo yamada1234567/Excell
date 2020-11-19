@@ -55,6 +55,7 @@ void CSceneStage4::InitScene()
 	Draw::LoadImage(L"hero dead.png", 17, TEX_SIZE_512);
 	Draw::LoadImage(L"UFO.png", 20, TEX_SIZE_512);
 	Draw::LoadImage(L"barrier.png", 22, TEX_SIZE_512);
+	Draw::LoadImage(L"隕石爆発.png", 50, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(4);//主人公オブジェクト作成
