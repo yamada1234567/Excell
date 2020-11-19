@@ -32,7 +32,7 @@ void CSceneTitle::InitScene()
 {
 
 	//音楽読み込み
-	Audio::LoadAudio( 0 , L"BGMTitle.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio( 0 , L"BGMSceneTitle.wav", SOUND_TYPE::BACK_MUSIC);
 
 	//バックミュージックスタート
 	float Volume = Audio::VolumeMaster(-0.8f); //マスターボリュームを0.8下げる

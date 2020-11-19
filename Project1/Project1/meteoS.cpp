@@ -206,7 +206,7 @@ void CObjmeteoS::Draw()
 		
 			
 
-		if(de_time >= 3)
+		if(de_time >= 5)
 		{
 			Hits::DeleteHitBox(this);
 			this->SetStatus(false);
