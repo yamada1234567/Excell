@@ -310,10 +310,10 @@ void CSceneStage3::Scene()
 	}
 
 	//出力する時間(timeが200になると出力)
-	if (m_time == 1500)
+	if (m_time == 1600)
 	{
 		//ボス出力
-		CObjBoss3* obj = new CObjBoss3(100.0f, 10.0f);
+		CObjBoss3* obj = new CObjBoss3(-100.0f, -650.0f);
 		Objs::InsertObj(obj, OBJ_BOSS3, 10);
 	}
 
