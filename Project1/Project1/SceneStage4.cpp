@@ -179,21 +179,21 @@ void CSceneStage4::Scene()
 		obj->SetVector(0.0f, 1.0f);
 	}
 	//出力する時間(timeが70になると出力)
-	if (m_time % 88 == 0)
+	if (m_time % 150 == 0)
 	{
 		//大隕石出力
 		CObjmeteoL* obj = new CObjmeteoL(300.0f, 0.0f);
 		Objs::InsertObj(obj, OBJ_meteoL, 4);
 		obj->SetVector(0.0f, 1.0f);
 	}
-	if (m_time % 80 == 0)
+	if (m_time % 200 == 0)
 	{
 		//大隕石出力
 		CObjmeteoL* obj = new CObjmeteoL(700.0f, 0.0f);
 		Objs::InsertObj(obj, OBJ_meteoL, 4);
 		obj->SetVector(0.0f, 1.0f);
 	}
-	if (m_time % 60 == 0)
+	if (m_time % 260 == 0)
 	{
 		//大隕石出力
 		CObjmeteoL* obj = new CObjmeteoL(0.0f, 0.0f);
