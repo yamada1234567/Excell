@@ -281,7 +281,7 @@ void CObjHero::Action()
 		
 		bar_time++;
 
-		if (bar_time==50a)
+		if (bar_time==50)
 		{
 
 			Bar=-1;
