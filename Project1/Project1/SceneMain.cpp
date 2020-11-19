@@ -60,7 +60,7 @@ void CSceneMain::Scene()
 	
 	//ƒNƒŠƒA‚ÉˆÚ“®
 	//Scene::SetScene(new CSceneClear());
-	//Scene::SetScene(new CSceneClear(5));
+	Scene::SetScene(new CSceneClear(6));
 	
 	//ŠÔ
 	m_time++;
