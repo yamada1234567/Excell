@@ -389,7 +389,7 @@ void CSceneStage5::Scene()
 				}
 			}
 		}
-		if (m_time == 800)
+		if (m_time == 100)
 		{
 			//音楽チェンジ
 			Audio::Stop(0);//0番曲をストップ
