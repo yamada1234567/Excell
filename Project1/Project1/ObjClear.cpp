@@ -118,29 +118,29 @@ void CObjClear::Draw()
 	if (SG == 2)
 	{
 		Font::StrDraw(L"1ステージクリア！", 260, 225, 32, c);
-		Font::StrDraw(L"next:ENTER_KEY", 225, 275, 50, c);
+		Font::StrDraw(L"next 2ステージ :ENTER_KEY", 100, 270, 50, c);
 	}
 	else if (SG == 3)
 	{
 		Font::StrDraw(L"2ステージクリア！", 260, 225, 32, c);
-		Font::StrDraw(L"next:ENTER_KEY", 225, 275, 50, c);
+		Font::StrDraw(L"next 3ステージ :ENTER_KEY", 100, 275, 50, c);
 	}
 	else if (SG == 4)
 	{
 		Font::StrDraw(L"3ステージクリア！", 260, 225, 32, c);
-		Font::StrDraw(L"next:ENTER_KEY", 225, 275, 50, c);
+		Font::StrDraw(L"next 4ステージ :ENTER_KEY", 100, 275, 50, c);
 
 	}
 	else if (SG == 5)
 	{
 		Font::StrDraw(L"4ステージクリア！", 260, 225, 32, c);
-		Font::StrDraw(L"next:ENTER_KEY", 225, 275, 50, c);
+		Font::StrDraw(L"next 5ステージ :ENTER_KEY", 100, 275, 50, c);
 
 	}
 	else if (SG == 6)
 	{
 		Font::StrDraw(L"5ステージクリア！", 260, 225, 32, c);
-		Font::StrDraw(L"next:ENTER_KEY", 225, 275, 50, c);
+		Font::StrDraw(L"next 6ステージ :ENTER_KEY", 100, 275, 50, c);
 
 	}
 	else if (SG == 7)
