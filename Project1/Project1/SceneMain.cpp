@@ -63,7 +63,9 @@ void CSceneMain::InitScene()
 	CObjHero* obj = new CObjHero(1);//主人公オブジェクト作成
 	Objs::InsertObj(obj,OBJ_HERO,1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
-
+	
+	CObjshield* obj_b = new CObjshield(50 + 3.0f, 50);
+	Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
 
 
 	//背景
@@ -89,6 +91,9 @@ void CSceneMain::Scene()
 	int pos2;
 	int x;
 	int a;
+
+
+
 	for (int i = 0; i < 10000; i++)
 	{
 		pos = 0;
