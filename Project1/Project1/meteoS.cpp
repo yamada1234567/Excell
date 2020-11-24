@@ -6,6 +6,7 @@
 #include "GameHead.h"
 #include "meteoS.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -78,6 +79,9 @@ void CObjmeteoS::Action()
 	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
 	{
 		m_hp = 0;
+
+		//発射音を鳴らす
+		Audio::Start(3);
 	}
 
 	//ダメージ判定
@@ -88,7 +92,8 @@ void CObjmeteoS::Action()
 		{
 			int item;
 
-
+			//敵爆発音を鳴らす
+			Audio::Start(3);
 
 			////アイテム　作成中
 			srand(time(NULL));
@@ -119,15 +124,7 @@ void CObjmeteoS::Action()
 				CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
 			}	
-			//if (m_time % 10 == 0)
-			//{
 
-
-				//CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				//Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-
-
-			//}
 
 
 			
@@ -137,6 +134,7 @@ void CObjmeteoS::Action()
 	if (hit->CheckElementHit(ELEMENT_EXPLOSION) == true)
 	{
 		m_hp -= 10;
+
 
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
@@ -208,6 +206,9 @@ void CObjmeteoS::Draw()
 
 		if(de_time >= 3)
 		{
+			//敵爆発音を鳴らす
+			Audio::Start(3);
+
 			Hits::DeleteHitBox(this);
 			this->SetStatus(false);
 			

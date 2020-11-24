@@ -6,6 +6,7 @@
 #include "GameHead.h"
 #include "meteoLD.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -25,7 +26,7 @@ void CObjmeteoLD::Init()
 	m_left_bottom = 32.0f;//表示位置
 	m_top_right = 0.0f; //表示位置
 
-
+	de_time = 0;
 	//当たり判定作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_meteoRD, 1);
 }
@@ -77,8 +78,10 @@ void CObjmeteoLD::Action()
 	//bomにあったら消滅
 	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		m_hp = 0;
+
+		//発射音を鳴らす
+		Audio::Start(3);
 	}
 
 	/*ダメージ判定*/
@@ -89,8 +92,8 @@ void CObjmeteoLD::Action()
 		{
 			int item;
 
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
+			//敵爆発音を鳴らす
+			Audio::Start(3);
 
 			//アイテム　作成中
 			srand(time(NULL));
@@ -117,6 +120,9 @@ void CObjmeteoLD::Action()
 
 	if (hit->CheckElementHit(ELEMENT_EXPLOSION) == true)
 	{
+		//発射音を鳴らす
+		Audio::Start(3);
+
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
@@ -177,12 +183,15 @@ void CObjmeteoLD::Draw()
 
 		Draw::Draw(50, &src, &dst, c, 0.0f);
 
+
 		de_time++;
 
 
 
 		if (de_time >= 10)
 		{
+
+
 			Hits::DeleteHitBox(this);
 			this->SetStatus(false);
 

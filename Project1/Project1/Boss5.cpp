@@ -14,7 +14,7 @@ CObjBoss5::CObjBoss5(float x, float y)
 {
 
 	//表示位置
-	m_x = x + 100;
+	m_x = x +100;
 	m_y = y - 150;
 
 }
@@ -22,16 +22,39 @@ CObjBoss5::CObjBoss5(float x, float y)
 //イニシャライズ
 void CObjBoss5::Init()
 {
-	m_hp = 60;
+	m_hp = 100;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
 	//当たり判定用HiyBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 420, 420, ELEMENT_ENEMY, OBJ_BOSS5, 12);
+	Hits::SetHitBox(this, m_x, m_y, 800, 780, ELEMENT_ENEMY, OBJ_BOSS5, 12);
 }
 //アクション
 void CObjBoss5::Action()
 {
+	m_vy = 1.0f;
+
+	float r = 0.0f;
+	r = m_vx * m_vx + m_vy * m_vy;
+	r = sqrt(r);
+
+	if (r == 0.0f)
+	{
+		;
+	}
+	else
+	{
+		m_vx = 1.0f / r * m_vx;
+		m_vy = 1.0f / r * m_vy;
+	}
+
+	//加速
+	m_vx *= 0.0f;
+	m_vy *= 0.1f;
+
+	m_x += m_vx;
+	m_y += m_vy;
+
 	//HitBoxの内容を更新
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
@@ -72,13 +95,13 @@ void CObjBoss5::Draw()
 	//切れ取り設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 911.0f;
-	src.m_bottom = 729.0f;
+	src.m_right = 530.0f;
+	src.m_bottom = 530.0f;
 	//表示位置
 	dst.m_top = 0.0f + m_y;
-	dst.m_left = 420.0f + m_x;
-	dst.m_right = 0.0f + m_x;
-	dst.m_bottom = 420.0f + m_y;
+	dst.m_left = 1000.0f + m_x;
+	dst.m_right = -200.0f + m_x;
+	dst.m_bottom = 800.0f + m_y;
 
 	//1番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(12, &src, &dst, c, 0.0f);

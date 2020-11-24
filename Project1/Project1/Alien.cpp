@@ -6,6 +6,7 @@
 #include "GameHead.h"
 #include "Alien.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -96,8 +97,10 @@ void CObjAlien::Action()
 	//bomにあったら消滅
 	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		m_hp = 0;
+
+		//発射音を鳴らす
+		Audio::Start(3);
 	}
 
 
@@ -107,6 +110,9 @@ void CObjAlien::Action()
 		m_hp -= 1;
 		if (0 >= m_hp)
 		{
+
+			//敵爆発音を鳴らす
+			Audio::Start(3);
 			
 			//消去
 			this->SetStatus(false);
@@ -156,33 +162,9 @@ void CObjAlien::Draw()
 	dst.m_left = 50.0f + m_x;
 	dst.m_right = 0.0f + m_x;
 	dst.m_bottom = 50.0f + m_y;
-	//爆発切り替え
-	if (0 >= m_hp)
-	{
 
 
-		m_vx = 0;
-		m_vy = 0;
-
-		Draw::Draw(50, &src, &dst, c, 0.0f);
-
-		de_time++;
-
-
-
-		if (de_time >= 10)
-		{
-			Hits::DeleteHitBox(this);
-			this->SetStatus(false);
-
-		}
-
-
-	}
-	else
-	{
 		//隕石登録
-		Draw::Draw(2, &src, &dst, c, 0.0f);
+		Draw::Draw(20, &src, &dst, c, 0.0f);
 
-	}
 }

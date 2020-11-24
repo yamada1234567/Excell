@@ -5,6 +5,7 @@
 //GameLで使用するヘッダー
 #include "GameL/SceneObjManager.h"
 #include "GameL/DrawFont.h"
+#include"GameL\Audio.h"
 
 
 //使用するネームスペース
@@ -34,6 +35,15 @@ void CSceneClear::InitScene()
 	CObjClear* obj = new CObjClear(Count);
 	Objs::InsertObj(obj, OBJ_CLEAR, 10);
 
+	//音楽読み込み
+	Audio::LoadAudio(0, L"BGMSceneClear.wav", BACK_MUSIC);
+
+	//ボリュームを1.0に戻す
+	float v = Audio::VolumeMaster(0);
+	v = Audio::VolumeMaster(1.0 - v);
+
+	//音楽スタート
+	Audio::Start(0);
 }
 
 

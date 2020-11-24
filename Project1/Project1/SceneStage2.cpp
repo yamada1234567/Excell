@@ -5,6 +5,7 @@
 //GameLで使用するヘッダー
 #include"GameL/DrawTexture.h"
 #include"GameL\SceneObjManager.h"
+#include"GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -26,6 +27,20 @@ CSceneStage2::~CSceneStage2()
 //ゲームメイン初期化メソッド
 void CSceneStage2::InitScene()
 {
+	//音楽読み込み
+	Audio::LoadAudio(0, L"BGMSceneMain.wav", BACK_MUSIC);
+	Audio::LoadAudio(1, L"BGMBoss.wav", BACK_MUSIC);
+
+	Audio::LoadAudio(2, L"SEbullet.wav", EFFECT);
+	Audio::LoadAudio(3, L"SEEnemyexp.wav", EFFECT);
+	Audio::LoadAudio(4, L"SEheroexp.wav", EFFECT);
+
+	//ボリュームを1.5増やす
+	float v = Audio::VolumeMaster(1.5);
+
+	//音楽スタート
+	Audio::Start(0);
+
 	//外部グラフィックファイルを読み込む0番に登録()
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"hero bullet.png", 1, TEX_SIZE_512);
@@ -40,6 +55,7 @@ void CSceneStage2::InitScene()
 	Draw::LoadImage(L"hero 2damage.png", 16, TEX_SIZE_512);
 	Draw::LoadImage(L"hero dead.png", 17, TEX_SIZE_512);
 	Draw::LoadImage(L"barrier.png", 22, TEX_SIZE_512);
+	Draw::LoadImage(L"隕石爆発.png", 50, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(2);//主人公オブジェクト作成
@@ -201,8 +217,11 @@ void CSceneStage2::Scene()
 	//ボス
 	if (m_time == 1300)
 	{
+		//音楽チェンジ
+		Audio::Stop(0);//0番曲をストップ
+		Audio::Start(1);//1番曲をスタート
 		x = 100;
-		CObjBoss2* obj = new CObjBoss2(x, 10.0f);
+		CObjBoss2* obj = new CObjBoss2(-100, -650.0f);
 		Objs::InsertObj(obj, OBJ_BOSS2, 9);
 	}
 }

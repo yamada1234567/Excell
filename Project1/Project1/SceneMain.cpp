@@ -5,6 +5,7 @@
 //GameLで使用するヘッダー
 #include"GameL/DrawTexture.h"
 #include"GameL\SceneObjManager.h"
+#include"GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -12,6 +13,8 @@ using namespace GameL;
 //使用ヘッダー
 #include"SceneMain.h"
 #include"GameHead.h"
+#include <stdlib.h>
+#include <time.h>
 //コンストラクタ
 CSceneMain::CSceneMain()
 {
@@ -26,6 +29,20 @@ CSceneMain::~CSceneMain()
 //ゲームメイン初期化メソッド
 void CSceneMain::InitScene()
 {
+	//音楽読み込み
+	Audio::LoadAudio(0, L"BGMSceneMain.wav",BACK_MUSIC);
+	Audio::LoadAudio(1, L"BGMBoss.wav", BACK_MUSIC);
+
+	Audio::LoadAudio(2, L"SEbullet.wav", EFFECT);
+	Audio::LoadAudio(3, L"SEEnemyexp.wav",EFFECT);
+	Audio::LoadAudio(4, L"SEheroexp.wav", EFFECT);
+
+	//ボリュームを1.5増やす
+	float v = Audio::VolumeMaster(1.5);
+
+	//音楽スタート
+	Audio::Start(0);
+
 	//外部グラフィックファイルを読み込む0番に登録()
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"hero bullet.png", 1, TEX_SIZE_512);
@@ -61,78 +78,176 @@ void CSceneMain::Scene()
 	
 	//クリアに移動
 	//Scene::SetScene(new CSceneClear());
-	//Scene::SetScene(new CSceneClear(5));
+	Scene::SetScene(new CSceneClear(4));
 	
+
+
 	//時間
 	m_time++;
-
-	if (m_time %500 == 0)
+	int random;
+	int pos;
+	int pos2;
+	int x;
+	int a;
+	for (int i = 0; i < 10000; i++)
 	{
-		x = 0.0f;
-
-		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
-		Objs::InsertObj(obj, OBJ_Alien, 200);
+		pos = 0;
+		srand((int)time(NULL));
+		pos = rand() % 3;
+		if (pos == 0)
+		{
+			x = 200.0f;
+		}
+		else if (pos == 1)
+		{
+			x = 400.0f;
+		}
+		else if (pos == 2)
+		{
+			x = 600.0f;
+		}
 	}
-	if (m_time % 63 == 0)
-	{
-		x = 200.0f;
 
-		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
-		Objs::InsertObj(obj, OBJ_meteoS, 4);
-		obj->SetVector(0.0f, 1.0f);
+	for (int i = 0; i < 10000; i++)
+	{
+		pos2 = 0;
+		srand((int)time(NULL));
+		pos2 = rand() % 3;
+		if (pos2 == 0)
+		{
+			a = 50.0f;
+		}
+		else if (pos == 1)
+		{
+			a = 60.0f;
+		}
+		else if (pos == 2)
+		{
+			a = 70.0f;
+		}
 	}
-	if (m_time % 65 == 0)
+	for (int i = 0; i < 10000; i++)//ランダム隕石
 	{
-		x = 100.0f;
-
-		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
-		Objs::InsertObj(obj, OBJ_meteoS, 4);
-		obj->SetVector(0.0f, 1.0f);
+		if (m_time == i * 60)
+		{
+			random = 0;
+			srand((int)time(NULL));
+			random = rand() % 8;
+			if (random == 0)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f - a);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 1)
+			{
+				CObjmeteoM* obj = new CObjmeteoM(x - a, -100.0f - a);
+				Objs::InsertObj(obj, OBJ_meteoM, 3);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 2)
+			{
+				CObjmeteoL* obj = new CObjmeteoL(x - a, -100.0f - a);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			if (random == 3)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f - a);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 4)
+			{
+				CObjmeteoM* obj = new CObjmeteoM(x + a, -100.0f - a);
+				Objs::InsertObj(obj, OBJ_meteoM, 3);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 5)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f - a);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			if (random == 6)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x, -100.0f - a);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 7)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x, -100.0f - a);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+		}
 	}
-	if (m_time % 58 == 0)
+	for (int i = 0; i < 10000; i++)//ランダム隕石2
 	{
-		x = 150.0f;
-
-		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
-		Objs::InsertObj(obj, OBJ_meteoS, 4);
-		obj->SetVector(0.0f, 1.0f);
-	}
-	if (m_time % 70 == 0)
-	{
-		x = 300.0f;
-
-		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
-		Objs::InsertObj(obj, OBJ_meteoS, 4);
-		obj->SetVector(0.0f, 1.0f);
-	}
-	if (m_time % 50 == 0)
-	{
-		x = 450.0f;
-
-		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
-		Objs::InsertObj(obj, OBJ_meteoS, 4);
-		obj->SetVector(0.0f, 1.0f);
-	}
-	if (m_time % 77 == 0)
-	{
-		x = 580.0f;
-
-		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
-		Objs::InsertObj(obj, OBJ_meteoS, 4);
-		obj->SetVector(0.0f, 1.0f);
-	}
-	if (m_time % 55 == 0)
-	{
-		x = 640.0f;
-
-		CObjmeteoS* obj = new CObjmeteoS(x, 0.0f);
-		Objs::InsertObj(obj, OBJ_meteoS, 4);
-		obj->SetVector(0.0f, 1.0f);
+		if (m_time == i * 80)
+		{
+			random = 0;
+			srand((int)time(NULL));
+			random = rand() % 8;
+			if (random == 7)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 5)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 6)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			if (random == 4)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 1)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 0)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			if (random == 2)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 3)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+		}
 	}
 	if (m_time == 1200)
 	{
+		//音楽チェンジ
+		Audio::Stop(0);//0番曲をストップ
+		Audio::Start(1);//1番曲をスタート
+
 		x = 100;
-		CObjBoss* obj = new CObjBoss(x, 10.0f);
+		CObjBoss* obj = new CObjBoss(x, -640.0f);
 		Objs::InsertObj(obj, OBJ_BOSS, 6);
 	}
 }

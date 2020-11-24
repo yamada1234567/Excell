@@ -3,6 +3,7 @@
 #include "GameHead.h"
 #include "bullet.h"
 #include "GameL\HitBoxManager.h"
+#include"GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -37,6 +38,7 @@ void CObjBullet::Action()
 		Hits::DeleteHitBox(this);
 	}
 
+
 	//hitbox更新用ポインターの取得
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
@@ -68,6 +70,8 @@ void CObjBullet::Action()
 	//ELEMENT_ENEMYを持つオブジェクトと接触したら削除
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
+		Audio::Start(3);//着弾音を鳴らす
+
 		this->SetStatus(false);     
 		Hits::DeleteHitBox(this);   
 	}
