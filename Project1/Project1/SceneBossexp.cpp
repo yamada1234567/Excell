@@ -14,8 +14,6 @@ using namespace GameL;
 #include"SceneMain.h"
 #include "SceneBossexp.h"
 #include"GameHead.h"
-#include <stdlib.h>
-#include <time.h>
 
 //コントラクタ
 CSceneBossexp::CSceneBossexp()

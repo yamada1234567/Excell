@@ -13,6 +13,8 @@ using namespace GameL;
 
 CObjHeroime::CObjHeroime()
 {
+	m_y = 500 - 16;
+	m_x = (810 / 2) - 16;
 
 }
 
@@ -49,11 +51,11 @@ void CObjHeroime::Draw()
 	src.m_bottom = 50.0f;
 
 	//ï\é¶à íuÇÃê›íË
-	dst.m_top = 0.0f ;
-	dst.m_left = 0.0f ;
-	dst.m_right = 36.0f ;
-	dst.m_bottom = 36.0f ;
+	dst.m_top = 0.0f + m_y;
+	dst.m_left = 0.0f + m_x;
+	dst.m_right = 36.0f + m_x;
+	dst.m_bottom = 36.0f + m_y;
 
-	Draw::Draw(15, &src, &dst, c, 0.0f);
+	Draw::Draw(0, &src, &dst, c, 0.0f);
 }
 //600*800
