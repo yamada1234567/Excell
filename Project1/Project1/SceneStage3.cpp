@@ -325,7 +325,7 @@ void CSceneStage3::Scene()
 	}
 
 	//出力する時間(timeが200になると出力)
-	if (m_time == 1600)
+	if (m_time == 100)
 	{
 		//音楽チェンジ
 		Audio::Stop(0);//0番曲をストップ
