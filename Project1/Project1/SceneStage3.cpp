@@ -245,7 +245,7 @@ void CSceneStage3::Scene()
 	}
 	for (int i = 0; i < 10000; i++)//ƒ‰ƒ“ƒ_ƒ€è¦Î2
 	{
-		if (m_time == i * 66)
+		if (m_time == i * 30)
 		{
 			random = 0;
 			srand((int)time(NULL));
@@ -284,7 +284,7 @@ void CSceneStage3::Scene()
 	}
 	for (int i = 0; i < 10000; i++)//ƒ‰ƒ“ƒ_ƒ€è¦Î2
 	{
-		if (m_time == i * 80)
+		if (m_time == i * 50)
 		{
 			random = 0;
 			srand((int)time(NULL));
@@ -323,7 +323,7 @@ void CSceneStage3::Scene()
 	}
 	for (int i = 0; i < 10000; i++)//ƒ‰ƒ“ƒ_ƒ€è¦Î2
 	{
-		if (m_time == i * 180)
+		if (m_time == i * 50)
 		{
 			random = 0;
 			srand((int)time(NULL));
