@@ -369,6 +369,6 @@ void CSceneStage4::Scene()
 		Audio::Start(1);//1番曲をスタート
 		//ボス出力
 		CObjBoss4* obj = new CObjBoss4(-100.0f, -630.0f);
-		Objs::InsertObj(obj, OBJ_BOSS4, 13);
+		Objs::InsertObj(obj, OBJ_BOSS4, 11);
 	}
 }
