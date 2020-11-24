@@ -36,6 +36,7 @@ void CSceneStage5::InitScene()
 	Audio::LoadAudio(2, L"SEbullet.wav", EFFECT);
 	Audio::LoadAudio(3, L"SEEnemyexp.wav", EFFECT);
 	Audio::LoadAudio(4, L"SEheroexp.wav", EFFECT);
+
 	//ボリュームを1.5増やす
 	float v = Audio::VolumeMaster(1.5);
 
@@ -203,7 +204,7 @@ void CSceneStage5::Scene()
 				}
 				else if (random == 6)
 				{
-					CObjmeteoL* obj = new CObjmeteoL(x - a, -100.0f);
+					CObjmeteoM* obj = new CObjmeteoM(x - a, -100.0f);
 					Objs::InsertObj(obj, OBJ_meteoL, 2);
 					obj->SetVector(0.0f, 1.0f);
 				}
@@ -389,13 +390,14 @@ void CSceneStage5::Scene()
 				}
 			}
 		}
-		if (m_time == 100)
+		if (m_time == 1300)
 		{
 			//音楽チェンジ
 			Audio::Stop(0);//0番曲をストップ
 			Audio::Start(1);//1番曲をスタート
+			
 			//ボス出力
-			CObjBoss5* obj = new CObjBoss5(-100.0f, -700.0f);
+			CObjBoss5* obj = new CObjBoss5(-100.0f, -630.0f);
 			Objs::InsertObj(obj, OBJ_BOSS5, 12);
 		}
 }
