@@ -321,6 +321,45 @@ void CSceneStage3::Scene()
 			}
 		}
 	}
+	for (int i = 0; i < 10000; i++)//ƒ‰ƒ“ƒ_ƒ€è¦Î2
+	{
+		if (m_time == i * 180)
+		{
+			random = 0;
+			srand((int)time(NULL));
+			random = rand() % 8;
+			if (random == 2)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 1)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 0)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 3)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 4)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+		}
+	}
 
 	//o—Í‚·‚éŠÔ(time‚ª200‚É‚È‚é‚Æo—Í)
 	if (m_time == 1300)

@@ -181,7 +181,7 @@ void CObjmeteoM::Draw()
 		m_vy = 0;
 
 		Draw::Draw(50, &src, &dst, c, 0.0f);
-
+		
 		de_time++;
 
 
