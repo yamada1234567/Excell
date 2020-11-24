@@ -64,8 +64,6 @@ void CSceneMain::InitScene()
 	Objs::InsertObj(obj,OBJ_HERO,1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
 	
-	CObjshield* obj_b = new CObjshield(50 + 3.0f, 50);
-	Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
 
 
 	//背景
@@ -152,7 +150,7 @@ void CSceneMain::Scene()
 			}
 			else if (random == 2)
 			{
-				CObjmeteoM* obj = new CObjmeteoM(x - a, -100.0f - a);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f - a);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}

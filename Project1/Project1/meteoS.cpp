@@ -97,7 +97,7 @@ void CObjmeteoS::Action()
 
 			////アイテム　作成中
 			srand(time(NULL));
-			item = rand() % 30;//アイテムが出る確率
+			item = rand() % 20;//アイテムが出る確率
 			
 			if (item == 1)
 			{
@@ -119,7 +119,7 @@ void CObjmeteoS::Action()
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 			}
-			if (item == 2)
+			if (item == 12)
 			{
 				CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
