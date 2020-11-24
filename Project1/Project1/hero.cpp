@@ -33,7 +33,7 @@ void CObjHero::Init()
 	de_time = 0;
 	bar_time = 0;
 
-	m_hp = 3;
+	m_hp = 5;
 	m_o	=	15;
 
 	Attack_Item=0;
@@ -230,8 +230,6 @@ void CObjHero::Action()
 			{
 				Bar -= 1;
 
-
-
 			}
 
 		}
@@ -260,7 +258,7 @@ void CObjHero::Action()
 	if (hit->CheckObjNameHit(OBJ_SHIELD) != nullptr)
 	{
 
-		Bar = 1;
+		Bar = 3;
 
 	}
 	
@@ -362,54 +360,73 @@ void CObjHero::Draw()
 
 	//}
 
-
+	
 
 
 	if (Bar>0)
 	{
-		Font::StrDraw(L"バリア中", 210, 568, 32, c);
+		Font::StrDraw(L"バリア中(3)", 210, 568, 32, c);
 		
 		Draw::Draw(22, &src, &dst, c, 0.0f);
 	}
-	//if (Bar == 2)
-	//{
-	//	Font::StrDraw(L"バリア中(2)", 210, 568, 32, c);
-
-	//	Draw::Draw(22, &src, &dst, c, 0.0f);
-	//}
-	//if (Bar == 1)
-	//{
-	//	Font::StrDraw(L"バリア中(1)", 210, 568, 32, c);
-
-	//	Draw::Draw(22, &src, &dst, c, 0.0f);
-	//}
-
-	if (m_hp==3)
+	else if (Bar == 2)
 	{
-		Font::StrDraw(L"HP:3/3", 0, 568, 32, c);
+		Font::StrDraw(L"バリア中(2)", 210, 568, 32, c);
+
+		Draw::Draw(22, &src, &dst, c, 0.0f);
+	}
+	else if (Bar == 1)
+	{
+		Font::StrDraw(L"バリア中(1)", 210, 568, 32, c);
+
+		Draw::Draw(22, &src, &dst, c, 0.0f);
+	}
+
+
+	if (m_hp == 5)
+	{
+		Font::StrDraw(L"HP:5/5", 0, 568, 32, c);
 
 		//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 		Draw::Draw(0, &src, &dst, c, 0.0f);
 
 
+	}	
+	else if (m_hp == 4)
+	{
+		Font::StrDraw(L"HP:4/5", 0, 568, 32, c);
+
+		//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
+		Draw::Draw(15, &src, &dst, c, 0.0f);
+
+
+	}
+	else if (m_hp==3)
+	{
+		Font::StrDraw(L"HP:3/5", 0, 568, 32, c);
+
+		//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
+		Draw::Draw(15, &src, &dst, c, 0.0f);
+
+
 	}
 	else if (m_hp == 2)
 	{
-		Font::StrDraw(L"HP:2/3", 0, 568, 32, c);
+		Font::StrDraw(L"HP:2/5", 0, 568, 32, c);
 
-		Draw::Draw(15, &src, &dst, c, 0.0f);
+		Draw::Draw(16, &src, &dst, c, 0.0f);
 
 	}
 	else if (m_hp == 1)
 	{
-		Font::StrDraw(L"HP:1/3", 0, 568, 32, c);
+		Font::StrDraw(L"HP:1/5", 0, 568, 32, c);
 
 		Draw::Draw(16, &src, &dst, c, 0.0f);
 
 	}
 	else
 	{
-		Font::StrDraw(L"HP:0/3", 0, 568, 32, c);
+		Font::StrDraw(L"HP:0/5", 0, 568, 32, c);
 	    Draw::Draw(17, &src, &dst, c, 0.0f);
 
 		de_time++;

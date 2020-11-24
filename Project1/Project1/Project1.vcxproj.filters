@@ -154,6 +154,15 @@
     <ClCompile Include="meteoEX.cpp">
       <Filter>ソースファイル\敵</Filter>
     </ClCompile>
+    <ClCompile Include="SceneBossexp.cpp">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClCompile>
+    <ClCompile Include="heroima.cpp">
+      <Filter>ソースファイル\その他</Filter>
+    </ClCompile>
+    <ClCompile Include="bossima.cpp">
+      <Filter>ソースファイル\その他</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -308,6 +317,15 @@
     </ClInclude>
     <ClInclude Include="meteoEX.h">
       <Filter>ソースファイル\敵</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBossexp.h">
+      <Filter>ソースファイル\敵\ボス</Filter>
+    </ClInclude>
+    <ClInclude Include="heroima.h">
+      <Filter>ソースファイル\その他</Filter>
+    </ClInclude>
+    <ClInclude Include="bossima.h">
+      <Filter>ソースファイル\その他</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
