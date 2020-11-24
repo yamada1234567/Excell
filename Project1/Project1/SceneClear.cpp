@@ -36,7 +36,7 @@ void CSceneClear::InitScene()
 	Objs::InsertObj(obj, OBJ_CLEAR, 10);
 
 	//‰¹Šy“Ç‚İ‚İ
-	Audio::LoadAudio(0, L"BGMSceneLaast.wav", BACK_MUSIC);
+	Audio::LoadAudio(0, L"BGMSceneLast.wav", BACK_MUSIC);
 
 	//ƒ{ƒŠƒ…[ƒ€‚ğ1.0‚É–ß‚·
 	float v = Audio::VolumeMaster(0);
