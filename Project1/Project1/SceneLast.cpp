@@ -278,7 +278,7 @@ void CSceneLast::Scene()
 		Audio::Stop(0);//0番曲をストップ
 		Audio::Start(1);//1番曲をスタート
 		x = 100;
-		CObjBoss6* obj = new CObjBoss6(x, 10.0f);
+		CObjBoss6* obj = new CObjBoss6(x, -660.0f);
 		Objs::InsertObj(obj, OBJ_BOSS6, 13);
 	}
 }
