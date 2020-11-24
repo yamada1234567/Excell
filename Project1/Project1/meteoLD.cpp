@@ -190,7 +190,8 @@ void CObjmeteoLD::Draw()
 
 		if (de_time >= 10)
 		{
-
+			//“G”š”­‰¹‚ğ–Â‚ç‚·
+			Audio::Start(3);
 
 			Hits::DeleteHitBox(this);
 			this->SetStatus(false);

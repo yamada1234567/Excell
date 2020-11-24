@@ -249,7 +249,7 @@ void CObjHero::Action()
 	if (Input::GetVKey('A') == false)
 	{
 		//é_ëfÇOÇ≈è¡ñ≈
-		if (m_time % 60 == 0)
+		if (m_time % 70 == 0)
 		{
 			m_o--;
 
