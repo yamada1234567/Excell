@@ -30,13 +30,13 @@ CSceneClear::~CSceneClear()
 //ゲームメイン初期化メソッド
 void CSceneClear::InitScene()
 {
-
-
+	if(Count==7)
+	{
 	CObjClear* obj = new CObjClear(Count);
 	Objs::InsertObj(obj, OBJ_CLEAR, 10);
 
 	//音楽読み込み
-	Audio::LoadAudio(0, L"BGMSceneClear.wav", BACK_MUSIC);
+	Audio::LoadAudio(0, L"BGMSceneLast.wav", BACK_MUSIC);
 
 	//ボリュームを1.0に戻す
 	float v = Audio::VolumeMaster(0);
@@ -44,6 +44,23 @@ void CSceneClear::InitScene()
 
 	//音楽スタート
 	Audio::Start(0);
+
+	}
+	else
+	{
+		CObjClear* obj = new CObjClear(Count);
+		Objs::InsertObj(obj, OBJ_CLEAR, 10);
+
+		//音楽読み込み
+		Audio::LoadAudio(0, L"BGMSceneClear.wav", BACK_MUSIC);
+
+		//ボリュームを1.0に戻す
+		float v = Audio::VolumeMaster(0);
+		v = Audio::VolumeMaster(1.0 - v);
+
+		//音楽スタート
+		Audio::Start(0);
+	}
 }
 
 

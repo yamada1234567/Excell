@@ -93,7 +93,7 @@ void CObjmeteoM::Action()
 
 			//アイテム　作成中
 			srand(time(NULL));
-			item = rand() % 20;//倒した際に出るランダムな数値の数
+			item = rand() % 10;//倒した際に出るランダムな数値の数
 			if (item == 1)//そのランダムに出た数値が特定の数値の場合アイテムを出す
 			{
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
