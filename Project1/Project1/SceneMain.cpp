@@ -76,9 +76,6 @@ void CSceneMain::InitScene()
 void CSceneMain::Scene()
 {
 	
-	//ƒNƒŠƒA‚ÉˆÚ“®
-	//Scene::SetScene(new CSceneClear());
-	Scene::SetScene(new CSceneClear(4));
 	
 
 
@@ -147,7 +144,7 @@ void CSceneMain::Scene()
 			}
 			else if (random == 2)
 			{
-				CObjmeteoL* obj = new CObjmeteoL(x - a, -100.0f - a);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f - a);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
