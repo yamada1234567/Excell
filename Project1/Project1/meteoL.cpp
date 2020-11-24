@@ -129,13 +129,13 @@ void CObjmeteoL::Action()
 				}
 				if (item == 7)
 				{
-					CObjitem* obj_item = new CObjitem(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_item, OBJ_ITEM, 5);
+					//CObjitem* obj_item = new CObjitem(m_x + 3.0f, m_y);
+					//Objs::InsertObj(obj_item, OBJ_ITEM, 5);
 				}
 				if (item == 8)
 				{
-					CObjitem* obj_item = new CObjitem(m_x + 3.0f, m_y);
-	                Objs::InsertObj(obj_item, OBJ_ITEM, 5);
+	/*				CObjitem* obj_item = new CObjitem(m_x + 3.0f, m_y);
+	                Objs::InsertObj(obj_item, OBJ_ITEM, 5);*/
 				}
 				if (item == 9)
 				{
