@@ -138,7 +138,7 @@ void CSceneStage3::Scene()
 			random = rand() % 8;
 			if (random == 0)
 			{
-				CObjmeteoL* obj = new CObjmeteoL(x - a, -100.0f - a);
+				CObjmeteoM* obj = new CObjmeteoM(x - a, -100.0f - a);
 				Objs::InsertObj(obj, OBJ_meteoL, 2);
 				obj->SetVector(0.0f, 1.0f);
 			}
@@ -174,7 +174,7 @@ void CSceneStage3::Scene()
 			}
 			if (random == 6)
 			{
-				CObjmeteoL* obj = new CObjmeteoL(x, -100.0f - a);
+				CObjmeteoS* obj = new CObjmeteoS(x, -100.0f - a);
 				Objs::InsertObj(obj, OBJ_meteoL, 2);
 				obj->SetVector(0.0f, 1.0f);
 			}
