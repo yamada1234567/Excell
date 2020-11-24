@@ -75,6 +75,12 @@ void CSceneMain::InitScene()
 //ゲームメイン実行メソッド
 void CSceneMain::Scene()
 {
+	
+	//クリアに移動
+	//Scene::SetScene(new CSceneClear());
+	//Scene::SetScene(new CSceneClear(3));
+	
+
 
 	//時間
 	m_time++;
@@ -144,7 +150,7 @@ void CSceneMain::Scene()
 			}
 			else if (random == 2)
 			{
-				CObjmeteoL* obj = new CObjmeteoL(x - a, -100.0f - a);
+				CObjmeteoM* obj = new CObjmeteoM(x - a, -100.0f - a);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
@@ -232,6 +238,120 @@ void CSceneMain::Scene()
 			else if (random == 3)
 			{
 				CObjmeteoS* obj = new CObjmeteoS(x, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+		}
+	}
+	for (int i = 0; i < 10000; i++)//ランダム隕石3
+	{
+		if (m_time == i * 150)
+		{
+			random = 0;
+			srand((int)time(NULL));
+			random = rand() % 8;
+			if (random == 0)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - 100, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 1)
+			{
+				CObjmeteoM* obj = new CObjmeteoM(x - 100, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoM, 3);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 2)
+			{
+				CObjmeteoM* obj = new CObjmeteoM(x - 100, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			if (random == 3)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x + 100, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 4)
+			{
+				CObjmeteoM* obj = new CObjmeteoM(x + 100, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoM, 3);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 5)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x + 100, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			if (random == 6)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 7)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x, -100.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+		}
+	}
+	for (int i = 0; i < 10000; i++)//ランダム隕石4
+	{
+		if (m_time == i * 90)
+		{
+			random = 0;
+			srand((int)time(NULL));
+			random = rand() % 8;
+			if (random == 7)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -200.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 5)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -200.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 6)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -200.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			if (random == 4)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x + a, -200.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 1)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x + a, -200.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 0)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x + a, -200.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			if (random == 2)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x, -200.0f);
+				Objs::InsertObj(obj, OBJ_meteoS, 4);
+				obj->SetVector(0.0f, 1.0f);
+			}
+			else if (random == 3)
+			{
+				CObjmeteoS* obj = new CObjmeteoS(x, -200.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
