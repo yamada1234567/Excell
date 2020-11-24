@@ -301,6 +301,7 @@ void CObjHero::Action()
 //ドロー
 void CObjHero::Draw()
 {
+
 	//描画カラー情報　R＝Red G=Green B=Blue A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 	
@@ -409,7 +410,7 @@ void CObjHero::Draw()
 	else
 	{
 		Font::StrDraw(L"HP:0/3", 0, 568, 32, c);
-		Draw::Draw(17, &src, &dst, c, 0.0f);
+	    Draw::Draw(17, &src, &dst, c, 0.0f);
 
 		de_time++;
 
@@ -425,9 +426,8 @@ void CObjHero::Draw()
 				this->SetStatus(false);
 				Hits::DeleteHitBox(this);
 			
-				//主人公消滅でシーンをゲームオーバーに移行する
-				Scene::SetScene((CScene*)new CSceneGameOver(C));
-
+					//主人公消滅でシーンをゲームオーバーに移行する
+					Scene::SetScene((CScene*)new CSceneGameOver(C));
 
 
 			}

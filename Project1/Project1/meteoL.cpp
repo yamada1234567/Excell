@@ -18,7 +18,7 @@ CObjmeteoL::CObjmeteoL(float x, float y)
 //イニシャライズ
 void CObjmeteoL::Init()
 {
-	m_hp = 5;
+	m_hp = 8;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_time=0;
@@ -96,7 +96,7 @@ void CObjmeteoL::Action()
 
 			//アイテム　作成中
 			srand(time(NULL));
-			item = rand() % 20;//倒した際に出るランダムな数値の数
+			item = rand() % 9;//倒した際に出るランダムな数値の数
 				if (item == 1)//そのランダムに出た数値が特定の数値の場合アイテムを出す
 				{
 					CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);

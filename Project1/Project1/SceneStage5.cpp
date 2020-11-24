@@ -203,7 +203,7 @@ void CSceneStage5::Scene()
 				}
 				else if (random == 6)
 				{
-					CObjmeteoL* obj = new CObjmeteoL(x - a, -100.0f);
+					CObjmeteoM* obj = new CObjmeteoM(x - a, -100.0f);
 					Objs::InsertObj(obj, OBJ_meteoL, 2);
 					obj->SetVector(0.0f, 1.0f);
 				}
