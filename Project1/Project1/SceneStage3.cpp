@@ -58,6 +58,7 @@ void CSceneStage3::InitScene()
 	Draw::LoadImage(L"barrier.png", 22, TEX_SIZE_512);
 	Draw::LoadImage(L"隕石爆発.png", 50, TEX_SIZE_512);
 	Draw::LoadImage(L"UFO.png", 20, TEX_SIZE_512);
+
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(3);//主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
