@@ -91,7 +91,13 @@ void CSceneMain::Scene()
 	int a;
 
 
+	if (m_time % 500 == 0)
+	{
+		x = 0.0f;
 
+		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
+		Objs::InsertObj(obj, OBJ_Alien, 20);
+	}
 	for (int i = 0; i < 10000; i++)
 	{
 		pos = 0;

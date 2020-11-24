@@ -145,7 +145,7 @@ void CObjClear::Draw()
 	}
 	else if (SG == 7)
 	{
-		Font::StrDraw(L"ラストステージクリア！", 260, 225, 32, c);
+		Font::StrDraw(L"ラストステージクリア！", 230, 225, 32, c);
 		Font::StrDraw(L"おめでとう！", 225, 275, 50, c);
 
 	}
