@@ -299,17 +299,21 @@ void CObjHero::Action()
 //ドロー
 void CObjHero::Draw()
 {
+	int AniData[4] =
+	{
+		1 , 0 , 2 , 0 ,
+	};
 
 	//描画カラー情報　R＝Red G=Green B=Blue A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-	
+
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
 	//切り取り位置の設定
-	src.m_top		= 0.0f;
-	src.m_left		= 0.0f;
-	src.m_right		= 50.0f;
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 50.0f;
 	src.m_bottom	= 50.0f;
 
 	//表示位置の設定
@@ -427,7 +431,7 @@ void CObjHero::Draw()
 	else
 	{
 		Font::StrDraw(L"HP:0/5", 0, 568, 32, c);
-	    Draw::Draw(17, &src, &dst, c, 0.0f);
+	    //Draw::Draw(17, &src, &dst, c, 0.0f);
 
 		de_time++;
 
@@ -435,8 +439,7 @@ void CObjHero::Draw()
 		m_vy = 0;
 
 
-
-			if (de_time == 11)
+			if (de_time == 50)
 			{
 
 
