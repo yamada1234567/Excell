@@ -299,10 +299,6 @@ void CObjHero::Action()
 //ドロー
 void CObjHero::Draw()
 {
-	int AniData[4] =
-	{
-		1 , 0 , 2 , 0 ,
-	};
 
 	//描画カラー情報　R＝Red G=Green B=Blue A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -439,7 +435,7 @@ void CObjHero::Draw()
 		m_vy = 0;
 
 
-			if (de_time == 50)
+			if (de_time == 11)
 			{
 
 
