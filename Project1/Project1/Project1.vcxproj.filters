@@ -163,6 +163,9 @@
     <ClCompile Include="bossima.cpp">
       <Filter>ソースファイル\その他</Filter>
     </ClCompile>
+    <ClCompile Include="Bomb.cpp">
+      <Filter>ソースファイル\アイテム</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -326,6 +329,9 @@
     </ClInclude>
     <ClInclude Include="bossima.h">
       <Filter>ソースファイル\その他</Filter>
+    </ClInclude>
+    <ClInclude Include="Bomb.h">
+      <Filter>ソースファイル\アイテム</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

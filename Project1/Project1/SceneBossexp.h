@@ -15,5 +15,6 @@ public:
 	void Scene();      //ゲームタイトルの実行中メソッド
 private:
 	int Count;
+	int m_time;
 };
 
