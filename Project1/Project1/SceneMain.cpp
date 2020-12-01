@@ -128,11 +128,11 @@ void CSceneMain::Scene()
 		}
 		else if (pos == 1)
 		{
-			a = 60.0f;
+			a = 70.0f;
 		}
 		else if (pos == 2)
 		{
-			a = 70.0f;
+			a =  100.0f;
 		}
 	}
 	for (int i = 0; i < 10000; i++)//ƒ‰ƒ“ƒ_ƒ€è¦Î
@@ -162,19 +162,19 @@ void CSceneMain::Scene()
 			}
 			if (random == 3)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f - a);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f - a);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
 			else if (random == 4)
 			{
-				CObjmeteoM* obj = new CObjmeteoM(x + a, -100.0f - a);
+				CObjmeteoM* obj = new CObjmeteoM(x - a, -100.0f - a);
 				Objs::InsertObj(obj, OBJ_meteoM, 3);
 				obj->SetVector(0.0f, 1.0f);
 			}
 			else if (random == 5)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f - a);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f - a);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
@@ -219,19 +219,19 @@ void CSceneMain::Scene()
 			}
 			if (random == 4)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
 			else if (random == 1)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
 			else if (random == 0)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
@@ -333,19 +333,19 @@ void CSceneMain::Scene()
 			}
 			if (random == 4)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -200.0f);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -200.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
 			else if (random == 1)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -200.0f);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -200.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
 			else if (random == 0)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -200.0f);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -200.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
