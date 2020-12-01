@@ -38,6 +38,5 @@ private:
 	int Attack_Item;
 	int Bar;
 	int C;
-
 };
 
