@@ -33,6 +33,7 @@ enum OBJ_NAME
 	OBJ_OXYGEN,
 	OBJ_ITEM,
 	OBJ_SHIELD,
+	OBJ_BOMB,
 
 	OBJ_BACKGROUND,
 
@@ -41,7 +42,7 @@ enum OBJ_NAME
 	OBJ_CLEAR,
 
 	OBJ_HEROIME,
-
+	OBJ_BOSSIMA,
 };
 //------------------------------------------------
 
@@ -112,12 +113,13 @@ struct UserData
 #include "Boss4.h"
 #include "Boss5.h"
 #include "Boss6.h"
+#include "bossima.h"
 
 #include "item.h"
 #include "Oxygen.h"
 #include "shield.h"
 #include "ObjBackground.h"
-
+#include "Bomb.h"
 
 #include "ObjGameOver.h"
 #include "ObjTitle.h"

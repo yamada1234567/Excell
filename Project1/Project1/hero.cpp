@@ -108,25 +108,28 @@ void CObjHero::Action()
 		//	m_g = true;
 		//}
 
-		////BOMの弾丸発射
-		//if (Input::GetVKey('B') == true)
-		//{
-		//	if (m_b == true)
-		//	{
-		//		//if (Attack_Item <= 1)
-		//		
-		//			////BOMオブジェクト作成
-		//			CObjBomBullet* obj_b = new CObjBomBullet(m_x + 3.0f, m_y);
-		//			Objs::InsertObj(obj_b, OBJ_BOM_BULLET, 1);
-		//		//			Attack_Item -= 1;
-		//		///*		}*/
-		//		m_b = false;
-		//	}
-		//}
-		//else
-		//{
-		//	m_b = true;
-		//}
+		//BOMの弾丸発射
+		if (Input::GetVKey('B') == true)
+		{
+			if (m_b == true)
+			{
+				if (Attack_Item != 0)
+				{
+
+					//BOMオブジェクト作成
+					CObjBomBullet* obj_b = new CObjBomBullet(m_x + 3.0f, m_y);
+					Objs::InsertObj(obj_b, OBJ_BOM_BULLET, 1);
+
+
+					Attack_Item -= 1;
+				}
+				m_b = false;
+			}
+		}
+		else
+		{
+			m_b = true;
+		}
 
 
 
@@ -286,11 +289,11 @@ void CObjHero::Action()
 
 
 
-	////散弾アイテム判定
-	//if (hit->CheckObjNameHit(OBJ_ITEM) != nullptr)
-	//{
-	//	Attack_Item=4;
-	//}
+	//BOMアイテム判定
+	if (hit->CheckObjNameHit(OBJ_BOMB) != nullptr)
+	{
+		Attack_Item+=2;
+	}
 
 
 }
@@ -360,8 +363,18 @@ void CObjHero::Draw()
 
 	//}
 
-	
+	if (Attack_Item == 1)
+	{
 
+		Font::StrDraw(L"(Bom(1)使用可能)", 260, 568, 32, c);
+
+	}
+	if (Attack_Item>1)
+	{
+
+		Font::StrDraw(L"(Bom使用可能)" , 260, 568, 32, c);
+
+	}
 
 	if (Bar>0)
 	{
