@@ -33,6 +33,7 @@ enum OBJ_NAME
 	OBJ_OXYGEN,
 	OBJ_ITEM,
 	OBJ_SHIELD,
+	OBJ_BOMB,
 
 	OBJ_BACKGROUND,
 
@@ -40,6 +41,8 @@ enum OBJ_NAME
 	OBJ_TITLE,
 	OBJ_CLEAR,
 
+	OBJ_HEROIME,
+	OBJ_BOSSIMA,
 };
 //------------------------------------------------
 
@@ -95,6 +98,7 @@ struct UserData
 #include "triplebullet.h"
 #include "triplebullet2.h"
 
+
 #include "meteoS.h"
 #include "meteoM.h"
 #include "meteoL.h"
@@ -109,16 +113,19 @@ struct UserData
 #include "Boss4.h"
 #include "Boss5.h"
 #include "Boss6.h"
+#include "bossima.h"
 
 #include "item.h"
 #include "Oxygen.h"
 #include "shield.h"
 #include "ObjBackground.h"
-
+#include "Bomb.h"
 
 #include "ObjGameOver.h"
 #include "ObjTitle.h"
 #include "ObjClear.h"
+
+#include "heroima.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -128,6 +135,7 @@ struct UserData
 #include "SceneStage4.h"
 #include "SceneStage5.h"
 #include "SceneLast.h"
+#include "SceneBossexp.h"
 
 #include "SceneTitle.h"
 #include "SceneGameOver.h"
@@ -137,5 +145,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneMain
 //-----------------------------------------------

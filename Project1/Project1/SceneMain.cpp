@@ -58,12 +58,14 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"UFO.png", 20, TEX_SIZE_512);
 	Draw::LoadImage(L"barrier.png", 22, TEX_SIZE_512);
 	Draw::LoadImage(L"隕石爆発.png", 50, TEX_SIZE_512);
+	Draw::LoadImage(L"BOOM.png", 23, TEX_SIZE_512);
+	Draw::LoadImage(L"bomb.png", 24, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(1);//主人公オブジェクト作成
 	Objs::InsertObj(obj,OBJ_HERO,1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
-	
+
 
 
 	//背景
@@ -75,12 +77,6 @@ void CSceneMain::InitScene()
 //ゲームメイン実行メソッド
 void CSceneMain::Scene()
 {
-	
-	//クリアに移動
-	//Scene::SetScene(new CSceneClear());
-	//Scene::SetScene(new CSceneClear(3));
-	
-
 
 	//時間
 	m_time++;
@@ -128,11 +124,11 @@ void CSceneMain::Scene()
 		}
 		else if (pos == 1)
 		{
-			a = 60.0f;
+			a = 70.0f;
 		}
 		else if (pos == 2)
 		{
-			a = 70.0f;
+			a =  100.0f;
 		}
 	}
 	for (int i = 0; i < 10000; i++)//ランダム隕石
@@ -162,19 +158,19 @@ void CSceneMain::Scene()
 			}
 			if (random == 3)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f - a);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f - a);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
 			else if (random == 4)
 			{
-				CObjmeteoM* obj = new CObjmeteoM(x + a, -100.0f - a);
+				CObjmeteoM* obj = new CObjmeteoM(x - a, -100.0f - a);
 				Objs::InsertObj(obj, OBJ_meteoM, 3);
 				obj->SetVector(0.0f, 1.0f);
 			}
 			else if (random == 5)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f - a);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f - a);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
@@ -219,19 +215,19 @@ void CSceneMain::Scene()
 			}
 			if (random == 4)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
 			else if (random == 1)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
 			else if (random == 0)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -100.0f);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -100.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
@@ -333,19 +329,19 @@ void CSceneMain::Scene()
 			}
 			if (random == 4)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -200.0f);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -200.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
 			else if (random == 1)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -200.0f);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -200.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}
 			else if (random == 0)
 			{
-				CObjmeteoS* obj = new CObjmeteoS(x + a, -200.0f);
+				CObjmeteoS* obj = new CObjmeteoS(x - a, -200.0f);
 				Objs::InsertObj(obj, OBJ_meteoS, 4);
 				obj->SetVector(0.0f, 1.0f);
 			}

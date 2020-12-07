@@ -1,28 +1,27 @@
 //使用するヘッダー
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
-#include "item.h"
+#include "Bomb.h"
 #include "GameL\HitBoxManager.h"
 //使用するネームスペース
 using namespace GameL;
-
-CObjitem::CObjitem(float x, float y)
+CObjBomb::CObjBomb(float x, float y)
 {
 	m_x = x;
 	m_y = y;
 }
-
 //イニシャライズ
-void CObjitem::Init()
+void CObjBomb::Init()
 {
+
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	//当たり判定作成
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ITEM, OBJ_ITEM, 1);
-}
+	Hits::SetHitBox(this, m_x, m_y, 28, 32, ELEMENT_ITEM, OBJ_BOMB, 1);
 
+}
 //アクション
-void CObjitem::Action()
+void CObjBomb::Action()
 {
 	//移動方向
 	m_vx = 0.0f;
@@ -60,33 +59,29 @@ void CObjitem::Action()
 
 	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
 	{
-		m_hp -= 1;
-		if (0 >= m_hp)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-		}
 
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
 	}
-}
 
+}
 //ドロー
-void CObjitem::Draw()
+void CObjBomb::Draw()
 {
 	//描画
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 	RECT_F src;
 	RECT_F dst;
 	//切れ取り設定
-	src.m_top	 = 0.0f;
-	src.m_left	 = 0.0f;
-	src.m_right  = 30.0f;
-	src.m_bottom = 28.0f;
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 35.0f;
+	src.m_bottom = 43.0f;
 	//表示位置
-	dst.m_top	 = 0.0f  + m_y;
-	dst.m_left   = 32.0f + m_x;
-	dst.m_right  = 0.0f  + m_x;
-	dst.m_bottom = 32.0f + m_y;
+	dst.m_top = 0.0f + m_y;
+	dst.m_left = 38.0f + m_x;
+	dst.m_right = 1.5f + m_x;
+	dst.m_bottom = 30.0f + m_y;
 	//画像登録
-	Draw::Draw(3, &src, &dst, c, 0.0f);
+	Draw::Draw(23, &src, &dst, c, 0.0f);
 }

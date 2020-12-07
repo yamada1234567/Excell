@@ -58,7 +58,8 @@ void CSceneStage3::InitScene()
 	Draw::LoadImage(L"barrier.png", 22, TEX_SIZE_512);
 	Draw::LoadImage(L"隕石爆発.png", 50, TEX_SIZE_512);
 	Draw::LoadImage(L"UFO.png", 20, TEX_SIZE_512);
-
+	Draw::LoadImage(L"BOOM.png", 23, TEX_SIZE_512);
+	Draw::LoadImage(L"bomb.png", 24, TEX_SIZE_512);
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero(3);//主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
@@ -245,7 +246,7 @@ void CSceneStage3::Scene()
 	}
 	for (int i = 0; i < 10000; i++)//ランダム隕石2
 	{
-		if (m_time == i * 66)
+		if (m_time == i * 30)
 		{
 			random = 0;
 			srand((int)time(NULL));
@@ -284,7 +285,7 @@ void CSceneStage3::Scene()
 	}
 	for (int i = 0; i < 10000; i++)//ランダム隕石2
 	{
-		if (m_time == i * 80)
+		if (m_time == i * 50)
 		{
 			random = 0;
 			srand((int)time(NULL));
@@ -323,7 +324,7 @@ void CSceneStage3::Scene()
 	}
 	for (int i = 0; i < 10000; i++)//ランダム隕石2
 	{
-		if (m_time == i * 180)
+		if (m_time == i * 50)
 		{
 			random = 0;
 			srand((int)time(NULL));

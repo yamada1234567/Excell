@@ -69,5 +69,5 @@ void CObjBom::Draw()
 	dst.m_bottom = si_y + m_y;
 
 	//1番に登録したグラフィックをの情報をもとに描画
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(50, &src, &dst, c, 0.0f);
 }

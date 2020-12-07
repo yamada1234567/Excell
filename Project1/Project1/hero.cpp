@@ -33,7 +33,7 @@ void CObjHero::Init()
 	de_time = 0;
 	bar_time = 0;
 
-	m_hp = 3;
+	m_hp = 5;
 	m_o	=	15;
 
 	Attack_Item=0;
@@ -108,25 +108,28 @@ void CObjHero::Action()
 		//	m_g = true;
 		//}
 
-		////BOMの弾丸発射
-		//if (Input::GetVKey('B') == true)
-		//{
-		//	if (m_b == true)
-		//	{
-		//		//if (Attack_Item <= 1)
-		//		
-		//			////BOMオブジェクト作成
-		//			CObjBomBullet* obj_b = new CObjBomBullet(m_x + 3.0f, m_y);
-		//			Objs::InsertObj(obj_b, OBJ_BOM_BULLET, 1);
-		//		//			Attack_Item -= 1;
-		//		///*		}*/
-		//		m_b = false;
-		//	}
-		//}
-		//else
-		//{
-		//	m_b = true;
-		//}
+		//BOMの弾丸発射
+		if (Input::GetVKey('B') == true)
+		{
+			if (m_b == true)
+			{
+				if (Attack_Item != 0)
+				{
+
+					//BOMオブジェクト作成
+					CObjBomBullet* obj_b = new CObjBomBullet(m_x + 3.0f, m_y);
+					Objs::InsertObj(obj_b, OBJ_BOM_BULLET, 1);
+
+
+					Attack_Item -= 1;
+				}
+				m_b = false;
+			}
+		}
+		else
+		{
+			m_b = true;
+		}
 
 
 
@@ -230,8 +233,6 @@ void CObjHero::Action()
 			{
 				Bar -= 1;
 
-
-
 			}
 
 		}
@@ -260,7 +261,7 @@ void CObjHero::Action()
 	if (hit->CheckObjNameHit(OBJ_SHIELD) != nullptr)
 	{
 
-		Bar = 1;
+		Bar = 3;
 
 	}
 	
@@ -288,11 +289,11 @@ void CObjHero::Action()
 
 
 
-	////散弾アイテム判定
-	//if (hit->CheckObjNameHit(OBJ_ITEM) != nullptr)
-	//{
-	//	Attack_Item=4;
-	//}
+	//BOMアイテム判定
+	if (hit->CheckObjNameHit(OBJ_BOMB) != nullptr)
+	{
+		Attack_Item+=2;
+	}
 
 
 }
@@ -304,14 +305,14 @@ void CObjHero::Draw()
 
 	//描画カラー情報　R＝Red G=Green B=Blue A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-	
+
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
 	//切り取り位置の設定
-	src.m_top		= 0.0f;
-	src.m_left		= 0.0f;
-	src.m_right		= 50.0f;
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 50.0f;
 	src.m_bottom	= 50.0f;
 
 	//表示位置の設定
@@ -362,61 +363,89 @@ void CObjHero::Draw()
 
 	//}
 
+	if (Attack_Item == 1)
+	{
 
+		Font::StrDraw(L"(Bom(1)使用可能)", 260, 568, 32, c);
 
+	}
+	if (Attack_Item>1)
+	{
+
+		Font::StrDraw(L"(Bom使用可能)" , 260, 568, 32, c);
+
+	}
 
 	if (Bar>0)
 	{
-		Font::StrDraw(L"バリア中", 210, 568, 32, c);
+		Font::StrDraw(L"バリア中(3)", 210, 568, 32, c);
 		
 		Draw::Draw(22, &src, &dst, c, 0.0f);
 	}
-	//if (Bar == 2)
-	//{
-	//	Font::StrDraw(L"バリア中(2)", 210, 568, 32, c);
-
-	//	Draw::Draw(22, &src, &dst, c, 0.0f);
-	//}
-	//if (Bar == 1)
-	//{
-	//	Font::StrDraw(L"バリア中(1)", 210, 568, 32, c);
-
-	//	Draw::Draw(22, &src, &dst, c, 0.0f);
-	//}
-
-	if (m_hp==3)
+	else if (Bar == 2)
 	{
-		Font::StrDraw(L"HP:3/3", 0, 568, 32, c);
+		Font::StrDraw(L"バリア中(2)", 210, 568, 32, c);
+
+		Draw::Draw(22, &src, &dst, c, 0.0f);
+	}
+	else if (Bar == 1)
+	{
+		Font::StrDraw(L"バリア中(1)", 210, 568, 32, c);
+
+		Draw::Draw(22, &src, &dst, c, 0.0f);
+	}
+
+
+	if (m_hp == 5)
+	{
+		Font::StrDraw(L"HP:5/5", 0, 568, 32, c);
 
 		//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 		Draw::Draw(0, &src, &dst, c, 0.0f);
 
 
+	}	
+	else if (m_hp == 4)
+	{
+		Font::StrDraw(L"HP:4/5", 0, 568, 32, c);
+
+		//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
+		Draw::Draw(15, &src, &dst, c, 0.0f);
+
+
+	}
+	else if (m_hp==3)
+	{
+		Font::StrDraw(L"HP:3/5", 0, 568, 32, c);
+
+		//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
+		Draw::Draw(15, &src, &dst, c, 0.0f);
+
+
 	}
 	else if (m_hp == 2)
 	{
-		Font::StrDraw(L"HP:2/3", 0, 568, 32, c);
+		Font::StrDraw(L"HP:2/5", 0, 568, 32, c);
 
-		Draw::Draw(15, &src, &dst, c, 0.0f);
+		Draw::Draw(16, &src, &dst, c, 0.0f);
 
 	}
 	else if (m_hp == 1)
 	{
-		Font::StrDraw(L"HP:1/3", 0, 568, 32, c);
+		Font::StrDraw(L"HP:1/5", 0, 568, 32, c);
 
 		Draw::Draw(16, &src, &dst, c, 0.0f);
 
 	}
 	else
 	{
-		Font::StrDraw(L"HP:0/3", 0, 568, 32, c);
-	    Draw::Draw(17, &src, &dst, c, 0.0f);
+		Font::StrDraw(L"HP:0/5", 0, 568, 32, c);
+	    //Draw::Draw(17, &src, &dst, c, 0.0f);
 
 		de_time++;
 
 		m_vx = 0;
 		m_vy = 0;
-
 
 
 			if (de_time == 11)
