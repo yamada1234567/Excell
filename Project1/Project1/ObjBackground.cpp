@@ -35,10 +35,10 @@ void CObjBackground::Draw()
 	RECT_F dst;
 
 	//êÿÇÍéÊÇËê›íË
-	src.m_top = 264.0f;
+	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 512.0f;
-	src.m_bottom = 448.0f;
+	src.m_right = 740.0f;
+	src.m_bottom = 600.0f;
 
 	//ï\é¶à íuîwåiÇP
 	dst.m_top = 0.0f - m_y1;

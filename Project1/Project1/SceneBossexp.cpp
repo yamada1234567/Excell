@@ -16,8 +16,10 @@ using namespace GameL;
 #include"GameHead.h"
 
 //コントラクタ
-CSceneBossexp::CSceneBossexp()
+CSceneBossexp::CSceneBossexp(int c)
 {
+	Count = c;
+
 	m_time = 0;
 }
 
@@ -114,5 +116,12 @@ void CSceneBossexp::Scene()
 	{
 		CObjBossima* obj = new CObjBossima(30, 100);
 		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
+	}
+	if (m_time == 200)
+	{
+
+		//クリアに移動
+		Scene::SetScene(new CSceneClear(Count));
+
 	}
 }

@@ -128,16 +128,14 @@ void CObjAlien::Action()
 			
 			if(item == 1)
 			{ 
-
 				CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
 			}
 			else
 			{
-				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
+				CObjBomb* obj_b = new CObjBomb(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_BOMB, 1);
 			}
-
 
 	}
 
