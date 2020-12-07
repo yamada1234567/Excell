@@ -109,7 +109,7 @@ void CObjHero::Action()
 		//}
 
 		//BOM‚Ì’eŠÛ”­ŽË
-		if (Input::GetVKey('B') == true)
+		if (Input::GetVKey('X') == true)
 		{
 			if (m_b == true)
 			{
