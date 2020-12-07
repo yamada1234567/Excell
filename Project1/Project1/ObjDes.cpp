@@ -3,24 +3,24 @@
 #include "GameL/WinInputs.h"
 #include "GameL/DrawTexture.h"
 #include "GameHead.h"
-#include "ObjTitle.h"
+#include "ObjDes.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //イニシャライズ
-void CObjTitle::Init()
+void CObjDes::Init()
 {
 	m_key_flag = false;//キーフラグ
 }
 
 //アクション
-void CObjTitle::Action()
+void CObjDes::Action()
 {
 	//エンターキーを押してシーン：ゲームメインに移動する
-	if (Input::GetVKey(VK_RETURN)==true)
+	if (Input::GetVKey(VK_RETURN) == true)
 	{
-		if (m_key_flag==true)
+		if (m_key_flag == true)
 		{
 			Scene::SetScene(new CSceneMain());
 			m_key_flag = false;
@@ -33,7 +33,7 @@ void CObjTitle::Action()
 }
 
 //ドロー
-void CObjTitle::Draw()
+void CObjDes::Draw()
 {
 	//描画
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };

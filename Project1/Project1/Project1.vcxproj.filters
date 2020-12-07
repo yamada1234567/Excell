@@ -166,6 +166,12 @@
     <ClCompile Include="Bomb.cpp">
       <Filter>ソースファイル\アイテム</Filter>
     </ClCompile>
+    <ClCompile Include="SceneDes.cpp">
+      <Filter>ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDes.cpp">
+      <Filter>ソースファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -332,6 +338,12 @@
     </ClInclude>
     <ClInclude Include="Bomb.h">
       <Filter>ソースファイル\アイテム</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDes.h">
+      <Filter>ソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDes.h">
+      <Filter>ソースファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,20 +1,17 @@
 #pragma once
 //使用するヘッダー
-#include "GameL/SceneManager.h"
+#include "GameL/SceneObjManager.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //オブジェクト：ゲームタイトル
-class CSceneBossexp :public CScene
+class CSceneDes :public CScene
 {
 public:
-	CSceneBossexp() ;
-	~CSceneBossexp();
+	CSceneDes();  //コンストラクタ
+	~CSceneDes();
 	void InitScene();  //ゲームタイトルの初期化メソッド
 	void Scene();      //ゲームタイトルの実行中メソッド
 private:
-	int Count;
-	int m_time;
 };
-

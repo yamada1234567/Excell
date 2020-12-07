@@ -16,9 +16,9 @@ using namespace GameL;
 #include"GameHead.h"
 
 //コントラクタ
-CSceneBossexp::CSceneBossexp(int c)
+CSceneBossexp::CSceneBossexp()
 {
-	Count = c;
+	Count = 1;
 
 	m_time = 0;
 }
@@ -55,8 +55,8 @@ void CSceneBossexp::Scene()
 
 		CObjBossima* obj = new CObjBossima(350,100);
 		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
+
 	}
-	
 	if (m_time == 30)
 	{
 		CObjBossima* obj = new CObjBossima(300, 60);
@@ -102,22 +102,8 @@ void CSceneBossexp::Scene()
 		CObjBossima* obj = new CObjBossima(390, 100);
 		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
 	}
-	if (m_time == 140)
-	{
-		CObjBossima* obj = new CObjBossima(30, 100);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-	}
+
 	if (m_time == 150)
-	{
-		CObjBossima* obj = new CObjBossima(390, 100);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-	}
-	if (m_time == 160)
-	{
-		CObjBossima* obj = new CObjBossima(30, 100);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-	}
-	if (m_time == 200)
 	{
 
 		//クリアに移動

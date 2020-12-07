@@ -124,6 +124,7 @@ struct UserData
 #include "ObjGameOver.h"
 #include "ObjTitle.h"
 #include "ObjClear.h"
+#include "ObjDes.h"
 
 #include "heroima.h"
 //------------------------------------------------
@@ -140,10 +141,11 @@ struct UserData
 #include "SceneTitle.h"
 #include "SceneGameOver.h"
 #include "SceneClear.h"
+#include "SceneDes.h"
 //sdsdfsfsfsdf
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneMain
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------
