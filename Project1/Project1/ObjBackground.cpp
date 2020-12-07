@@ -51,6 +51,6 @@ void CObjBackground::Draw()
 	dst.m_top = 0.0f - m_y2;
 	dst.m_left = 0.0f;
 	dst.m_right = 800.0f;
-	dst.m_bottom = 900.0f - m_y2;
+	dst.m_bottom = 800.0f - m_y2;
 	Draw::Draw(5, &src, &dst, c, 0.0f);
 }

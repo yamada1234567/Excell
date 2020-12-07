@@ -28,9 +28,9 @@ CSceneDes::~CSceneDes()
 }
 
 //ゲームメイン初期化メソッド
-void CSceneDes::Scene()
+void CSceneDes::InitScene()
 {
-	Draw::LoadImage(L"タイトル.png", 1, TEX_SIZE_512);
+	Draw::LoadImage(L"操作方法.png", 1, TEX_SIZE_512);
 
 
 	//音楽読み込み
@@ -42,11 +42,9 @@ void CSceneDes::Scene()
 
 
 	//タイトルオブジェクトを作成
-	CObjTitle* obj = new CObjTitle();   //タイトルオブジェクト作成
-	Objs::InsertObj(obj, OBJ_TITLE, 10);//主人公オブジェクト登録
+	CObjDes* obj = new CObjDes();   //タイトルオブジェクト作成
+	Objs::InsertObj(obj, OBJ_DES, 10);//主人公オブジェクト登録
 }
-
-
 //ゲームメイン実行中メソッド
 void CSceneDes::Scene()
 {
