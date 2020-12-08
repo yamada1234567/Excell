@@ -19,4 +19,6 @@ private:
 	float m_vx;//ボス機移動ベクトルX
 	float m_vy;//ボス機移動ベクトル
 	int m_hp;//ボスのヒットポイント
+
+	int de_time;
 };

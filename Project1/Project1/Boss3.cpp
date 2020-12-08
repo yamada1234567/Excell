@@ -5,6 +5,7 @@
 #include"GameHead.h"
 #include"Boss3.h"
 #include"UtilityModule.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -102,6 +103,33 @@ void CObjBoss3::Draw()
 	dst.m_left = 1000.0f + m_x;
 	dst.m_right = -200.0f + m_x;
 	dst.m_bottom = 800.0f + m_y;
+
+	//爆発切り替え
+	if (0 >= m_hp)
+	{
+
+
+		m_vx = 0;
+		m_vy = 0;
+
+		Draw::Draw(50, &src, &dst, c, 0.0f);
+
+		de_time++;
+
+
+
+		if (de_time >= 10)
+		{
+			//敵爆発音を鳴らす
+			Audio::Start(3);
+
+			Hits::DeleteHitBox(this);
+			this->SetStatus(false);
+
+		}
+
+
+	}
 
 	//1番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(10, &src, &dst, c, 0.0f);
