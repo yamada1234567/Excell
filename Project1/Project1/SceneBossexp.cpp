@@ -33,7 +33,7 @@ CSceneBossexp::~CSceneBossexp()
 void CSceneBossexp::InitScene()
 {
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
-	Draw::LoadImage(L"隕石爆発.png", 50, TEX_SIZE_512);
+	Draw::LoadImage(L"ボス爆発.png", 50, TEX_SIZE_512);
 	Draw::LoadImageW(L"縦背景.png", 5, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
@@ -55,24 +55,11 @@ void CSceneBossexp::Scene()
 	if (m_time == 10)
 	{
 
-		CObjBossima* obj = new CObjBossima(250,-150);
+		CObjBossima* obj = new CObjBossima(100,-150);
 		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
 
 	}
-	if (m_time == 30)
-	{
 
-		CObjBossima* obj = new CObjBossima(100, -150);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-
-	}
-	if (m_time == 30)
-	{
-
-		CObjBossima* obj = new CObjBossima(400, -150);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-
-	}
 
 	if (m_time == 50)
 	{
