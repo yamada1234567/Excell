@@ -105,7 +105,6 @@ void CObjBoss::Draw()
 	dst.m_bottom = 800.0f+ m_y;
 
 	//1番目に登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(6, &src, &dst, c, 0.0f);
-
+		Draw::Draw(6, &src, &dst, c, 0.0f);
 
 }
