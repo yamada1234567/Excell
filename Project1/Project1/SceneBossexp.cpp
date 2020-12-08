@@ -50,58 +50,7 @@ void CSceneBossexp::Scene()
 {
 	m_time++;
 
-	if (m_time == 10)
-	{
 
-		CObjBossima* obj = new CObjBossima(350,100);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-
-	}
-	if (m_time == 30)
-	{
-		CObjBossima* obj = new CObjBossima(300, 60);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-	}
-	if (m_time == 50)
-	{
-		CObjBossima* obj = new CObjBossima(360, 130);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-	}
-	if (m_time == 60)
-	{
-		CObjBossima* obj = new CObjBossima(300, 160);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-	}
-	if (m_time == 70)
-	{
-		CObjBossima* obj = new CObjBossima(400, 100);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-	}
-	if (m_time == 80)
-	{
-		CObjBossima* obj = new CObjBossima(350, 60);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-	}
-	if (m_time == 90)
-	{
-		CObjBossima* obj = new CObjBossima(300, 100);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-	}
-	if (m_time == 100)
-	{
-		CObjBossima* obj = new CObjBossima(320, 150);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-	}
-	if (m_time == 120)
-	{
-		CObjBossima* obj = new CObjBossima(30, 100);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-	}
-	if (m_time == 130)
-	{
-		CObjBossima* obj = new CObjBossima(390, 100);
-		Objs::InsertObj(obj, OBJ_BOSSIMA, 50);
-	}
 
 	if (m_time == 150)
 	{

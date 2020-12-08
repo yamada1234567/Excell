@@ -109,7 +109,7 @@ void CObjHero::Action()
 		//}
 
 		//BOMの弾丸発射
-		if (Input::GetVKey('X') == true)
+		if (Input::GetVKey('B') == true)
 		{
 			if (m_b == true)
 			{
@@ -363,34 +363,29 @@ void CObjHero::Draw()
 
 	//}
 
-	if (Attack_Item == 1)
-	{
 
-		Font::StrDraw(L"(Bom(1)使用可能)", 260, 568, 32, c);
-
-	}
 	if (Attack_Item>1)
 	{
 
-		Font::StrDraw(L"(Bom使用可能)" , 260, 568, 32, c);
+		Font::StrDraw(L"(Bom使用可能)", 370, 568, 28, c);
 
 	}
 
 	if (Bar>0)
 	{
-		Font::StrDraw(L"バリア中(3)", 210, 568, 32, c);
+		Font::StrDraw(L"バリア中(3)", 210, 568, 28, c);
 		
 		Draw::Draw(22, &src, &dst, c, 0.0f);
 	}
 	else if (Bar == 2)
 	{
-		Font::StrDraw(L"バリア中(2)", 210, 568, 32, c);
+		Font::StrDraw(L"バリア中(2)", 210, 568, 28, c);
 
 		Draw::Draw(22, &src, &dst, c, 0.0f);
 	}
 	else if (Bar == 1)
 	{
-		Font::StrDraw(L"バリア中(1)", 210, 568, 32, c);
+		Font::StrDraw(L"バリア中(1)", 210, 568, 28, c);
 
 		Draw::Draw(22, &src, &dst, c, 0.0f);
 	}

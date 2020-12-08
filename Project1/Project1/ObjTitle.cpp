@@ -42,7 +42,7 @@ void CObjTitle::Draw()
 	//Ø‚êæ‚èİ’è
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 800.0f;
+	src.m_right = 780.0f;
 	src.m_bottom = 600.0f;
 	//•\¦ˆÊ’u
 	dst.m_top = 0;
