@@ -166,11 +166,11 @@
     <ClCompile Include="Bomb.cpp">
       <Filter>ソースファイル\アイテム</Filter>
     </ClCompile>
-    <ClCompile Include="SceneDes.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
     <ClCompile Include="ObjDes.cpp">
-      <Filter>ソースファイル</Filter>
+      <Filter>ソースファイル\その他</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDes.cpp">
+      <Filter>ソースファイル\その他</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -339,11 +339,11 @@
     <ClInclude Include="Bomb.h">
       <Filter>ソースファイル\アイテム</Filter>
     </ClInclude>
-    <ClInclude Include="SceneDes.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
     <ClInclude Include="ObjDes.h">
-      <Filter>ソースファイル</Filter>
+      <Filter>ソースファイル\その他</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDes.h">
+      <Filter>ソースファイル\その他</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
