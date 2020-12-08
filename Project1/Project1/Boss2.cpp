@@ -77,7 +77,7 @@ void CObjBoss2::Action()
 			Hits::DeleteHitBox(this);
 
 			//ƒNƒŠƒA‚ÉˆÚ“®
-			Scene::SetScene(new CSceneClear(3));
+			Scene::SetScene(new CSceneBossexp(3));
 
 		}
 
