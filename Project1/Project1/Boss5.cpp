@@ -51,7 +51,7 @@ void CObjBoss5::Action()
 
 	//‰Á‘¬
 	m_vx *= 0.0f;
-	m_vy *= 0.1f;
+	m_vy *= 0.3f;
 
 	m_x += m_vx;
 	m_y += m_vy;
