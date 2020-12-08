@@ -188,7 +188,7 @@ void CObjmeteoLD::Draw()
 
 
 
-		if (de_time >= 10)
+		if (de_time >= 3)
 		{
 			//“G”š”­‰¹‚ð–Â‚ç‚·
 			Audio::Start(3);
