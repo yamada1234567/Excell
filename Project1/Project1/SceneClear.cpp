@@ -6,7 +6,7 @@
 #include "GameL/SceneObjManager.h"
 #include "GameL/DrawFont.h"
 #include"GameL\Audio.h"
-
+#include"GameL/DrawTexture.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -30,6 +30,8 @@ CSceneClear::~CSceneClear()
 //ゲームメイン初期化メソッド
 void CSceneClear::InitScene()
 {
+	Draw::LoadImage(L"クリア.png", 1, TEX_SIZE_512);
+
 	if(Count==7)
 	{
 	CObjClear* obj = new CObjClear(Count);

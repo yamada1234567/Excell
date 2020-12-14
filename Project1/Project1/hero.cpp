@@ -90,15 +90,16 @@ void CObjHero::Action()
 		//{
 		//	if (m_g == true)
 		//	{
-		//		//if (Attack_Item <= 1)
-		//			for (int i = 0; i <= 40; i += 10)
+		//			for (int i = 0; i <= 360; i += 20)
 		//			{
+
+
 		//				//３弾丸オブジェクト作成
-		//				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y - i);
-		//				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+		//				CObjTripleBullet* obj_b = new CObjTripleBullet(m_x, m_y,i,5);
+		//				Objs::InsertObj(obj_b, OBJ_TRIPLEBULLET, 1);
+		//			
 		//			}
-		////			Attack_Item -= 1;
-		/////*		}*/
+
 		//		m_g = false;
 		//	}
 		//}
