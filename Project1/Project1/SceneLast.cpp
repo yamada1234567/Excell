@@ -48,7 +48,7 @@ void CSceneLast::InitScene()
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"hero bullet.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
-	Draw::LoadImageW(L"ècîwåi.png", 5, TEX_SIZE_512);
+	Draw::LoadImage(L"ècîwåi.png", 5, TEX_SIZE_512);
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
 	Draw::LoadImage(L"Boss(Sun).png", 13, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);

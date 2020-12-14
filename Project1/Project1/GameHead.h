@@ -16,7 +16,6 @@ enum OBJ_NAME
 	OBJ_meteoRD,
 	OBJ_meteoLD,
 	OBJ_meteoSIN,
-	OBJ_meteoEX,
 	OBJ_Alien,
 	OBJ_BOSS,
 	OBJ_BOSS2,
@@ -27,8 +26,6 @@ enum OBJ_NAME
 
 	OBJ_BULLET,
 	OBJ_BOM_BULLET,
-	OBJ_TRIPLEBULLET,
-	OBJ_TRIPLEBULLET2,
 
 	OBJ_OXYGEN,
 	OBJ_ITEM,
@@ -96,8 +93,7 @@ struct UserData
 #include "bullet.h"
 #include "BomBullet.h"
 #include "Bom.h"
-#include "triplebullet.h"
-#include "triplebullet2.h"
+
 
 
 #include "meteoS.h"
@@ -106,7 +102,6 @@ struct UserData
 #include "meteoRD.h"
 #include "meteoLD.h"
 #include "meteoSin.h"
-#include "meteoEX.h"
 #include "Alien.h"
 #include "Boss.h"
 #include "Boss2.h"

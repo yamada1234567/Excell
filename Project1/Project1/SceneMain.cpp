@@ -47,7 +47,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"hero bullet.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
-	Draw::LoadImageW(L"ècîwåi.png", 5, TEX_SIZE_512);
+	Draw::LoadImage(L"ècîwåi.png", 5, TEX_SIZE_512);
 	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
 	Draw::LoadImage(L"Boss(moon).png", 6, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
@@ -87,9 +87,11 @@ void CSceneMain::Scene()
 	int a;
 
 
+
 	if (m_time % 500 == 0)
 	{
 		x = 0.0f;
+
 
 		CObjAlien* obj = new CObjAlien(0.0f, 100.0f);
 		Objs::InsertObj(obj, OBJ_Alien, 20);

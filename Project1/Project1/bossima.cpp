@@ -29,7 +29,7 @@ void CObjBossima::Action()
 {
 	m_time++;
 
-	if (m_time==30)
+	if (m_time==20)
 	{
 		this->SetStatus(false);
 	}
@@ -44,16 +44,16 @@ void CObjBossima::Draw()
 	RECT_F dst;//描画先表示位置
 
 	//切れ取り設定
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 50.0f;
-	src.m_bottom = 50.0f;
+	src.m_top =100.0f;
+	src.m_left = 150.0f;
+	src.m_right = 650.0f;
+	src.m_bottom = 520.0f;
 
 	//表示位置
 	dst.m_top = 0.0f + m_y;
-	dst.m_left = 100.0f + m_x;
+	dst.m_left = 620.0f + m_x;
 	dst.m_right = 0.0f + m_x;
-	dst.m_bottom = 100.0f + m_y;
+	dst.m_bottom = 480.0f + m_y;
 
 	//1番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(50, &src, &dst, c, 0.0f);

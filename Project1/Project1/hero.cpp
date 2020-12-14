@@ -4,9 +4,9 @@
 #include "GameL\HitBoxManager.h"
 #include "GameHead.h"
 #include "hero.h"
-#include "triplebullet.h"
+
 #include "UtilityModule.h"
-#include "triplebullet2.h"
+
 
 #include "GameL/DrawFont.h"
 #include "GameL\Audio.h"
@@ -85,31 +85,9 @@ void CObjHero::Action()
 			m_f = true;
 		}
 
-		////４連の弾丸発射
-		//if (Input::GetVKey('X') == true)
-		//{
-		//	if (m_g == true)
-		//	{
-		//		//if (Attack_Item <= 1)
-		//			for (int i = 0; i <= 40; i += 10)
-		//			{
-		//				//３弾丸オブジェクト作成
-		//				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y - i);
-		//				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-		//			}
-		////			Attack_Item -= 1;
-		/////*		}*/
-		//		m_g = false;
-		//	}
-		//}
-		//else
-		//{
-
-		//	m_g = true;
-		//}
 
 		//BOMの弾丸発射
-		if (Input::GetVKey('B') == true)
+		if (Input::GetVKey('X') == true)
 		{
 			if (m_b == true)
 			{
@@ -215,8 +193,6 @@ void CObjHero::Action()
 	//CHitBox* hit = Hits::GetHitBox(this);
 	//hit->SetPos(m_x, m_y);
 
-	if (Input::GetVKey('A') == false)
-	{
 		//ダメージ判定
 		if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 		{
@@ -236,9 +212,7 @@ void CObjHero::Action()
 			}
 
 		}
-	}
-	if (Input::GetVKey('A') == false)
-	{
+
 		//酸素０で消滅
 		if (m_time % 70 == 0)
 		{
@@ -255,8 +229,6 @@ void CObjHero::Action()
 			}
 		}
 
-	}
-
 	//シールドアイテム当たり判定
 	if (hit->CheckObjNameHit(OBJ_SHIELD) != nullptr)
 	{
@@ -266,16 +238,7 @@ void CObjHero::Action()
 	}
 	
 
-	//if (Bar>0)
-	//{
-	//	
-	//	bar_time++;
-	//	if (bar_time==60)
-	//	{
-	//		Bar--;
-	//		bar_time = 0;
-	//	}
-	//}
+
 
 
 	//酸素アイテム当たり判定
@@ -371,7 +334,7 @@ void CObjHero::Draw()
 
 	}
 
-	if (Bar>0)
+	if (Bar==3)
 	{
 		Font::StrDraw(L"バリア中(3)", 210, 568, 28, c);
 		
