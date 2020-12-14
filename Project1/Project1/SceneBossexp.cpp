@@ -34,7 +34,7 @@ void CSceneBossexp::InitScene()
 {
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"ボス爆発.png", 50, TEX_SIZE_512);
-	Draw::LoadImageW(L"縦背景.png", 5, TEX_SIZE_512);
+	Draw::LoadImage(L"縦背景.png", 5, TEX_SIZE_512);
 
 	//主人公オブジェクト作成
 	CObjHeroime* obj = new CObjHeroime();
