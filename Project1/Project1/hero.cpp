@@ -4,9 +4,9 @@
 #include "GameL\HitBoxManager.h"
 #include "GameHead.h"
 #include "hero.h"
-#include "triplebullet.h"
+
 #include "UtilityModule.h"
-#include "triplebullet2.h"
+
 
 #include "GameL/DrawFont.h"
 #include "GameL\Audio.h"
@@ -85,29 +85,6 @@ void CObjHero::Action()
 			m_f = true;
 		}
 
-		////‚S˜A‚Ì’eŠÛ”­ŽË
-		//if (Input::GetVKey('X') == true)
-		//{
-		//	if (m_g == true)
-		//	{
-		//			for (int i = 0; i <= 360; i += 20)
-		//			{
-
-
-		//				//‚R’eŠÛƒIƒuƒWƒFƒNƒgì¬
-		//				CObjTripleBullet* obj_b = new CObjTripleBullet(m_x, m_y,i,5);
-		//				Objs::InsertObj(obj_b, OBJ_TRIPLEBULLET, 1);
-		//			
-		//			}
-
-		//		m_g = false;
-		//	}
-		//}
-		//else
-		//{
-
-		//	m_g = true;
-		//}
 
 		//BOM‚Ì’eŠÛ”­ŽË
 		if (Input::GetVKey('X') == true)
@@ -261,16 +238,7 @@ void CObjHero::Action()
 	}
 	
 
-	//if (Bar>0)
-	//{
-	//	
-	//	bar_time++;
-	//	if (bar_time==60)
-	//	{
-	//		Bar--;
-	//		bar_time = 0;
-	//	}
-	//}
+
 
 
 	//Ž_‘fƒAƒCƒeƒ€“–‚½‚è”»’è

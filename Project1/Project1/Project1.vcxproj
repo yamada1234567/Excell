@@ -130,9 +130,6 @@
     <ClCompile Include="bossima.cpp" />
     <ClCompile Include="ObjDes.cpp" />
     <ClCompile Include="SceneDes.cpp" />
-    <ClCompile Include="explosion.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="Boss.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
@@ -156,9 +153,6 @@
     <ClCompile Include="GameL\UserData.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="heroima.cpp" />
-    <ClCompile Include="meteoEX.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="meteoLD.cpp" />
     <ClCompile Include="meteoRD.cpp" />
     <ClCompile Include="meteoSin.cpp">
@@ -206,12 +200,6 @@
     </ClCompile>
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="shield.cpp" />
-    <ClCompile Include="triplebullet.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="triplebullet2.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="UtilityModule.cpp" />
     <ClCompile Include="SceneBossexp.cpp" />
   </ItemGroup>
@@ -221,9 +209,6 @@
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="BomBullet.h" />
     <ClInclude Include="bossima.h" />
-    <ClInclude Include="explosion.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="Boss.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
@@ -248,9 +233,6 @@
     <ClInclude Include="heroima.h" />
     <ClInclude Include="item.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="meteoEX.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="meteoLD.h" />
     <ClInclude Include="meteoRD.h" />
@@ -295,12 +277,6 @@
     </ClInclude>
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="shield.h" />
-    <ClInclude Include="triplebullet.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="triplebullet2.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="UtilityModule.h" />
     <ClInclude Include="SceneBossexp.h" />
   </ItemGroup>
