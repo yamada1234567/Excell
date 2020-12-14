@@ -216,8 +216,6 @@ void CObjHero::Action()
 	//CHitBox* hit = Hits::GetHitBox(this);
 	//hit->SetPos(m_x, m_y);
 
-	if (Input::GetVKey('A') == false)
-	{
 		//ダメージ判定
 		if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 		{
@@ -237,9 +235,7 @@ void CObjHero::Action()
 			}
 
 		}
-	}
-	if (Input::GetVKey('A') == false)
-	{
+
 		//酸素０で消滅
 		if (m_time % 70 == 0)
 		{
@@ -255,8 +251,6 @@ void CObjHero::Action()
 
 			}
 		}
-
-	}
 
 	//シールドアイテム当たり判定
 	if (hit->CheckObjNameHit(OBJ_SHIELD) != nullptr)
