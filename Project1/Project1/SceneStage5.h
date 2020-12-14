@@ -16,4 +16,8 @@ private:
 	int m_time;
 	float x;
 	float y;
+	int random;
+	int pos;
+	int pos2;
+	int a;
 };

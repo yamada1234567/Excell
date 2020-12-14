@@ -18,13 +18,14 @@ using namespace GameL;
 //コンストラクタ
 CSceneStage4::CSceneStage4()
 {
-
+	m_time = 0;
+	x = 0.0f;
+	y = 0.0f;
 }
 //デストラクタ
 CSceneStage4::~CSceneStage4()
 {
-	x = 0.0f;
-	y = 0.0f;
+
 }
 //ゲームメイン初期化メソッド
 void CSceneStage4::InitScene()
@@ -64,16 +65,12 @@ void CSceneStage4::InitScene()
 	CObjHero* obj = new CObjHero(4);//主人公オブジェクト作成
 	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
-	//敵メテオ
-	//CObjmeteoRD* obj_meteoRD = new CObjmeteoRD(100, 100);
-	//Objs::InsertObj(obj_meteoRD, OBJ_meteoRD, 4);
+
 
 	//背景
 	CObjBackground* back = new CObjBackground();
 	Objs::InsertObj(back, OBJ_BACKGROUND, 0);
 
-
-	m_time = 0;
 }
 //ゲームメイン実行メソッド
 void CSceneStage4::Scene()

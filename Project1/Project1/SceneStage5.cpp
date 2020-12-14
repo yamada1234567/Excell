@@ -17,13 +17,19 @@ using namespace GameL;
 //コンストラクタ
 CSceneStage5::CSceneStage5()
 {
-
+	x = 0.0f;
+	y = 0.0f;
+	m_time = 0;
+	 random=0;
+	 pos=0;
+	 pos2=0;
+	 a=0;
 }
 //デストラクタ
 CSceneStage5::~CSceneStage5()
 {
-	x = 0.0f;
-	y = 0.0f;
+	
+
 }
 //ゲームメイン初期化メソッド
 void CSceneStage5::InitScene()
@@ -68,18 +74,14 @@ void CSceneStage5::InitScene()
 	CObjBackground* back = new CObjBackground();
 	Objs::InsertObj(back, OBJ_BACKGROUND, 0);
 
-	m_time = 0;
+	
 }
 //ゲームメイン実行メソッド
 void CSceneStage5::Scene()
 {
 	m_time++;
 
-	int random;
-	int pos;
-	int pos2;
-	int x;
-	int a;
+
 
 	if (m_time % 500 == 0)
 	{
