@@ -128,6 +128,7 @@
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="BomBullet.cpp" />
     <ClCompile Include="bossima.cpp" />
+    <ClCompile Include="O2meteo.cpp" />
     <ClCompile Include="ObjDes.cpp" />
     <ClCompile Include="SceneDes.cpp" />
     <ClCompile Include="Boss.cpp">
@@ -239,6 +240,7 @@
     <ClInclude Include="meteoSin.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="O2meteo.h" />
     <ClInclude Include="ObjBackground.h" />
     <ClInclude Include="ObjClear.h" />
     <ClInclude Include="ObjDes.h" />
