@@ -19,8 +19,8 @@ CObjTripleBullet2::CObjTripleBullet2(float x, float y, float r, float speed)
 //イニシャライズ
 void CObjTripleBullet2::Init()
 {
-	m_vx = cos(3.14f / 180.0f * m_r);
-	m_vy = sin(3.14f / 180.0f * m_r);
+	m_vx = tan(3.14f / 180.0f * m_r);
+	m_vy = cos(3.14f / 180.0f * m_r);
 
 	//当たり判定作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_BULLET, OBJ_TRIPLEBULLET2, 1);
@@ -30,8 +30,8 @@ void CObjTripleBullet2::Init()
 void CObjTripleBullet2::Action()
 {
 	//移動
-	m_y -= m_vx * m_speed;
-	m_x += m_vx * m_speed;
+	m_y += m_vx * m_speed;
+	m_x -= m_vx * m_speed;
 
 
 

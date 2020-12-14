@@ -90,15 +90,16 @@ void CObjHero::Action()
 		//{
 		//	if (m_g == true)
 		//	{
-		//		//if (Attack_Item <= 1)
-		//			for (int i = 0; i <= 40; i += 10)
+		//			for (int i = 0; i <= 360; i += 20)
 		//			{
+
+
 		//				//３弾丸オブジェクト作成
-		//				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y - i);
-		//				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+		//				CObjTripleBullet* obj_b = new CObjTripleBullet(m_x, m_y,i,5);
+		//				Objs::InsertObj(obj_b, OBJ_TRIPLEBULLET, 1);
+		//			
 		//			}
-		////			Attack_Item -= 1;
-		/////*		}*/
+
 		//		m_g = false;
 		//	}
 		//}
@@ -109,7 +110,7 @@ void CObjHero::Action()
 		//}
 
 		//BOMの弾丸発射
-		if (Input::GetVKey('B') == true)
+		if (Input::GetVKey('X') == true)
 		{
 			if (m_b == true)
 			{
@@ -215,8 +216,6 @@ void CObjHero::Action()
 	//CHitBox* hit = Hits::GetHitBox(this);
 	//hit->SetPos(m_x, m_y);
 
-	if (Input::GetVKey('A') == false)
-	{
 		//ダメージ判定
 		if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 		{
@@ -236,9 +235,7 @@ void CObjHero::Action()
 			}
 
 		}
-	}
-	if (Input::GetVKey('A') == false)
-	{
+
 		//酸素０で消滅
 		if (m_time % 70 == 0)
 		{
@@ -254,8 +251,6 @@ void CObjHero::Action()
 
 			}
 		}
-
-	}
 
 	//シールドアイテム当たり判定
 	if (hit->CheckObjNameHit(OBJ_SHIELD) != nullptr)
