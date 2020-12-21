@@ -28,8 +28,8 @@ void CObjHero::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_f = true;
-	m_g = true;
 	m_bullet = 0;
+	time = 0;
 	de_time = 0;
 	bar_time = 0;
 
@@ -44,13 +44,22 @@ void CObjHero::Init()
 	Bar = 0;
 
 	//当たり判定用hitboxを作成
-	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
+	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_DIFFUSION, 1);
 }
 
 //アクション
 void CObjHero::Action()
 {
+
 	m_time++;
+
+
+
+
+
+
+
+
 
 	//Hitboxの内容を更新
 	CHitBox* hit = Hits::GetHitBox(this);
@@ -78,18 +87,27 @@ void CObjHero::Action()
 			}
 
 
-		}
-		else
+		}//拡散弾丸発射
+		else if (Input::GetVKey('C') == true)
 		{
-			
-			m_f = true;
-		}
+			if (m_f == true)
+			{
 
+				for (int i = 0; i < 360; i+=20)
+				{
+					//弾丸オブジェクト作成
+					CObjDifBullet* obj_b = new CObjDifBullet(m_x + 3.0f, m_y,i,10.0f);
+					Objs::InsertObj(obj_b, OBJ_DIFFUSION, 1);
+				}
+				m_f = false;
+	
+	
+			 }
 
-		//BOMの弾丸発射
-		if (Input::GetVKey('X') == true)
+		} //BOMの弾丸発射
+		else if (Input::GetVKey('X') == true)
 		{
-			if (m_b == true)
+			if (m_f == true)
 			{
 				if (Attack_Item != 0)
 				{
@@ -101,12 +119,12 @@ void CObjHero::Action()
 
 					Attack_Item -= 1;
 				}
-				m_b = false;
+				m_f = false;
 			}
 		}
 		else
 		{
-			m_b = true;
+			m_f = true;
 		}
 
 
@@ -191,9 +209,7 @@ void CObjHero::Action()
 		m_x = 0.0f;
 	}
 
-	//Hitboxの内容を更新
-	//CHitBox* hit = Hits::GetHitBox(this);
-	//hit->SetPos(m_x, m_y);
+
 
 		//ダメージ判定
 		if (hit->CheckElementHit(ELEMENT_ENEMY) == true)

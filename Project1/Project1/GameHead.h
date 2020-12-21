@@ -9,6 +9,7 @@ enum OBJ_NAME
 	OBJ_HERO,
 	OBJ_TRIPLE,
 	OBJ_BOM,
+	OBJ_DIFFUSION,
 
 	OBJ_meteoS,
 	OBJ_meteoM,
@@ -94,6 +95,7 @@ struct UserData
 #include "bullet.h"
 #include "BomBullet.h"
 #include "Bom.h"
+#include "Diffusion.h"
 
 
 
