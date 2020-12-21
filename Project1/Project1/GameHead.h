@@ -16,6 +16,7 @@ enum OBJ_NAME
 	OBJ_meteoRD,
 	OBJ_meteoLD,
 	OBJ_meteoSIN,
+	OBJ_O2meteo,
 	OBJ_Alien,
 	OBJ_BOSS,
 	OBJ_BOSS2,
@@ -102,6 +103,7 @@ struct UserData
 #include "meteoRD.h"
 #include "meteoLD.h"
 #include "meteoSin.h"
+#include "O2meteo.h"
 #include "Alien.h"
 #include "Boss.h"
 #include "Boss2.h"

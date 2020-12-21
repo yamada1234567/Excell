@@ -34,14 +34,14 @@ void CObjHero::Init()
 	bar_time = 0;
 
 	m_hp = 5;
-	m_o	=	15;
+	m_o	= 15;
 
 	Attack_Item=0;
 
 	m_time = 0;
 	Bullet_time = 100;
 
-	Bar=0;
+	Bar = 0;
 
 	//当たり判定用hitboxを作成
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
@@ -130,9 +130,11 @@ void CObjHero::Action()
 		m_y += 5.0f;
 	}
 
+
 	//移動ベクトル初期化
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+
 
 	//キーの方向にベクトルの速度を入れる
 	if (Input::GetVKey(VK_RIGHT)==true)
@@ -284,71 +286,30 @@ void CObjHero::Draw()
 	dst.m_right		= 36.0f+m_x;
 	dst.m_bottom	= 36.0f+m_y;
 
-	//if (m_hp == 3)
-	//{
-	//	//０番目に登録したグラフィックをsrc・dst・cの情報を元に描画
-	//	Draw::Draw(0, &src, &dst, c, 0.0f);
-	//}
-	//else if(m_hp == 2)
-	//{
 
-	//	Draw::Draw(15, &src, &dst, c, 0.0f);
-
-	//}
-	//else if (m_hp == 1)
-	//{		
-
-	//	Draw::Draw(16, &src, &dst, c, 0.0f);
-
-	//}
-	//else
-	//{
-	//	Draw::Draw(17, &src, &dst, c, 0.0f);
-
-
-	//	de_time++;
-
-
-
-	//	if (de_time == 100)
-	//	{
-	//		this->SetStatus(false);
-	//		Hits::DeleteHitBox(this);
-	//	}
-	//	else
-	//	{
-	//			
-	//			//主人公消滅でシーンをゲームオーバーに移行する
-	//			Scene::SetScene((CScene*)new CSceneGameOver(C));
-
-	//	}
-	//	
-
-	//}
 
 
 	if (Attack_Item>1)
 	{
 
-		Font::StrDraw(L"(Bom使用可能)", 370, 568, 28, c);
+		Font::StrDraw(L"(Bom使用可能)", 500, 568, 28, c);
 
 	}
-
 	if (Bar==3)
 	{
-		Font::StrDraw(L"バリア中(3)", 210, 568, 28, c);
+		Font::StrDraw(L"バリア中(3)", 320, 568, 28, c);
 		
 		Draw::Draw(22, &src, &dst, c, 0.0f);
 	}
 	else if (Bar == 2)
 	{
-		Font::StrDraw(L"バリア中(2)", 210, 568, 28, c);
+		Font::StrDraw(L"バリア中(2)", 320, 568, 28, c);
 
 		Draw::Draw(22, &src, &dst, c, 0.0f);
 	}
 	else if (Bar == 1)
 	{
-		Font::StrDraw(L"バリア中(1)", 210, 568, 28, c);
+		Font::StrDraw(L"バリア中(1)", 320, 568, 28, c);
 
 		Draw::Draw(22, &src, &dst, c, 0.0f);
 	}
@@ -427,63 +388,63 @@ void CObjHero::Draw()
 
 	if (m_o == 15)
 	{
-		Font::StrDraw(L"15/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：15/15", 110, 568, 32, c);
 	}
 	else if (m_o == 14)
 	{
-		Font::StrDraw(L"14/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：14/15", 110, 568, 32, c);
 	}
 	else if (m_o ==13)
 	{
-		Font::StrDraw(L"13/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：13/15", 110, 568, 32, c);
 	}
 	else if (m_o == 12)
 	{
-		Font::StrDraw(L"12/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：12/15", 110, 568, 32, c);
 	}
 	else if (m_o == 11)
 	{
-		Font::StrDraw(L"11/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：11/15", 110, 568, 32, c);
 	}
 	else if (m_o == 10)
 	{
-		Font::StrDraw(L"10/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：10/15", 110, 568, 32, c);
 	}
 	else if (m_o == 9)
 	{
-		Font::StrDraw(L"9/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：9/15", 110, 568, 32, c);
 	}
 	else if (m_o ==8)
 	{
-		Font::StrDraw(L"8/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：8/15", 110, 568, 32, c);
 	}
 	else if (m_o == 7)
 	{
-		Font::StrDraw(L"7/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：7/15", 110, 568, 32, c);
 	}
 	else if (m_o ==6)
 	{
-		Font::StrDraw(L"6/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：6/15", 110, 568, 32, c);
 	}
 	else if (m_o == 5)
 	{
-		Font::StrDraw(L"5/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：5/15", 110, 568, 32, c);
 	}
 	else if (m_o == 4)
 	{
-		Font::StrDraw(L"4/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：4/15", 110, 568, 32, c);
 	}
 	else if (m_o == 3)
 	{
-		Font::StrDraw(L"3/10", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：3/10", 110, 568, 32, c);
 	}
 	else if (m_o == 2)
 	{
-		Font::StrDraw(L"2/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：2/15", 110, 568, 32, c);
 	}
 	else if (m_o == 1)
 	{
-		Font::StrDraw(L"1/15", 110, 568, 32, c);
+		Font::StrDraw(L"酸素：1/15", 110, 568, 32, c);
 	}
 }
 //600*800

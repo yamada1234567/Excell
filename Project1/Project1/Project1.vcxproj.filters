@@ -160,6 +160,9 @@
     <ClCompile Include="SceneDes.cpp">
       <Filter>ソースファイル\その他</Filter>
     </ClCompile>
+    <ClCompile Include="O2meteo.cpp">
+      <Filter>ソースファイル\敵</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -320,6 +323,9 @@
     </ClInclude>
     <ClInclude Include="SceneDes.h">
       <Filter>ソースファイル\その他</Filter>
+    </ClInclude>
+    <ClInclude Include="O2meteo.h">
+      <Filter>ソースファイル\敵</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
