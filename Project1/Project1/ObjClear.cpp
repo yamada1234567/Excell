@@ -107,6 +107,21 @@ void CObjClear::Action()
 		}
 	
 	}
+	else if (SG == 7)
+	{
+
+		if (Input::GetVKey(VK_RETURN) == true)
+		{
+			Scene::SetScene(new CSceneTitle());
+			m_key_flag = true;
+		}
+		else
+		{
+
+			m_key_flag = true;
+		}
+
+	}
 
 
 }
