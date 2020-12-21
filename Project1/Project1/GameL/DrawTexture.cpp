@@ -289,7 +289,7 @@ void CDrawTexture::InitDraw(ID3D11Device* p_device,ID3D11DeviceContext* p_device
 	if (FAILED(D3DCompile(g_hlsl_str, strlen(g_hlsl_str), 0, 0, D3D_COMPILE_STANDARD_FILE_INCLUDE, "vs", "vs_4_0", 0,0, &pCompiledShader, &pErrors)))
 	{
 		char* c = (char*)pErrors->GetBufferPointer();
-		MessageBox(0, L"hlslì«Ç›çûÇ›é∏îs", NULL, MB_OK);
+		MessageBox(0,L"hlslì«Ç›çûÇ›é∏îs", NULL, MB_OK);
 		return;
 	}
 	SAFE_RELEASE(pErrors);
