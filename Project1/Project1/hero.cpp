@@ -44,7 +44,7 @@ void CObjHero::Init()
 	Bar = 0;
 
 	//当たり判定用hitboxを作成
-	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_DIFFUSION, 1);
+	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
 
 //アクション
@@ -52,13 +52,6 @@ void CObjHero::Action()
 {
 
 	m_time++;
-
-
-
-
-
-
-
 
 
 	//Hitboxの内容を更新
