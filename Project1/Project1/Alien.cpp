@@ -92,6 +92,7 @@ void CObjAlien::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		return;
 	}
 
 	//bom‚É‚ ‚Á‚½‚çÁ–Å
@@ -117,7 +118,7 @@ void CObjAlien::Action()
 			//Á‹Ž
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
-
+			return;
 
 
 		}

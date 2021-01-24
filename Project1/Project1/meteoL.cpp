@@ -63,6 +63,7 @@ void CObjmeteoL::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		return;
 	}
 	
 	//ålŒö‚É“–‚½‚Á‚½‚çÁ–Å
@@ -70,6 +71,7 @@ void CObjmeteoL::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		return;
 	}
 
 	//bom‚É‚ ‚Á‚½‚çÁ–Å
@@ -208,7 +210,7 @@ void CObjmeteoL::Draw()
 
 			Hits::DeleteHitBox(this);
 			this->SetStatus(false);
-
+			return;
 		}
 
 

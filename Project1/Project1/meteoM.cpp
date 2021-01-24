@@ -62,6 +62,7 @@ void CObjmeteoM::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		return;
 	}
 	
 	//ålŒö‚É“–‚½‚Á‚½‚çÁ–Å
@@ -69,6 +70,7 @@ void CObjmeteoM::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		return;
 	}
 	//bom‚É‚ ‚Á‚½‚çÁ–Å
 	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
@@ -129,6 +131,7 @@ void CObjmeteoM::Action()
 
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		return;
 	}
 
 	m_time++;
@@ -195,6 +198,7 @@ void CObjmeteoM::Draw()
 			Hits::DeleteHitBox(this);
 			this->SetStatus(false);
 
+			return;
 		}
 
 

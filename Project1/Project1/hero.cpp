@@ -234,6 +234,7 @@ void CObjHero::Action()
 				this->SetStatus(false);
 				Hits::DeleteHitBox(this);
 
+				return;
 				//主人公消滅でシーンをゲームオーバーに移行する
 				Scene::SetScene((CScene*)new CSceneGameOver(C));
 
@@ -382,10 +383,10 @@ void CObjHero::Draw()
 
 				this->SetStatus(false);
 				Hits::DeleteHitBox(this);
-			
+				return;
 					//主人公消滅でシーンをゲームオーバーに移行する
 					Scene::SetScene((CScene*)new CSceneGameOver(C));
-
+					
 
 			}
 
