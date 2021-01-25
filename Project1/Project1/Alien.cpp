@@ -118,7 +118,7 @@ void CObjAlien::Action()
 			//Á‹Ž
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
-			return;
+	
 
 
 		}
@@ -137,7 +137,8 @@ void CObjAlien::Action()
 				CObjBomb* obj_b = new CObjBomb(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_BOMB, 1);
 			}
-
+		
+		return;
 	}
 
 

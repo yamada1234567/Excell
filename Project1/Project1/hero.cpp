@@ -80,24 +80,26 @@ void CObjHero::Action()
 			}
 
 
-		}//ŠgŽU’eŠÛ”­ŽË
-		else if (Input::GetVKey('C') == true)
-		{
-			if (m_f == true)
-			{
+		}
+		//ŠgŽU’eŠÛ”­ŽË
+		//else if (Input::GetVKey('C') == true)
+		//{
+		//	if (m_f == true)
+		//	{
 
-				for (int i = 0; i < 360; i+=20)
-				{
-					//’eŠÛƒIƒuƒWƒFƒNƒgì¬
-					CObjDifBullet* obj_b = new CObjDifBullet(m_x + 3.0f, m_y,i,10.0f);
-					Objs::InsertObj(obj_b, OBJ_DIFFUSION, 1);
-				}
-				m_f = false;
+		//		for (int i = 0; i < 360; i+=20)
+		//		{
+		//			//’eŠÛƒIƒuƒWƒFƒNƒgì¬
+		//			CObjDifBullet* obj_b = new CObjDifBullet(m_x + 3.0f, m_y,i,10.0f);
+		//			Objs::InsertObj(obj_b, OBJ_DIFFUSION, 1);
+		//		}
+		//		m_f = false;
 	
 	
-			 }
+		//	 }
 
-		} //BOM‚Ì’eŠÛ”­ŽË
+		//}
+		//BOM‚Ì’eŠÛ”­ŽË
 		else if (Input::GetVKey('X') == true)
 		{
 			if (m_f == true)
