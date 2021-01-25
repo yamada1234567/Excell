@@ -234,9 +234,11 @@ void CObjHero::Action()
 				this->SetStatus(false);
 				Hits::DeleteHitBox(this);
 
-				return;
+
 				//主人公消滅でシーンをゲームオーバーに移行する
 				Scene::SetScene((CScene*)new CSceneGameOver(C));
+				
+				return;
 
 			}
 		}
@@ -369,7 +371,8 @@ void CObjHero::Draw()
 	else
 	{
 		Font::StrDraw(L"HP:0/5", 0, 568, 32, c);
-	    //Draw::Draw(17, &src, &dst, c, 0.0f);
+	    
+		Draw::Draw(17, &src, &dst, c, 0.0f);
 
 		de_time++;
 
@@ -383,10 +386,11 @@ void CObjHero::Draw()
 
 				this->SetStatus(false);
 				Hits::DeleteHitBox(this);
-				return;
-					//主人公消滅でシーンをゲームオーバーに移行する
-					Scene::SetScene((CScene*)new CSceneGameOver(C));
+			
+				//主人公消滅でシーンをゲームオーバーに移行する
+				Scene::SetScene((CScene*)new CSceneGameOver(C));
 					
+				return;	
 
 			}
 

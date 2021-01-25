@@ -13,7 +13,7 @@ CObjDifBullet::CObjDifBullet(float x, float y, float r, float spe)
 {
 	m_x = x;
 	m_y = y;
-	m_r = r;
+	m_r = r-1000;
 	m_speed = spe;
 }
 
