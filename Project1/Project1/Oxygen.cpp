@@ -16,7 +16,7 @@ void CObjOxygen::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	//ìñÇΩÇËîªíËçÏê¨
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_OXYGEN,OBJ_OXYGEN, 1);
+	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ITEM,OBJ_OXYGEN, 1);
 }
 //ÉAÉNÉVÉáÉì
 void CObjOxygen::Action()
