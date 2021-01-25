@@ -96,54 +96,12 @@ void CObjmeteoL::Action()
 			Audio::Start(3);
 
 
-			//アイテム　作成中
-			srand(time(NULL));
-			item = rand() % 9;//倒した際に出るランダムな数値の数
-				if (item == 1)//そのランダムに出た数値が特定の数値の場合アイテムを出す
-				{
-					CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-				}
-				if (item == 2)
-				{
-					CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-				}
-				if (item == 3)
-				{
-					CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-				}
-				if (item == 4)
-				{
-					CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-				}
-				if (item == 5)
-				{
-					CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-				}
-				if (item == 6)
-				{
-					CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-				}
-				if (item == 7)
-				{
-					CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-				}
-				if (item == 8)
-				{
-					CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
-				}
-				if (item == 9)
-				{
-					CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
-				}
+			////アイテム　作成中
+			//srand(time(NULL));
+			//item = rand() % 9;//倒した際に出るランダムな数値の数
+
+			CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
+			Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 		}
 	}
 
@@ -210,6 +168,7 @@ void CObjmeteoL::Draw()
 
 			Hits::DeleteHitBox(this);
 			this->SetStatus(false);
+
 			return;
 		}
 

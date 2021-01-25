@@ -5,7 +5,7 @@
 using namespace GameL;
 
 //オブジェクト:敵機
-class CObjO2meteo :public CObj//メテオ小 
+class CObjO2meteo :public CObj//酸素落とすメテオ
 {
 public:
 	CObjO2meteo(float x, float y);

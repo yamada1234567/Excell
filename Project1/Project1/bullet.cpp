@@ -36,6 +36,8 @@ void CObjBullet::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+
+		return;
 	}
 
 
@@ -74,6 +76,8 @@ void CObjBullet::Action()
 
 		this->SetStatus(false);     
 		Hits::DeleteHitBox(this);   
+
+		return;
 	}
 }
 
