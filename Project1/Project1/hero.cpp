@@ -303,7 +303,7 @@ void CObjHero::Draw()
 
 
 
-	if (Attack_Item>1)
+	if (Attack_Item>=1)
 	{
 
 		Font::StrDraw(L"(BomŽg—p‰Â”\)", 500, 568, 28, c);
