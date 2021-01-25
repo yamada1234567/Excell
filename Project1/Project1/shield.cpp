@@ -16,7 +16,7 @@ void CObjshield::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	//ìñÇΩÇËîªíËçÏê¨
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_SHIELD, OBJ_SHIELD, 1);
+	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ITEM, OBJ_SHIELD, 1);
 }
 //ÉAÉNÉVÉáÉì
 void CObjshield::Action()
