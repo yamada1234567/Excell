@@ -56,6 +56,7 @@ void CObjitem::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		return;
 	}
 
 	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
@@ -65,6 +66,7 @@ void CObjitem::Action()
 		{
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
+			return;
 		}
 
 	}
