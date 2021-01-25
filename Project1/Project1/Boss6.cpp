@@ -23,7 +23,7 @@ CObjBoss6::CObjBoss6(float x, float y)
 //イニシャライズ
 void CObjBoss6::Init()
 {
-	m_hp = 40;
+	m_hp = 30;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 

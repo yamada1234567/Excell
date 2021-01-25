@@ -104,7 +104,7 @@ void* CHitBox::CheckObjNameHit(int obj_name,int point)
 bool CHitBox::CheckElementHit(int element)
 {
 	for(int i=0;i<m_hit_count;i++)
-		if(m_hit_data[i].o!=nullptr)
+	if(m_hit_data[i].o!=nullptr)
 			if(m_hit_data[i].e==element)
 				return true;
 	return false;
