@@ -35,6 +35,8 @@ void CObjBomBullet::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+
+		return;
 	}
 
 	//hitbox更新用ポインターの取得
@@ -49,8 +51,11 @@ void CObjBomBullet::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 
+
 		CObjBom* obj_b = new CObjBom(m_x, m_y);
 		Objs::InsertObj(obj_b, OBJ_BOM, 1);
+
+		return;
 	}
 }
 

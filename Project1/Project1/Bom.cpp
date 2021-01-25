@@ -41,6 +41,7 @@ void CObjBom::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 
+		return;
 	}
 
 

@@ -62,9 +62,6 @@ void CObjDifBullet::Action()
 
 
 
-
-
-
 	//ELEMENT_ENEMYを持つオブジェクトと接触したら削除
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
