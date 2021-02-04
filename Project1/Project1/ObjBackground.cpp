@@ -16,12 +16,12 @@ void CObjBackground::Init()
 void CObjBackground::Action()
 {
 	//”wŒi‚P‚Ì“®ì
-	m_y1 -= 2.3f;
+	m_y1 -= 2.0f;
 	if (m_y1 <-600.0f)
 		m_y1 = 800;
 
 	//”wŒi‚Q‚Ì“®ì
-	m_y2 -= 2.3f;
+	m_y2 -= 2.0f;
 	if (m_y2 <-600.0f)
 		m_y2 = 800;
 }
