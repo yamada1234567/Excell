@@ -50,12 +50,16 @@ void CObjmeteoLD::Action()
 		m_vx = 1.0f / r * m_vx;
 		m_vy = 1.0f / r * m_vy;
 	}
-	//加速
-	m_vx *= 4.5f;
-	m_vy *= 4.5f;
 
-	m_x += m_vx;
-	m_y += m_vy;
+	if (m_hp > 0)
+	{
+		//加速
+		m_vx *= 4.5f;
+		m_vy *= 4.5f;
+
+		m_x += m_vx;
+		m_y += m_vy;
+	}
 
 	//hitbox更新用ポインターの取得
 	CHitBox* hit = Hits::GetHitBox(this);
@@ -191,7 +195,7 @@ void CObjmeteoLD::Draw()
 
 
 
-		if (de_time >= 3)
+		if (de_time >= 30)
 		{
 			//敵爆発音を鳴らす
 			Audio::Start(3);

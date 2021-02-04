@@ -40,8 +40,9 @@ void CObjHero::Init()
 	Bullet_time = 100;
 	Bar = 0;
 
-	m_f = true;
-	
+	m_f_bu = false;
+	m_f_bom = false;
+
 	//当たり判定用hitboxを作成
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
@@ -57,91 +58,77 @@ void CObjHero::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
 
-
-	//通常弾丸発射
-	if (Input::GetVKey('Z') == true)
+	if (m_hp > 0)
 	{
-		if (m_f == true)
+		//通常弾丸発射
+		if (Input::GetVKey('Z') == true)
 		{
-			//発射音を鳴らす
-			Audio::Start(2);
-
-			//弾丸オブジェクト作成
-			CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
-			Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-
-		
-
-			m_f = false;
-
-		}
-
-
-	}//BOMの弾丸発射
-	else if (Input::GetVKey('X') == true)
-	{
-		if (m_f == true)
-		{
-			if (Attack_Item != 0)
+			if (m_f_bu == true)
 			{
-
-				//BOMオブジェクト作成
-				CObjBomBullet* obj_b = new CObjBomBullet(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_BOM_BULLET, 1);
-
-
-				Attack_Item -= 1;
+				//発射音を鳴らす
+				Audio::Start(2);
+	
+				//弾丸オブジェクト作成
+				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+	
+			
+	
+				m_f_bu = false;
+	
 			}
-			m_f = false;
+	
+		}
+		if (m_time % 15 == 0)
+		{
+			m_f_bu = true;
+	
+		}
+	
+		//BOMの弾丸発射
+		if (Input::GetVKey('X') == true)
+		{
+			if (m_f_bom == true)
+			{
+				if (Attack_Item != 0)
+				{
+	
+					//BOMオブジェクト作成
+					CObjBomBullet* obj_b = new CObjBomBullet(m_x + 3.0f, m_y);
+					Objs::InsertObj(obj_b, OBJ_BOM_BULLET, 1);
+	
+	
+					Attack_Item -= 1;
+				}
+				
+			}
+	
+		}
+		else
+		{
+			m_f_bom = true;
+		}
+
+
+		//操作
+		if (Input::GetVKey(VK_RIGHT) == true)
+		{
+			m_x += 5.0f;
+		}
+		if (Input::GetVKey(VK_LEFT) == true)
+		{
+			m_x -= 5.0f;
+
+		}
+		if (Input::GetVKey(VK_UP) == true)
+		{
+			m_y -= 5.0f;
+		}
+		if (Input::GetVKey(VK_DOWN) == true)
+		{
+			m_y += 5.0f;
 		}
 	}
-	else
-	{
-		m_f = true;
-	}
-
-	//拡散弾丸発射
-	//else if (Input::GetVKey('C') == true)
-	//{
-	//	if (m_f == true)
-	//	{
-
-	//		for (int i = 0; i < 360; i+=20)
-	//		{
-	//			//弾丸オブジェクト作成
-	//			CObjDifBullet* obj_b = new CObjDifBullet(m_x + 3.0f, m_y,i,10.0f);
-	//			Objs::InsertObj(obj_b, OBJ_DIFFUSION, 1);
-	//		}
-	//		m_f = false;
-	
-	
-	//	 }
-
-	//}
-
-
-
-
-
-	//操作
-	if (Input::GetVKey(VK_RIGHT) == true)
-	{
-		m_x += 5.0f;
-	}
-	if (Input::GetVKey(VK_LEFT) == true)
-	{
-		m_x -= 5.0f;
-
-	}
-	if (Input::GetVKey(VK_UP)==true)
-	{
-		m_y -= 5.0f;
-	}
-	if (Input::GetVKey(VK_DOWN) == true)
-	{
-		m_y += 5.0f;
-	}
-
 
 	//移動ベクトル初期化
 	m_vx = 0.0f;
@@ -190,9 +177,9 @@ void CObjHero::Action()
 	{
 		m_x = 800.0f - 5.0f - 32.0f;
 	}
-	if (m_y + 32.0f > 600.0f - 5.0f)
+	if (m_y + 32.0f > 568.0f - 5.0f)
 	{
-		m_y = 600.0f - 5.0f - 32.0f;
+		m_y = 568.0f - 5.0f - 32.0f;
 	}
 	if (m_y < 0.0f)
 	{
@@ -363,27 +350,27 @@ void CObjHero::Draw()
 	{
 		Font::StrDraw(L"HP:0/5", 0, 568, 32, c);
 	    
-		Draw::Draw(17, &src, &dst, c, 0.0f);
+		if (de_time<=30)
+			Draw::Draw(17, &src, &dst, c, 0.0f);
+		
+
 
 		de_time++;
 
 		m_vx = 0;
 		m_vy = 0;
 
-
-			if (de_time == 11)
+			if (de_time == 60)
 			{
 
 				this->SetStatus(false);
 				Hits::DeleteHitBox(this);
-			
+
 				//主人公消滅でシーンをゲームオーバーに移行する
 				Scene::SetScene((CScene*)new CSceneGameOver(C));
-					
-				return;	
 
+				return;
 			}
-
 
 
 	}

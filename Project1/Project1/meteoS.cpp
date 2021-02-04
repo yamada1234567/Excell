@@ -167,7 +167,7 @@ void CObjmeteoS::Draw()
 	//”š”­Ø‚è‘Ö‚¦
 	if (0 >= m_hp)
 	{					
-		
+	
 
 		m_vx = 0;
 		m_vy = 0;
@@ -178,7 +178,7 @@ void CObjmeteoS::Draw()
 		
 			
 
-		if(de_time >= 3)
+		if(de_time >= 20)
 		{
 			//“G”š”­‰¹‚ð–Â‚ç‚·
 			Audio::Start(3);

@@ -67,9 +67,6 @@
     <ClCompile Include="meteoS.cpp">
       <Filter>ソースファイル\敵</Filter>
     </ClCompile>
-    <ClCompile Include="meteoSin.cpp">
-      <Filter>ソースファイル\敵</Filter>
-    </ClCompile>
     <ClCompile Include="ObjClear.cpp">
       <Filter>ソースファイル\クリア ・ゲームオーバー ・タイトル</Filter>
     </ClCompile>
@@ -232,9 +229,6 @@
       <Filter>ソースファイル\敵</Filter>
     </ClInclude>
     <ClInclude Include="meteoS.h">
-      <Filter>ソースファイル\敵</Filter>
-    </ClInclude>
-    <ClInclude Include="meteoSin.h">
       <Filter>ソースファイル\敵</Filter>
     </ClInclude>
     <ClInclude Include="ObjClear.h">
