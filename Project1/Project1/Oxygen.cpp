@@ -59,9 +59,9 @@ void CObjOxygen::Action()
 	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
 	{
 
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-			return;
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+		return;
 	}
 }
 //ƒhƒ[

@@ -124,21 +124,20 @@ void CObjAlien::Action()
 
 
 		}
-			int item;
 
-			srand(time(NULL));
-			item = rand() % 2;//アイテムが出る確率
-			
-			if(item == 1)
-			{ 
-				CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
-			}
-			else
-			{
-				CObjBomb* obj_b = new CObjBomb(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_BOMB, 1);
-			}
+		srand(time(NULL));
+		item = rand() % 2;//アイテムが出る確率
+		
+		if(item == 1)
+		{ 
+			CObjshield* obj_b = new CObjshield(m_x + 3.0f, m_y);
+			Objs::InsertObj(obj_b, OBJ_SHIELD, 1);
+		}
+		else
+		{
+			CObjBomb* obj_b = new CObjBomb(m_x + 3.0f, m_y);
+			Objs::InsertObj(obj_b, OBJ_BOMB, 1);
+		}
 		
 		return;
 	}
@@ -166,7 +165,7 @@ void CObjAlien::Draw()
 	dst.m_bottom = 50.0f + m_y;
 
 
-		//隕石登録
-		Draw::Draw(20, &src, &dst, c, 0.0f);
+	//隕石登録
+	Draw::Draw(20, &src, &dst, c, 0.0f);
 
 }

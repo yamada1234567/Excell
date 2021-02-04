@@ -16,6 +16,7 @@ void CObjBomb::Init()
 
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+
 	//ìñÇΩÇËîªíËçÏê¨
 	Hits::SetHitBox(this, m_x, m_y, 28, 32, ELEMENT_ITEM, OBJ_BOMB, 1);
 
@@ -75,14 +76,14 @@ void CObjBomb::Draw()
 	RECT_F src;
 	RECT_F dst;
 	//êÿÇÍéÊÇËê›íË
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 35.0f;
+	src.m_top	 = 0.0f;
+	src.m_left	 = 0.0f;
+	src.m_right	 = 35.0f;
 	src.m_bottom = 43.0f;
 	//ï\é¶à íu
-	dst.m_top = 0.0f + m_y;
-	dst.m_left = 38.0f + m_x;
-	dst.m_right = 1.5f + m_x;
+	dst.m_top	 = 0.0f  + m_y;
+	dst.m_left 	 = 38.0f + m_x;
+	dst.m_right  = 1.5f  + m_x;
 	dst.m_bottom = 30.0f + m_y;
 	//âÊëúìoò^
 	Draw::Draw(23, &src, &dst, c, 0.0f);

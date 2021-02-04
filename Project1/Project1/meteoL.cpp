@@ -150,16 +150,12 @@ void CObjmeteoL::Draw()
 	//”š”­Ø‚è‘Ö‚¦
 	if (0 >= m_hp)
 	{
-
-
 		m_vx = 0;
 		m_vy = 0;
 
 		Draw::Draw(50, &src, &dst, c, 0.0f);
 
 		de_time++;
-
-
 
 		if (de_time >= 10)
 		{
@@ -171,7 +167,6 @@ void CObjmeteoL::Draw()
 
 			return;
 		}
-
 
 	}
 	else

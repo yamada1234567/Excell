@@ -20,10 +20,10 @@ CSceneStage5::CSceneStage5()
 	x = 0.0f;
 	y = 0.0f;
 	m_time = 0;
-	 random=0;
-	 pos=0;
-	 pos2=0;
-	 a=0;
+	random=0;
+	pos=0;
+	pos2=0;
+	a=0;
 }
 //デストラクタ
 CSceneStage5::~CSceneStage5()

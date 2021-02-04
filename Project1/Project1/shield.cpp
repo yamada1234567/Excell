@@ -58,13 +58,11 @@ void CObjshield::Action()
 
 	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
 	{
-		m_hp -= 1;
-		if (0 >= m_hp)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-			return;
-		}
+
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+
+		return;
 
 	}
 }
