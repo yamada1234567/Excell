@@ -107,11 +107,6 @@ void CObjmeteoS::Action()
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 			}
-
-
-
-
-
 			
 		}
 	}
@@ -125,13 +120,6 @@ void CObjmeteoS::Action()
 		Hits::DeleteHitBox(this);
 		return;
 	}
-
-
-
-
-
-
-
 	
 	//“G‰ñ“]
 	if (m_time>=25)

@@ -12,7 +12,6 @@ using namespace GameL;
 
 CObjmeteoSin::CObjmeteoSin(float x, float y)
 {
-
 	m_x = x;
 	m_y = y;
 }
@@ -103,6 +102,7 @@ void CObjmeteoSin::Action()
 
 			srand(time(NULL));
 			item = rand() % 30;//倒した際に出るランダムな数値の数
+			
 			if (item == 1)//そのランダムに出た数値が特定の数値の場合アイテムを出す
 			{
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
@@ -118,8 +118,6 @@ void CObjmeteoSin::Action()
 				CObjOxygen* obj_b = new CObjOxygen(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_OXYGEN, 1);
 			}
-
-
 		}
 	}
 

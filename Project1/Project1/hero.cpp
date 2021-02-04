@@ -23,26 +23,25 @@ CObjHero::CObjHero(int c)
 //イニシャライズ
 void CObjHero::Init()
 {
-	m_y = 500-16;
-	m_x = (810/2)-16;
-	m_vx = 0.0f;
-	m_vy = 0.0f;
-	m_f = true;
+	m_y		 = 500-16;
+	m_x		 = (810/2)-16;
+	m_vx	 = 0.0f;
+	m_vy	 = 0.0f;
 	m_bullet = 0;
-	time = 0;
-	de_time = 0;
+	time	 = 0;
+	de_time  = 0;
 	bar_time = 0;
-
-	m_hp = 5;
-	m_o	= 15;
+	m_hp	 = 5;
+	m_o		 = 15;
 
 	Attack_Item=0;
 
 	m_time = 0;
 	Bullet_time = 100;
-
 	Bar = 0;
 
+	m_f = true;
+	
 	//当たり判定用hitboxを作成
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
@@ -59,68 +58,68 @@ void CObjHero::Action()
 	hit->SetPos(m_x, m_y);
 
 
-
-
-		//通常弾丸発射
-		if (Input::GetVKey('Z') == true)
+	//通常弾丸発射
+	if (Input::GetVKey('Z') == true)
+	{
+		if (m_f == true)
 		{
-			if (m_f == true)
-			{
-				//発射音を鳴らす
-				Audio::Start(2);
+			//発射音を鳴らす
+			Audio::Start(2);
 
-				//弾丸オブジェクト作成
-				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
-				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
+			//弾丸オブジェクト作成
+			CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
+			Objs::InsertObj(obj_b, OBJ_BULLET, 1);
 
-			
+		
 
-				m_f = false;
-
-			}
-
+			m_f = false;
 
 		}
-		//拡散弾丸発射
-		//else if (Input::GetVKey('C') == true)
-		//{
-		//	if (m_f == true)
-		//	{
 
-		//		for (int i = 0; i < 360; i+=20)
-		//		{
-		//			//弾丸オブジェクト作成
-		//			CObjDifBullet* obj_b = new CObjDifBullet(m_x + 3.0f, m_y,i,10.0f);
-		//			Objs::InsertObj(obj_b, OBJ_DIFFUSION, 1);
-		//		}
-		//		m_f = false;
+
+	}//BOMの弾丸発射
+	else if (Input::GetVKey('X') == true)
+	{
+		if (m_f == true)
+		{
+			if (Attack_Item != 0)
+			{
+
+				//BOMオブジェクト作成
+				CObjBomBullet* obj_b = new CObjBomBullet(m_x + 3.0f, m_y);
+				Objs::InsertObj(obj_b, OBJ_BOM_BULLET, 1);
+
+
+				Attack_Item -= 1;
+			}
+			m_f = false;
+		}
+	}
+	else
+	{
+		m_f = true;
+	}
+
+	//拡散弾丸発射
+	//else if (Input::GetVKey('C') == true)
+	//{
+	//	if (m_f == true)
+	//	{
+
+	//		for (int i = 0; i < 360; i+=20)
+	//		{
+	//			//弾丸オブジェクト作成
+	//			CObjDifBullet* obj_b = new CObjDifBullet(m_x + 3.0f, m_y,i,10.0f);
+	//			Objs::InsertObj(obj_b, OBJ_DIFFUSION, 1);
+	//		}
+	//		m_f = false;
 	
 	
-		//	 }
+	//	 }
 
-		//}
-		//BOMの弾丸発射
-		else if (Input::GetVKey('X') == true)
-		{
-			if (m_f == true)
-			{
-				if (Attack_Item != 0)
-				{
-
-					//BOMオブジェクト作成
-					CObjBomBullet* obj_b = new CObjBomBullet(m_x + 3.0f, m_y);
-					Objs::InsertObj(obj_b, OBJ_BOM_BULLET, 1);
+	//}
 
 
-					Attack_Item -= 1;
-				}
-				m_f = false;
-			}
-		}
-		else
-		{
-			m_f = true;
-		}
 
 
 
@@ -206,44 +205,44 @@ void CObjHero::Action()
 
 
 
-		//ダメージ判定
-		if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
-		{
+	//ダメージ判定
+	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
+	{
 			
-			if (Bar <= 0)
-			{
-				m_hp -= 1;
-
-				//ダメージ音を鳴らす
-				Audio::Start(4);
-
-			}
-			else
-			{
-				Bar -= 1;
-
-			}
-
-		}
-
-		//酸素０で消滅
-		if (m_time % 70 == 0)
+		if (Bar <= 0)
 		{
-			m_o--;
+			m_hp -= 1;
 
-			if (0 == m_o)
-			{
-				this->SetStatus(false);
-				Hits::DeleteHitBox(this);
+			//ダメージ音を鳴らす
+			Audio::Start(4);
 
-
-				//主人公消滅でシーンをゲームオーバーに移行する
-				Scene::SetScene((CScene*)new CSceneGameOver(C));
-				
-				return;
-
-			}
 		}
+		else
+		{
+			Bar -= 1;
+
+		}
+
+	}
+
+	//酸素０で消滅
+	if (m_time % 70 == 0)
+	{
+		m_o--;
+
+		if (0 == m_o)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+
+
+			//主人公消滅でシーンをゲームオーバーに移行する
+			Scene::SetScene((CScene*)new CSceneGameOver(C));
+			
+			return;
+
+		}
+	}
 
 	//シールドアイテム当たり判定
 	if (hit->CheckObjNameHit(OBJ_SHIELD) != nullptr)
@@ -252,10 +251,6 @@ void CObjHero::Action()
 		Bar = 3;
 
 	}
-	
-
-
-
 
 	//酸素アイテム当たり判定
 	if (hit->CheckObjNameHit(OBJ_OXYGEN) != nullptr)
@@ -263,10 +258,6 @@ void CObjHero::Action()
 		m_o = 15;
 
 	}
-
-
-
-
 
 	//BOMアイテム判定
 	if (hit->CheckObjNameHit(OBJ_BOMB) != nullptr)
@@ -289,25 +280,23 @@ void CObjHero::Draw()
 	RECT_F dst;//描画先表示位置
 
 	//切り取り位置の設定
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 50.0f;
-	src.m_bottom	= 50.0f;
+	src.m_top	 = 0.0f;
+	src.m_left	 = 0.0f;
+	src.m_right	 = 50.0f;
+	src.m_bottom = 50.0f;
 
 	//表示位置の設定
-	dst.m_top		= 0.0f+m_y;
-	dst.m_left		= 0.0f+m_x;
-	dst.m_right		= 36.0f+m_x;
-	dst.m_bottom	= 36.0f+m_y;
+	dst.m_top	 = 0.0f+m_y;
+	dst.m_left	 = 0.0f+m_x;
+	dst.m_right	 = 36.0f+m_x;
+	dst.m_bottom = 36.0f+m_y;
 
 
 
 
 	if (Attack_Item>=1)
 	{
-
 		Font::StrDraw(L"(Bom使用可能)", 500, 568, 28, c);
-
 	}
 	if (Bar==3)
 	{
@@ -384,7 +373,6 @@ void CObjHero::Draw()
 
 			if (de_time == 11)
 			{
-
 
 				this->SetStatus(false);
 				Hits::DeleteHitBox(this);
