@@ -1,20 +1,20 @@
 #pragma once
-//使用するヘッダー
+
 #include "GameL/SceneObjManager.h"
 
-//使用するネームスペース
+
 using namespace GameL;
 
-//オブジェクト：ゲームタイトル
+
 class CObjGameOver :public CObj
 {
 public:
 	CObjGameOver(int c);
 	~CObjGameOver() {};
-	void Init();  //イニシャライズ
-	void Action();//アクション
-	void Draw();  //ドロー
+	void Init();  
+	void Action();
+	void Draw();  
 private:
-	bool m_key_flag;//キーフラグ
+	bool m_key_flag;
 	int SG;
 };

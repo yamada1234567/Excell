@@ -1,35 +1,35 @@
-//STLデバック機能をOFFにする
+
 #define _SECURE_SCL (0)
 #define _HAS_ITERATOR_DEBUGGING (0)
 
-//GameLで使用するヘッダー
+
 #include"GameL/DrawTexture.h"
 #include"GameL\SceneObjManager.h"
 #include"GameL\Audio.h"
 
-//使用するネームスペース
+
 using namespace GameL;
 
-//使用ヘッダー
+
 #include"SceneStage2.h"
 #include"GameHead.h"
 #include <stdlib.h>
 #include <time.h>
-//コンストラクタ
+
 CSceneStage2::CSceneStage2()
 {
 
 }
-//デストラクタ
+
 CSceneStage2::~CSceneStage2()
 {
 	x = 0.0f;
 	y = 0.0f;
 }
-//ゲームメイン初期化メソッド
+
 void CSceneStage2::InitScene()
 {
-	//音楽読み込み
+	
 	Audio::LoadAudio(0, L"BGMSceneMain.wav", BACK_MUSIC);
 	Audio::LoadAudio(1, L"BGMBoss.wav", BACK_MUSIC);
 
@@ -37,13 +37,13 @@ void CSceneStage2::InitScene()
 	Audio::LoadAudio(3, L"SEEnemyexp.wav", EFFECT);
 	Audio::LoadAudio(4, L"SEheroexp.wav", EFFECT);
 
-	//ボリュームを1.5増やす
+
 	float v = Audio::VolumeMaster(1.5);
 
-	//音楽スタート
+
 	Audio::Start(0);
 
-	//外部グラフィックファイルを読み込む0番に登録()
+	
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"hero bullet.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
@@ -61,22 +61,18 @@ void CSceneStage2::InitScene()
 	Draw::LoadImage(L"BOOM.png", 23, TEX_SIZE_512);
 	Draw::LoadImage(L"bomb.png", 24, TEX_SIZE_512);
 
-	//主人公オブジェクト作成
-	CObjHero* obj = new CObjHero(2);//主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
 
-	//敵メテオ
-	//CObjmeteoRD* obj_meteoRD = new CObjmeteoRD(100, 100);
-	//Objs::InsertObj(obj_meteoRD, OBJ_meteoRD, 4);
+	CObjHero* obj = new CObjHero(2);
+	Objs::InsertObj(obj, OBJ_HERO, 1);
 
-	//背景
+	
 	CObjBackground* back = new CObjBackground();
 	Objs::InsertObj(back, OBJ_BACKGROUND, 0);
 
 
 	m_time = 0;
 }
-//ゲームメイン実行メソッド
+
 void CSceneStage2::Scene()
 {
 	m_time++;
@@ -129,7 +125,7 @@ void CSceneStage2::Scene()
 			a = 70.0f;
 		}
 	}
-	for (int i = 0; i < 10000; i++)//ランダム隕石
+	for (int i = 0; i < 10000; i++)
 	{
 		if (m_time == i * 60)
 		{
@@ -186,7 +182,7 @@ void CSceneStage2::Scene()
 			}
 		}
 	}
-	for (int i = 0; i < 10000; i++)//ランダム隕石2
+	for (int i = 0; i < 10000; i++)
 	{
 		if (m_time == i * 80)
 		{
@@ -243,7 +239,7 @@ void CSceneStage2::Scene()
 			}
 		}
 	}
-	for (int i = 0; i < 10000; i++)//ランダム隕石2
+	for (int i = 0; i < 10000; i++)
 	{
 		if (m_time == i * 80)
 		{
@@ -282,12 +278,12 @@ void CSceneStage2::Scene()
 			}
 		}
 	}
-	//ボス
+
 	if (m_time == 1300)
 	{
-		//音楽チェンジ
-		Audio::Stop(0);//0番曲をストップ
-		Audio::Start(1);//1番曲をスタート
+
+		Audio::Stop(0);
+		Audio::Start(1);
 		x = 100;
 		CObjBoss2* obj = new CObjBoss2(-100, -650.0f);
 		Objs::InsertObj(obj, OBJ_BOSS2, 9);

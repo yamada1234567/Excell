@@ -1,36 +1,34 @@
-//STLデバック機能をOFFにする
+
 #define _SECURE_SCL (0)
 #define _HAS_ITERATOR_DEBUGGING (0)
 
-//GameLで使用するヘッダー
+
 #include"GameL/DrawTexture.h"
 #include"GameL\SceneObjManager.h"
 #include"GameL\Audio.h"
 
-//使用するネームスペース
+
 using namespace GameL;
 
-//使用ヘッダー
+
 #include"SceneStage4.h"
 #include"GameHead.h"
 #include <stdlib.h>
 #include <time.h>
-//コンストラクタ
+
 CSceneStage4::CSceneStage4()
 {
 	m_time = 0;
 	x = 0.0f;
 	y = 0.0f;
 }
-//デストラクタ
+
 CSceneStage4::~CSceneStage4()
 {
 
 }
-//ゲームメイン初期化メソッド
 void CSceneStage4::InitScene()
 {
-	//音楽読み込み
 	Audio::LoadAudio(0, L"BGMSceneMain.wav", BACK_MUSIC);
 	Audio::LoadAudio(1, L"BGMBoss.wav", BACK_MUSIC);
 
@@ -38,13 +36,10 @@ void CSceneStage4::InitScene()
 	Audio::LoadAudio(3, L"SEEnemyexp.wav", EFFECT);
 	Audio::LoadAudio(4, L"SEheroexp.wav", EFFECT);
 
-	//ボリュームを1.5増やす
 	float v = Audio::VolumeMaster(1.5);
 
-	//音楽スタート
 	Audio::Start(0);
 
-	//外部グラフィックファイルを読み込む0番に登録()
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"hero bullet.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
@@ -61,18 +56,17 @@ void CSceneStage4::InitScene()
 	Draw::LoadImage(L"隕石爆発.png", 50, TEX_SIZE_512);
 	Draw::LoadImage(L"BOOM.png", 23, TEX_SIZE_512);
 	Draw::LoadImage(L"bomb.png", 24, TEX_SIZE_512);
-	//主人公オブジェクト作成
-	CObjHero* obj = new CObjHero(4);//主人公オブジェクト作成
-	Objs::InsertObj(obj, OBJ_HERO, 1);//作った主人公オブジェクトをオブジェクトマネージャーに登録
+	CObjHero* obj = new CObjHero(4);
+	Objs::InsertObj(obj, OBJ_HERO, 1);
 
 
 
-	//背景
+
 	CObjBackground* back = new CObjBackground();
 	Objs::InsertObj(back, OBJ_BACKGROUND, 0);
 
 }
-//ゲームメイン実行メソッド
+
 void CSceneStage4::Scene()
 {
 	m_time++;
@@ -126,7 +120,7 @@ void CSceneStage4::Scene()
 			a = 70.0f;
 		}
 	}
-	for (int i = 0; i < 10000; i++)//ランダム隕石
+	for (int i = 0; i < 10000; i++)
 	{
 		if (m_time == i * 60)
 		{
@@ -185,7 +179,7 @@ void CSceneStage4::Scene()
 			}
 		}
 	}
-	for (int i = 0; i < 10000; i++)//ランダム隕石2
+	for (int i = 0; i < 10000; i++)
 	{
 		if (m_time == i * 63)
 		{
@@ -242,7 +236,7 @@ void CSceneStage4::Scene()
 			}
 		}
 	}
-	for (int i = 0; i < 10000; i++)//ランダム隕石2
+	for (int i = 0; i < 10000; i++)
 	{
 		if (m_time == i * 66)
 		{
@@ -281,7 +275,7 @@ void CSceneStage4::Scene()
 			}
 		}
 	}
-	for (int i = 0; i < 10000; i++)//ランダム隕石2
+	for (int i = 0; i < 10000; i++)
 	{
 		if (m_time == i * 80)
 		{
@@ -320,7 +314,7 @@ void CSceneStage4::Scene()
 			}
 		}
 	}
-	for (int i = 0; i < 10000; i++)//ランダム隕石2
+	for (int i = 0; i < 10000; i++)
 	{
 		if (m_time == i * 80)
 		{
@@ -359,7 +353,7 @@ void CSceneStage4::Scene()
 			}
 		}
 	}
-	for (int i = 0; i < 10000; i++)//ランダム隕石斜め２
+	for (int i = 0; i < 10000; i++)
 	{
 		if (m_time == i * 120)
 		{
@@ -404,13 +398,13 @@ void CSceneStage4::Scene()
 			}
 		}
 	}
-	//出力する時間(timeが500になると出力)
+
 	if (m_time == 1500)
 	{
-		//音楽チェンジ
-		Audio::Stop(0);//0番曲をストップ
-		Audio::Start(1);//1番曲をスタート
-		//ボス出力
+	
+		Audio::Stop(0);
+		Audio::Start(1);
+	
 		CObjBoss4* obj = new CObjBoss4(-100.0f, -630.0f);
 		Objs::InsertObj(obj, OBJ_BOSS4, 11);
 	}

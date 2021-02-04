@@ -1,4 +1,4 @@
-//使用するヘッダーファイル
+
 #include "GameL/DrawFont.h"
 #include "GameL/WinInputs.h"
 #include "GameL/SceneManager.h"
@@ -6,7 +6,7 @@
 #include "GameHead.h"
 #include "ObjGameOver.h"
 
-//使用するネームスペース
+
 using namespace GameL;
 
 CObjGameOver::CObjGameOver(int c)
@@ -15,20 +15,20 @@ CObjGameOver::CObjGameOver(int c)
 
 }
 
-//イニシャライズ
+
 void CObjGameOver::Init()
 {
-	m_key_flag = false;//キーフラグ
+	m_key_flag = false;
 
 }
 
-//アクション
+
 void CObjGameOver::Action()
 {
 
 	if (SG == 1)
 	{		
-		//エンターキーを押してシーン：次のステージに移動する
+		
 		if (Input::GetVKey(VK_RETURN) == true)
 		{
 
@@ -46,7 +46,7 @@ void CObjGameOver::Action()
 	}
 	else if (SG == 2)
 	{
-		//エンターキーを押してシーン：次のステージに移動する
+		
 		if (Input::GetVKey(VK_RETURN) == true)
 		{
 
@@ -125,13 +125,13 @@ void CObjGameOver::Action()
 	}
 }
 
-//ドロー
+
 void CObjGameOver::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	Font::StrDraw(L"YOU LOST", 205, 150, 100, c);
-	Font::StrDraw(L"GAME OVER", 175, 250, 100, c);
-	Font::StrDraw(L"NEXT_CHALLENGE:ENTER_KEY", 200, 380, 32, c);
-											//y座標(左右) , x座標(上下) , サイズ
+	Font::StrDraw(L"YOU LOST", 325, 200, 32, c);
+	Font::StrDraw(L"GAME OVER", 320, 250, 32, c);
+	Font::StrDraw(L"NEXT_CHALLENGE:ENTER_KEY", 200, 350, 32, c);
+											
 }
