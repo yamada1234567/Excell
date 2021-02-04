@@ -1,53 +1,52 @@
-//STLデバッグ機能をOFFにする
+
 #define _SECURE_SCL	(0)  
 #define _HAS_ITERATOR_DEBUGGING	(0)]
 
-//GameLで使用するヘッダー
+
 #include "GameL/SceneObjManager.h"
 #include "GameL/DrawFont.h"
 #include"GameL/DrawTexture.h"
 #include "GameL/Audio.h"
 
-//使用するネームスペース
 using namespace GameL;
 
-//使用ヘッダー
+
 #include "SceneMain.h"
 #include "GameHead.h"
 
-//コントラクタ
+
 CSceneTitle::CSceneTitle()
 {
 
 }
 
-//デストラクタ
+
 CSceneTitle::~CSceneTitle()
 {
 
 }
 
-//ゲームメイン初期化メソッド
+
 void CSceneTitle::InitScene()
 {
 	Draw::LoadImage(L"タイトル.png", 1, TEX_SIZE_512);
 	
 	
-	//音楽読み込み
+
 	Audio::LoadAudio( 0 , L"BGMSceneTitle.wav", SOUND_TYPE::BACK_MUSIC);
 
-	//バックミュージックスタート
-	float Volume = Audio::VolumeMaster(-0.3f); //マスターボリュームを0.8下げる
-	Audio::Start(0);  //音楽スタート
+
+	float Volume = Audio::VolumeMaster(-0.3f);
+	Audio::Start(0); 
 
 
-	//タイトルオブジェクトを作成
-	CObjTitle* obj = new CObjTitle();   //タイトルオブジェクト作成
-	Objs::InsertObj(obj, OBJ_TITLE, 10);//主人公オブジェクト登録
+
+	CObjTitle* obj = new CObjTitle();   
+	Objs::InsertObj(obj, OBJ_TITLE, 10);
 }
 
 
-//ゲームメイン実行中メソッド
+
 void CSceneTitle::Scene()
 {
 

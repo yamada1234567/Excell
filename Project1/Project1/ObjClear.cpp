@@ -1,4 +1,4 @@
-//使用するヘッダーファイル
+
 #include "GameL/DrawFont.h"
 #include "GameL/WinInputs.h"
 #include "GameL/SceneManager.h"
@@ -7,7 +7,7 @@
 #include "GameHead.h"
 #include "ObjClear.h"
 
-//使用するネームスペース
+
 using namespace GameL;
 
 CObjClear::CObjClear(int Cou)
@@ -18,19 +18,19 @@ CObjClear::CObjClear(int Cou)
 }
 
 
-//イニシャライズ
+
 void CObjClear::Init()
 {
-	m_key_flag = false;//キーフラグ
+	m_key_flag = false;
 }
 
-//アクション
+
 void CObjClear::Action()
 {
 
 	if (SG==2)
 	{
-		//エンターキーを押してシーン：次のステージに移動する
+		
 		if (Input::GetVKey(VK_RETURN) == true)
 		{
 
@@ -126,10 +126,10 @@ void CObjClear::Action()
 
 }
 
-//ドロー
+
 void CObjClear::Draw()
 {
-	//描画
+
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 
@@ -167,12 +167,12 @@ void CObjClear::Draw()
 
 		RECT_F src;
 		RECT_F dst;
-		//切れ取り設定
+
 		src.m_top = 0.0f;
 		src.m_left = 0.0f;
 		src.m_right = 780.0f;
 		src.m_bottom = 600.0f;
-		//表示位置
+	
 		dst.m_top = 0;
 		dst.m_left = 0;
 		dst.m_right = 800.0;

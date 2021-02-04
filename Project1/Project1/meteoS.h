@@ -1,18 +1,18 @@
 #pragma once
-//使用するヘッダー
+
 #include "GameL/SceneObjManager.h"
-//使用するネームスペース
+
 using namespace GameL;
 
-//オブジェクト:敵機
-class CObjmeteoS :public CObj//メテオ小 
+
+class CObjmeteoS :public CObj 
 {
 public:
 	CObjmeteoS(float x,float y);
 	~CObjmeteoS() {};
-	void Init(); //イニシャ
-	void Action();//アクション
-	void Draw();//ドロー
+	void Init(); 
+	void Action();
+	void Draw();
 	void SetVector(float vx, float vy);
 private:
 	float m_x; 

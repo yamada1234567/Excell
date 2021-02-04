@@ -1,5 +1,5 @@
 #pragma once
-//使用するヘッダー
+
 #include <stdlib.h>
 #include <time.h>
 #include "GameL/DrawTexture.h"
@@ -8,7 +8,7 @@
 #include "GameL\HitBoxManager.h"
 #include "GameL\Audio.h"
 
-//使用するネームスペース
+
 using namespace GameL;
 
 CObjAlien::CObjAlien(float x, float y)
@@ -16,7 +16,7 @@ CObjAlien::CObjAlien(float x, float y)
 	m_x = x;
 	m_y = y;
 }
-//イニシャライズ
+
 void CObjAlien::Init()
 {
 
@@ -24,21 +24,21 @@ void CObjAlien::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_time = 0;
-	m_left_bottom =50.0f;//表示位置
-	m_top_right = 0.0f; //表示位置
+	m_left_bottom =50.0f;
+	m_top_right = 0.0f;
 
 	item = 0;
 
-	//当たり判定作成
+
 	Hits::SetHitBox(this, m_x, m_y, 50, 50, ELEMENT_ENEMY, OBJ_Alien, 1);
 }
 
-//アクション
+
 void CObjAlien::Action()
 {
 	m_time++;
 		
-	//移動方向
+
 	m_vx = 1.0f;
 	m_vy = 0.0f;
 	float r = 0.0f;
@@ -55,18 +55,18 @@ void CObjAlien::Action()
 		m_vy = 1.0f / r * m_vy;
 	}
 
-	//加速
+
 	m_vx *= 3.5f;
 	m_vy *= 0.0f;
 
 	m_x += m_vx;
 	m_y += m_vy;
 
-	//hitbox更新用ポインターの取得
+	
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
 
-	//領域外に出たら削除
+
 	if (m_y > 600.0f)
 	{
 		this->SetStatus(false);
@@ -89,7 +89,7 @@ void CObjAlien::Action()
 	}
 
 
-	//主人公に当たったら消滅
+
 	if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
 	{
 		this->SetStatus(false);
@@ -97,27 +97,27 @@ void CObjAlien::Action()
 		return;
 	}
 
-	//bomにあったら消滅
+
 	if (hit->CheckObjNameHit(OBJ_BOM) != nullptr)
 	{
 		m_hp = 0;
 
-		//発射音を鳴らす
+
 		Audio::Start(3);
 	}
 
 
-	//ダメージ判定
+
 	if (hit->CheckElementHit(ELEMENT_BULLET) == true)
 	{
 		m_hp -= 1;
 		if (0 >= m_hp)
 		{
 
-			//敵爆発音を鳴らす
+
 			Audio::Start(3);
 			
-			//消去
+
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 	
@@ -127,7 +127,7 @@ void CObjAlien::Action()
 			int item;
 
 			srand(time(NULL));
-			item = rand() % 2;//アイテムが出る確率
+			item = rand() % 2;
 			
 			if(item == 1)
 			{ 
@@ -147,26 +147,26 @@ void CObjAlien::Action()
 
 }
 
-//ドロー
+
 void CObjAlien::Draw()
 {
-	//描画
+
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 	RECT_F src;
 	RECT_F dst;
-	//切れ取り設定
+
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 50.0f;
 	src.m_bottom = 50.0f;
-	//表示位置
+
 	dst.m_top = 0.0f + m_y;
 	dst.m_left = 50.0f + m_x;
 	dst.m_right = 0.0f + m_x;
 	dst.m_bottom = 50.0f + m_y;
 
 
-		//隕石登録
+
 		Draw::Draw(20, &src, &dst, c, 0.0f);
 
 }
