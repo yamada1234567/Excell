@@ -54,8 +54,8 @@ void CObjO2meteo::Action()
 	m_vx *= 0.0f;
 	m_vy *= 4.5f;
 
-	m_x += m_vx;
-	m_y += m_vy;
+		m_x += m_vx;
+		m_y += m_vy;
 
 
 	CHitBox* hit = Hits::GetHitBox(this);
@@ -179,7 +179,7 @@ void CObjO2meteo::Draw()
 
 
 
-		if (de_time >= 3)
+		if (de_time >= 10)
 		{
 
 			Audio::Start(3);

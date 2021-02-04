@@ -46,12 +46,15 @@ void CObjmeteoM::Action()
 		m_vy = 1.0f / r * m_vy;
 	}
 
+	if (m_hp > 0)
+	{
+		//‰Á‘¬
+		m_vx *= 0.0f;
+		m_vy *= 2.5f;
 
-	m_vx *= 0.0f;
-	m_vy *= 2.5f;
-
-	m_x += m_vx;
-	m_y += m_vy;
+		m_x += m_vx;
+		m_y += m_vy;
+	}
 
 	
 	CHitBox* hit = Hits::GetHitBox(this);
@@ -189,7 +192,7 @@ void CObjmeteoM::Draw()
 
 
 
-		if (de_time >= 3)
+		if (de_time >= 30)
 		{
 
 	

@@ -25,7 +25,6 @@ void CObjGameOver::Init()
 
 void CObjGameOver::Action()
 {
-	
 
 	if (SG == 1)
 	{		

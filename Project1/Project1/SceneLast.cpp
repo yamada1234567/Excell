@@ -193,6 +193,7 @@ void CSceneLast::Scene()
 		pos = 0;
 		srand((int)time(NULL));
 		pos = rand() % 3;
+
 		if (pos == 0)
 		{
 			x = 200.0f;

@@ -23,27 +23,27 @@ CObjHero::CObjHero(int c)
 
 void CObjHero::Init()
 {
-	m_y = 500-16;
-	m_x = (810/2)-16;
-	m_vx = 0.0f;
-	m_vy = 0.0f;
-	m_f = true;
+	m_y		 = 500-16;
+	m_x		 = (810/2)-16;
+	m_vx	 = 0.0f;
+	m_vy	 = 0.0f;
 	m_bullet = 0;
-	time = 0;
-	de_time = 0;
+	time	 = 0;
+	de_time  = 0;
 	bar_time = 0;
-
-	m_hp = 5;
-	m_o	= 15;
+	m_hp	 = 5;
+	m_o		 = 15;
 
 	Attack_Item=0;
 
 	m_time = 0;
 	Bullet_time = 100;
-
 	Bar = 0;
 
-	
+	m_f_bu = false;
+	m_f_bom = false;
+
+	//“–‚½‚è”»’è—phitbox‚ðì¬
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
 
@@ -58,31 +58,36 @@ void CObjHero::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x, m_y);
 
-
-
-
+	if (m_hp > 0)
+	{
+		//’Êí’eŠÛ”­ŽË
 		if (Input::GetVKey('Z') == true)
 		{
-			if (m_f == true)
+			if (m_f_bu == true)
 			{
 	
 				Audio::Start(2);
 
 				CObjBullet* obj_b = new CObjBullet(m_x + 3.0f, m_y);
 				Objs::InsertObj(obj_b, OBJ_BULLET, 1);
-
+	
 			
-
-				m_f = false;
-
+	
+				m_f_bu = false;
+	
 			}
-
-
+	
 		}
-		
-		else if (Input::GetVKey('X') == true)
+		if (m_time % 15 == 0)
 		{
-			if (m_f == true)
+			m_f_bu = true;
+	
+		}
+	
+		//BOM‚Ì’eŠÛ”­ŽË
+		if (Input::GetVKey('X') == true)
+		{
+			if (m_f_bom == true)
 			{
 				if (Attack_Item != 0)
 				{
@@ -90,16 +95,17 @@ void CObjHero::Action()
 					
 					CObjBomBullet* obj_b = new CObjBomBullet(m_x + 3.0f, m_y);
 					Objs::InsertObj(obj_b, OBJ_BOM_BULLET, 1);
-
-
+	
+	
 					Attack_Item -= 1;
 				}
-				m_f = false;
+				
 			}
+	
 		}
 		else
 		{
-			m_f = true;
+			m_f_bom = true;
 		}
 
 
@@ -113,14 +119,15 @@ void CObjHero::Action()
 	{
 		m_x -= 5.0f;
 
-	}
-	if (Input::GetVKey(VK_UP)==true)
-	{
-		m_y -= 5.0f;
-	}
-	if (Input::GetVKey(VK_DOWN) == true)
-	{
-		m_y += 5.0f;
+		}
+		if (Input::GetVKey(VK_UP) == true)
+		{
+			m_y -= 5.0f;
+		}
+		if (Input::GetVKey(VK_DOWN) == true)
+		{
+			m_y += 5.0f;
+		}
 	}
 
 
@@ -171,9 +178,9 @@ void CObjHero::Action()
 	{
 		m_x = 800.0f - 5.0f - 32.0f;
 	}
-	if (m_y + 32.0f > 600.0f - 5.0f)
+	if (m_y + 32.0f > 568.0f - 5.0f)
 	{
-		m_y = 600.0f - 5.0f - 32.0f;
+		m_y = 568.0f - 5.0f - 32.0f;
 	}
 	if (m_y < 0.0f)
 	{
@@ -190,31 +197,31 @@ void CObjHero::Action()
 		if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 		{
 			
-			if (Bar <= 0)
-			{
-				m_hp -= 1;
+		if (Bar <= 0)
+		{
+			m_hp -= 1;
 
 
 				Audio::Start(4);
 
-			}
-			else
-			{
-				Bar -= 1;
-
-			}
+		}
+		else
+		{
+			Bar -= 1;
 
 		}
+
+	}
 
 
 		if (m_time % 70 == 0)
 		{
 			m_o--;
 
-			if (0 == m_o)
-			{
-				this->SetStatus(false);
-				Hits::DeleteHitBox(this);
+		if (0 == m_o)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
 
 
 				
@@ -222,8 +229,8 @@ void CObjHero::Action()
 				
 				return;
 
-			}
 		}
+	}
 
 
 	if (hit->CheckObjNameHit(OBJ_SHIELD) != nullptr)
@@ -285,9 +292,7 @@ void CObjHero::Draw()
 
 	if (Attack_Item>=1)
 	{
-
 		Font::StrDraw(L"(BomŽg—p‰Â”\)", 500, 568, 28, c);
-
 	}
 	if (Bar==3)
 	{
@@ -353,28 +358,27 @@ void CObjHero::Draw()
 	{
 		Font::StrDraw(L"HP:0/5", 0, 568, 32, c);
 	    
-		Draw::Draw(17, &src, &dst, c, 0.0f);
+		if (de_time<=30)
+			Draw::Draw(17, &src, &dst, c, 0.0f);
+		
+
 
 		de_time++;
 
 		m_vx = 0;
 		m_vy = 0;
 
-
-			if (de_time == 11)
+			if (de_time == 60)
 			{
-
 
 				this->SetStatus(false);
 				Hits::DeleteHitBox(this);
 			
 				
 				Scene::SetScene((CScene*)new CSceneGameOver(C));
-					
-				return;	
 
+				return;
 			}
-
 
 
 	}

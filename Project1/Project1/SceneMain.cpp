@@ -46,9 +46,9 @@ void CSceneMain::InitScene()
 	
 	Draw::LoadImage(L"hero.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"hero bullet.png", 1, TEX_SIZE_512);
-	Draw::LoadImage(L"meteoS.png", 2, TEX_SIZE_512);
-	Draw::LoadImage(L"ècîwåi.png", 5, TEX_SIZE_512);
-	Draw::LoadImage(L"triple.png", 3, TEX_SIZE_512);
+	Draw::LoadImage(L"meteoS.png",2, TEX_SIZE_512);
+	Draw::LoadImage(L"triple.png",3, TEX_SIZE_512);
+	Draw::LoadImage(L"ècîwåi.png",5, TEX_SIZE_512);
 	Draw::LoadImage(L"Boss(moon).png", 6, TEX_SIZE_512);
 	Draw::LoadImage(L"Oxygen.png", 7, TEX_SIZE_512);
 	Draw::LoadImage(L"Shield.png", 8, TEX_SIZE_512);
@@ -57,9 +57,9 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"hero dead.png", 17, TEX_SIZE_512);
 	Draw::LoadImage(L"UFO.png", 20, TEX_SIZE_512);
 	Draw::LoadImage(L"barrier.png", 22, TEX_SIZE_512);
-	Draw::LoadImage(L"Ë¶êŒîöî≠.png", 50, TEX_SIZE_512);
 	Draw::LoadImage(L"BOOM.png", 23, TEX_SIZE_512);
 	Draw::LoadImage(L"bomb.png", 24, TEX_SIZE_512);
+	Draw::LoadImage(L"Ë¶êŒîöî≠.png", 50, TEX_SIZE_512);
 
 	
 	CObjHero* obj = new CObjHero(1);

@@ -47,12 +47,15 @@ void CObjmeteoL::Action()
 		m_vy = 1.0f / r * m_vy;
 	}
 
+	if (m_hp > 0)
+	{
+		//‰Á‘¬
+		m_vx *= 0.5f;
+		m_vy *= 0.5f;
 
-	m_vx *= 0.5f;
-	m_vy *= 0.5f;
-
-	m_x += m_vx;
-	m_y += m_vy;
+		m_x += m_vx;
+		m_y += m_vy;
+	}
 
 
 	CHitBox* hit = Hits::GetHitBox(this);
@@ -148,8 +151,6 @@ void CObjmeteoL::Draw()
 
 	if (0 >= m_hp)
 	{
-
-
 		m_vx = 0;
 		m_vy = 0;
 
@@ -157,9 +158,7 @@ void CObjmeteoL::Draw()
 
 		de_time++;
 
-
-
-		if (de_time >= 10)
+		if (de_time >= 30)
 		{
 
 			Audio::Start(3);
@@ -169,7 +168,6 @@ void CObjmeteoL::Draw()
 
 			return;
 		}
-
 
 	}
 	else

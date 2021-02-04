@@ -124,7 +124,6 @@ void CObjAlien::Action()
 
 
 		}
-			int item;
 
 			srand(time(NULL));
 			item = rand() % 2;

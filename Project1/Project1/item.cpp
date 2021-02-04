@@ -27,6 +27,7 @@ void CObjitem::Action()
 	
 	m_vx = 0.0f;
 	m_vy = 0.5f;
+
 	float r = 0.0f;
 	r = m_vx * m_vx + m_vy * m_vy;
 	r = sqrt(r);
