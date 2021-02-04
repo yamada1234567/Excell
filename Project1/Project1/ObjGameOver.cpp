@@ -130,8 +130,8 @@ void CObjGameOver::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	Font::StrDraw(L"YOU LOST", 325, 200, 32, c);
-	Font::StrDraw(L"GAME OVER", 320, 250, 32, c);
-	Font::StrDraw(L"NEXT_CHALLENGE:ENTER_KEY", 200, 350, 32, c);
+	Font::StrDraw(L"YOU LOST", 225, 140, 80, c);
+	Font::StrDraw(L"GAME OVER", 225, 250, 80, c);
+	Font::StrDraw(L"NEXT_CHALLENGE:ENTER_KEY", 100, 380, 50, c);
 											
 }
