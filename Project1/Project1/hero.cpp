@@ -43,7 +43,7 @@ void CObjHero::Init()
 	m_f_bu = false;
 	m_f_bom = false;
 
-	//“–‚½‚è”»’è—phitbox‚ğì¬
+
 	Hits::SetHitBox(this, m_x, m_y, 37, 38, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
 
@@ -60,7 +60,7 @@ void CObjHero::Action()
 
 	if (m_hp > 0)
 	{
-		//’Êí’eŠÛ”­Ë
+
 		if (Input::GetVKey('Z') == true)
 		{
 			if (m_f_bu == true)
@@ -84,7 +84,7 @@ void CObjHero::Action()
 	
 		}
 	
-		//BOM‚Ì’eŠÛ”­Ë
+
 		if (Input::GetVKey('X') == true)
 		{
 			if (m_f_bom == true)

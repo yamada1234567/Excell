@@ -16,14 +16,14 @@ public:
 	void Draw();
 
 private:
-	float m_y; //主人公機 y方向移動用変数
-	float m_x; //主人公機 x方向移動用変数
+	float m_y; 
+	float m_x;
 	
-	bool  m_f_bu; //弾丸発射制御用
-	bool  m_f_bom; //弾丸発射制御用
+	bool  m_f_bu; 
+	bool  m_f_bom; 
 
-	float m_vx;//ｘ方向ベクトル変換用
-	float m_vy;//ｙ方向ベクトル変換用
+	float m_vx;
+	float m_vy;
 
 	int m_hp;
 	int m_bullet;

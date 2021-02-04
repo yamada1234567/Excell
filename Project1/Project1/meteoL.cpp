@@ -49,7 +49,7 @@ void CObjmeteoL::Action()
 
 	if (m_hp > 0)
 	{
-		//‰Á‘¬
+		
 		m_vx *= 0.5f;
 		m_vy *= 0.5f;
 

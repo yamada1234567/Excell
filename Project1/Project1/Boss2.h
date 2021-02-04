@@ -1,24 +1,24 @@
 #pragma once
-//使用するヘッダー
+
 #include"GameL\SceneObjManager.h"
-//使用するネームスペース
+
 using namespace GameL;
 
-//オブジェクト:ボス機
+
 class CObjBoss2 :public CObj
 {
 public:
-	CObjBoss2(float x, float y);//コンストラクタ位置情報をもらう
+	CObjBoss2(float x, float y);
 	~CObjBoss2() {};
-	void Init();//イニシャライズ
-	void Action();//アクション
-	void Draw();//ドロー
+	void Init();
+	void Action();
+	void Draw();
 private:
-	float m_x;//ボス機のx方向の位置
-	float m_y;//ボス機のy方向の位置
-	float m_vx;//ボス機移動ベクトルX
-	float m_vy;//ボス機移動ベクトル
-	int m_hp;//ボスのヒットポイント
+	float m_x;
+	float m_y;
+	float m_vx;
+	float m_vy;
+	int m_hp;
 
 	int de_time;
 };

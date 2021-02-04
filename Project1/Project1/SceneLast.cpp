@@ -400,7 +400,7 @@ void CSceneLast::Scene()
 			}
 		}
 	}
-	for (int i = 0; i < 10000; i++)//ƒ‰ƒ“ƒ_ƒ€è¦Î
+	for (int i = 0; i < 10000; i++)
 	{
 		if (m_time == i * 60)
 		{

@@ -1,14 +1,14 @@
 #pragma once
-//使用するヘッダー
+
 #include "GameL\SceneObjManager.h"
-//使用するネームスペース
+
 using namespace GameL;
 
-//オブジェクト：弾丸
+
 class CObjBom : public CObj
 {
 public:
-	CObjBom(float x, float y); //コンストラクタ
+	CObjBom(float x, float y);
 	~CObjBom() {};
 	void Init();
 	void Action();
