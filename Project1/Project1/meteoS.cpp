@@ -176,9 +176,9 @@ void CObjmeteoS::Draw()
 
 		de_time++;
 		
-			
-
-		if(de_time >= 20)
+		
+	
+		if(de_time >= 12)
 		{
 			
 			Audio::Start(3);
@@ -187,8 +187,6 @@ void CObjmeteoS::Draw()
 			this->SetStatus(false);
 			return;
 		}
-
-
 	}
 	else
 	{

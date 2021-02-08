@@ -195,7 +195,7 @@ void CObjmeteoLD::Draw()
 
 
 
-		if (de_time >= 30)
+		if (de_time >= 12)
 		{
 
 			Audio::Start(3);
