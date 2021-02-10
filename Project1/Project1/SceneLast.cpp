@@ -39,7 +39,7 @@ void CSceneLast::InitScene()
 	Audio::LoadAudio(4, L"SEheroexp.wav", EFFECT);
 
 
-	float v = Audio::VolumeMaster(1.5);
+	float v = Audio::VolumeMaster(1);
 
 
 	Audio::Start(0);

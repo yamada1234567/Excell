@@ -36,7 +36,7 @@ void CSceneTitle::InitScene()
 	Audio::LoadAudio( 0 , L"BGMSceneTitle.wav", SOUND_TYPE::BACK_MUSIC);
 
 
-	float Volume = Audio::VolumeMaster(-0.3f);
+	float Volume = Audio::VolumeMaster(1);
 	Audio::Start(0); 
 
 

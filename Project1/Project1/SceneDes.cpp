@@ -30,8 +30,6 @@ void CSceneDes::InitScene()
 	Audio::LoadAudio(0, L"BGMSceneTitle.wav", SOUND_TYPE::BACK_MUSIC);
 
 
-	float Volume = Audio::VolumeMaster(-0.3f);
-	Audio::Start(0);
 
 
 	Draw::LoadImage(L"‘€ì•û–@.png", 1, TEX_SIZE_512);

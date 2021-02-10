@@ -36,7 +36,7 @@ void CSceneStage4::InitScene()
 	Audio::LoadAudio(3, L"SEEnemyexp.wav", EFFECT);
 	Audio::LoadAudio(4, L"SEheroexp.wav", EFFECT);
 
-	float v = Audio::VolumeMaster(1.5);
+	float v = Audio::VolumeMaster(1);
 
 	Audio::Start(0);
 
