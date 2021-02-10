@@ -98,6 +98,8 @@ void CObjHero::Action()
 	
 	
 					Attack_Item -= 1;
+
+					m_f_bom = false;
 				}
 				
 			}
@@ -290,7 +292,7 @@ void CObjHero::Draw()
 
 
 
-	if (Attack_Item>=1)
+	if (Attack_Item>0)
 	{
 		Font::StrDraw(L"(BomŽg—p‰Â”\)", 500, 568, 28, c);
 	}

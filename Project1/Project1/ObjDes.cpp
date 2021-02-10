@@ -17,7 +17,7 @@ void CObjDes::Init()
 
 void CObjDes::Action()
 {
-	
+
 	if (Input::GetVKey(VK_RETURN) == true)
 	{
 		if (m_key_flag == true)

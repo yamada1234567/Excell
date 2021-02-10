@@ -87,7 +87,6 @@ void CSceneMain::Scene()
 	int a;
 
 
-
 	if (m_time % 500 == 0)
 	{
 		x = 0.0f;
