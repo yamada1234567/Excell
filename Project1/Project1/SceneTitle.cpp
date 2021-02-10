@@ -30,7 +30,7 @@ CSceneTitle::~CSceneTitle()
 void CSceneTitle::InitScene()
 {
 	Draw::LoadImage(L"タイトル.png", 1, TEX_SIZE_512);
-	
+	Draw::LoadImage(L"操作方法.png", 2, TEX_SIZE_512);
 	
 
 	Audio::LoadAudio( 0 , L"BGMSceneTitle.wav", SOUND_TYPE::BACK_MUSIC);
