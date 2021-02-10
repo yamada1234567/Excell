@@ -128,9 +128,6 @@
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="BomBullet.cpp" />
     <ClCompile Include="bossima.cpp" />
-    <ClCompile Include="Diffusion.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="O2meteo.cpp" />
     <ClCompile Include="ObjDes.cpp" />
     <ClCompile Include="SceneDes.cpp" />
@@ -219,9 +216,6 @@
     <ClInclude Include="Boss5.h" />
     <ClInclude Include="Boss6.h" />
     <ClInclude Include="bullet.h" />
-    <ClInclude Include="Diffusion.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="GameHead.h" />
     <ClInclude Include="GameL\Audio.h" />
     <ClInclude Include="GameL\DirectXDevice.h" />

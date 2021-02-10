@@ -160,9 +160,6 @@
     <ClCompile Include="O2meteo.cpp">
       <Filter>ソースファイル\敵</Filter>
     </ClCompile>
-    <ClCompile Include="Diffusion.cpp">
-      <Filter>ソースファイル\主人公\強化</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -323,9 +320,6 @@
     </ClInclude>
     <ClInclude Include="O2meteo.h">
       <Filter>ソースファイル\敵</Filter>
-    </ClInclude>
-    <ClInclude Include="Diffusion.h">
-      <Filter>ソースファイル\主人公\強化</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
